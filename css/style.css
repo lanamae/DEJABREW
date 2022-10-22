@@ -1,0 +1,491 @@
+@import url("style.scss");
+@import url("style.scss");
+@import url("style.scss");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  width: 100%;
+  height: auto;
+  background: #333333;
+}
+.main .hero-section {
+  width: 100%;
+  height: 100vh;
+}
+.main .hero-section .navbar {
+  width: 100%;
+  height: 75px;
+  background: #1F1F1F;
+  padding: 0px 100px;
+}
+.main .hero-section .navbar .logo {
+  margin-top: 38px;
+}
+.main .hero-section .hero-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 400px 800px;
+  grid-template-rows: 1fr;
+  padding: 0px 80px;
+  margin-top: 60px;
+}
+.main .hero-section .hero-container .hero-img {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  margin-top: 50px;
+}
+.main .hero-section .hero-container .hero-content {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.main .hero-section .hero-container .hero-content .headline {
+  font-family: "Playfair Display", serif;
+  font-size: 55px;
+  color: #FFFFFF;
+  display: flex;
+  text-align: right;
+  padding: 10px;
+}
+.main .hero-section .hero-container .hero-content .desc {
+  font-family: "Arimo", sans-serif;
+  color: #FFFFFF;
+  text-align: right;
+  padding: 40px 0px;
+  padding-left: 200px;
+}
+.main .hero-section .hero-container .hero-content .buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 50px 0px;
+}
+.main .hero-section .hero-container .hero-content .buttons .signup {
+  width: 200px;
+  height: 40px;
+  background: #DADADA;
+  color: #5A5A5A;
+  border-style: none;
+  border-radius: 10px;
+  font-family: "Arimo", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.main .hero-section .hero-container .hero-content .buttons .login {
+  width: 200px;
+  height: 40px;
+  margin-left: 50px;
+  background: #1F1F1F;
+  color: #FFFFFF;
+  border-style: none;
+  border-radius: 10px;
+  font-family: "Arimo", sans-serif;
+  font-size: 18px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.main .instructions {
+  width: 100%;
+  height: 100vh;
+  padding: 30px 120px;
+}
+.main .instructions h1 {
+  color: #FFFFFF;
+  font-family: "Arimo", sans-serif;
+  font-size: 50px;
+  text-align: center;
+  font-weight: 100;
+}
+.main .instructions p {
+  color: #FFFFFF;
+  font-family: "Arimo", sans-serif;
+  font-size: 18px;
+  text-align: center;
+  font-weight: lighter;
+  margin-top: 20px;
+  padding: 0 120px;
+}
+.main .instructions .box-container {
+  width: 100%;
+  height: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  margin-top: 50px;
+  padding: 0px 50px;
+}
+.main .instructions .box-container .ins1 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 300px;
+  height: 400px;
+  background: #000000;
+  border-radius: 20px;
+  box-shadow: inset 6px 6px 6px rgba(218, 218, 218, 0.8);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main .instructions .box-container .ins1 .num {
+  width: 50px;
+  height: 50px;
+  background: #9C9C9C;
+  color: #000000;
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: lighter;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: -100px 0px 0px 0px;
+}
+.main .instructions .box-container .ins1 .icon {
+  margin: 50px 0px 30px;
+}
+.main .instructions .box-container .ins1 .content {
+  text-align: center;
+  color: #FFFFFF;
+  font-family: "Arimo", sans-serif;
+  font-size: 18px;
+}
+.main .instructions .box-container .ins2 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  width: 300px;
+  height: 400px;
+  background: #000000;
+  border-radius: 20px;
+  box-shadow: inset 6px 6px 6px rgba(218, 218, 218, 0.8);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main .instructions .box-container .ins2 .num {
+  width: 50px;
+  height: 50px;
+  background: #9C9C9C;
+  color: #000000;
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: lighter;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: -100px 0px 0px 0px;
+}
+.main .instructions .box-container .ins2 .icon {
+  margin: 50px 0px 30px;
+}
+.main .instructions .box-container .ins2 .content {
+  text-align: center;
+  color: #FFFFFF;
+  font-family: "Arimo", sans-serif;
+  font-size: 18px;
+}
+.main .instructions .box-container .ins3 {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  width: 300px;
+  height: 400px;
+  background: #000000;
+  border-radius: 20px;
+  box-shadow: inset 6px 6px 6px rgba(218, 218, 218, 0.8);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main .instructions .box-container .ins3 .num {
+  width: 50px;
+  height: 50px;
+  background: #9C9C9C;
+  color: #000000;
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: lighter;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: -100px 0px 0px 0px;
+}
+.main .instructions .box-container .ins3 .icon {
+  margin: 50px 0px 30px;
+}
+.main .instructions .box-container .ins3 .content {
+  text-align: center;
+  color: #FFFFFF;
+  font-family: "Arimo", sans-serif;
+  font-size: 18px;
+}
+
+.main-signup {
+  width: 100%;
+  height: auto;
+}
+.main-signup .background {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../PROJECT/Images/bg-signup-login1.png");
+}
+.main-signup .signup-modal {
+  width: 100%;
+  height: 100vh;
+  padding: 30px 100px;
+  position: fixed;
+}
+.main-signup .signup-modal .signup-container {
+  width: 500px;
+  height: 600px;
+  background-color: #1F1F1F;
+  border-radius: 20px;
+  padding: 20px;
+  margin-left: 350px;
+}
+.main-signup .signup-modal .signup-container form {
+  padding: 10px;
+}
+.main-signup .signup-modal .signup-container form h2 {
+  color: #FFFFFF;
+  font-size: 40px;
+  text-align: center;
+  font-weight: lighter;
+}
+.main-signup .signup-modal .signup-container form .radio-container {
+  width: 100%;
+  height: 40px;
+  background: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 15px;
+}
+.main-signup .signup-modal .signup-container form .radio-container .admintxt {
+  color: #1F1F1F;
+  font-family: "Arimo", sans-serif;
+  font-size: 18px;
+  margin-right: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+.main-signup .signup-modal .signup-container form .radio-container .admin {
+  visibility: hidden;
+}
+.main-signup .signup-modal .signup-container form .radio-container .admin:checked ~ .admintxt {
+  background: #DADADA;
+  width: 150px;
+  height: 30px;
+  text-align: center;
+  padding: 3px;
+}
+.main-signup .signup-modal .signup-container form .radio-container .employee {
+  visibility: hidden;
+}
+.main-signup .signup-modal .signup-container form .radio-container .emptxt {
+  color: #1F1F1F;
+  font-family: "Arimo", sans-serif;
+  font-size: 18px;
+  margin-right: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+.main-signup .signup-modal .signup-container form .radio-container .employee:checked ~ .emptxt {
+  background: #DADADA;
+  width: 150px;
+  height: 30px;
+  text-align: center;
+}
+.main-signup .signup-modal .signup-container form .label {
+  font-family: "Arimo", sans-serif;
+  color: #FFFFFF;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.main-signup .signup-modal .signup-container form .input {
+  width: 100%;
+  height: 35px;
+  border-style: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.main-signup .signup-modal .signup-container form .create-btn {
+  width: 70%;
+  height: 50px;
+  color: #FFFFFF;
+  background: #5A5A5A;
+  border-style: none;
+  border-radius: 10px;
+  font-family: "Arimo", sans-serif;
+  font-size: 18px;
+  margin-left: 65px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.main-signup .signup-modal .signup-container .haveAccount {
+  text-align: center;
+  font-family: "Arimo", sans-serif;
+  font-size: 15px;
+}
+.main-signup .signup-modal .signup-container .haveAccount p {
+  color: #FFFFFF;
+  margin-right: 10px;
+}
+.main-signup .signup-modal .signup-container .haveAccount p a {
+  color: #FFFFFF;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.main-login {
+  width: 100%;
+  height: auto;
+}
+.main-login .background {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../PROJECT/Images/bg-signup-login1.png");
+}
+.main-login .login-modal {
+  width: 100%;
+  height: 100vh;
+  padding: 30px 100px;
+  position: fixed;
+}
+.main-login .login-modal .login-container {
+  width: 500px;
+  height: 600px;
+  background-color: #1F1F1F;
+  border-radius: 20px;
+  padding: 20px;
+  margin-left: 350px;
+}
+.main-login .login-modal .login-container form {
+  padding: 10px;
+}
+.main-login .login-modal .login-container form h2 {
+  color: #FFFFFF;
+  font-size: 40px;
+  text-align: center;
+  font-weight: lighter;
+}
+.main-login .login-modal .login-container form .radio-container {
+  width: 100%;
+  height: 40px;
+  background: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 15px;
+}
+.main-login .login-modal .login-container form .radio-container .admintxt {
+  color: #1F1F1F;
+  font-family: "Arimo", sans-serif;
+  font-size: 18px;
+  margin-right: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+.main-login .login-modal .login-container form .radio-container .admin {
+  visibility: hidden;
+}
+.main-login .login-modal .login-container form .radio-container .admin:checked ~ .admintxt {
+  background: #DADADA;
+  width: 150px;
+  height: 30px;
+  text-align: center;
+  padding: 3px;
+}
+.main-login .login-modal .login-container form .radio-container .employee {
+  visibility: hidden;
+}
+.main-login .login-modal .login-container form .radio-container .emptxt {
+  color: #1F1F1F;
+  font-family: "Arimo", sans-serif;
+  font-size: 18px;
+  margin-right: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+.main-login .login-modal .login-container form .radio-container .employee:checked ~ .emptxt {
+  background: #DADADA;
+  width: 150px;
+  height: 30px;
+  text-align: center;
+}
+.main-login .login-modal .login-container form .label {
+  font-family: "Arimo", sans-serif;
+  color: #FFFFFF;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.main-login .login-modal .login-container form .input {
+  width: 100%;
+  height: 35px;
+  border-style: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.main-login .login-modal .login-container form .login-btn {
+  width: 70%;
+  height: 50px;
+  color: #FFFFFF;
+  background: #5A5A5A;
+  border-style: none;
+  border-radius: 10px;
+  font-family: "Arimo", sans-serif;
+  font-size: 18px;
+  margin-left: 65px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.main-login .login-modal .login-container .noAccount {
+  text-align: center;
+  font-family: "Arimo", sans-serif;
+  font-size: 15px;
+}
+.main-login .login-modal .login-container .noAccount p {
+  color: #FFFFFF;
+  margin-right: 10px;
+}
+.main-login .login-modal .login-container .noAccount p a {
+  color: #FFFFFF;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.pop-message {
+  width: 300px;
+  height: 200px;
+  background: #000000;
+  position: absolute;
+  top: 0;
+  margin: 200px 0px 0px 450px;
+  display: block;
+  border-radius: 10px;
+  color: #FFFFFF;
+  padding: 30px;
+  font-family: "Arimo", sans-serif;
+}
+
+.pop-message.show {
+  display: block;
+}/*# sourceMappingURL=style.css.map */

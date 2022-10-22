@@ -1,0 +1,52 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    
+
+}
+
+// variables
+
+$color1 : #000000;
+$color2 : #1F1F1F;
+$color3 : #333333;
+$color4 : #5A5A5A;
+$color5 : #9C9C9C;
+$color6 : #DADADA;
+$color7 : #FFFFFF;
+
+$font1: 'Arimo', sans-serif;
+
+$font2: 'Playfair Display', serif;
+
+
+@import '_landing-desk.scss';
+@import '_signup-desk.scss';
+@import '_login-desk.scss';
+
+.pop-message{
+    width: 300px;
+    height: 200px;
+    background: $color1;
+    position: absolute;
+    top: 0;
+    margin: 200px 0px 0px 450px;
+    display: block;
+
+    border-radius: 10px;
+    color: $color7;
+    padding: 30px;
+    font-family: $font1;   
+}
+
+.pop-message.show{
+    display: block;
+}
+
+
+
+
+
