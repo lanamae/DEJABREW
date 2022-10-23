@@ -1,45 +1,56 @@
 <?php
-    require "../php-landing/database.php";
+    require '../php-landing/database.php';
 
     session_start();
 
     if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
         $_SESSION['status'] = 'invalid';
+
+        // echo 'invalid session';
+        // echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
+
+
     }
 
-    else if ($_SESSION['status'] = 'valid'){
+    if($_SESSION['status'] == 'valid'){
         echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
+            
     }
+
+
 
     if(isset($_POST['login'])){
         $position = trim($_POST['position']);
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
-
+    
         if(empty($position) || empty($username) || empty($password)){
-            echo "Fill up all fields";
+            echo "Fill up all fields!";
         }
 
         else{
-            $queryLogin = "SELECT * FROM useraccounts WHERE position = '$position' AND username='$username' AND password = md5('$password')";
+            $queryLogin = "SELECT * FROM useraccounts WHERE position='$position' AND username = '$username' AND password= md5('$password')";
             $sqlLogin = mysqli_query($connection, $queryLogin);
-            $results = mysqli_fetch_array($sqlLogin);
+            $userDetails = mysqli_fetch_array($sqlLogin);
+
 
             if(mysqli_num_rows($sqlLogin) > 0){
                 $_SESSION['status'] = 'valid';
-                $_SESSION['username'] = $results['username'];
+                $_SESSION['username'] = $userDetails['username'];
                 
-      
                 echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
             }
 
             else{
+                echo "Details not found!";
                 $_SESSION['status'] = 'invalid';
-                echo 'invalid ';
             }
         }
-
+    
     }
+
+
+
 
 ?>
 

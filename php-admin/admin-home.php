@@ -1,26 +1,27 @@
-<?php 
-    session_start();
+<?php
+    require "../php-landing/session.php";
+    // session_start();
 
-    echo 'status: ' .$_SESSION['status'];
-    echo 'username: ' .$_SESSION['username'];
+    
+    // // echo 'SESSION:' .$_SESSION['status'] .'<br>';
+    // // echo 'USERNAME:' .$_SESSION['username'];
+    
+    // if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
+    //     $_SESSION['status'] = 'invalid';
 
-
-    if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
-        $_SESSION['status'] = 'invalid';
-    }
-
-    // else if ($_SESSION['status'] = 'valid'){
-    //     echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
+    //     // echo 'invalid session';
+    //     // echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
+        
+    //     unset($_SESSION['position']);
+    //     unset($_SESSION['username']);
+    //     unset($_SESSION['email']);
+    //     unset($_SESSION['password']);
+    
+    //     echo "<script>window.location.href='../php-landing/landing.php'</script>";
+                
+       
     // }
-
-    
-    // $_SESSION['status'] = 'invalid';
-    
-    // unset($_SESSION['username']);
-
-    // echo "<script>window.location.href='../php-landing/landing.php'</script>";
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

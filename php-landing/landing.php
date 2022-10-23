@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+
+if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
+    $_SESSION['status'] = 'invalid';
+
+    // echo "<script>window.location.href='../php-landing/landing.php'</script>";
+        
+}
+
+if($_SESSION['status'] == 'valid'){
+    echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
+        
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

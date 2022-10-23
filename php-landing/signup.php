@@ -1,6 +1,21 @@
 <?php
     require './database.php';
 
+    session_start();
+    
+    if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
+        $_SESSION['status'] = 'invalid';
+
+        // echo "<script>window.location.href='../php-landing/signup.php'</script>";
+    }
+
+    if($_SESSION['status'] == 'valid'){
+        echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
+            
+    }
+
+
+    
     if(isset($_POST['signup'])){
         $position =trim($_POST['position']);
         $username = trim($_POST['username']);
@@ -22,7 +37,7 @@
             $queryCreate = "INSERT INTO userAccounts VALUES(null, '$position', '$username', '$email', md5('$password')) ";
             $sqlCreate = mysqli_query($connection, $queryCreate);
 
-            echo "<script>alert('SUCCESSFULLY CREATED ACCOUNT)</script>";
+            echo "<script>alert('SUCCESSFULLY CREATED ACCOUNT')</script>";
             echo "<script>window.location.href='signup.php'</script>";
         }
         
