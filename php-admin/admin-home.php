@@ -3,8 +3,8 @@
     // session_start();
 
     
-    // // echo 'SESSION:' .$_SESSION['status'] .'<br>';
-    // // echo 'USERNAME:' .$_SESSION['username'];
+    echo 'SESSION:' .$_SESSION['status'] .'<br>';
+    echo 'POSITION:' .$_SESSION['position'];
     
     // if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
     //     $_SESSION['status'] = 'invalid';
@@ -31,7 +31,7 @@
     <title>DEJA BREW - ADMIN</title>
 </head>
 <body>
-    <h1> WELCOME TO ADMIN DASHBOARD, </h1>
+    <h1 > WELCOME TO ADMIN DASHBOARD, </h1>
 
     <br> <br>
     <a href="admin-profile.php">PROFILE</a></p>

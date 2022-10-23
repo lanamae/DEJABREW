@@ -1,6 +1,6 @@
 <?php
     require './database.php';
-
+    //  require "../php-landing/session.php";
     session_start();
     
     if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
@@ -10,7 +10,13 @@
     }
 
     if($_SESSION['status'] == 'valid'){
-        echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
+        if($_SESSION['position'] == 'admin'){
+            echo "<script>alert('Hello testing admin')</script>";
+        }
+
+        if($_SESSION['position'] == 'employee'){
+            echo "<script>alert('Hello testing employee')</script>";
+        }
             
     }
 

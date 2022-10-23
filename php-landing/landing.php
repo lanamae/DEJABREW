@@ -2,17 +2,24 @@
 session_start();
 
 
-if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
-    $_SESSION['status'] = 'invalid';
+    if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
+        $_SESSION['status'] = 'invalid';
 
-    // echo "<script>window.location.href='../php-landing/landing.php'</script>";
-        
-}
+    }
 
-if($_SESSION['status'] == 'valid'){
-    echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
-        
-}
+    if($_SESSION['status'] == 'valid'){
+        if($_SESSION['position'] == 'admin'){
+            // echo "<script>alert('Hello testing admin')</script>";
+            echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
+
+        }
+
+        if($_SESSION['position'] == 'employee'){
+            // echo "<script>alert('Hello testing employee')</script>";
+            echo "<script>window.location.href='../php-employee/employee-home.php'</script>";
+        }
+            
+    }
 
 
 ?>

@@ -3,8 +3,8 @@
     // session_start();
 
     
-    echo 'SESSION:' .$_SESSION['status'] .'<br>';
-    echo 'POSITION:' .$_SESSION['position'];
+    // // echo 'SESSION:' .$_SESSION['status'] .'<br>';
+    // // echo 'USERNAME:' .$_SESSION['username'];
     
     // if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
     //     $_SESSION['status'] = 'invalid';
@@ -21,17 +21,6 @@
                 
        
     // }
-
-
-    // if($_SESSION['status'] == 'valid' || $userDetails['position'] == 'admin'){
-    //     echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
-            
-    // }
-
-    // else if($_SESSION['status'] == 'valid' || $userDetails['position'] == 'employee'){
-    //     echo "<script>window.location.href='../php-employee/employee-home.php'</script>";
-            
-    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,10 +31,16 @@
     <title>DEJA BREW - EMPLOYEE</title>
 </head>
 <body>
-<h1 > WELCOME TO EMPLOYEE DASHBOARD, </h1>
+    
+<p><i>EMPLOYEE PROFILE</i>
+<br><br>
 
-    <br> <br>
-    <a href="employee-profile.php">PROFILE</a></p>
-   
+<form action="../php-landing/logout.php">
+    <input type="submit" value="LOGOUT">
+
+
+
+    
+</form>
 </body>
-</html> 
+</html>
