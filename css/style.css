@@ -1,6 +1,7 @@
 @import url("style.scss");
 @import url("style.scss");
 @import url("style.scss");
+@import url("style.scss");
 * {
   margin: 0;
   padding: 0;
@@ -470,6 +471,48 @@
   color: #FFFFFF;
   margin-left: 10px;
   font-weight: bold;
+}
+
+.main-adminHome {
+  width: 100%;
+  height: auto;
+  background: #333333;
+}
+.main-adminHome .head-section {
+  width: 100%;
+  height: 100vh;
+}
+.main-adminHome .head-section .navbar {
+  width: 100%;
+  height: 75px;
+  background: #1F1F1F;
+  padding: 0px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-adminHome .head-section .navbar .logo {
+  margin-top: 150px;
+}
+.main-adminHome .head-section .navbar ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+.main-adminHome .head-section .navbar ul li {
+  display: inline-block;
+  padding: 10px;
+  margin-right: 10px;
+}
+.main-adminHome .head-section .navbar ul li a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: "Arimo", sans-serif;
+  font-size: 18px;
+}
+.main-adminHome .admin-ins {
+  width: 100%;
+  height: 100vh;
 }
 
 .pop-message {
