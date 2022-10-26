@@ -2,6 +2,7 @@
 @import url("style.scss");
 @import url("style.scss");
 @import url("style.scss");
+@import url("style.scss");
 * {
   margin: 0;
   padding: 0;
@@ -60,6 +61,8 @@
   text-align: right;
   padding: 40px 0px;
   padding-left: 200px;
+  font-weight: 100;
+  font-style: italic;
 }
 .main .hero-section .hero-container .hero-content .buttons {
   width: 100%;
@@ -478,11 +481,11 @@
   height: auto;
   background: #333333;
 }
-.main-adminHome .head-section {
+.main-adminHome .hero-section {
   width: 100%;
   height: 100vh;
 }
-.main-adminHome .head-section .navbar {
+.main-adminHome .hero-section .navbar {
   width: 100%;
   height: 75px;
   background: #1F1F1F;
@@ -491,27 +494,117 @@
   justify-content: space-between;
   align-items: center;
 }
-.main-adminHome .head-section .navbar .logo {
+.main-adminHome .hero-section .navbar .logo {
   margin-top: 150px;
 }
-.main-adminHome .head-section .navbar ul {
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-}
-.main-adminHome .head-section .navbar ul li {
+.main-adminHome .hero-section .navbar ul li {
   display: inline-block;
-  padding: 10px;
-  margin-right: 10px;
+  padding: 10px 10px;
 }
-.main-adminHome .head-section .navbar ul li a {
+.main-adminHome .hero-section .header {
+  width: 100%;
+  height: auto;
+  text-align: right;
+  padding: 100px 100px 120px 100px;
+}
+.main-adminHome .hero-section .header .line {
+  width: 600px;
+  height: 5px;
+  background: #ffffff;
+  margin-left: 210px;
+  margin-top: 20px;
+}
+.main-adminHome .hero-section .header h1 {
+  font-family: "Playfair Display", serif;
   color: #FFFFFF;
-  text-decoration: none;
+  font-size: 55px;
+  padding-top: 20px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.main-adminHome .hero-section .header h2 {
+  font-family: "Playfair Display", serif;
+  color: #DADADA;
+  font-size: 35px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.main-adminHome .hero-section .header p {
   font-family: "Arimo", sans-serif;
+  color: #FFFFFF;
   font-size: 18px;
+  font-weight: 100;
+  margin: 100px 0px 50px 0px;
 }
 .main-adminHome .admin-ins {
+  width: 100px;
+  height: 100vh;
+}
+
+.main-adminProfile {
   width: 100%;
+  height: auto;
+  background: #333333;
+}
+
+.main-employeeHome {
+  width: 100%;
+  height: auto;
+  background: #333333;
+}
+.main-employeeHome .hero-section {
+  width: 100%;
+  height: 100vh;
+}
+.main-employeeHome .hero-section .navbar {
+  width: 100%;
+  height: 75px;
+  background: #1F1F1F;
+  padding: 0px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-employeeHome .hero-section .navbar .logo {
+  margin-top: 150px;
+}
+.main-employeeHome .hero-section .navbar ul li {
+  display: inline-block;
+  padding: 10px 10px;
+}
+.main-employeeHome .hero-section .header {
+  width: 100%;
+  height: auto;
+  text-align: right;
+  padding: 100px 100px 120px 100px;
+}
+.main-employeeHome .hero-section .header .line {
+  width: 600px;
+  height: 5px;
+  background: #ffffff;
+  margin-left: 210px;
+  margin-top: 20px;
+}
+.main-employeeHome .hero-section .header h1 {
+  font-family: "Playfair Display", serif;
+  color: #FFFFFF;
+  font-size: 55px;
+  padding-top: 20px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.main-employeeHome .hero-section .header h2 {
+  font-family: "Playfair Display", serif;
+  color: #DADADA;
+  font-size: 35px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.main-employeeHome .hero-section .header p {
+  font-family: "Arimo", sans-serif;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 100;
+  margin: 100px 0px 50px 0px;
+}
+.main-employeeHome .admin-ins {
+  width: 100px;
   height: 100vh;
 }
 

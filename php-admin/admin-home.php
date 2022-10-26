@@ -1,26 +1,7 @@
 <?php
     require "../php-landing/session.php";
-    // session_start();
+    require "../php-landing/date_and_time.php";
 
-    
-    // echo 'SESSION:' .$_SESSION['status'] .'<br>';
-    // echo 'POSITION:' .$_SESSION['position'];
-    
-    // if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
-    //     $_SESSION['status'] = 'invalid';
-
-    //     // echo 'invalid session';
-    //     // echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
-        
-    //     unset($_SESSION['position']);
-    //     unset($_SESSION['username']);
-    //     unset($_SESSION['email']);
-    //     unset($_SESSION['password']);
-    
-    //     echo "<script>window.location.href='../php-landing/landing.php'</script>";
-                
-       
-    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,42 +11,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEJA BREW - ADMIN</title>
 
+    <link rel="shortcut icon" href="../PROJECT/Images/dejabrew-logo.png" type="image/x-icon">
+   
     <link rel="stylesheet" href="../css/style.css">
     
+    
 </head>
-
-
-
 <body>
-   <div class="main-adminHome">
+   <div class="main-adminHome">   
+        <!-- head section -->
+        <div class="hero-section">
+            <!-- NAVBAR -->
+            <div class="navbar">
+                    <img src="../PROJECT/Images/dejabrew-logo.png" class="logo" alt="dejabrew logo">
+                    
+                    <ul>
+                        <li><a href="admin-home.php"><img src="../PROJECT/Images/home-icon.png" alt="home icon"style="width: 30px; height: 30px"></a></li>
+                        <li><a href="admin-menu.php"><img src="../PROJECT/Images/menu-icon.png" alt="menu icon"style="width: 30px; height: 30px"></a></li>
+                        <li><a href="admin-sales.php"><img src="../PROJECT/Images/sales-icon.png" alt="sales icon" style="width: 30px; height: 30px"></a></li>
+                        <li><a href="admin-employee.php"><img src="../PROJECT/Images/emp-icon.png" alt="employee icon" style="width: 30px; height: 30px"></a></li>
+                        <li><a href="admin-profile.php"><img src="../PROJECT/Images/prof-icon.png" alt="profile icon" style="width: 30px; height: 30px"></a></li>
+                    </ul>
+                
+            </div>
 
-    <!-- head section -->
-    <div class="head-section">
-        <!-- NAVBAR -->
-        <div class="navbar">
-            <img src="../PROJECT/Images/dejabrew-logo.png" class="logo" alt="dejabrew logo">
-            
-            <ul>
-                <li><a href=""><img src="../PROJECT/Images/home-icon.png" alt="home icon"style="width: 30px; height: 30px"></a></li>
-                <li><a href=""><img src="../PROJECT/Images/menu-icon.png" alt="menu icon"style="width: 30px; height: 30px"></a></li>
-                <li><a href=""><img src="../PROJECT/Images/sales-icon.png" alt="sales icon" style="width: 30px; height: 30px"></a></li>
-                <li><a href=""><img src="../PROJECT/Images/emp-icon.png" alt="employee icon" style="width: 30px; height: 30px"></a></li>
-                <li><a href="admin-profile.php"><img src="../PROJECT/Images/prof-icon.png" alt="profile icon" style="width: 30px; height: 30px"></a></li>
-            </ul>
-        
+            <!-- HEADING -->
+
+            <div class="header">
+                <div class="line" style="width: 950px;"></div> 
+                <h1>
+                    
+                <?php
+                    if($setHour == "AM"){
+                        echo  "Good Morning, ";
+                    }
+
+                    else if($hours<6 || $setHour == "PM"){
+                        echo  "Good Afternoon,";
+                    }
+
+                    else if($hours>=6 || $setHour == "PM" ){
+                        echo  "Good Evening,";
+                    }
+
+                   
+                   
+
+                ?>
+                
+                Admin <?php echo $_SESSION['username'];?> </h1>
+                <h2>Check How Today’s Deja Brew’s Sale</h2>
+                
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non aliquam, at <br>
+                duis ac. Vel eleifend iaculis sit aliquet urna vehicula malesuada interdum pharetra.</p>
+
+                <div class="line" style="width:750px;margin-left: 415px;"></div>
+            </div>
+
+           <hr>
         </div>
-
-        <!-- HEADING -->
-        
-    </div>
-
-        <!-- admin instructions -->
+ <!-- admin instructions -->
         <div class="admin-ins">
-
-
+            <div class="instruction1"></div>
+            <div class="instruction2"></div>
+            <div class="instruction3"></div>
         </div>
-
-
-   </div>
+    
+    </div>    
 </body>
 </html> 

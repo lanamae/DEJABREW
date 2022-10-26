@@ -67,9 +67,7 @@ session_start();
                         DEJA BREW AUTOMATED SALES RECORD SYSTEM
                     </div>
 
-                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non aliquam, at 
-                        duis ac. Vel eleifend iaculis sit aliquet urna vehicula malesuada interdum 
-                        pharetra.
+                    <p class="desc"> Today’s a good mood to make a perfect blend, BREWmates! 
                     </p>
 
                     <div class="line" style="width: 550px; height: 5px; background: #fff;"></div>

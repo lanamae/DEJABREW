@@ -11,11 +11,14 @@
 
     if($_SESSION['status'] == 'valid'){
         if($_SESSION['position'] == 'admin'){
-            echo "<script>alert('Hello testing admin')</script>";
+            // echo "<script>alert('Hello testing admin')</script>";
+            echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
+
         }
 
         if($_SESSION['position'] == 'employee'){
-            echo "<script>alert('Hello testing employee')</script>";
+            // echo "<script>alert('Hello testing employee')</script>";
+            echo "<script>window.location.href='../php-employee/employee-home.php'</script>";
         }
             
     }
@@ -45,6 +48,46 @@
 
             echo "<script>alert('SUCCESSFULLY CREATED ACCOUNT')</script>";
             echo "<script>window.location.href='signup.php'</script>";
+        }
+
+
+        if(empty($position) || empty($username) || empty($password)){
+            echo "Fill up all fields!";
+        }
+
+        else{
+            $queryLogin = "SELECT * FROM useraccounts WHERE position='$position' AND username = '$username' AND password= md5('$password')";
+            $sqlLogin = mysqli_query($connection, $queryLogin);
+            $userDetails = mysqli_fetch_array($sqlLogin);
+            
+
+
+            if(mysqli_num_rows($sqlLogin) > 0){
+                $_SESSION['status'] = 'valid';
+                $_SESSION['position'] = $userDetails['position'];
+                $_SESSION['username'] = $userDetails['username'];
+                $_SESSION['password'] = $userDetails['password'];
+
+                // echo "<script>console.log('Hello testing')</script>";
+                
+                // echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
+
+                if($_SESSION['position'] == 'admin'){
+                    // echo "<script>alert('Hello testing admin')</script>";
+                    echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
+
+                }
+
+                if($_SESSION['position'] == 'employee'){
+                    // echo "<script>alert('Hello testing employee')</script>";
+                    echo "<script>window.location.href='../php-employee/employee-home.php'</script>";
+                }
+            }
+
+            else{
+                echo "Details not found!";
+                $_SESSION['status'] = 'invalid';
+            }
         }
         
     }

@@ -1,8 +1,12 @@
 <?php
     require '../php-landing/database.php';
+    require "../php-landing/date_and_time.php";
+    require '../php-landing/logbook.php';
+
 
     session_start();
 
+    // SESSION SET DEFAULTS
     if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
         $_SESSION['status'] = 'invalid';
 
@@ -26,11 +30,24 @@
     }
 
 
-
+// DATABASE CONNECTION
     if(isset($_POST['login'])){
         $position = trim($_POST['position']);
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
+
+        $getDateLog = trim($_POST['date_log']);
+        $getLoginTime = trim($_POST['login_time']);
+        // $getPosition = trim($_POST['position']);
+        // $getUsername = trim($_POST['username']);
+        
+        $queryLogbook = "INSERT INTO log_details VALUES(null, '$position', '$username', '$getDateLog', '$getLoginTime', null)";
+        $sqlLog = mysqli_query($connLog, $queryLogbook);
+
+        echo "<script>alert('SUCCESSFULLY LOG ACCOUNT')</script>";
+
+
+
     
         if(empty($position) || empty($username) || empty($password)){
             echo "Fill up all fields!";
@@ -57,12 +74,20 @@
                     // echo "<script>alert('Hello testing admin')</script>";
                     echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
 
+               
+
                 }
 
                 if($_SESSION['position'] == 'employee'){
                     // echo "<script>alert('Hello testing employee')</script>";
                     echo "<script>window.location.href='../php-employee/employee-home.php'</script>";
+                
+                  
                 }
+
+                 
+               
+
             }
 
             else{
@@ -86,7 +111,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEJA BREW - LOGIN</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../PROJECT/Images/dejabrew-logo.png" type="image/x-icon">
+   
+   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div class="main-login">
@@ -117,6 +144,16 @@
                 <input type="password" name="password" id="password" class="password input" placeholder="Enter your Password">
                 <br><br>
 
+                <!-- HIDEN DATE -->
+                <!-- <label for="date" class="label">Date</label><br> -->
+                <input type="hidden" name="date_log" id="date_log" value="<?php echo $date; ?>">
+                <br><br>
+
+
+                <!-- HIDDEN TIMES -->
+                <!-- <label for="time" class="label">Time</label><br> -->
+                <input type="hidden" name="login_time" id="time" value="<?php echo $time; ?>">
+                <br><br>
              
                 <input type="submit" name="login" class="login-btn" value="LOGIN">
 
