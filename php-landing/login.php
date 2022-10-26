@@ -36,15 +36,6 @@
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
 
-        $getDateLog = trim($_POST['date_log']);
-        $getLoginTime = trim($_POST['login_time']);
-        // $getPosition = trim($_POST['position']);
-        // $getUsername = trim($_POST['username']);
-        
-        $queryLogbook = "INSERT INTO log_details VALUES(null, '$position', '$username', '$getDateLog', '$getLoginTime', null)";
-        $sqlLog = mysqli_query($connLog, $queryLogbook);
-
-        echo "<script>alert('SUCCESSFULLY LOG ACCOUNT')</script>";
 
 
 
@@ -74,7 +65,16 @@
                     // echo "<script>alert('Hello testing admin')</script>";
                     echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
 
-               
+                                
+                    $getDateLog = trim($_POST['date_log']);
+                    $getLoginTime = trim($_POST['login_time']);
+                    // $getPosition = trim($_POST['position']);
+                    // $getUsername = trim($_POST['username']);
+                    
+                    $queryLogbook = "INSERT INTO log_details VALUES(null, '$position', '$username', '$getDateLog', '$getLoginTime', null)";
+                    $sqlLog = mysqli_query($connLog, $queryLogbook);
+
+                    echo "<script>alert('SUCCESSFULLY LOG ACCOUNT')</script>";
 
                 }
 
@@ -82,6 +82,17 @@
                     // echo "<script>alert('Hello testing employee')</script>";
                     echo "<script>window.location.href='../php-employee/employee-home.php'</script>";
                 
+
+                                
+                    $getDateLog = trim($_POST['date_log']);
+                    $getLoginTime = trim($_POST['login_time']);
+                    // $getPosition = trim($_POST['position']);
+                    // $getUsername = trim($_POST['username']);
+                    
+                    $queryLogbook = "INSERT INTO log_details VALUES(null, '$position', '$username', '$getDateLog', '$getLoginTime', null)";
+                    $sqlLog = mysqli_query($connLog, $queryLogbook);
+
+                    echo "<script>alert('SUCCESSFULLY LOG ACCOUNT')</script>";
                   
                 }
 

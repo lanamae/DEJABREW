@@ -112,9 +112,49 @@
    
 }
 
+
+
+
+
+
+// ADMIN PROFILE
 .main-adminProfile{
     width: 100%;
     height: auto;
     background: $color3;
+
+    .navbar{
+        width: 100%;
+        height: 75px;
+        background: $color2;
+        padding: 0px 100px;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+
+        .logo{
+            margin-top: 150px;
+        }
+        ul li{
+            display: inline-block;
+            padding: 10px 10px;
+
+
+        }
+    }
+
+    .adminProfile-header{
+        width: 100%;
+        height: 250px;
+        padding: 30px 100px;
+        
+    }
+
+    .adminProfile-details{
+        width: 100%;
+        height: auto;
+    }
     
 }
