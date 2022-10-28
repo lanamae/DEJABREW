@@ -1,14 +1,38 @@
 <?php
+    require '../php-landing/logbook.php';
+    require '../php-landing/date_and_time.php';
+
     session_start();
-    $_SESSION['status'] = 'invalid';
     
+    // GETTING UPDATED TIME FOR LOGOUT
+    // $_SESSION['date_logout'] = $date;
+    // $_SESSION['logout_time'] = $time;
+
+
+    echo $_SESSION['date'];
+    echo $_SESSION['time']; 
+
+    $date_logout = $_SESSION['date'];
+    $logout_time = $_SESSION['time']; 
+
+    // $date_logout = $_POST['date'];
+    // $logout_time = $_POST['time']; 
+    
+    $queryLogout = "UPDATE log_details SET date_logout = '$date_logout' AND logout_time = '$logout_time' WHERE username = 'username'";
+    $sqlLogout = mysqli_query($connLog, $queryLogout);
+
+
+    // DESTROYING SESSION
+    $_SESSION['status'] = 'invalid';
     unset($_SESSION['position']);
     unset($_SESSION['username']);
     unset($_SESSION['email']);
     unset($_SESSION['password']);
 
     echo "<script>window.location.href='../php-landing/landing.php'</script>";
-            
+    
+
+   
 
     // require '../php-landing/logbook.php';
 
@@ -26,6 +50,8 @@
 
     //     echo "<script>alert('SUCCESSFULLY LOGOUT ACCOUNT')</script>";
     // }
+
+
 
 
 

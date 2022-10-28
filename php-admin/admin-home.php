@@ -1,6 +1,10 @@
 <?php
     require "../php-landing/session.php";
     require "../php-landing/date_and_time.php";
+    require "../php-landing/read.php";
+    require "../php-landing/read.php";
+
+    // echo $_SESSION['LogUsername'];
 
 ?>
 <!DOCTYPE html>
@@ -31,6 +35,14 @@
                         <li><a href="admin-sales.php"><img src="../PROJECT/Images/sales-icon.png" alt="sales icon" style="width: 30px; height: 30px"></a></li>
                         <li><a href="admin-employee.php"><img src="../PROJECT/Images/emp-icon.png" alt="employee icon" style="width: 30px; height: 30px"></a></li>
                         <li><a href="admin-profile.php"><img src="../PROJECT/Images/prof-icon.png" alt="profile icon" style="width: 30px; height: 30px"></a></li>
+
+                        <!-- <li>
+                            <form action="admin-profile.php" method="post">
+                                <input type="submit" value="PROFILE" /></li>
+                            </form>
+                            
+                         -->
+                    
                     </ul>
                 
             </div>
@@ -46,11 +58,11 @@
                         echo  "Good Morning, ";
                     }
 
-                    else if($hours<6 || $setHour == "PM"){
+                    else if($hours<6 && $setHour == "PM"){
                         echo  "Good Afternoon,";
                     }
 
-                    else if($hours>=6 || $setHour == "PM" ){
+                    else if($hours>6 && $setHour == "PM" ){
                         echo  "Good Evening,";
                     }
 
@@ -61,7 +73,7 @@
                 
                 Admin <?php echo $_SESSION['username'];?> </h1>
                 <h2>Check How Today’s Deja Brew’s Sale</h2>
-                
+                <?php echo $fetchData['id'];?>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non aliquam, at <br>
                 duis ac. Vel eleifend iaculis sit aliquet urna vehicula malesuada interdum pharetra.</p>
 

@@ -9,9 +9,16 @@ $minutes = date("i");
 $seconds = date("s");
 $setHour =  date("A");
 
-$date = date("M-d-Y");
-$time = $hours . ":". $minutes . ":" .$seconds .$setHour;
+$_SESSION['date'] = date("M-d-Y");
+$_SESSION['time'] = $hours . ":". $minutes . ":" .$seconds .$setHour;
  
+
+$date_logout = $_SESSION['date'];
+$logout_time = $_SESSION['time']; 
+
+// echo $date_logout ;
+// echo $logout_time ;
+
 // echo $date;
 
 

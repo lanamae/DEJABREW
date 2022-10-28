@@ -2,21 +2,21 @@
     require "../php-landing/session.php";
     require "../php-landing/date_and_time.php";
     require '../php-landing/logbook.php';
-
-    if(isset($_POST['logout_time'])){
-        // $getLogoutTime = trim($_POST['logout_time']);
-
-        // $queryLogout = "SELECT * FROM log_detailS";
-        // $sqlLogout = mysqli_query($connLog, $queryLogout);
-        // $logDetails = mysqli_fetch_array($sqlLogout);
+    require '../php-landing/database.php';
+    require '../php-landing/read.php';
+    require '../php-landing/readLogbook.php';
 
 
-             
-        // $queryLogbook = "UPDATE log_details SET position = '$position', username='$username', date_log='$getDate', logout_time='$getLogoutTime',)";
-        // $sqlLog = mysqli_query($connLog, $queryLogbook);
+    $datesamp = $_SESSION['date'];
+    echo $datesamp;
 
-        echo "<script>alert('SUCCESSFULLY LOGOUT ACCOUNT')</script>";
-    }
+    echo $fetchData['position'];
+    echo $fetchData['email'];
+    echo $fetchData['username'];
+    echo $fetchData['password'];
+    
+    
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,9 +56,19 @@
             <h1>ADMIN  <?php echo $_SESSION['username'];?></h1>
             <form action="../php-landing/logout.php" method="POST">
                 <input type="submit" name="logout" value="LOGOUT"> 
-                <label for="time" class="label">Time</label><br>
-                <input type="text" name="logout_time" id="time" value="<?php echo $time; ?>">
+
+
+                
+                <input type="text" name="date_logout" id="time" value="<?php echo $date_logout; ?>">
+               
+                <input type="text" name="logout_time" id="time" value="<?php echo $logout_time; ?>">
+               
                 <br><br>
+            </form>
+
+
+            <form action="admin-profile.php" method="get">
+                <input type="submit" name="test" value="Click Here">
             </form>
             
         </div>
@@ -67,7 +77,54 @@
 
         <!-- ADMIN DETAILS -->
         <div class="adminProfile-details">
+      
 
+            <table> 
+                <tr>
+                    <td>
+                        <form action="" method="post">
+                            <label for="username">Username</label>
+                            <input type="text" name="updateUsername" id="updateUsername" value="<?php  echo $fetchData['username'];?>" />
+                            <input type="submit" value="Edit">
+                        </form>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <form action="" method="post">
+                            <label for="email">Email</label>
+                            <input type="text" name="updateEmail" id="updateEmail" value="<?php  echo $fetchData['email']; ?>"/>
+                            <input type="submit" value="Edit">
+                        </form>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <form action="" method="post">
+                            <label for="password">Password</label>
+                            <input type="password" name="updatePassword" id="updatePassword" value="<?php echo $fetchData['password'] ?>"/>
+                            <input type="submit" value="Edit">
+                        </form>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <form action="" method="post">
+                            <label for="position">Position</label>
+                            <input type="text" name="updatePosition" id="updatePosition" value="<?php echo $fetchData['position'] ?>"/ disabled>
+                            <input type="submit" value="Edit" disabled>
+                        </form>
+                    </td>
+                </tr>
+
+
+            </table>
+
+             
+                
             
         </div>
 
