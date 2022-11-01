@@ -1,26 +1,32 @@
 <?php
     require '../php-landing/logbook.php';
     require '../php-landing/date_and_time.php';
+    // require '../php-landing/readLogbook.php';
 
     session_start();
-    
-    // GETTING UPDATED TIME FOR LOGOUT
-    // $_SESSION['date_logout'] = $date;
-    // $_SESSION['logout_time'] = $time;
+
+    $idHello = $_SESSION['logId']; 
+
+    $dateHello =  $_SESSION['date']; 
+    $timeHello =  $_SESSION['time']; 
+
+    $newdate = date("M-d-Y");
+    $newtime = $hours . ":". $minutes . ":" .$seconds .$setHour;
+
+    // echo $idHello;
+    // echo  $dateHello;
+    // echo $timeHello;
+
+    // echo "<br>";
+    // echo $newdate;
+    // echo $newtime;
 
 
-    echo $_SESSION['date'];
-    echo $_SESSION['time']; 
 
-    $date_logout = $_SESSION['date'];
-    $logout_time = $_SESSION['time']; 
-
-    // $date_logout = $_POST['date'];
-    // $logout_time = $_POST['time']; 
-    
-    $queryLogout = "UPDATE log_details SET date_logout = '$date_logout' AND logout_time = '$logout_time' WHERE username = 'username'";
+    $queryLogout = "UPDATE log_details SET date_logout = '$newdate' AND logout_time = '$newtime' WHERE id = '$idHello'";
     $sqlLogout = mysqli_query($connLog, $queryLogout);
 
+  
 
     // DESTROYING SESSION
     $_SESSION['status'] = 'invalid';
@@ -32,7 +38,27 @@
     echo "<script>window.location.href='../php-landing/landing.php'</script>";
     
 
-   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // require '../php-landing/logbook.php';
 

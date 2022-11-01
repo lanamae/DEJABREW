@@ -4,7 +4,16 @@
     require "../php-landing/read.php";
     require "../php-landing/read.php";
 
-    // echo $_SESSION['LogUsername'];
+
+    // echo $_SESSION['username'];
+    // echo $_SESSION['dateLogin'];
+    // echo $_SESSION['timelogin'];
+
+    // $usernameSamp = $_SESSION['username'];
+    // $getDateLoginSamp = $_SESSION['dateLogin'];
+    // $getLogoutTimeSamp = $_SESSION['timelogin'];
+
+     
 
 ?>
 <!DOCTYPE html>
@@ -62,7 +71,7 @@
                         echo  "Good Afternoon,";
                     }
 
-                    else if($hours>6 && $setHour == "PM" ){
+                    else if($hours>=6 && $setHour == "PM" ){
                         echo  "Good Evening,";
                     }
 
@@ -73,7 +82,7 @@
                 
                 Admin <?php echo $_SESSION['username'];?> </h1>
                 <h2>Check How Today’s Deja Brew’s Sale</h2>
-                <?php echo $fetchData['id'];?>
+        
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non aliquam, at <br>
                 duis ac. Vel eleifend iaculis sit aliquet urna vehicula malesuada interdum pharetra.</p>
 

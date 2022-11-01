@@ -7,16 +7,25 @@
     require '../php-landing/readLogbook.php';
 
 
-    $datesamp = $_SESSION['date'];
-    echo $datesamp;
+    // echo $_SESSION['username'];
+    // echo $_SESSION['dateLogin'];
+    // echo $_SESSION['timelogin'];
+     
 
-    echo $fetchData['position'];
-    echo $fetchData['email'];
-    echo $fetchData['username'];
-    echo $fetchData['password'];
+
     
-    
-    
+//    echo  $_SESSION['logId'] .'<br>'; 
+//     echo $_SESSION['logPosition'] .'<br>';
+//     echo $_SESSION['logUsername'].'<br>' ;
+//    echo $_SESSION['date_login'] .'<br>';
+//    echo $_SESSION['login_time'] .'<br>';
+//    echo $_SESSION['date_logout'] .'<br>'; 
+//    echo $_SESSION['logout_time'];
+
+    // if(isset($_POST['logout'])){
+    //     $updateDate = trim($_POST['Updatedate_logout']);
+    //     $updateTime = trim($_POST['Updatedate_logout']);
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,25 +60,45 @@
         </div>
 
         <!-- ADMIN HEADER -->
+        
+
+
         <div class="adminProfile-header">
 
-            <h1>ADMIN  <?php echo $_SESSION['username'];?></h1>
-            <form action="../php-landing/logout.php" method="POST">
-                <input type="submit" name="logout" value="LOGOUT"> 
+            <div class="changedp">
+                <img src="../PROJECT/Images/default-pic.png" class="profile-pic" alt="profile pic">
 
+            </div>  
+
+
+            <h1>ADMIN  <?php echo $_SESSION['username'];?></h1>
+
+            
+            <div class="line" style="width: 550px;"></div> 
+            <div class="line" style="width: 550px; margin-top: 10px;"></div>
 
                 
-                <input type="text" name="date_logout" id="time" value="<?php echo $date_logout; ?>">
-               
-                <input type="text" name="logout_time" id="time" value="<?php echo $logout_time; ?>">
-               
-                <br><br>
-            </form>
+        
+            
+                <span><form action="../php-landing/logout.php" method="POST">
+                    <input type="submit" name="logout" value="LOGOUT" class="logout"> 
 
 
-            <form action="admin-profile.php" method="get">
-                <input type="submit" name="test" value="Click Here">
-            </form>
+                    <!-- <br>
+                    LOG DETAILS <br> -->
+                    <input type="hidden" name="logid" id=time" value="<?php echo $_SESSION['logId']; ?>">
+                <br>     <br>     
+                    <input type="hidden" name="date_logout" id="" value="<?php echo $_SESSION['logPosition']; ?>">
+                <br><br>     
+                    <input type="hidden" name="logUsername" id="" value="<?php echo $_SESSION['logUsername']; ?>">
+                <br>     <br>     
+                    <input type="hidden" name="Updatedate_logout" id="" value="<?php echo $_SESSION['date']; ?>">
+                <br><br>     
+                    <input type="hidden" name="Updatelogout_time" id="" value="<?php echo $_SESSION['time']; ?>">
+                
+                    <br><br>
+                </form></span>
+
             
         </div>
 
@@ -77,56 +106,75 @@
 
         <!-- ADMIN DETAILS -->
         <div class="adminProfile-details">
-      
+                
 
-            <table> 
-                <tr>
-                    <td>
-                        <form action="" method="post">
-                            <label for="username">Username</label>
-                            <input type="text" name="updateUsername" id="updateUsername" value="<?php  echo $fetchData['username'];?>" />
-                            <input type="submit" value="Edit">
-                        </form>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <form action="" method="post">
-                            <label for="email">Email</label>
-                            <input type="text" name="updateEmail" id="updateEmail" value="<?php  echo $fetchData['email']; ?>"/>
-                            <input type="submit" value="Edit">
-                        </form>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <form action="" method="post">
-                            <label for="password">Password</label>
-                            <input type="password" name="updatePassword" id="updatePassword" value="<?php echo $fetchData['password'] ?>"/>
-                            <input type="submit" value="Edit">
-                        </form>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <form action="" method="post">
-                            <label for="position">Position</label>
-                            <input type="text" name="updatePosition" id="updatePosition" value="<?php echo $fetchData['position'] ?>"/ disabled>
-                            <input type="submit" value="Edit" disabled>
-                        </form>
-                    </td>
-                </tr>
+            <div class="details">
+                    
+                <form action="" method="post">
 
 
-            </table>
+                    <div class="form-container">
+                        <label for="">Id</label>
+                        <input type="text" class="input" name="updateId" id="updateId" value="<?php  echo $_SESSION['id'];?>" />
+                        <label for="updateId" class="edit">Edit</label>
+                    </div>   
+                
+                
+                
+
+            
+                    <div class="form-container">
+                        <label for="username">Username</label>
+                        <input type="text" class="input" name="updateUsername" id="updateUsername" value="<?php  echo $_SESSION['username'];?>" />
+                        <label for="updateUsername" class="edit">Edit</label>
+                    </div>
+                        
+                
+                
+        
+                    <div class="form-container">
+                        <label for="email">Email</label>
+                        <input type="text" class="input" name="updateEmail" id="updateEmail" value="<?php  echo $_SESSION['email']; ?>"/>
+                        <label for="updateEmail" class="edit">Edit</label>
+                    </div>  
+                
+            
+                    <div class="form-container">
+                        <label for="password">Password</label>
+                        <input type="password" class="input" name="updatePassword" id="updatePassword" value="<?php echo $_SESSION['password'] ?>"/>
+                        <label for="updatePassword" class="edit">Edit</label>
+                    </div>  
+            
+                    <div class="form-container">
+                        <label for="position">Position</label>
+                        <input type="text" class="input" name="updatePosition" id="updatePosition" value="<?php echo $_SESSION['position'] ?>"/ disabled>
+                        <label for="updatePosition" class="edit" disabled>Edit</label>
+                
+                    </div>  
+
+                    <input type="submit" value="SAVE CHANGES">
+                    <br>
+                    <input type="submit" value="Delete">
+
+                </form>
+                    
+                
+
+
+
+
+            </div>
+
+        </div>
+           
+
+        
+                
 
              
                 
             
-        </div>
+        
 
 
     </div>

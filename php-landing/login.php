@@ -3,6 +3,9 @@
     require "../php-landing/date_and_time.php";
     require '../php-landing/logbook.php';
 
+    // echo $getDateLogin;
+
+    
 
     session_start();
 
@@ -30,7 +33,7 @@
     }
 
 
-// DATABASE CONNECTION
+// DATABASE CONNECTION to login
     if(isset($_POST['login'])){
         $position = trim($_POST['position']);
         $username = trim($_POST['username']);
@@ -48,7 +51,19 @@
             $queryLogin = "SELECT * FROM useraccounts WHERE position='$position' AND username = '$username' AND password= md5('$password')";
             $sqlLogin = mysqli_query($connection, $queryLogin);
             $userDetails = mysqli_fetch_array($sqlLogin);
+        
+
+            $_SESSION['id'] = $userDetails['id'];
+            $_SESSION['position'] = $userDetails['position'];
+            $_SESSION['username'] = $userDetails['username'];
+            $_SESSION['email'] = $userDetails['email'];
+            $_SESSION['password'] = $userDetails['password'];
+
             
+            
+            
+            
+
 
             
 
@@ -72,30 +87,53 @@
                     echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
                     echo "<script>alert('SUCCESSFULLY LOG ACCOUNT')</script>";
                                 
+                    // LOGIN TIME        //    
                     $getDateLogin = trim($_POST['date_login']);
                     $getLoginTime = trim($_POST['login_time']);
-                    // $getPosition = trim($_POST['position']);
-                    // $getUsername = trim($_POST['username']);
+                    $getDateLogout = trim($_POST['date_logout']);
+                    $getLogoutTime = trim($_POST['logout_time']);
                     
-                    $queryLogbook = "INSERT INTO log_details VALUES(null, '$position', '$username', '$getDateLogin', '$getLoginTime', null, null)";
+                    
+                    $queryLogbook = "INSERT INTO log_details VALUES(null, '$position', '$username', '$getDateLogin', '$getLoginTime', '$getDateLogout', '$getLogoutTime' )";
                     $sqlLog = mysqli_query($connLog, $queryLogbook);
+                   
+
+
+                    
+                    // $queryLogout = "SELECT * FROM log_details";
+                    // $sqlLogout = mysqli_query($connLog, $queryLogout);
+                    // $logbookfetch = mysqli_fetch_array($sqlLogout);
+
+                    // $SESSION['samplelog'] = $logbookfetch['id'];
 
                     echo "<script>alert('SUCCESSFULLY LOG ACCOUNT')</script>";
 
-
-                    //TRYING GETTING THE DETILAS OFFOR LOGOUT  
-
-                    // $queryLogDetails = "SELECT * FROM log_details WHERE position='$position' AND username = '$username' AND date_log='$date_log' AND login_time='$login_time' AND logout_time='$logout_time')";
-                    // $sqlLogDetails = mysqli_query($connLog, $queryLogDetails);
-                    // $logDetails = mysqli_fetch_array($sqlLogDetails);
+                    $_SESSION['datelogin'] = $getDateLogin;
+                    $_SESSION['timelogin'] = $getLoginTime;
 
 
-                    // $_SESSION['LogId'] = $logDetails['id'];
-                    // $_SESSION['LogPosition'] = $logDetails['position'];
-                    // $_SESSION['LogUsername'] = $logDetails['username'];
-                    // $_SESSION['LogDate_log'] = $logDetails['date_log'];
-                    // $_SESSION['Login_Time'] = $logDetails['login_time'];
-                    // $_SESSION['Logout_Time'] = $logDetails['logout_time'];
+
+
+                    //READING LOGBOOK DETAILS
+                    
+                    // $id2 = $_SESSION['id'];
+                    // $position2 = $_SESSION['position'];
+                    // $username2 = $_SESSION['username'];
+                    
+
+                    // $queryLog = "SELECT * FROM log_details WHERE id='$id2' ANDposition='$position2' AND username = '$username2' AND date_login='$getDateLogin' AND login_time='$getLoginTime' AND date_logout='$getDateLogout' AND logout_time='$getLogoutTime'";
+                    // $sqlLog = mysqli_query($connLog, $queryLog);
+                    // $logData = mysqli_fetch_array($sqlLog);
+
+                    // $_SESSION['logId']  = $logData['id'];
+                    // $_SESSION['logPosition'] =  $logData['position'];
+                    // $_SESSION['logUsername'] = $logData['username'];
+                
+                    // $_SESSION['date_login'] = $logData['date_login'];
+                    // $_SESSION['login_time'] =$logData['login_time'];
+                    // $_SESSION['date_logout'] =$logData['date_logout'];
+                    // $_SESSION['logout_time']= $logData['logout_time'];
+
 
 
 
@@ -110,10 +148,10 @@
                                 
                     $getDateLogin = trim($_POST['date_login']);
                     $getLoginTime = trim($_POST['login_time']);
-                    // $getPosition = trim($_POST['position']);
-                    // $getUsername = trim($_POST['username']);
+                    $getDateLogout = trim($_POST['date_logout']);
+                    $getLogoutTime = trim($_POST['logout_date']);
                     
-                    $queryLogbook = "INSERT INTO log_details VALUES(null, '$position', '$username', '$getDateLogin', '$getLoginTime', null, null)";
+                    $queryLogbook = "INSERT INTO log_details VALUES(null, '$position', '$username', '$getDateLogin', '$getLoginTime', '$getDateLogout', '$getLogoutTime' )";
                     $sqlLog = mysqli_query($connLog, $queryLogbook);
 
                     echo "<script>alert('SUCCESSFULLY LOG ACCOUNT')</script>";
@@ -184,17 +222,22 @@
 
                 <!-- HIDEN DATE -->
                 <!-- <label for="date" class="label">Date</label><br> -->
-                <input type="text" name="date_login" id="date_login" value="<?php echo $_SESSION['date']; ?>">
+                <input type="hidden" name="date_login" id="date_login" value="<?php echo $_SESSION['date']; ?>">
                 <br><br>
 
 
                 <!-- HIDDEN TIMES -->
                 <!-- <label for="time" class="label">Time</label><br> -->
-                <input type="text" name="login_time" id="time" value="<?php echo $_SESSION['time']; ?>">
+                <input type="hidden" name="login_time" id="time" value="<?php echo $_SESSION['time']; ?>">
                 <br><br>
              
+                <input type="hidden" name="date_logout" id="time" value="<?php echo $date_logout; ?>">
+               
+               <input type="hidden" name="logout_time" id="time" value="<?php echo $logout_time; ?>">
+              
                 <input type="submit" name="login" class="login-btn" value="LOGIN">
 
+                
 
                 </form>
                 <div class="noAccount">
