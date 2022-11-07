@@ -54,7 +54,7 @@
                         <li><a href="admin-menu.php"><img src="../PROJECT/Images/menu-icon.png" alt="menu icon"style="width: 30px; height: 30px"></a></li>
                         <li><a href="admin-sales.php"><img src="../PROJECT/Images/sales-icon.png" alt="sales icon" style="width: 30px; height: 30px"></a></li>
                         <li><a href="admin-employee.php"><img src="../PROJECT/Images/emp-icon.png" alt="employee icon" style="width: 30px; height: 30px"></a></li>
-                        <li><a href="admin-profile.php"><img src="../PROJECT/Images/prof-icon.png" alt="profile icon" style="width: 30px; height: 30px"></a></li>
+                        <li style=" border-bottom: #fff 5px solid;"><a href="admin-profile.php"><img src="../PROJECT/Images/prof-icon.png" alt="profile icon" style="width: 30px; height: 30px"></a></li>
                     </ul>
                 
         </div>
@@ -147,7 +147,7 @@
             
                     <div class="form-container">
                         <label for="position">Position</label>
-                        <input type="text" class="input" name="updatePosition" id="updatePosition" value="<?php echo $_SESSION['position'] ?>"/ disabled>
+                        <b><input type="text" class="input" name="updatePosition" id="updatePosition" value="<?php echo $_SESSION['position'] ?>"/ disabled></b>
                         <label for="updatePosition" class="edit" disabled>Edit</label>
                 
                     </div>  

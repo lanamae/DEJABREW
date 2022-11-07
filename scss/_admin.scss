@@ -1,5 +1,7 @@
 @import url('style.scss');
 
+
+// ADMIN HOME
 .main-adminHome{
     width: 100%;
     height: auto;
@@ -114,7 +116,338 @@
 
 
 
+// ADMIN MENU
 
+.main-adminMenu{
+    width: 100%;
+    height: 100vh;
+    background: $color3;
+
+    color: #fff;
+
+    .menu{
+        width: 100%;
+        height: auto;
+        
+       
+
+
+        .navbar{
+            width: 100%;
+            height: 75px;
+            background: $color2;
+            padding: 0px 100px;
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+
+            .logo{
+                margin-top: 150px;
+            }
+            ul li{
+                display: inline-block;
+                padding: 10px 10px;
+                // margin-right: 10px;
+                // border-bottom: #fff 5px solid;
+
+            }
+        }
+
+        .menu-header{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 0px;
+
+            .title-menu{
+                font-family: $font1;
+                color: $color7;
+                font-size: 45px;
+            }
+        }
+
+        .add{
+            
+            width: 80px;
+            height: 80px;
+            background: red;
+            color: $color1;
+        
+            font-size: 45px;
+            font-weight: 900;
+            border-radius: 50%;
+            padding: 10px;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            box-shadow: inset 6px 6px 6px rgba($color: #000, $alpha: 0.50);
+            cursor: pointer;
+            position: fixed;
+            margin: 320px 0px 0px 1180px;
+            
+        }
+
+        .modal-container{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)scale(0);
+            width:500px;
+            max-width: 80%;
+            border: red 3px solid;
+            border-radius: 20px;
+            background: $color6;
+            z-index: 10;
+            color: $color1;
+            
+        }
+
+        .modal-container.show{
+            transform: scale(1);
+        }
+
+
+       
+
+
+        
+
+        .product-container{
+            width: 100%;
+            height: auto;
+            padding: 20px 100px;
+            background: $color3;
+
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 250px);
+            grid-row-gap: 50px;
+            grid-column-gap: 20px;
+            
+            // .addProduct{
+            //     width: 235px;
+            //     height: 320px;
+            //     background: $color7;
+            //     border-radius: 10px;
+            //     font-family: $font1;
+
+            //     display: flex;
+            //     flex-direction: column;
+            //     justify-content: space-between;
+            //     align-items: center;
+
+
+            //     h2{
+            //         color: $color1;
+            //         font-weight: 300px;
+            //     }
+            // }
+
+
+            .product{
+                width: 235px;
+                height: 320px;
+                background: $color7;
+                border-radius: 10px;
+                font-family: $font1;
+                padding: 10px;
+                margin: 10px 50px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+
+                .addproduct-form{
+                    display: flex;
+                    flex-direction: column;
+                    padding: 10px;
+                    margin-top: 20px;
+                    width: 98%;
+
+                    
+
+                    input{
+                        width: 100%;
+                        height: 30px;
+                        padding: 5px;
+                        border: #fff 1px solid;
+                        border-radius: 5px;
+                    }
+
+                    .create-btn{
+                        cursor: pointer;
+                        border-radius: 20px;
+                    }
+                }
+
+
+                .product-name{
+                    color: $color1;
+                    font-weight: 300px;
+                }
+
+                .product-img{
+                    width: 114px;
+                    height: 141px;
+                    margin: 10px 0px;
+                }
+
+                .product-amount{
+                    color: $color4;
+                }
+
+                .prodUpdate-btn{
+                    width: 181px;
+                    height: 30px;
+                    background: $color6;
+                    border-radius: 20px;
+                    border-style: none;
+                    padding: 5px 0px;
+                    cursor: pointer;
+                    margin-top: 10px;
+                }
+
+                .unavail-btn{
+                    width: 181px;
+                    height: 30px;
+                    background: $color4;
+                    border-radius: 20px;
+                    border-style: none;
+                    padding: 5px 0px;
+                    cursor: pointer;
+                    margin-top: 10px;
+                    color: $color7;
+                }
+
+            }
+       }
+
+       .overlay{
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        background:rgba($color: #000, $alpha: 0.8);
+        opacity: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: none;
+        }
+
+        .overlay.active{
+            opacity: 1;
+            
+        }
+
+       
+    }
+}
+
+// ADMIN-SALES
+.main-adminSales{
+    width: 100%;
+    height: auto;
+    background: $color3;
+
+    .sales{
+        width: 100%;
+        height: auto;
+
+        .navbar{
+            width: 100%;
+            height: 75px;
+            background: $color2;
+            padding: 0px 100px;
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+
+            .logo{
+                margin-top: 150px;
+            }
+            ul li{
+                display: inline-block;
+                padding: 10px 10px;
+
+
+            }
+        }
+
+        
+        .sales-header{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 0px;
+
+            .title-sales{
+                font-family: $font1;
+                color: $color7;
+                font-size: 45px;
+            }
+        }
+
+    }
+}
+
+// ADMIN-EMPLOYEES
+.main-adminEmployee{
+    width: 100%;
+    height: auto;
+    background: $color3;
+
+    .employee{
+        width: 100%;
+        height: auto;
+
+        .navbar{
+            width: 100%;
+            height: 75px;
+            background: $color2;
+            padding: 0px 100px;
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+
+            .logo{
+                margin-top: 150px;
+            }
+            ul li{
+                display: inline-block;
+                padding: 10px 10px;
+
+
+            }
+        }
+
+        .employee-header{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 0px;
+
+            .title-employee{
+                font-family: $font1;
+                color: $color7;
+                font-size: 45px;
+            }
+        }
+
+
+    }
+
+}
 
 
 // ADMIN PROFILE
