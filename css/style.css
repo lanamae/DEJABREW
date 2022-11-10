@@ -691,19 +691,22 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
   width: 400px;
-  height: 500px;
+  height: 550px;
   max-width: 80%;
   border: #FFFFFF 3px solid;
   border-radius: 5px;
   background: #DADADA;
   z-index: 10;
   color: #000000;
+  display: grid;
+  grid-template-rows: 60px 490px;
 }
 .main-adminMenu .menu .modal-container .modal-header {
+  grid-row: 1/2;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 50px;
+  padding: 10px 40px;
   border-bottom: #FFFFFF solid 2px;
 }
 .main-adminMenu .menu .modal-container .modal-header h2 {
@@ -721,7 +724,54 @@
   text-align: center;
 }
 .main-adminMenu .menu .modal-container .modal-body {
-  padding: 10px 50px;
+  padding: 10px 40px;
+  grid-row: 2/3;
+}
+.main-adminMenu .menu .modal-container .modal-body form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-adminMenu .menu .modal-container .modal-body form .productImg {
+  width: 100px;
+  height: 100px;
+  border: #000 2px solid;
+}
+.main-adminMenu .menu .modal-container .modal-body form label {
+  font-size: 18px;
+  font-family: "Arimo", sans-serif;
+  margin-bottom: 5px;
+}
+.main-adminMenu .menu .modal-container .modal-body form input {
+  width: 100%;
+  height: 30px;
+  padding: 0px 10px;
+  border: 2px solid #9C9C9C;
+  border-radius: 3px;
+  background: none;
+  font-size: 15px;
+}
+.main-adminMenu .menu .modal-container .modal-body form .uploadProduct {
+  border: none;
+  padding-left: 70px;
+  margin-top: 20px;
+}
+.main-adminMenu .menu .modal-container .modal-body form .create-btn {
+  background: #333333;
+  color: #FFFFFF;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+.main-adminMenu .menu .modal-container .modal-body form .create-btn:hover {
+  background: #9C9C9C;
+  border: 1px solid #333333;
+  color: #000000;
 }
 .main-adminMenu .menu .modal-container.show {
   position: fixed;
@@ -729,7 +779,7 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   width: 400px;
-  height: 500px;
+  height: 550px;
   max-width: 80%;
   border: #FFFFFF 3px solid;
   border-radius: 5px;
@@ -799,17 +849,29 @@
   padding: 5px 0px;
   cursor: pointer;
   margin-top: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
-.main-adminMenu .menu .product-container .product .unavail-btn {
+.main-adminMenu .menu .product-container .product .prodUpdate-btn:hover {
+  background: #333333;
+  color: #DADADA;
+  font-weight: bold;
+}
+.main-adminMenu .menu .product-container .product .delete-btn {
   width: 181px;
   height: 30px;
-  background: #5A5A5A;
+  background: rgb(247, 131, 131);
   border-radius: 20px;
   border-style: none;
   padding: 5px 0px;
   cursor: pointer;
   margin-top: 10px;
-  color: #FFFFFF;
+  color: #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+.main-adminMenu .menu .product-container .product .delete-btn:hover {
+  background: red;
+  color: #DADADA;
+  font-weight: bold;
 }
 .main-adminMenu .menu .overlay {
   width: 100%;

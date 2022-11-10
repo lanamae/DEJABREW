@@ -1,6 +1,16 @@
 <?php
-    
+    require "../php-admin/menu-database/menu-database.php";
+    require "../php-admin/menu-database/read.php";
 
+
+    $results_product = mysqli_fetch_array($sqlRead_product);
+
+    // echo $results_product['id'];
+    // echo $results_product['image'];
+    // echo $results_product['productName'];
+    // echo $results_product['Price'];
+    // echo $results_product['Category'];
+    
     
 
 
@@ -16,9 +26,11 @@
     <title>DEJA BREW - ADMIN MENU</title>
 
     
+    
     <link rel="shortcut icon" href="../PROJECT/Images/dejabrew-logo.png" type="image/x-icon">
    
     <link rel="stylesheet" href="../css/style.css">
+    
     
 </head>
 
@@ -112,7 +124,7 @@
 
         
         <!-- add product form MODAL  -->
-        <div class="modal-container">
+        <div class="modal-container show">
             <div class="modal-header">
                 <h2>ADD PRODUCT</h2>
                 <div class="modal-close" onclick="closeModal()">&times;</div>
@@ -120,15 +132,22 @@
             
             <!-- MODAL UPLOAD PRODUCT -->
             <div class="modal-body">
-               <form action="" method="post">
-                    <input type="file" name="uploadProduct" id="uploadProduct" class="" value="UPLOAD PRODUCT IMAGE"> <br>
+               <form action="../php-admin/menu-database/create.php" method="POST" enctype="multipart/form-data">
+                    <img src="" alt="" class="productImg">
+                    <input type="file" name="uploadProduct" id="uploadProduct" class="uploadProduct" value="UPLOAD PRODUCT IMAGE"> <br>
 
                     <label for="productName">Product Name : </label>
                     <input type="text" name="productName" id="productName" placeholder="Enter Product Name"> <br>
 
-                    <label for="productPrice">Php:</label>
+                    <label for="productPrice">Product Amount:</label>
                     <input type="text" name="productPrice" id="productPrice" placeholder="Enter Product Price"> <br>
-                    <input type="submit" value="CREATE" class="create-btn">
+                    
+
+                    <label for="productCategory">Product Category:</label>  
+                    <input type="text" name="productCategory" id="productCategory" placeholder="Enter Product Category"> <br>
+                    
+                    
+                    <input type="submit" name="create-product" value="CREATE" class="create-btn">
                  </form>
             </div>
         </div>
@@ -149,7 +168,7 @@
                 </form>
 
                 <form action="">
-                    <input type="submit" value="Label as Unavailable" class="unavail-btn">
+                    <input type="submit" value="DELETE" class="delete-btn">
                 </form>
 
             </div>
@@ -164,7 +183,7 @@
                 </form>
 
                 <form action="">
-                    <input type="submit" value="Label as Unavailable" class="unavail-btn">
+                    <input type="submit" value="DELETE" class="delete-btn">
                 </form>
 
             </div>
@@ -179,7 +198,7 @@
                 </form>
 
                 <form action="">
-                    <input type="submit" value="Label as Unavailable" class="unavail-btn">
+                    <input type="submit" value="DELETE" class="delete-btn">
                 </form>
 
             </div>
@@ -194,7 +213,7 @@
                 </form>
 
                 <form action="">
-                    <input type="submit" value="Label as Unavailable" class="unavail-btn">
+                    <input type="submit" value="DELETE" class="delete-btn">
                 </form>
 
             </div>
@@ -209,7 +228,7 @@
                 </form>
 
                 <form action="">
-                    <input type="submit" value="Label as Unavailable" class="unavail-btn">
+                    <input type="submit" value="DELETE" class="delete-btn">
                 </form>
 
             </div>
@@ -226,7 +245,7 @@
                 </form>
 
                 <form action="">
-                    <input type="submit" value="Label as Unavailable" class="unavail-btn">
+                    <input type="submit" value="DELETE" class="delete-btn">
                 </form>
 
             </div>

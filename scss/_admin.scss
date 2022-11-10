@@ -347,7 +347,7 @@
             left: 50%;
             transform: translate(-50%, -50%)scale(0);
             width: 400px;
-            height: 500px;
+            height: 550px;
             max-width: 80%;
             border: $color7 3px solid;
             border-radius: 5px;
@@ -355,12 +355,17 @@
             z-index: 10;
             color: $color1;
 
+            display: grid;
+            grid-template-rows: 60px 490px;
+
             .modal-header{
+                grid-row: 1/2;
+
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
 
-                padding: 10px 50px;
+                padding: 10px 40px;
                 border-bottom: $color7 solid 2px;
                 
                 h2{
@@ -384,8 +389,67 @@
             }
 
             .modal-body{
-                padding: 10px 50px;
+                padding: 10px 40px;
+                grid-row: 2/3;
                 
+                form{
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    .productImg{
+                        width: 100px;
+                        height: 100px;
+                        border:#000 2px solid;
+                    }
+
+                    
+
+                    label{
+                        font-size: 18px;
+                        font-family: $font1;
+                        margin-bottom: 5px;
+                    }
+
+                    input{
+                        width: 100%;
+                        height: 30px;
+                        padding: 0px 10px;  
+                        border: 2px solid $color5;
+                        border-radius: 3px;
+                        background: none;
+                        font-size: 15px;
+                        
+                        
+                        
+                    }
+                    .uploadProduct{
+                        border: none;
+                        padding-left: 70px;
+                        margin-top: 20px;
+                    }
+
+                    .create-btn{
+                        background: $color3;
+                        color: $color7;
+                        height: 50px;
+                        border-radius: 50px; 
+                        border: none;   
+                        font-size: 18px;
+                        cursor: pointer;
+                        box-shadow: 0px 4px 4px rgba($color: $color1, $alpha: 0.30);
+
+                        &:hover{
+                            background: $color5;
+                            border: 1px solid $color3;
+                            color: $color1;
+                        }
+                    }
+                
+                }
+
             }
 
             
@@ -397,7 +461,7 @@
             left: 50%;
             transform: translate(-50%, -50%)scale(1);
             width: 400px;
-            height: 500px;
+            height: 550px;
             max-width: 80%;
             border: $color7 3px solid;
             border-radius: 5px;
@@ -504,18 +568,34 @@
                     padding: 5px 0px;
                     cursor: pointer;
                     margin-top: 10px;
+                    box-shadow: 0px 4px 4px rgba($color: $color1, $alpha: 0.30);
+
+
+                    &:hover{
+                        background: $color3;
+                        color: $color6;
+                        font-weight: bold;
+                    }
                 }
 
-                .unavail-btn{
+                .delete-btn{
                     width: 181px;
                     height: 30px;
-                    background: $color4;
+                    background: rgb(247, 131, 131);
                     border-radius: 20px;
                     border-style: none;
                     padding: 5px 0px;
                     cursor: pointer;
                     margin-top: 10px;
-                    color: $color7;
+                    color: $color1;
+                    box-shadow: 0px 4px 4px rgba($color: $color1, $alpha: 0.30);
+
+
+                    &:hover{
+                        background: red;
+                        color: $color6;
+                        font-weight: bold;
+                    }
                 }
 
             }
