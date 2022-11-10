@@ -153,6 +153,7 @@
             else{
                 echo "Details not found!";
                 $_SESSION['status'] = 'invalid';
+                
             }
         }
     

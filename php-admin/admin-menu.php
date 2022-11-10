@@ -27,7 +27,7 @@
 <body>
 <div class="main-adminMenu">
     <div class="menu">
-     <!-- sidebar -->
+        <!-- sidebar -->
         <div class="sidebar">
                 <div class="sidebar-header">
                     <p class="side-title">MENU</p>
@@ -48,6 +48,16 @@
                     <li>Barista's Choice</li>
                     <li>Gourmet Series</li>
                     <li>Tea Latte Series</li>
+                    <br>
+
+                    <!-- for voucher -->
+                    <div class="line" style="margin-left: 0; margin-bottom: 10px;"></div>
+                    <h1>Voucher List</h1><br>
+                    
+                    <li>Sample Voucher</li>
+                    <li>Sample Voucher</li>
+                    <li style="background: #5A5A5A; margin-bottom: 20px; border-radius: 10px; border: 2px white solid;">+ Add Voucher</li>
+                    
 
                 </ul>
                 </ul>
@@ -74,7 +84,7 @@
                 </ul>
         </div>
 
-        <!-- menu bar -->
+        <!-- menu bar icon-->
         <div class="menu-bar">
             <span></span>
             <span></span>
@@ -90,20 +100,9 @@
             <marquee class="title-menu">Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu .Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu .</marquee> 
             
             <div class="line" style="width: 100%; margin-left: 0px; height: 2px;"></div> 
-            </div>
+        </div>
 
-        <!-- menu category -->
-        <!-- <div class="menu-category">
-            <ul>
-                <li>Cofee</li>
-                <li>Bottled</li>
-                <li>Frappucino</li>
-                <li>Float Series</li>
-                <li>Non-Coffee</li>
-                <li>Fruit Tea Series</li>
-                <li></li>
-            </ul>
-        </div> -->
+       
 
         <!-- add product button -->
         <div class="add" onclick="showModal()">
@@ -119,6 +118,7 @@
                 <div class="modal-close" onclick="closeModal()">&times;</div>
             </div>
             
+            <!-- MODAL UPLOAD PRODUCT -->
             <div class="modal-body">
                <form action="" method="post">
                     <input type="file" name="uploadProduct" id="uploadProduct" class="" value="UPLOAD PRODUCT IMAGE"> <br>
@@ -133,27 +133,10 @@
             </div>
         </div>
 
+
+        <!-- ---------------------------------------------------------------------------------- -->
             <!-- MENU -->
         <div class="product-container">
-
-                <!-- <div class="product" style="justify-content: flex-start; background: #9C9C9C; border: 2px solid red;">
-                <h2 class="product-name">ADD PRODUCT</h2>
-                <form action="" class="addproduct-form">
-                    <input type="file" name="uploadProduct" id="uploadProduct" class="" value="UPLOAD PRODUCT IMAGE"> <br>
-
-                    <label for="productName">Product Name : </label>
-                    <input type="text" name="productName" id="productName" placeholder="Enter Product Name"> <br>
-                    
-                    <label for="productPrice">Php:</label>
-                    <input type="text" name="productPrice" id="productPrice" placeholder="Enter Product Price"> <br>
-                    <input type="submit" value="CREATE" class="create-btn">
-                </form>
-
-                
-
-            </div>        -->
-
-
 
 
             <div class="product">
