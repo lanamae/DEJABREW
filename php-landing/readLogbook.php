@@ -11,7 +11,7 @@
     // echo $_SESSION['timelogin'];
 
    $usernameSamp = $_SESSION['username'];
-   $getDateLoginSamp = $_SESSION['dateLogin'];
+   $getDateLoginSamp = $_SESSION['datelogin'];
    $getLogoutTimeSamp = $_SESSION['timelogin'];
     
 

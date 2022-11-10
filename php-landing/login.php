@@ -1,21 +1,17 @@
 <?php
     require '../php-landing/database.php';
-    require "../php-landing/date_and_time.php";
+    require '../php-landing/date_and_time.php';
     require '../php-landing/logbook.php';
 
-    // echo $getDateLogin;
 
-    
+
+    // echo $_SESSION['date'];
 
     session_start();
 
     // SESSION SET DEFAULTS
     if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
         $_SESSION['status'] = 'invalid';
-
-        // echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
-
-
     }
 
     if($_SESSION['status'] == 'valid'){
@@ -39,10 +35,6 @@
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
 
-
-
-
-    
         if(empty($position) || empty($username) || empty($password)){
             echo "Fill up all fields!";
         }
@@ -52,7 +44,6 @@
             $sqlLogin = mysqli_query($connection, $queryLogin);
             $userDetails = mysqli_fetch_array($sqlLogin);
         
-
             $_SESSION['id'] = $userDetails['id'];
             $_SESSION['position'] = $userDetails['position'];
             $_SESSION['username'] = $userDetails['username'];
@@ -60,13 +51,6 @@
             $_SESSION['password'] = $userDetails['password'];
 
             
-            
-            
-            
-
-
-            
-
 
             if(mysqli_num_rows($sqlLogin) > 0){
                 $_SESSION['status'] = 'valid';
@@ -223,17 +207,13 @@
                 <!-- HIDEN DATE -->
                 <!-- <label for="date" class="label">Date</label><br> -->
                 <input type="hidden" name="date_login" id="date_login" value="<?php echo $_SESSION['date']; ?>">
-                <br><br>
-
-
-                <!-- HIDDEN TIMES -->
-                <!-- <label for="time" class="label">Time</label><br> -->
-                <input type="hidden" name="login_time" id="time" value="<?php echo $_SESSION['time']; ?>">
-                <br><br>
-             
-                <input type="hidden" name="date_logout" id="time" value="<?php echo $date_logout; ?>">
                
-               <input type="hidden" name="logout_time" id="time" value="<?php echo $logout_time; ?>">
+               <input type="hidden" name="login_time" id="login_time" value="<?php echo $_SESSION['time']; ?>">
+              
+             
+                <input type="hidden" name="date_logout" id="date_logout" value="<?php echo $date_logout; ?>">
+               
+               <input type="hidden" name="logout_time" id="logout_time" value="<?php echo $logout_time; ?>">
               
                 <input type="submit" name="login" class="login-btn" value="LOGIN">
 

@@ -1,3 +1,21 @@
+<?php
+    require '../php-landing/database.php';
+
+    // session_start();
+
+    // echo $_SESSION['username'];
+
+    $queryEmployee = "SELECT * FROM useraccounts WHERE position = 'employee'";
+    $sqlEmployee = mysqli_query($connection, $queryEmployee);
+    $employee =  mysqli_fetch_array($sqlEmployee);
+
+    if(mysqli_num_rows($sqlEmployee) >0){
+        
+        echo $employee['id'];
+        echo $employee['username'];
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,6 +63,10 @@
             </div>
         <!--EMPLOYEE CONTAINER  -->
             <div class="employee-container">
+
+                <div class="employee">
+
+                </div>
 
             </div>
 

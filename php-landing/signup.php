@@ -43,7 +43,7 @@
         }
 
         else{
-            $queryCreate = "INSERT INTO userAccounts VALUES(null, '$position', '$username', '$email', md5('$password')) ";
+            $queryCreate = "INSERT INTO useraccounts VALUES(null, '$position', '$username', '$email', md5('$password')) ";
             $sqlCreate = mysqli_query($connection, $queryCreate);
 
             echo "<script>alert('SUCCESSFULLY CREATED ACCOUNT')</script>";

@@ -27,10 +27,36 @@
 <body>
 <div class="main-adminMenu">
     <div class="menu">
-    
+     <!-- sidebar -->
+        <div class="sidebar">
+                <div class="sidebar-header">
+                    <p class="side-title">MENU</p>
+                    <div class="close">&times;</div>
+                    
+                </div>
+                
+                <ul>
+                    <li>COFFEE</li>
+                    <li>Bottled</li>
+                    <li>Frappucino</li>
+                    <li>Float Series</li>
+                    <li>Non-Coffee</li>
+                    <li>Fruit Tea Series</li>
+                    <li style="font-size: 12px;">Fruit Splash Yogurt Smoothies</li>
+                    <li>Yogurt</li>
+                    <li>Chees Macchiato Series</li>
+                    <li>Barista's Choice</li>
+                    <li>Gourmet Series</li>
+                    <li>Tea Latte Series</li>
+
+                </ul>
+                </ul>
+        </div>
+
+
+
         <!-- NAVBAR -->
         <div class="navbar">
-                
                 <ul>
                     <li><a href="admin-home.php"><img src="../PROJECT/Images/home-icon.png" alt="home icon"style="width: 30px; height: 30px"></a></li>
                     <li style=" border-bottom: #fff 5px solid;"><a href="admin-menu.php"><img src="../PROJECT/Images/menu-icon.png" alt="menu icon"style="width: 30px; height: 30px"></a></li>
@@ -46,32 +72,64 @@
                         -->
                 
                 </ul>
-            
-        </div>
-        <!-- menu header -->
-        <div class="menu-header">
-            <p class="title-menu">Deja brew Menu</p> 
-            <div class="line" style="width: 360px; margin-left: 0px;"></div> 
-            <div class="line" style="width: 360px; margin-left: 0px;"></div> 
         </div>
 
+        <!-- menu bar -->
+        <div class="menu-bar">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+            
+        </div>
+        
+        <!-- menu header -->
+        <div class="menu-header">
+            <div class="line" style="width: 100%; margin-left: 0px; height: 2px;"></div> 
+            <marquee class="title-menu">Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu .Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu .</marquee> 
+            
+            <div class="line" style="width: 100%; margin-left: 0px; height: 2px;"></div> 
+            </div>
+
+        <!-- menu category -->
+        <!-- <div class="menu-category">
+            <ul>
+                <li>Cofee</li>
+                <li>Bottled</li>
+                <li>Frappucino</li>
+                <li>Float Series</li>
+                <li>Non-Coffee</li>
+                <li>Fruit Tea Series</li>
+                <li></li>
+            </ul>
+        </div> -->
+
         <!-- add product button -->
-        <div class="add" onclick="showAlert()">
+        <div class="add" onclick="showModal()">
             +
         </div>
+        
 
         
         <!-- add product form MODAL  -->
         <div class="modal-container">
             <div class="modal-header">
                 <h2>ADD PRODUCT</h2>
-                <div class="modal-close">&times;</div>
+                <div class="modal-close" onclick="closeModal()">&times;</div>
             </div>
             
             <div class="modal-body">
-                Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Quod non maxime consectetur 
-                ullam tenetur quis nostrum nulla mollitia, vitae cum!
+               <form action="" method="post">
+                    <input type="file" name="uploadProduct" id="uploadProduct" class="" value="UPLOAD PRODUCT IMAGE"> <br>
+
+                    <label for="productName">Product Name : </label>
+                    <input type="text" name="productName" id="productName" placeholder="Enter Product Name"> <br>
+
+                    <label for="productPrice">Php:</label>
+                    <input type="text" name="productPrice" id="productPrice" placeholder="Enter Product Price"> <br>
+                    <input type="submit" value="CREATE" class="create-btn">
+                 </form>
             </div>
         </div>
 
@@ -206,7 +264,7 @@
 </body>
 
 <script src="../javascript/events.js">
-
+alert('testingggg')
 
 </script>
 </html>

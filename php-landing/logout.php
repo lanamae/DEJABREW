@@ -5,10 +5,26 @@
 
     session_start();
 
+
+    // $logidNum = trim($_POST['logid']);
+
+    
+
     $idHello = $_SESSION['logId']; 
 
-    $dateHello =  $_SESSION['date']; 
-    $timeHello =  $_SESSION['time']; 
+
+
+    // $dateHello =  $_SESSION['date']; 
+    // $timeHello =  $_SESSION['time']; 
+
+    date_default_timezone_set('Asia/Manila');  
+    $current_timezone = date_default_timezone_get();
+    //    echo $current_timezone . "<br>";
+
+    $hours = date("h");
+    $minutes = date("i");
+    $seconds = date("s");
+    $setHour =  date("A");
 
     $newdate = date("M-d-Y");
     $newtime = $hours . ":". $minutes . ":" .$seconds .$setHour;
@@ -20,6 +36,8 @@
     // echo "<br>";
     // echo $newdate;
     // echo $newtime;
+
+    
 
 
 
@@ -74,7 +92,7 @@
     //     $queryLogbook = "UPDATE log_details SET position = '$position', username='$username', date_log='$getDate', logout_time='$getLogoutTime',)";
     //     $sqlLog = mysqli_query($connLog, $queryLogbook);
 
-    //     echo "<script>alert('SUCCESSFULLY LOGOUT ACCOUNT')</script>";
+        echo "<script>alert('SUCCESSFULLY LOGOUT ACCOUNT')</script>";
     // }
 
 

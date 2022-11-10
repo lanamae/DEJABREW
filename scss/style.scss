@@ -56,6 +56,16 @@ $font2: 'Playfair Display', serif;
     margin-top: 20px;
 }
 
+.dot{
+    content: " ";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: $color7;
+    border-radius: 50%;
+}
+
+
 
 
 
