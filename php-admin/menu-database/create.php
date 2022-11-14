@@ -36,19 +36,46 @@
             // $size = get_size($_FILES['uploadProduct']['size']);
 
             else if($fileSize > 1000000){
-                echo "FILE IS TOO LARGE";
+                echo "<script>alert('FILE IS TOO LARGE ')</script>";
             }
 
             else{
 
-                $newImageName = uniqid();
-                $newImageName .= '.' . $imgExtension;
+                // $newImageName = uniqid();
+                // $newImageName .= '.' . $imgExtension;
 
-                $queryProduct = "INSERT INTO tb_product VALUES(null, '$newImageName', '$productName', '$productPrice', '$productCategory')";
-                $sqlProduct = mysqli_query($connProducts, $queryProduct);
+                $path = "uploads/" . $_POST['folder'];
 
-                echo "<script>alert('SUCCESSFULLY ADDED')</script>";
-                echo "<script>window.location.href='../admin-menu.php'</script>";
+
+                if(!file_exists($path)){
+                    mkdir($path, 0777, true);
+
+                }
+
+                if($tmpName != ""){
+                    $newFilePath = $path . "/" . $fileName;
+
+
+                    if(move_uploaded_file($tmpName, $newFilePath)){
+                        
+                        $queryProduct = "INSERT INTO tb_product VALUES(null, '$newImageName', '$productName', '$productPrice', '$productCategory')";
+                        $sqlProduct = mysqli_query($connProducts, $queryProduct);
+
+                        echo "<script>alert('SUCCESSFULLY ADDED')</script>";
+                        echo "<script>window.location.href='../admin-menu.php'</script>";
+                    }
+
+                    else{
+                        echo "error";
+                    }
+                }
+
+
+
+
+                // move_uploaded_file($tmpName, 'img/' . $newImageName);
+
+                
             }
         }
 

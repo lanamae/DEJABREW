@@ -7,13 +7,15 @@
 
     $queryEmployee = "SELECT * FROM useraccounts WHERE position = 'employee'";
     $sqlEmployee = mysqli_query($connection, $queryEmployee);
-    $employee =  mysqli_fetch_array($sqlEmployee);
+    // $employee =  mysqli_fetch_array($sqlEmployee);
 
-    if(mysqli_num_rows($sqlEmployee) >0){
+    // if(mysqli_num_rows($sqlEmployee) >0){
         
-        echo $employee['id'];
-        echo $employee['username'];
-    }
+    //     echo $employee['id'];
+    //     echo $employee['username'];
+
+        
+    // }
 ?>
 
 <!DOCTYPE html>
@@ -61,10 +63,21 @@
                 <div class="line" style="width: 360px; margin-left: 0px;"></div> 
                 <div class="line" style="width: 360px; margin-left: 0px;"></div> 
             </div>
+
+
         <!--EMPLOYEE CONTAINER  -->
             <div class="employee-container">
 
+                <div class="employee-table">
+
                 <div class="employee">
+                    Employee Sample
+
+                    ID: 
+                </div>
+
+
+
 
                 </div>
 

@@ -54,7 +54,7 @@
                 
                 
                 
-                , Employee <?php echo $_SESSION['username'];?> </h1>
+                 Employee <?php echo $_SESSION['username'];?> </h1>
                 <h2>Customers Deserve Your Hardwork, Serve them!</h2>
                 
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non aliquam, at <br>
