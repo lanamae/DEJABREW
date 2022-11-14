@@ -493,6 +493,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0px -6px 6px rgba(239, 239, 239, 0.25);
 }
 .main-adminHome .hero-section .navbar .logo {
   margin-top: 150px;
@@ -602,6 +603,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  box-shadow: 0px -6px 6px rgba(239, 239, 239, 0.25);
 }
 .main-adminMenu .navbar .logo {
   margin-top: 150px;
@@ -800,7 +802,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, 250px);
   grid-row-gap: 50px;
-  grid-column-gap: 20px;
+  grid-column-gap: 50px;
+  padding-top: 30px;
 }
 .main-adminMenu .menu .product-container .product-table .product {
   width: 235px;
@@ -911,6 +914,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  box-shadow: 0px -6px 6px rgba(239, 239, 239, 0.25);
 }
 .main-adminSales .sales .navbar .logo {
   margin-top: 150px;
@@ -949,6 +953,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  box-shadow: 0px -6px 6px rgba(239, 239, 239, 0.25);
 }
 .main-adminEmployee .employee .navbar .logo {
   margin-top: 150px;
@@ -971,7 +976,7 @@
 }
 .main-adminEmployee .employee .employee-container {
   width: 100%;
-  height: 100vh;
+  height: auto;
   padding: 20px 80px;
 }
 .main-adminEmployee .employee .employee-container .employee-table {
@@ -988,12 +993,23 @@
   background: #FFFFFF;
   border-radius: 10px;
   font-family: "Arimo", sans-serif;
-  padding: 20px;
+  padding: 30px;
   margin: 10px 50px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
+}
+.main-adminEmployee .employee .employee-container .employee-table .employee .name {
+  color: #000000;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+.main-adminEmployee .employee .employee-container .employee-table .employee img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 50px;
 }
 
 .main-adminProfile {
@@ -1009,6 +1025,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  box-shadow: 0px -6px 6px rgba(239, 239, 239, 0.25);
 }
 .main-adminProfile .navbar .logo {
   margin-top: 150px;

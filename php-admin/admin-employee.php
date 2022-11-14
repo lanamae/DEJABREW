@@ -70,13 +70,18 @@
 
                 <div class="employee-table">
 
-                <div class="employee">
-                    Employee Sample
+                <?php 
+                while($employee = mysqli_fetch_array($sqlEmployee)) {?>
 
-                    ID: 
+                <div class="employee">
+                       <div class="name">SAMPLE NAME</div>
+                        <img src="../PROJECT/Images/default-pic.png" alt="" srcset="">
+                        <div class="id"><strong>ID:</strong> <?php echo $employee['id'] ?></div>
+                        <div class="username"><strong>Username:</strong> <?php echo $employee['username'] ?> </div>
+                        <div class="email"><strong>Email:</strong> <?php echo $employee['email'] ?></div>
                 </div>
 
-
+                <?php } ?>
 
 
                 </div>

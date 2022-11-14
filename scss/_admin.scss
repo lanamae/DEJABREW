@@ -27,6 +27,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0px -6px 6px rgba($color: #EFEFEF, $alpha: 0.25);
 
 
             .logo{
@@ -121,7 +122,6 @@
 
 
 // ADMIN MENU
-
 .main-adminMenu{
     width: 100%;
     height: auto;
@@ -206,7 +206,7 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-
+        box-shadow: 0px -6px 6px rgba($color: #EFEFEF, $alpha: 0.25);
 
         .logo{
             margin-top: 150px;
@@ -475,7 +475,7 @@
 
 
         
-
+        // MENU-CONTAINER
         .product-container{
             width: 100%;
             height: auto;
@@ -515,7 +515,8 @@
                 display: grid;
                 grid-template-columns: repeat(auto-fill, 250px);
                 grid-row-gap: 50px;
-                grid-column-gap: 20px;
+                grid-column-gap: 50px;
+                padding-top: 30px;
 
                 .product{
                     width: 235px;
@@ -657,7 +658,7 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
-
+            box-shadow: 0px -6px 6px rgba($color: #EFEFEF, $alpha: 0.25);
 
             .logo{
                 margin-top: 150px;
@@ -707,7 +708,7 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
-
+            box-shadow: 0px -6px 6px rgba($color: #EFEFEF, $alpha: 0.25);
 
             .logo{
                 margin-top: 150px;
@@ -736,7 +737,7 @@
 
         .employee-container{
             width: 100%;
-            height: 100vh;
+            height: auto;
             
             padding: 20px 80px;
 
@@ -756,12 +757,27 @@
                     background: $color7;
                     border-radius: 10px;
                     font-family: $font1;
-                    padding: 20px;
+                    padding: 30px;
                     margin: 10px 50px;
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-between;
-                    align-items: center;
+                    justify-content: center;
+                    align-items: flex-start;
+
+                    .name{
+                        color: $color1;
+                        font-weight: bold;
+                        font-size: 20px;
+                        margin-bottom: 50px;
+                    }
+
+                    img{
+                        width: 120px;
+                        height: 120px;
+                        margin-bottom: 50px;
+                    }
+
+
 
                 }
             }
@@ -788,7 +804,7 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-
+        box-shadow: 0px -6px 6px rgba($color: #EFEFEF, $alpha: 0.25);
 
         .logo{
             margin-top: 150px;
