@@ -107,14 +107,15 @@
         </div>
 
        
-
-        <!-- add product button -->
+        <!-- ---------------------------------------------------------------- -->
+        <!-- add product button  - the red plus button-->
         <div class="add" onclick="showModal()">
             +
         </div>
         
 
-        
+        <!----------------------------------------------------------------------------------------  -->
+            <!-- MODAL UPLOAD PRODUCT -->
         <!-- add product form MODAL  -->
         <div class="modal-container">
             <div class="modal-header">
@@ -123,8 +124,7 @@
             </div>
             
 
-            <!----------------------------------------------------------------------------------------  -->
-            <!-- MODAL UPLOAD PRODUCT -->
+         
             <div class="modal-body">
                <form action="../php-admin/menu-database/create.php" method="POST" enctype="multipart/form-data">
                     <img src="<?php echo $results['image'] ?>" alt="" class="productImg">
@@ -149,6 +149,39 @@
         </div>
 
         <!-- ---------------------------------------------------------------------------- -->
+        <!-- MODAL UPDATE PRODUCT -->
+        <div class="modalUpdate-container">
+            <div class="modal-header">
+                <h2>EDIT </h2>
+                <div class="modal-close" onclick="closeModal()">&times;</div>
+            </div>
+            
+
+         
+            <div class="modal-body">
+               <form action="../php-admin/menu-database/create.php" method="POST" enctype="multipart/form-data">
+                    <img src="<?php echo $results['image'] ?>" alt="" class="productImg">
+                    <input type="file" name="uploadProduct" id="uploadProduct" class="uploadProduct" value="UPLOAD PRODUCT IMAGE"> <br>
+
+                    <label for="productName">Product Name : </label>
+                    <input type="text" name="productName" id="productName" placeholder="Enter Product Name"> <br>
+
+                    <label for="productPrice">Product Amount:</label>
+                    <input type="number" name="productPrice" id="productPrice" placeholder="Enter Product Price"> <br>
+                    
+
+                    <label for="productCategory">Product Category:</label>  
+                    <input type="text" name="productCategory" id="productCategory" placeholder="Enter Product Category"> <br>
+                    
+                    <!-- folder for images -->
+                    <input type="hidden" name="folder" value="Product-Images">
+                    
+                    <input type="submit" name="create-product" value="CREATE" class="create-btn">
+                 </form>
+            </div>
+        </div>
+        
+        <!-- ------------------------------------------------------------------------------------------------ -->
         <!-- VOUCHER MODAL -->
         <div class="voucher">
 

@@ -493,7 +493,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px -6px 6px rgba(239, 239, 239, 0.25);
+  box-shadow: inset 0px -6px 6px rgba(239, 239, 239, 0.25);
 }
 .main-adminHome .hero-section .navbar .logo {
   margin-top: 150px;
@@ -603,7 +603,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  box-shadow: 0px -6px 6px rgba(239, 239, 239, 0.25);
+  box-shadow: inset 0px -6px 6px rgba(239, 239, 239, 0.25);
 }
 .main-adminMenu .navbar .logo {
   margin-top: 150px;
@@ -789,6 +789,108 @@
   z-index: 10;
   color: #000000;
 }
+.main-adminMenu .menu .modalUpdate-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 400px;
+  height: 550px;
+  max-width: 80%;
+  border: #FFFFFF 3px solid;
+  border-radius: 5px;
+  background: #DADADA;
+  z-index: 10;
+  color: #000000;
+  display: grid;
+  grid-template-rows: 60px 490px;
+}
+.main-adminMenu .menu .modalUpdate-container .modal-header {
+  grid-row: 1/2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  border-bottom: #FFFFFF solid 2px;
+}
+.main-adminMenu .menu .modalUpdate-container .modal-header h2 {
+  font-family: "Arimo", sans-serif;
+}
+.main-adminMenu .menu .modalUpdate-container .modal-header .modal-close {
+  width: 30px;
+  height: 30px;
+  background: #000000;
+  border-radius: 50%;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 26px;
+  cursor: pointer;
+  text-align: center;
+}
+.main-adminMenu .menu .modalUpdate-container .modal-body {
+  padding: 10px 40px;
+  grid-row: 2/3;
+}
+.main-adminMenu .menu .modalUpdate-container .modal-body form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-adminMenu .menu .modalUpdate-container .modal-body form .productImg {
+  width: 100px;
+  height: 100px;
+  border: #000 2px solid;
+}
+.main-adminMenu .menu .modalUpdate-container .modal-body form label {
+  font-size: 18px;
+  font-family: "Arimo", sans-serif;
+  margin-bottom: 5px;
+}
+.main-adminMenu .menu .modalUpdate-container .modal-body form input {
+  width: 100%;
+  height: 30px;
+  padding: 0px 10px;
+  border: 2px solid #9C9C9C;
+  border-radius: 3px;
+  background: none;
+  font-size: 15px;
+}
+.main-adminMenu .menu .modalUpdate-container .modal-body form .uploadProduct {
+  border: none;
+  padding-left: 70px;
+  margin-top: 20px;
+}
+.main-adminMenu .menu .modalUpdate-container .modal-body form .create-btn {
+  background: #333333;
+  color: #FFFFFF;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+.main-adminMenu .menu .modalUpdate-container .modal-body form .create-btn:hover {
+  background: #9C9C9C;
+  border: 1px solid #333333;
+  color: #000000;
+}
+.main-adminMenu .menu .modalUpdate-container.show {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 400px;
+  height: 550px;
+  max-width: 80%;
+  border: #FFFFFF 3px solid;
+  border-radius: 5px;
+  background: #DADADA;
+  z-index: 10;
+  color: #000000;
+}
 .main-adminMenu .menu .product-container {
   width: 100%;
   height: auto;
@@ -914,7 +1016,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  box-shadow: 0px -6px 6px rgba(239, 239, 239, 0.25);
+  box-shadow: inset 0px -6px 6px rgba(239, 239, 239, 0.25);
 }
 .main-adminSales .sales .navbar .logo {
   margin-top: 150px;
@@ -953,7 +1055,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  box-shadow: 0px -6px 6px rgba(239, 239, 239, 0.25);
+  box-shadow: inset 0px -6px 6px rgba(239, 239, 239, 0.25);
 }
 .main-adminEmployee .employee .navbar .logo {
   margin-top: 150px;
@@ -1025,7 +1127,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  box-shadow: 0px -6px 6px rgba(239, 239, 239, 0.25);
+  box-shadow: inset 0px -6px 6px rgba(239, 239, 239, 0.25);
 }
 .main-adminProfile .navbar .logo {
   margin-top: 150px;
@@ -1036,12 +1138,11 @@
 }
 .main-adminProfile .adminProfile-header {
   width: 800px;
-  height: 350px;
-  padding: 35px 100px;
+  height: 200px;
+  padding: 25px 100px;
   border-radius: 20px;
   box-shadow: 0px 0px 4px 2 rgba(0, 0, 0, 0.2);
   display: flex;
-  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
@@ -1054,6 +1155,7 @@
   font-family: "Arimo", sans-serif;
   color: #FFFFFF;
   margin: 20px 20px;
+  font-family: "Playfair Display", serif;
 }
 .main-adminProfile .adminProfile-header .line {
   width: 600px;
@@ -1063,56 +1165,62 @@
 }
 .main-adminProfile .adminProfile-header .logout {
   width: 200px;
-  height: 50px;
+  height: 30px;
   margin-left: 20px;
-  border-radius: 15px;
-  color: #000000;
+  border-radius: 7px;
+  color: red;
+  font-weight: bold;
   font-size: 15px;
   cursor: pointer;
-  border-style: none;
+  border: 0.5px solid red;
+  background: #5A5A5A;
 }
 .main-adminProfile .adminProfile-header .logout:hover {
-  background: #5A5A5A;
-  color: #FFFFFF;
+  background: #1F1F1F;
+  color: red;
+  font-weight: bold;
   box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.2), inset 4px 4px 4px rgba(0, 0, 0, 0.2);
 }
 .main-adminProfile .adminProfile-details {
   width: 100%;
-  height: 100vh;
+  height: auto;
 }
 .main-adminProfile .adminProfile-details .details {
   width: 100%;
-  height: 100vh;
+  height: auto;
+  padding: 50px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Arimo", sans-serif;
 }
-.main-adminProfile .adminProfile-details .details .form-container {
+.main-adminProfile .adminProfile-details .details form .form-container {
   width: 1000px;
   height: 55px;
-  background: #DADADA;
-  margin: 20px 0px 50px 0px;
+  background: #1F1F1F;
+  margin: 20px 0px;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.2), inset 4px 4px 4px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  border-radius: 7px;
 }
-.main-adminProfile .adminProfile-details .details .form-container label {
+.main-adminProfile .adminProfile-details .details form .form-container label {
   font-weight: 500;
   font-size: 18px;
+  color: #FFFFFF;
 }
-.main-adminProfile .adminProfile-details .details .form-container .input {
+.main-adminProfile .adminProfile-details .details form .form-container .input {
   width: 400px;
   height: 40px;
   padding: 8px;
   font-size: 15px;
-  background: #DADADA;
+  background: #1F1F1F;
   border-style: none;
+  color: #FFFFFF;
 }
-.main-adminProfile .adminProfile-details .details .form-container .edit {
+.main-adminProfile .adminProfile-details .details form .form-container .edit {
   cursor: pointer;
   width: 50px;
   height: 30px;
@@ -1120,7 +1228,7 @@
   padding: 5px;
   border-radius: 5px;
 }
-.main-adminProfile .adminProfile-details .details .form-container .edit:hover {
+.main-adminProfile .adminProfile-details .details form .form-container .edit:hover {
   background: rgba(156, 156, 156, 0.7);
   cursor: pointer;
   width: 50px;
@@ -1128,6 +1236,32 @@
   border-radius: 5px;
   text-align: center;
   padding: 5px;
+}
+.main-adminProfile .adminProfile-details .details form .saveChanges-btn {
+  margin-left: 800px;
+  width: 200px;
+  height: 40px;
+  background: rgb(247, 173, 173);
+  color: red;
+  cursor: pointer;
+  border-style: none;
+  border-radius: 7px;
+  box-shadow: inset 4px 4px 4px rgba(255, 255, 255, 0.2), inset 4px 4px 4px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+.main-adminProfile .adminProfile-details .details form .deleteAccount-btn {
+  margin-left: 800px;
+  width: 200px;
+  height: 40px;
+  background: red;
+  color: #FFFFFF;
+  cursor: pointer;
+  border-style: none;
+  border-radius: 7px;
+  box-shadow: inset 4px 4px 4px rgba(255, 255, 255, 0.2), inset 4px 4px 4px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
 }
 
 .main-employeeHome {
