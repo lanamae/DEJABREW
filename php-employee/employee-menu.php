@@ -155,7 +155,7 @@
 
 
                         <form action="">
-                            <input type="submit" value="UPDATE" class="prodUpdate-btn">
+                            <input type="submit" value="ADD" class="prodUpdate-btn">
                         </form>
 
                         <form action="">

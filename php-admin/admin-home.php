@@ -97,7 +97,13 @@
             <div class="instruction2"></div>
             <div class="instruction3"></div>
         </div>
-    
+
+
+        <!-- FOOTER -->
+        <div class="footer">
+                
+
+        </div>
     </div>    
 </body>
 </html> 

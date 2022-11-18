@@ -981,7 +981,7 @@
 }
 .main-adminEmployee .employee .employee-container .employee-table {
   width: 100%;
-  height: 100vh;
+  height: auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, 250px);
   grid-row-gap: 50px;
@@ -1195,7 +1195,7 @@
 
 .main-employeeMenu {
   width: 100%;
-  height: 100vh;
+  height: auto;
   background: #333333;
   color: #fff;
 }
@@ -1454,7 +1454,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, 250px);
   grid-row-gap: 50px;
-  grid-column-gap: 20px;
+  grid-column-gap: 50px;
 }
 .main-employeeMenu .menu .product-container .product-table .product {
   width: 235px;
@@ -1691,11 +1691,8 @@
   margin-top: 20px;
 }
 
-.dot {
-  content: " ";
-  display: block;
-  width: 10px;
-  height: 10px;
-  background: #FFFFFF;
-  border-radius: 50%;
+.footer {
+  width: 100%;
+  height: 100px;
+  background: #DADADA;
 }/*# sourceMappingURL=style.css.map */

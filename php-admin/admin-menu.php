@@ -54,7 +54,8 @@
                     <br>
 
                     <!-- for voucher -->
-                    <div class="line" style="margin-left: 0; margin-bottom: 10px;"></div>
+                    <div class="line" style="margin-left: 0; margin-bottom: 10px; width: 243px; height: 3px;"></div>
+                    <!-- <hr> -->
                     <h1>Voucher List</h1><br>
                     
                     <li>Sample Voucher</li>
@@ -121,6 +122,8 @@
                 <div class="modal-close" onclick="closeModal()">&times;</div>
             </div>
             
+
+            <!----------------------------------------------------------------------------------------  -->
             <!-- MODAL UPLOAD PRODUCT -->
             <div class="modal-body">
                <form action="../php-admin/menu-database/create.php" method="POST" enctype="multipart/form-data">
@@ -131,7 +134,7 @@
                     <input type="text" name="productName" id="productName" placeholder="Enter Product Name"> <br>
 
                     <label for="productPrice">Product Amount:</label>
-                    <input type="text" name="productPrice" id="productPrice" placeholder="Enter Product Price"> <br>
+                    <input type="number" name="productPrice" id="productPrice" placeholder="Enter Product Price"> <br>
                     
 
                     <label for="productCategory">Product Category:</label>  
@@ -144,6 +147,17 @@
                  </form>
             </div>
         </div>
+
+        <!-- ---------------------------------------------------------------------------- -->
+        <!-- VOUCHER MODAL -->
+        <div class="voucher">
+
+        </div>
+
+
+
+
+
 
 
         <!-- ---------------------------------------------------------------------------------- -->
@@ -168,8 +182,9 @@
                             <input type="submit" value="UPDATE" class="prodUpdate-btn">
                         </form>
 
-                        <form action="">
-                            <input type="submit" value="DELETE" class="delete-btn">
+                        <form action="../php-admin/menu-database/delete.php" method="POST">
+                            <input type="submit" name="delete"value="DELETE" class="delete-btn">
+                            <input type="hidden" name="deleteId" value="<?php echo $results['id'] ?> ">
                         </form>
 
                         
@@ -182,87 +197,14 @@
 
            
 
-            <!-- <div class="product">
-                <h2 class="product-name">Sample Name</h2>
-                <img src="../PROJECT/Images/Almond Tea Latte.png" alt="" class="product-img">
-                <h4 class="product-amount">PHP 00.00</h4>
-
-                <form action="">
-                    <input type="submit" value="UPDATE" class="prodUpdate-btn">
-                </form>
-
-                <form action="">
-                    <input type="submit" value="DELETE" class="delete-btn">
-                </form>
-
-            </div>
-
-            <div class="product">
-                <h2 class="product-name">Sample Name</h2>
-                <img src="../PROJECT/Images/Almond Tea Latte.png" alt="" class="product-img">
-                <h4 class="product-amount">PHP 00.00</h4>
-
-                <form action="">
-                    <input type="submit" value="UPDATE" class="prodUpdate-btn">
-                </form>
-
-                <form action="">
-                    <input type="submit" value="DELETE" class="delete-btn">
-                </form>
-
-            </div>
-
-            <div class="product">
-                <h2 class="product-name">Sample Name</h2>
-                <img src="../PROJECT/Images/Almond Tea Latte.png" alt="" class="product-img">
-                <h4 class="product-amount">PHP 00.00</h4>
-
-                <form action="">
-                    <input type="submit" value="UPDATE" class="prodUpdate-btn">
-                </form>
-
-                <form action="">
-                    <input type="submit" value="DELETE" class="delete-btn">
-                </form>
-
-            </div>
-
-            <div class="product">
-                <h2 class="product-name">Sample Name</h2>
-                <img src="../PROJECT/Images/Almond Tea Latte.png" alt="" class="product-img">
-                <h4 class="product-amount">PHP 00.00</h4>
-
-                <form action="">
-                    <input type="submit" value="UPDATE" class="prodUpdate-btn">
-                </form>
-
-                <form action="">
-                    <input type="submit" value="DELETE" class="delete-btn">
-                </form>
-
-            </div>
-
-            
-            <div class="product">
-                <h2 class="product-name">Sample Name</h2>
-                <img src="../PROJECT/Images/Almond Tea Latte.png" alt="" class="product-img">
-                <h4 class="product-amount">PHP 00.00</h4>
-
-                <form action="">
-                    <input type="submit" value="UPDATE" class="prodUpdate-btn">
-                </form>
-
-                <form action="">
-                    <input type="submit" value="DELETE" class="delete-btn">
-                </form>
-
-            </div>
-             -->
 
         </div>
 
         <div class="overlay"></div>
-   
+
+        
+        <!-- ----------------------------------------------------------------------------------- -->
+
 
    
 
