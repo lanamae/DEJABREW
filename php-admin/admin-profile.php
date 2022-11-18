@@ -7,25 +7,31 @@
     require '../php-landing/readLogbook.php';
 
 
-    // echo $_SESSION['username'];
-    // echo $_SESSION['dateLogin'];
-    // echo $_SESSION['timelogin'];
-     
-
-
+    date_default_timezone_set('Asia/Manila');  
+    $current_timezone = date_default_timezone_get();
+    //    echo $current_timezone . "<br>";
     
-//    echo  $_SESSION['logId'] .'<br>'; 
-//     echo $_SESSION['logPosition'] .'<br>';
-//     echo $_SESSION['logUsername'].'<br>' ;
-//    echo $_SESSION['date_login'] .'<br>';
-//    echo $_SESSION['login_time'] .'<br>';
-//    echo $_SESSION['date_logout'] .'<br>'; 
-//    echo $_SESSION['logout_time'];
+    $hours = date("h");
+    $minutes = date("i");
+    $seconds = date("s");
+    $setHour =  date("A");
+    
+    $_SESSION['date'] = date("M-d-Y");
+    $_SESSION['time'] = $hours . ":". $minutes . ":" .$seconds .$setHour;
+     
+    
+    
+    
+    $date_logout = $_SESSION['date'];
+    $logout_time = $_SESSION['time']; 
+    
+//   echo $date_logout;
+//   echo $logout_time;
+   
+ 
 
-    // if(isset($_POST['logout'])){
-    //     $updateDate = trim($_POST['Updatedate_logout']);
-    //     $updateTime = trim($_POST['Updatedate_logout']);
-    // }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,9 +100,9 @@
                 <br><br>     
                     <input type="hidden" name="logUsername"  value="<?php echo $_SESSION['logUsername']; ?>">
                 <br>     <br>     
-                    <input type="hidden" name="Updatedate_logout"  value="<?php echo $_SESSION['date']; ?>">
+                    <input type="hidden" name="Updatedate_logout"  value="<?php echo $date_logout; ?>">
                 <br><br>     
-                    <input type="hidden" name="Updatelogout_time"  value="<?php echo $_SESSION['time']; ?>">
+                    <input type="hidden" name="Updatelogout_time"  value="<?php echo $logout_time; ?>">
                 
                     <br><br>
                 </form></span>

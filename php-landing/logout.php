@@ -5,44 +5,40 @@
 
     session_start();
 
-
-    // $logidNum = trim($_POST['logid']);
-
-    
-
     $idHello = $_SESSION['logId']; 
 
 
+    // echo $date_logout;
+    // echo $logout_time;
 
-    // $dateHello =  $_SESSION['date']; 
-    // $timeHello =  $_SESSION['time']; 
+    if(isset($_POST['logout'])){
+        $updateDate_logout = $_POST['Updatedate_logout'];
+        $updateLogout_time = $_POST['Updatelogout_time'];
 
-    date_default_timezone_set('Asia/Manila');  
-    $current_timezone = date_default_timezone_get();
-    //    echo $current_timezone . "<br>";
+        // echo $updateDate_logout;
+        // echo $updateLogout_time;
+        // echo $idHello;
 
-    $hours = date("h");
-    $minutes = date("i");
-    $seconds = date("s");
-    $setHour =  date("A");
+        
+        $queryLogout = "UPDATE log_details SET date_logout = '$updateDate_logout', logout_time = '$updateLogout_time' WHERE id = '$idHello'";
+        $sqlLogout = mysqli_query($connLog, $queryLogout);
 
-    $newdate = date("M-d-Y");
-    $newtime = $hours . ":". $minutes . ":" .$seconds .$setHour;
+        
+    //  echo "<script>alert('SUCCESSFULLY UPDATED LOG DETAILS')</script>";
+    
+    }
 
-    // echo $idHello;
-    // echo  $dateHello;
-    // echo $timeHello;
+    else{
+        
+     echo "<script>alert('CANNOT CHANGE LOGBOOK')</script>";
+    
+    }
 
-    // echo "<br>";
-    // echo $newdate;
-    // echo $newtime;
 
     
 
 
 
-    $queryLogout = "UPDATE log_details SET date_logout = '$newdate' AND logout_time = '$newtime' WHERE id = '$idHello'";
-    $sqlLogout = mysqli_query($connLog, $queryLogout);
 
   
 
@@ -55,45 +51,8 @@
 
     echo "<script>window.location.href='../php-landing/landing.php'</script>";
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // require '../php-landing/logbook.php';
-
-    // if(isset($_POST['logout_time'])){
-    //     $getLogoutTime = trim($_POST['logout_time']);
-
-    //     $queryLogout = "SELECT * FROM log_detailS";
-    //     $sqlLogout = mysqli_query($connLog, $queryLogout);
-    //     $logDetails = mysqli_fetch_array($sqlLogout);
-
-
-             
-    //     $queryLogbook = "UPDATE log_details SET position = '$position', username='$username', date_log='$getDate', logout_time='$getLogoutTime',)";
-    //     $sqlLog = mysqli_query($connLog, $queryLogbook);
-
-        echo "<script>alert('SUCCESSFULLY LOGOUT ACCOUNT')</script>";
-    // }
+    //  echo "<script>alert('SUCCESSFULLY LOGOUT ACCOUNT')</script>";
+    
 
 
 

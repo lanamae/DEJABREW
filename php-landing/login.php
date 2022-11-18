@@ -82,42 +82,10 @@
                     $sqlLog = mysqli_query($connLog, $queryLogbook);
                    
 
-
-                    
-                    // $queryLogout = "SELECT * FROM log_details";
-                    // $sqlLogout = mysqli_query($connLog, $queryLogout);
-                    // $logbookfetch = mysqli_fetch_array($sqlLogout);
-
-                    // $SESSION['samplelog'] = $logbookfetch['id'];
-
                     echo "<script>alert('SUCCESSFULLY LOG ACCOUNT')</script>";
 
                     $_SESSION['datelogin'] = $getDateLogin;
                     $_SESSION['timelogin'] = $getLoginTime;
-
-
-
-
-                    //READING LOGBOOK DETAILS
-                    
-                    // $id2 = $_SESSION['id'];
-                    // $position2 = $_SESSION['position'];
-                    // $username2 = $_SESSION['username'];
-                    
-
-                    // $queryLog = "SELECT * FROM log_details WHERE id='$id2' ANDposition='$position2' AND username = '$username2' AND date_login='$getDateLogin' AND login_time='$getLoginTime' AND date_logout='$getDateLogout' AND logout_time='$getLogoutTime'";
-                    // $sqlLog = mysqli_query($connLog, $queryLog);
-                    // $logData = mysqli_fetch_array($sqlLog);
-
-                    // $_SESSION['logId']  = $logData['id'];
-                    // $_SESSION['logPosition'] =  $logData['position'];
-                    // $_SESSION['logUsername'] = $logData['username'];
-                
-                    // $_SESSION['date_login'] = $logData['date_login'];
-                    // $_SESSION['login_time'] =$logData['login_time'];
-                    // $_SESSION['date_logout'] =$logData['date_logout'];
-                    // $_SESSION['logout_time']= $logData['logout_time'];
-
 
 
 
@@ -207,9 +175,9 @@
 
                 <!-- HIDEN DATE -->
                 <!-- <label for="date" class="label">Date</label><br> -->
-                <input type="hidden" name="date_login" id="date_login" value="<?php echo $_SESSION['date']; ?>">
+                <input type="hidden" name="date_login" id="date_login" value="<?php echo $date_login; ?>">
                
-               <input type="hidden" name="login_time" id="login_time" value="<?php echo $_SESSION['time']; ?>">
+               <input type="hidden" name="login_time" id="login_time" value="<?php echo $login_time; ?>">
               
              
                 <input type="hidden" name="date_logout" id="date_logout" value="<?php echo $date_logout; ?>">

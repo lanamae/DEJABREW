@@ -1693,6 +1693,18 @@
 
 .footer {
   width: 100%;
-  height: 100px;
+  height: 200px;
   background: #DADADA;
+  padding: 30px 80px;
+  display: flex;
+}
+.footer .logo {
+  width: 120px;
+  height: 120px;
+  margin-right: 40px;
+}
+.footer .footer-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }/*# sourceMappingURL=style.css.map */

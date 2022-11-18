@@ -2,7 +2,7 @@
     require "../php-landing/session.php";
     require "../php-landing/date_and_time.php";
     require "../php-landing/read.php";
-    require "../php-landing/read.php";
+    // require "../php-landing/read.php";
 
 
     // echo $_SESSION['username'];
@@ -101,7 +101,13 @@
 
         <!-- FOOTER -->
         <div class="footer">
-                
+            <img src="../PROJECT/Images/dejabrew-logo.png" class="logo" alt="dejabrew logo">
+                  
+            <div class="footer-details">
+                <h4>Deja brew</h4>
+                <p></p>
+                <p>All Right Reserved 2023 &copy;</p>
+            </div>
 
         </div>
     </div>    

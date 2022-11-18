@@ -4,11 +4,7 @@
     require "../php-landing/date_and_time.php";
     require "../php-landing/read.php";
    
-    // session_start();
-    
-    // echo $_SESSION['username'];
-    // echo $_SESSION['dateLogin'];
-    // echo $_SESSION['timelogin'];
+ 
 
    $usernameSamp = $_SESSION['username'];
    $getDateLoginSamp = $_SESSION['datelogin'];
@@ -22,6 +18,9 @@
 
         
         $_SESSION['logId']  = $logData['id'];
+
+
+        
         $_SESSION['logPosition'] =  $logData['position'];
         $_SESSION['logUsername'] = $logData['username'];
 
