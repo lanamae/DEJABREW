@@ -23,7 +23,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-
+            box-shadow: inset 0px -6px 6px rgba($color: #EFEFEF, $alpha: 0.25);
 
             .logo{
                 margin-top: 150px;
@@ -201,6 +201,7 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        box-shadow: inset 0px -6px 6px rgba($color: #EFEFEF, $alpha: 0.25);
 
 
         .logo{
@@ -635,6 +636,166 @@
 
 
 // ADMIN PROFILE
+// .main-employeeProfile{
+//     width: 100%;
+//     height: auto;
+//     background: $color3;
+
+//     .navbar{
+//         width: 100%;
+//         height: 75px;
+//         background: $color2;
+//         padding: 0px 100px;
+
+//         display: flex;
+//         justify-content: flex-end;
+//         align-items: center;
+//         box-shadow: inset 0px -6px 6px rgba($color: #EFEFEF, $alpha: 0.25);
+
+//         .logo{
+//             margin-top: 150px;
+//         }
+//         ul li{
+//             display: inline-block;
+//             padding: 10px 10px;
+
+
+//         }
+//     }
+
+//     .employeeProfile-header{
+//         width: 800px;
+//         height: 350px;
+//         padding: 35px 100px;
+//         border-radius: 20px;
+//         box-shadow: 0px 0px 4px 2 rgba($color: #000000, $alpha: 0.20);
+        
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: flex-start;
+//         align-items: flex-start;
+
+//         .changedp{
+//             .profile-pic{
+//                 width: 150px;
+//                 height: 150px;
+//                 margin-right: 30px;
+                
+//             }
+
+           
+//         }
+
+//         h1{
+//             font-family: $font1;
+//             color: $color7;
+//             margin: 20px 20px;
+//         }
+
+//         .line{
+//             width: 600px; 
+//             height: 5px; 
+//             background: #ffffff;  
+//             content: ' ';
+//         }
+        
+
+//         .logout{
+//             width: 200px;
+//             height: 50px;
+//             margin-left: 20px;
+//             border-radius: 15px;
+//             color: $color1;
+//             font-size: 15px;
+//             cursor: pointer;
+//             border-style: none;
+
+//             &:hover{
+//                 background: $color4;
+//                 color: $color7;
+//                 box-shadow: 4px 4px 4px rgba($color: #fff, $alpha: 0.20), inset 4px 4px 4px rgba($color: #000, $alpha: 0.20);
+
+//             }
+
+//         }
+
+
+        
+        
+//     }
+
+
+//     .employeeProfile-details{
+//         width: 100%;
+//         height: 100vh;
+
+//         .details{
+//             width: 100%;
+//             height: 100vh;
+            
+
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+
+//             font-family: $font1;
+
+
+//             .form-container{
+//                 width: 1000px;
+//                 height: 55px;
+//                 background: $color6;
+//                 margin: 20px 0px 50px 0px;
+//                 padding: 20px 40px;
+
+//                 display: flex;
+//                 justify-content: space-between;
+//                 align-items: center;
+//                 box-shadow: 4px 4px 4px rgba($color: #fff, $alpha: 0.20), inset 4px 4px 4px rgba($color: #000, $alpha: 0.20);
+
+//                 border-radius: 10px;
+
+
+//                 label{
+//                     font-weight: 500;
+//                     font-size: 18px;
+//                 }
+//                 .input{
+//                     width: 400px;
+//                     height: 40px;
+//                     padding: 8px;
+//                     font-size: 15px;
+//                     background: $color6;
+//                     border-style: none;
+//                 }
+
+//                 .edit{
+//                     cursor: pointer;
+//                     width: 50px;
+//                     height: 30px;
+//                     text-align: center;
+//                     padding: 5px;
+//                     border-radius: 5px;
+
+//                     &:hover{
+//                         background: rgba($color: $color5, $alpha: 0.70);
+//                         cursor: pointer;
+//                         width: 50px;
+//                         height: 30px;
+//                         border-radius: 5px;
+//                         text-align: center;
+//                         padding: 5px;
+//                     }
+
+//                 }
+//             }
+//         }
+
+//     }
+    
+    
+// }
+
 .main-employeeProfile{
     width: 100%;
     height: auto;
@@ -649,7 +810,7 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-
+        box-shadow: inset 0px -6px 6px rgba($color: #EFEFEF, $alpha: 0.25);
 
         .logo{
             margin-top: 150px;
@@ -663,14 +824,14 @@
     }
 
     .employeeProfile-header{
-        width: 800px;
-        height: 350px;
-        padding: 35px 100px;
+        width: 100%;
+        height: 200px;
+        padding: 25px 150px;
         border-radius: 20px;
         box-shadow: 0px 0px 4px 2 rgba($color: #000000, $alpha: 0.20);
         
         display: flex;
-        flex-direction: column;
+        // flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
 
@@ -689,29 +850,33 @@
             font-family: $font1;
             color: $color7;
             margin: 20px 20px;
+            font-family: $font2;
+            padding-right: 350px;
+
         }
 
-        .line{
-            width: 600px; 
-            height: 5px; 
-            background: #ffffff;  
-            content: ' ';
-        }
+
         
 
         .logout{
             width: 200px;
-            height: 50px;
-            margin-left: 20px;
-            border-radius: 15px;
-            color: $color1;
+            height: 30px;
+            margin-left: auto;
+            border-radius: 7px;
+            color: red;
+            font-weight: bold;
             font-size: 15px;
             cursor: pointer;
-            border-style: none;
+            border: 0.5px solid red;
+            background: $color4;
+
+            margin-left: 20px;
+
 
             &:hover{
-                background: $color4;
-                color: $color7;
+                background: $color2;
+                color: red;
+                font-weight: bold;
                 box-shadow: 4px 4px 4px rgba($color: #fff, $alpha: 0.20), inset 4px 4px 4px rgba($color: #000, $alpha: 0.20);
 
             }
@@ -726,68 +891,107 @@
 
     .employeeProfile-details{
         width: 100%;
-        height: 100vh;
+        height: auto;
 
         .details{
             width: 100%;
-            height: 100vh;
+            height: auto;
+            padding: 50px 0px;
             
 
             display: flex;
             justify-content: center;
             align-items: center;
-
             font-family: $font1;
 
-
-            .form-container{
-                width: 1000px;
-                height: 55px;
-                background: $color6;
-                margin: 20px 0px 50px 0px;
-                padding: 20px 40px;
-
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                box-shadow: 4px 4px 4px rgba($color: #fff, $alpha: 0.20), inset 4px 4px 4px rgba($color: #000, $alpha: 0.20);
-
-                border-radius: 10px;
+            form{
+                
 
 
-                label{
-                    font-weight: 500;
-                    font-size: 18px;
-                }
-                .input{
-                    width: 400px;
-                    height: 40px;
-                    padding: 8px;
-                    font-size: 15px;
-                    background: $color6;
-                    border-style: none;
-                }
-
-                .edit{
-                    cursor: pointer;
-                    width: 50px;
-                    height: 30px;
-                    text-align: center;
-                    padding: 5px;
-                    border-radius: 5px;
-
-                    &:hover{
-                        background: rgba($color: $color5, $alpha: 0.70);
+                .form-container{
+                    width: 1000px;
+                    height: 55px;
+                    background: $color2;
+                    
+                    margin: 20px 0px;
+                    padding: 20px 40px;
+    
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    box-shadow: 4px 4px 4px rgba($color: #fff, $alpha: 0.20), inset 4px 4px 4px rgba($color: #000, $alpha: 0.20);
+                    border-radius: 7px;
+    
+    
+                    label{
+                        font-weight: 500;
+                        font-size: 18px;
+                        color: $color7;
+                    }
+                    .input{
+                        width: 400px;
+                        height: 40px;
+                        padding: 8px;
+                        font-size: 15px;
+                        background: $color2;
+                        border-style: none;
+                        color: $color7;
+                    }
+    
+                    .edit{
                         cursor: pointer;
                         width: 50px;
                         height: 30px;
-                        border-radius: 5px;
                         text-align: center;
                         padding: 5px;
+                        border-radius: 5px;
+    
+                        &:hover{
+                            background: rgba($color: $color5, $alpha: 0.70);
+                            cursor: pointer;
+                            width: 50px;
+                            height: 30px;
+                            border-radius: 5px;
+                            text-align: center;
+                            padding: 5px;
+                        }
+    
                     }
+                }
 
+
+                .saveChanges-btn{
+                    margin-left: 800px;
+                    width: 200px;
+                    height: 40px;
+                    background: rgb(247, 173, 173);
+                    color: red;
+                    cursor:pointer;
+                    border-style: none;
+                    border-radius: 7px;
+                    box-shadow: inset 4px 4px 4px rgba($color: #fff, $alpha: 0.20), inset 4px 4px 4px rgba($color: #000, $alpha: 0.20);
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                    margin-top: 30px;
+                    font-family: $font1;
+                }
+
+                .deleteAccount-btn{
+                    margin-left: 800px;
+                    width: 200px;
+                    height: 40px;
+                    background: red;
+                    color: $color7;
+                    cursor:pointer;
+                    border-style: none;
+                    border-radius: 7px;
+                    box-shadow: inset 4px 4px 4px rgba($color: #fff, $alpha: 0.20), inset 4px 4px 4px rgba($color: #000, $alpha: 0.20);
+                    font-weight: bold;
+                    font-family: $font1 ;
+                    font-size: 15px;
                 }
             }
+            
         }
 
     }

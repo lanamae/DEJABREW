@@ -59,15 +59,8 @@
             </div>  
 
 
-            <h1>ADMIN  <?php echo $_SESSION['username'];?></h1>
+            <h1>EMPLOYEE <?php echo $_SESSION['username'];?></h1>
 
-            
-            <div class="line" style="width: 550px;"></div> 
-            <div class="line" style="width: 550px; margin-top: 10px;"></div>
-
-                
-
-            
                 <span>
                     
                 <form action="../php-landing/logout.php" method="POST">
@@ -142,9 +135,10 @@
                 
                     </div>  
 
-                    <input type="submit" value="SAVE CHANGES">
+                    <input type="submit" class="saveChanges-btn" value="SAVE CHANGES">
                     <br>
-                    <input type="submit" value="Delete">
+                    <input type="submit" class="deleteAccount-btn" value="Delete Account">
+
 
                 </form>
                     
