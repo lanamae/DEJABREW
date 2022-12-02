@@ -117,7 +117,7 @@
 
                     <div class="form-container">
                         <label for="email">Email</label>
-                        <input type="text" class="input" name="updateEmail" id="updateEmail" value="<?php  echo $_SESSION['email']; ?>"/>
+                        <input type="text" class="input" name="updateEmail" id="updateEmail" value="<?php  echo $_SESSION['email'] ?>"/>
                         <label for="updateEmail" class="edit">Edit</label>
                     </div>  
                 
