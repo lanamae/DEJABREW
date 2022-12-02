@@ -175,14 +175,14 @@
 
                 <!-- HIDEN DATE -->
                 <!-- <label for="date" class="label">Date</label><br> -->
-                <input type="hidden" name="date_login" id="date_login" value="<?php echo $date_login; ?>">
+                <input type="text" name="date_login" id="date_login" value="<?php echo $date_login; ?>">
                
-               <input type="hidden" name="login_time" id="login_time" value="<?php echo $login_time; ?>">
+               <input type="text" name="login_time" id="login_time" value="<?php echo $login_time; ?>">
               
              
-                <input type="hidden" name="date_logout" id="date_logout" value="<?php echo $date_logout; ?>">
+                <input type="text" name="date_logout" id="date_logout" value="<?php echo $date_logout; ?>">
                
-               <input type="hidden" name="logout_time" id="logout_time" value="<?php echo $logout_time; ?>">
+               <input type="text" name="logout_time" id="logout_time" value="<?php echo $logout_time; ?>">
               
                 <input type="submit" name="login" class="login-btn" value="LOGIN">
 
