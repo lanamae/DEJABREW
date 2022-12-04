@@ -137,19 +137,19 @@
                 <br><br>
 
                 <label for="username" class="label">Username</label><br>
-                <input type="text" name="username" id="username" class="username input" placeholder="Enter your Username">
+                <input type="text" name="username" id="username" class="username input" placeholder="Enter your Username" required>
                 <br><br>
 
                 <label for="email" class="label">Email</label><br>
-                <input type="email" name="email" id="email" class="email input" placeholder="Enter your Email">
+                <input type="email" name="email" id="email" class="email input" placeholder="Enter your Email" required>
                 <br><br>
 
                 <label for="password" class="label">Password</label><br>
-                <input type="password" name="password" id="password" class="password input" placeholder="Enter your Password">
+                <input type="password" name="password" id="password" class="password input" placeholder="Enter your Password" required>
                 <br><br>
 
                 <label for="password2" class="label">Confirm Password</label><br>
-                <input type="password" name="password2" id="password2" class="password2 input" placeholder="Confirm Password">
+                <input type="password" name="password2" id="password2" class="password2 input" placeholder="Confirm Password" required>
                 <br><br>
 
                 <input type="submit" name="signup" class="create-btn" value="CREATE ACCOUNT">

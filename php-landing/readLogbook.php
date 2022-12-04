@@ -17,7 +17,7 @@
     $logData = mysqli_fetch_array($sqlLog);
 
         
-        $_SESSION['logId']  = $logData['id'];
+        $_SESSION['logId']  = $logData['id'];   
 
 
         
@@ -30,6 +30,20 @@
         $_SESSION['logout_time']= $logData['logout_time'];
 
 
+
+        
+        
+        // echo $_SESSION['logId']  ;
+
+
+        
+        // echo $_SESSION['logPosition'];
+        // echo $_SESSION['logUsername'];
+
+        // echo $_SESSION['date_login'] ;
+        // echo $_SESSION['login_time'] ;
+        // echo $_SESSION['date_logout'] ;
+        // echo $_SESSION['logout_time'];
 
     
 

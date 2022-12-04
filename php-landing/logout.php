@@ -7,20 +7,37 @@
 
     $idHello = $_SESSION['logId']; 
 
+    date_default_timezone_set('Asia/Manila');  
+    $current_timezone = date_default_timezone_get();
+    //    echo $current_timezone . "<br>";
 
+    $hours = date("h");
+    $minutes = date("i");
+    $seconds = date("s");
+    $setHour =  date("A");
+
+    $_SESSION['date'] = date("M-d-Y");
+    $_SESSION['time'] = $hours . ":". $minutes . ":" .$seconds .$setHour;
+    
+    $date_logout = $_SESSION['date'];
+    $logout_time = $_SESSION['time']; 
+
+
+
+    // echo $idHello;
     // echo $date_logout;
     // echo $logout_time;
 
     if(isset($_POST['logout'])){
-        $updateDate_logout = $_POST['Updatedate_logout'];
-        $updateLogout_time = $_POST['Updatelogout_time'];
+        // $updateDate_logout = $_POST['Updatedate_logout'];
+        // $updateLogout_time = $_POST['Updatelogout_time'];
 
         // echo $updateDate_logout;
         // echo $updateLogout_time;
         // echo $idHello;
 
         
-        $queryLogout = "UPDATE log_details SET date_logout = '$updateDate_logout', logout_time = '$updateLogout_time' WHERE id = '$idHello'";
+        $queryLogout = "UPDATE log_details SET date_logout = '$date_logout', logout_time = '$logout_time' WHERE id = '$idHello'";
         $sqlLogout = mysqli_query($connLog, $queryLogout);
 
         

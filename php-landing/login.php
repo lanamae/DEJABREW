@@ -95,19 +95,21 @@
                 if($_SESSION['position'] == 'employee'){
                     // echo "<script>alert('Hello testing employee')</script>";
                     echo "<script>window.location.href='../php-employee/employee-home.php'</script>";
-                
+                    echo "<script>alert('SUCCESSFULLY LOG ACCOUNT')</script>";
 
                                 
                     $getDateLogin = trim($_POST['date_login']);
                     $getLoginTime = trim($_POST['login_time']);
                     $getDateLogout = trim($_POST['date_logout']);
-                    $getLogoutTime = trim($_POST['logout_date']);
+                    $getLogoutTime = trim($_POST['logout_time']);
                     
                     $queryLogbook = "INSERT INTO log_details VALUES(null, '$position', '$username', '$getDateLogin', '$getLoginTime', '$getDateLogout', '$getLogoutTime' )";
                     $sqlLog = mysqli_query($connLog, $queryLogbook);
 
                     echo "<script>alert('SUCCESSFULLY LOG ACCOUNT')</script>";
 
+                    $_SESSION['datelogin'] = $getDateLogin;
+                    $_SESSION['timelogin'] = $getLoginTime;
 
                   
                   
@@ -166,23 +168,23 @@
                 <br><br>
 
                 <label for="username" class="label">Username</label><br>
-                <input type="text" name="username" id="username" class="username input" placeholder="Enter your Username">
+                <input type="text" name="username" id="username" class="username input" placeholder="Enter your Username" required>
                 <br><br>
 
                 <label for="password" class="label">Password</label><br>
-                <input type="password" name="password" id="password" class="password input" placeholder="Enter your Password">
+                <input type="password" name="password" id="password" class="password input" placeholder="Enter your Password" required>
                 <br><br>
 
                 <!-- HIDEN DATE -->
                 <!-- <label for="date" class="label">Date</label><br> -->
-                <input type="text" name="date_login" id="date_login" value="<?php echo $date_login; ?>">
+                <input type="hidden" name="date_login" id="date_login" value="<?php echo $date_login; ?>">
                
-               <input type="text" name="login_time" id="login_time" value="<?php echo $login_time; ?>">
+               <input type="hidden" name="login_time" id="login_time" value="<?php echo $login_time; ?>">
               
              
-                <input type="text" name="date_logout" id="date_logout" value="<?php echo $date_logout; ?>">
+                <input type="hidden" name="date_logout" id="date_logout" value="<?php echo 'still logged in'; ?>">
                
-               <input type="text" name="logout_time" id="logout_time" value="<?php echo $logout_time; ?>">
+               <input type="hidden" name="logout_time" id="logout_time" value="<?php echo 'still logged in'; ?>">
               
                 <input type="submit" name="login" class="login-btn" value="LOGIN">
 

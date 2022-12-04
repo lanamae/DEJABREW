@@ -1,26 +1,12 @@
 <?php
     require "../php-landing/session.php";
-    // session_start();
+    require "../php-landing/date_and_time.php";
+    require '../php-landing/logbook.php';
+    require '../php-landing/database.php';
+    require '../php-landing/read.php';
+    require '../php-landing/readLogbook.php';
 
-    
-    // // echo 'SESSION:' .$_SESSION['status'] .'<br>';
-    // // echo 'USERNAME:' .$_SESSION['username'];
-    
-    // if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
-    //     $_SESSION['status'] = 'invalid';
-
-    //     // echo 'invalid session';
-    //     // echo "<script>window.location.href='../php-admin/admin-home.php'</script>";
-        
-    //     unset($_SESSION['position']);
-    //     unset($_SESSION['username']);
-    //     unset($_SESSION['email']);
-    //     unset($_SESSION['password']);
-    
-    //     echo "<script>window.location.href='../php-landing/landing.php'</script>";
-                
-       
-    // }
+    echo $_SESSION['logId'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,15 +55,15 @@
 
                     <!-- <br>
                     LOG DETAILS <br> -->
-                    <input type="hidden" name="logid"  value="<?php echo $_SESSION['logId']; ?>">
+                    <input type="text" name="logid"  value="<?php echo $_SESSION['logId']; ?>">
                 <br>     <br>     
-                    <input type="hidden" name="date_logout"  value="<?php echo $_SESSION['logPosition']; ?>">
+                    <input type="text" name="date_logout"  value="<?php echo $_SESSION['logPosition']; ?>">
                 <br><br>     
-                    <input type="hidden" name="logUsername"  value="<?php echo $_SESSION['logUsername']; ?>">
+                    <input type="text" name="logUsername"  value="<?php echo $_SESSION['logUsername']; ?>">
                 <br>     <br>     
-                    <input type="hidden" name="Updatedate_logout"  value="<?php echo $_SESSION['date']; ?>">
+                    <input type="text" name="Updatedate_logout"  value="<?php echo $_SESSION['date']; ?>">
                 <br><br>     
-                    <input type="hidden" name="Updatelogout_time"  value="<?php echo $_SESSION['time']; ?>">
+                    <input type="text" name="Updatelogout_time"  value="<?php echo $_SESSION['time']; ?>">
                 
                     <br><br>
                 </form></span>
