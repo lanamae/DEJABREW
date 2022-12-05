@@ -1,26 +1,8 @@
 <?php
-    // if(isset($_POST['update-product'])){
-    //     $updateId = trim($_POST['updateId']);
-    //     $update_Image =  basename( $_FILES["update_Image"]["name"]);
-    //     // $update_uploadProduct  = trim($_POST['$update_uploadProduct']);
-    //     $update_productName  = trim($_POST['$update_productName']);
-    //     $update_productPrice  = trim($_POST['$update_productPrice']);
-    //     $update_productCategory = trim($_POST['$update_productCategory']);
-
-
-    //     if(empty($update_Image) || empty($update_productName) || empty($update_productPrice) || empty($update_productCategory) ){
-    //         echo "<script>alert('Please fill up all fields')</script>";
-    //     }
-
-    //     else{
-    //         $query_updateProduct = "UPDATE tb_product SET productImage = '$update_uploadProduct', productName = '$update_productName', Price = '$update_productPrice', Category = '$update_productCategory' WHERE id = '$updateId'";
-    //         $sqlUpdateProducts = mysqli_query($connProducts, $query_updateProduct);
+    require "../menu-database/menu-database.php";
     
-    //         echo "<script>window.location.href='../php-admin/admin-menu.php'";
-    //     }
-      
-    // }
 
+    
     // folder for image
     $target_dir = "uploads/"; 
 
@@ -35,7 +17,6 @@
     
     // Check if image file is a actual image or fake image
     if(isset($_POST["update"])) {
-
 
         // check file if image
       $check = getimagesize($_FILES["update_Image"]["tmp_name"]);
@@ -77,36 +58,28 @@
     }
     
     else {
+      
       if (move_uploaded_file($_FILES["update_Image"]["tmp_name"], $target_file)) {
         echo "The file ". htmlspecialchars( basename( $_FILES["update_Image"]["name"])). " has been uploaded.";
 
-        
-        $updateId = trim($_POST['updateId']);
-        $update_Image =  basename( $_FILES["update_Image"]["name"]);
-        
-        
-        $update_productName  = $_POST['$update_productName'];
-        $update_productPrice  = $_POST['$update_productPrice'];
-        $update_productCategory = $_POST['$update_productCategory'];
+        $update_Image = basename( $_FILES["update_Image"]["name"]);
+        $update_productName = $_POST['update_productName'];
+        $update_productPrice = $_POST['update_productPrice'];
+        $update_productCategory = $_POST['update_productCategory'];
+        $updateId = $_POST['updateId'];
 
+        $query_updateProduct = "UPDATE tb_product SET productImage = '$update_Image', productName = '$update_productName', Price = '$update_productPrice', Category = '$update_productCategory' WHERE id = '$updateId'";
+        $sqlUpdateProducts = mysqli_query($connProducts, $query_updateProduct);
 
-        // echo $update_productName;
-        if(empty($update_productName) || empty($update_productPrice) || empty($update_productCategory) ){
-            echo "<script>alert('Please fill up all fields')</script>";
-        }
-
-        else{
-            $query_updateProduct = "UPDATE tb_product SET productImage = '$update_Image', productName = '$update_productName', Price = '$update_productPrice', Category = '$update_productCategory' WHERE id = '$updateId'";
-            $sqlUpdateProducts = mysqli_query($connProducts, $query_updateProduct);
+        echo "<script>window.location.href='../php-admin/admin-menu.php'";
     
-            echo "<script>window.location.href='../php-admin/admin-menu.php'";
-        }
+      } 
       
-      }
-      
-      else {        
+      else {
         echo "Sorry, there was an error uploading your file.";
       }
     }
 
+
+   
 ?>

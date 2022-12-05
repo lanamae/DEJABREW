@@ -167,7 +167,7 @@
                         <img src="<?php echo $pic?>" alt="productImage" class="product-img">
                         <h4 class="product-amount"><?php echo "Php " . $results['Price'] ?></h4>
                           
-                        <form action="../php-admin/admin-update-menu.php" method="POST">
+                        <form action="../php-admin/admin-update-menu.php" method="POST" enctype="multipart/form-data">
                             
                             <input type="hidden" name="product-id" value="<?php echo $results['id'] ?>">
                             <input type="hidden" name="product-name" value="<?php echo $results['productName'] ?>">
