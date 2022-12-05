@@ -6,7 +6,11 @@
     width: 100%;
     height: auto;
     background: $color3;
-
+    background: linear-gradient(to top, rgba(0,0,0,0.8)40%,rgba(0,0,0,0.8)6%), url('../PROJECT/Images/img1.jpg');
+    // background-image: url('../PROJECT/Images/img1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     .hero-section{
         width: 100%;
@@ -126,6 +130,7 @@
     width: 100%;
     height: auto;
     background: $color3;
+    
 
     color: #fff;
 
@@ -1200,7 +1205,7 @@
                     align-items: center;
                     box-shadow: 4px 4px 4px rgba($color: #fff, $alpha: 0.20), inset 4px 4px 4px rgba($color: #000, $alpha: 0.20);
                     border-radius: 7px;
-    
+                    // border: 1px solid $color7;
     
                     label{
                         font-weight: 500;

@@ -12,7 +12,10 @@
 .main {
   width: 100%;
   height: auto;
-  background: #333333;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.8) 6%), url("../PROJECT/Images/img1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .main .hero-section {
   width: 100%;
@@ -481,6 +484,10 @@
   width: 100%;
   height: auto;
   background: #333333;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.8) 6%), url("../PROJECT/Images/img1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .main-adminHome .hero-section {
   width: 100%;

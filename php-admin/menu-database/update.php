@@ -36,6 +36,7 @@
     // Check if image file is a actual image or fake image
     if(isset($_POST["update"])) {
 
+
         // check file if image
       $check = getimagesize($_FILES["update_Image"]["tmp_name"]);
 
@@ -82,12 +83,14 @@
         
         $updateId = trim($_POST['updateId']);
         $update_Image =  basename( $_FILES["update_Image"]["name"]);
+        
+        
         $update_productName  = $_POST['$update_productName'];
         $update_productPrice  = $_POST['$update_productPrice'];
         $update_productCategory = $_POST['$update_productCategory'];
 
 
-        echo $update_productName;
+        // echo $update_productName;
         if(empty($update_productName) || empty($update_productPrice) || empty($update_productCategory) ){
             echo "<script>alert('Please fill up all fields')</script>";
         }
@@ -99,9 +102,9 @@
             echo "<script>window.location.href='../php-admin/admin-menu.php'";
         }
       
-    }
+      }
       
-      else {
+      else {        
         echo "Sorry, there was an error uploading your file.";
       }
     }

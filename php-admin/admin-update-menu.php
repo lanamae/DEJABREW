@@ -44,9 +44,7 @@
                     <h2>UPDATE </h2>
                     
                 </div>
-                
-
-            
+        
                 <div class="modal-body">
                     <form action="../php-admin/menu-database/update.php" method="POST" enctype="multipart/form-data">
                         

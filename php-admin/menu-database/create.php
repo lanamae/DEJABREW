@@ -58,6 +58,7 @@
     }
     
     else {
+      
       if (move_uploaded_file($_FILES["uploadProduct"]["tmp_name"], $target_file)) {
         echo "The file ". htmlspecialchars( basename( $_FILES["uploadProduct"]["name"])). " has been uploaded.";
 
