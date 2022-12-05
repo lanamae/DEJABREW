@@ -2,83 +2,80 @@
     require "../menu-database/menu-database.php";
     
 
-    if(isset($_POST['create-product'])){
-        // $image = trim($_POST['uploadProduct']);
-        $productName = trim($_POST['productName']);
-        $productPrice = trim($_POST['productPrice']);
-        $productCategory = trim($_POST['productCategory']);
+    
+    // folder for image
+    $target_dir = "uploads/"; 
 
-        if($_FILES['uploadProduct']['error'] == 4){
-            echo "<script>alert('FILE DOES NOT EXISTS!')</script>";
-        }
+    // image name
+    $target_file = $target_dir . basename($_FILES["uploadProduct"]["name"]);
 
-        else{
-            $fileName = $_FILES['uploadProduct']['name'];
-            $fileSize = $_FILES['uploadProduct']['size'];
-            $tmpName = $_FILES['uploadProduct']['tmp_name'];
+    // error if 0, no error if 1
+    $uploadOk = 1;
 
-            $validExtensions = ['jpg', 'jpeg', 'png'];
-            $imgExtension = explode('.', $fileName);
-            $imgExtension  = strtolower(end( $validExtensions));
+    // image extension
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    
+    // Check if image file is a actual image or fake image
+    if(isset($_POST["create-product"])) {
 
-            if(!in_array($imgExtension, $validExtensions)){
-                echo "<script>alert('FILE DOES NOT EXISTS! Image File Extension is Invalid. ')</script>";
-            }
+        // check file if image
+      $check = getimagesize($_FILES["uploadProduct"]["tmp_name"]);
 
-            // FUNCTION FOR CONVERTING BYTES INTO KB
+      if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+      } 
+      
+      else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+      }
+    }
+    
+    // Check if file already exists
+    if (file_exists($target_file)) {
+      echo "Sorry, file already exists.";
+      $uploadOk = 0;
+    }
+    
+    // Check file size
+    if ($_FILES["uploadProduct"]["size"] > 5000000) {
+      echo "Sorry, your file is too large.";
+      $uploadOk = 0;
+    }
+    
+    // Allow certain file formats
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+    && $imageFileType != "gif" ) {
+      echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+      $uploadOk = 0;
+    }
+    
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+      echo "Sorry, your file was not uploaded.";
+    // if everything is ok, try to upload file
+    }
+    
+    else {
+      if (move_uploaded_file($_FILES["uploadProduct"]["tmp_name"], $target_file)) {
+        echo "The file ". htmlspecialchars( basename( $_FILES["uploadProduct"]["name"])). " has been uploaded.";
 
-            // function get_size($size){
-            //     $kb_size = $size / 1024;
-            //     $format_size  = number_format($kb_size,2);
-            //     return $format_size;
-            // }
+        $productImage = basename( $_FILES["uploadProduct"]["name"]);
+        $productName = $_POST['productName'];
+        $productPrice = $_POST['productPrice'];
+        $productCategory = $_POST['productCategory'];
 
-            // $size = get_size($_FILES['uploadProduct']['size']);
+        $queryProducts = "INSERT INTO tb_product VALUES(null, '$productImage', '$productName', '$productPrice', '$productCategory')";
+        $sqlProduct = mysqli_query($connProducts, $queryProducts);
 
-            else if($fileSize > 1000000){
-                echo "<script>alert('FILE IS TOO LARGE ')</script>";
-            }
-
-            else{
-
-                // $newImageName = uniqid();
-                // $newImageName .= '.' . $imgExtension;
-
-                $path = "uploads/" . $_POST['folder'];
-
-
-                if(!file_exists($path)){
-                    mkdir($path, 0777, true);
-
-                }
-
-                if($tmpName != ""){
-                    $newFilePath = $path . "/" . $fileName;
-
-
-                    if(move_uploaded_file($tmpName, $newFilePath)){
-                        
-                        $queryProduct = "INSERT INTO tb_product VALUES(null, '$newImageName', '$productName', '$productPrice', '$productCategory')";
-                        $sqlProduct = mysqli_query($connProducts, $queryProduct);
-
-                        echo "<script>alert('SUCCESSFULLY ADDED')</script>";
-                        echo "<script>window.location.href='../admin-menu.php'</script>";
-                    }
-
-                    else{
-                        echo "error";
-                    }
-                }
-
-
-
-
-                // move_uploaded_file($tmpName, 'img/' . $newImageName);
-
-                
-            }
-        }
-
+        echo "new record in database";
+        echo "<script>window.location.href='../admin-menu.php'</script>";
+      } 
+      
+      else {
+        echo "Sorry, there was an error uploading your file.";
+      }
     }
 
 

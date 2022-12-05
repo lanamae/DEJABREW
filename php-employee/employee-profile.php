@@ -55,15 +55,15 @@
 
                     <!-- <br>
                     LOG DETAILS <br> -->
-                    <input type="text" name="logid"  value="<?php echo $_SESSION['logId']; ?>">
+                    <input type="hidden" name="logid"  value="<?php echo $_SESSION['logId']; ?>">
                 <br>     <br>     
-                    <input type="text" name="date_logout"  value="<?php echo $_SESSION['logPosition']; ?>">
+                    <input type="hidden" name="date_logout"  value="<?php echo $_SESSION['logPosition']; ?>">
                 <br><br>     
-                    <input type="text" name="logUsername"  value="<?php echo $_SESSION['logUsername']; ?>">
+                    <input type="hidden" name="logUsername"  value="<?php echo $_SESSION['logUsername']; ?>">
                 <br>     <br>     
-                    <input type="text" name="Updatedate_logout"  value="<?php echo $_SESSION['date']; ?>">
+                    <input type="hidden" name="Updatedate_logout"  value="<?php echo $_SESSION['date']; ?>">
                 <br><br>     
-                    <input type="text" name="Updatelogout_time"  value="<?php echo $_SESSION['time']; ?>">
+                    <input type="hidden" name="Updatelogout_time"  value="<?php echo $_SESSION['time']; ?>">
                 
                     <br><br>
                 </form></span>

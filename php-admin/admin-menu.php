@@ -15,11 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEJA BREW - ADMIN MENU</title>
-
-    
-    
     <link rel="shortcut icon" href="../PROJECT/Images/dejabrew-logo.png" type="image/x-icon">
-   
     <link rel="stylesheet" href="../css/style.css">
     
     
@@ -67,8 +63,7 @@
                 </ul>
         </div>
 
-
-
+<!-- ---------------------------------------------------------------- -->
         <!-- NAVBAR -->
         <div class="navbar">
                 <ul>
@@ -127,7 +122,7 @@
          
             <div class="modal-body">
                <form action="../php-admin/menu-database/create.php" method="POST" enctype="multipart/form-data">
-                    <img src="<?php echo $results['image'] ?>" alt="" class="productImg">
+                       
                     <input type="file" name="uploadProduct" id="uploadProduct" class="uploadProduct" value="UPLOAD PRODUCT IMAGE"> <br>
 
                     <label for="productName">Product Name : </label>
@@ -148,51 +143,10 @@
             </div>
         </div>
 
-        <!-- ---------------------------------------------------------------------------- -->
-        <!-- MODAL UPDATE PRODUCT -->
-        <div class="modalUpdate-container">
-            <div class="modal-header">
-                <h2>EDIT </h2>
-                <div class="modal-close" onclick="closeModal()">&times;</div>
-            </div>
-            
-
-         
-            <div class="modal-body">
-               <form action="../php-admin/menu-database/create.php" method="POST" enctype="multipart/form-data">
-                    <img src="<?php echo $results['image'] ?>" alt="" class="productImg">
-                    <input type="file" name="uploadProduct" id="uploadProduct" class="uploadProduct" value="UPLOAD PRODUCT IMAGE"> <br>
-
-                    <label for="productName">Product Name : </label>
-                    <input type="text" name="productName" id="productName" placeholder="Enter Product Name"> <br>
-
-                    <label for="productPrice">Product Amount:</label>
-                    <input type="number" name="productPrice" id="productPrice" placeholder="Enter Product Price"> <br>
-                    
-
-                    <label for="productCategory">Product Category:</label>  
-                    <input type="text" name="productCategory" id="productCategory" placeholder="Enter Product Category"> <br>
-                    
-                    <!-- folder for images -->
-                    <input type="hidden" name="folder" value="Product-Images">
-                    
-                    <input type="submit" name="create-product" value="CREATE" class="create-btn">
-                 </form>
-            </div>
-        </div>
-        
-        <!-- ------------------------------------------------------------------------------------------------ -->
+       <!-- ------------------------------------------------------------------------------------------------ -->
         <!-- VOUCHER MODAL -->
         <div class="voucher">
-
         </div>
-
-
-
-
-
-
-
         <!-- ---------------------------------------------------------------------------------- -->
             <!-- MENU -->
         <div class="product-container">
@@ -204,15 +158,22 @@
 
                 <div class="product">
 
-                   
-
-                        <h3 class="product-name"><?php echo $results['productName'] ?></h3  >
-                        <img src="../PROJECT/Images/<?php echo $results['productName'] . ".png" ?>" alt="" class="product-img">
+                            <?php  $pic = '../php-admin/menu-database/uploads/' .$results['productImage'];
+                            $_SESSION['pic'] = $pic;
+                            ?>
+                            
+                    
+                        <h3 class="product-name"><?php echo $results['productName'] ?> </h3>                       
+                        <img src="<?php echo $pic?>" alt="productImage" class="product-img">
                         <h4 class="product-amount"><?php echo "Php " . $results['Price'] ?></h4>
-
-
-                        <form action="">
-                            <input type="submit" value="UPDATE" class="prodUpdate-btn">
+                          
+                        <form action="../php-admin/admin-update-menu.php" method="POST">
+                            
+                            <input type="hidden" name="product-id" value="<?php echo $results['id'] ?>">
+                            <input type="hidden" name="product-name" value="<?php echo $results['productName'] ?>">
+                            <input type="hidden" name="product-price" value="<?php echo $results['Price'] ?>">
+                            <input type="hidden" name="product-category" value="<?php echo $results['Category'] ?>">
+                            <input type="submit" name="edit" value="UPDATE" class="prodUpdate-btn">
                         </form>
 
                         <form action="../php-admin/menu-database/delete.php" method="POST">
