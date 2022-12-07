@@ -2,7 +2,9 @@
     require "../php-landing/session.php";
     require "../php-landing/date_and_time.php";
     require "../php-landing/read.php";
-    // require "../php-landing/read.php";
+    require '../php-landing/logbook.php';
+    require '../php-landing/database.php';
+    require '../php-landing/readLogbook.php';
 
 
     // echo $_SESSION['username'];
@@ -31,43 +33,13 @@
     
 </head>
 <body>
-   <div class="main-adminHome">   
+<div class="adminHome">  
     
-        <!-- head section -->
-        <div class="hero-section">
-            <!-- NAVBAR -->
-            <div class="navbar">
-                    <img src="../PROJECT/Images/dejabrew-logo.png" class="logo" alt="dejabrew logo">
-                    
-                    <ul>
-                        <li style=" border-bottom: #fff 5px solid;"><a href="admin-home.php"><img src="../PROJECT/Images/home-icon.png" alt="home icon"style="width: 30px; height: 30px"></a></li>
-                        <li><a href="admin-menu.php"><img src="../PROJECT/Images/menu-icon.png" alt="menu icon"style="width: 30px; height: 30px"></a></li>
-                        <li><a href="admin-sales.php"><img src="../PROJECT/Images/sales-icon.png" alt="sales icon" style="width: 30px; height: 30px"></a></li>
-                        <li><a href="admin-employee.php"><img src="../PROJECT/Images/emp-icon.png" alt="employee icon" style="width: 30px; height: 30px"></a></li>
-                        <li><a href="admin-profile.php"><img src="../PROJECT/Images/prof-icon.png" alt="profile icon" style="width: 30px; height: 30px"></a></li>
-
-                        <!-- <li>
-                            <form action="admin-profile.php" method="post">
-                                <input type="submit" value="PROFILE" /></li>
-                            </form>
-                            
-                         -->
-                    
-                    </ul>
-                
-            </div>
-
-
-
-
-           
-
-            <!-- HEADING -->
-
-            <div class="header">
-                <div class="line" style="width: 950px;"></div> 
-                <h1>
-                    
+    <!-- SIDEBAR -->
+   <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="../PROJECT/Images/dejabrew-logo.png" alt="" class="logo">
+            <p> 
                 <?php
                     if($setHour == "AM"){
                         echo  "Good Morning, ";
@@ -81,32 +53,69 @@
                         echo  "Good Evening,";
                     }
 
-                   
-                   
-
-                ?>
                 
-                Admin <?php echo $_SESSION['username'];?> </h1>
-                <h2>Check How Today’s Deja Brew’s Sale</h2>
+                
+
+                ?>        
+                Admin <?php echo $_SESSION['username'];?> 
+            </p>
+
+           
+        </div>
         
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non aliquam, at <br>
-                duis ac. Vel eleifend iaculis sit aliquet urna vehicula malesuada interdum pharetra.</p>
 
-                <div class="line" style="width:750px;margin-left: 415px;"></div>
-            </div>
+        <ul>
+            <li><img src="../PROJECT/Images/home-icon.png" alt=""><a href="admin-home.php">Dashboard</a></li>
+            <li><img src="../PROJECT/Images/menu-icon.png" alt=""><a href="admin-menu.php">Menu</a></li>
+            <li><img src="../PROJECT/Images/sales-icon.png" alt=""><a href="admin-sales.php">Sales</a></li>
+            <li><img src="../PROJECT/Images/emp-icon.png" alt=""><a href="admin-employee.php">Employee</a></li>
+            <li><img src="../PROJECT/Images/prof-icon.png" alt=""><a href="admin-profile.php">Profile</a></li>
+        </ul>
 
-           <hr>
+        
+        <form action="../php-landing/logout.php" method="POST">
+                    <input type="submit" name="logout" value="LOGOUT" class="logout"> 
+
+
+            <!-- <br>
+            LOG DETAILS <br> -->
+                    <input type="hidden" name="logid"  value="<?php echo $_SESSION['logId']; ?>">
+                <br>     <br>     
+                    <input type="hidden" name="date_logout"  value="<?php echo $_SESSION['logPosition']; ?>">
+                <br><br>     
+                    <input type="hidden" name="logUsername"  value="<?php echo $_SESSION['logUsername']; ?>">
+                <br>     <br>     
+                    <input type="hidden" name="Updatedate_logout"  value="<?php echo $date_logout; ?>">
+                <br><br>     
+                    <input type="hidden" name="Updatelogout_time"  value="<?php echo $logout_time; ?>">
+                
+                    <br><br>
+        </form></span>     
+        
+
+
+
+   </div>
+
+
+
+   <!-- main content -->
+   <div class="main">
+        <div class="sec1">
+
         </div>
- <!-- admin instructions -->
-        <div class="admin-ins">
-            <div class="instruction1"></div>
-            <div class="instruction2"></div>
-            <div class="instruction3"></div>
+
+        <div class="sec1">
+            
         </div>
+   </div>
+      
+   
 
-
-        <!-- FOOTER -->
-        <div class="footer">
+   
+</div>  
+ <!-- FOOTER -->
+ <div class="footer">
             <img src="../PROJECT/Images/dejabrew-logo.png" class="logo" alt="dejabrew logo">
                   
             <div class="footer-details" style="display:flex;">
@@ -136,7 +145,7 @@
                 
             </div>
 
-        </div>
-    </div>    
+
 </body>
 </html> 
+

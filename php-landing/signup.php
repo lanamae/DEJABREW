@@ -85,7 +85,7 @@
             }
 
             else{
-                echo "Details not found!";
+                echo "Unavailable to create account!";
                 $_SESSION['status'] = 'invalid';
             }
         }

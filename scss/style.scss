@@ -17,6 +17,7 @@ $color4 : #5A5A5A;
 $color5 : #9C9C9C;
 $color6 : #DADADA;
 $color7 : #FFFFFF;
+$blue : #008AD8;
 
 $font1: 'Arimo', sans-serif;
 
@@ -67,10 +68,11 @@ $font2: 'Playfair Display', serif;
 }
 
 .footer{
-    width: 100%;
+    // width: 100%;
     height: 220px;
     background: $color3;
     padding: 30px 80px;
+    padding-left: 500px;
     border-top: 2px $color5 solid;
     color: $color5;
     font-size: 18px;

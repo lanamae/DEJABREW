@@ -552,7 +552,7 @@
   width: 70%;
   height: 50px;
   color: #FFFFFF;
-  background: #5A5A5A;
+  background: #008AD8;
   border-style: none;
   border-radius: 10px;
   font-family: "Arimo", sans-serif;
@@ -576,71 +576,105 @@
   font-weight: bold;
 }
 
-.main-adminHome {
+.adminHome {
   width: 100%;
   height: auto;
-  background: #333333;
+  padding: 30px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.8) 6%), url("../PROJECT/Images/img1.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 1fr;
+  gap: 20px;
 }
-.main-adminHome .hero-section {
-  width: 100%;
-  height: 100vh;
+.adminHome .sidebar {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 300px;
+  height: 90vh;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
+  position: fixed;
+  border-radius: 10px;
+  padding: 30px;
 }
-.main-adminHome .hero-section .navbar {
-  width: 100%;
-  height: 75px;
-  background: #1F1F1F;
-  padding: 0px 100px;
+.adminHome .sidebar .sidebar-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: inset 0px -6px 6px rgba(239, 239, 239, 0.25);
+  border-bottom: 1px solid #FFFFFF;
+  padding-bottom: 20px;
 }
-.main-adminHome .hero-section .navbar .logo {
-  margin-top: 150px;
+.adminHome .sidebar .sidebar-header .logo {
+  width: 80px;
+  height: 80px;
 }
-.main-adminHome .hero-section .navbar ul li {
-  display: inline-block;
-  padding: 10px 10px;
+.adminHome .sidebar .sidebar-header p {
+  font-size: 18px;
+  font-family: "Playfair Display", serif;
+  margin-left: 20px;
+  color: #FFFFFF;
 }
-.main-adminHome .hero-section .header {
-  width: 100%;
-  height: auto;
-  text-align: right;
-  padding: 100px 100px 120px 100px;
-}
-.main-adminHome .hero-section .header .line {
-  width: 600px;
-  height: 5px;
-  background: #ffffff;
-  margin-left: 210px;
+.adminHome .sidebar ul {
   margin-top: 20px;
 }
-.main-adminHome .hero-section .header h1 {
-  font-family: "Playfair Display", serif;
-  color: #FFFFFF;
-  font-size: 55px;
-  padding-top: 20px;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+.adminHome .sidebar ul li {
+  list-style: none;
+  padding: 10px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition: 0.4s ease-in;
 }
-.main-adminHome .hero-section .header h2 {
-  font-family: "Playfair Display", serif;
-  color: #DADADA;
-  font-size: 35px;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+.adminHome .sidebar ul li img {
+  margin-right: 20px;
 }
-.main-adminHome .hero-section .header p {
+.adminHome .sidebar ul li a {
+  text-decoration: none;
   font-family: "Arimo", sans-serif;
   color: #FFFFFF;
+  letter-spacing: 2px;
   font-size: 18px;
-  font-weight: 100;
-  margin: 100px 0px 50px 0px;
 }
-.main-adminHome .admin-ins {
-  width: 100px;
+.adminHome .sidebar ul li:hover {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  margin-top: 5px;
+}
+.adminHome .sidebar .logout {
+  width: 200px;
+  height: 30px;
+  border-radius: 7px;
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  background: #5A5A5A;
+  margin: 150px 0px 0px 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
+  border: 0.5px solid red;
+}
+.adminHome .sidebar .logout:hover {
+  background: #1F1F1F;
+  color: red;
+  font-weight: bold;
+  box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.2), inset 4px 4px 4px rgba(0, 0, 0, 0.2);
+}
+.adminHome .main {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  border: 1px solid #FFFFFF;
+}
+.adminHome .main .sec1 {
+  width: 100%;
   height: 100vh;
 }
 
@@ -2042,10 +2076,10 @@
 }
 
 .footer {
-  width: 100%;
   height: 220px;
   background: #333333;
   padding: 30px 80px;
+  padding-left: 500px;
   border-top: 2px #9C9C9C solid;
   color: #9C9C9C;
   font-size: 18px;

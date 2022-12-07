@@ -1,129 +1,139 @@
 @import url('style.scss');
+@mixin glassBg {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border:  1px solid rgba(255,255,255,0.18);
+    box-shadow: 0px 8px 32px rgba(0,0,0,0.37);
+}
 
 // ------------------------------------------------------------------------------------
 // ADMIN HOME
-.main-adminHome{    
+.adminHome{    
     width: 100%;
     height: auto;
-    background: $color3;
+    padding: 30px;
+    
     background: linear-gradient(to top, rgba(0,0,0,0.8)40%,rgba(0,0,0,0.8)6%), url('../PROJECT/Images/img1.jpg');
-    // background-image: url('../PROJECT/Images/img1.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 
-    .hero-section{
-        width: 100%;
-        height: 100vh;
-        // background-image: url('../PROJECT/Images/background3.png');
-        // background-position: center;
-        // background-size: cover;
-        // background-repeat: no-repeat;
-        // background: rgba($color: #000, $alpha: 0.20);
 
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
 
-        .navbar{
-            width: 100%;
-            height: 75px;
-            background: $color2;
-            padding: 0px 100px;
-
+    // sidebar
+    .sidebar{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        width: 300px;
+        height: 90vh;
+        @include glassBg();
+        position: fixed;
+        border-radius: 10px;
+        padding: 30px;
+        
+        .sidebar-header{
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: inset 0px -6px 6px rgba($color: #EFEFEF, $alpha: 0.25);
-
+            border-bottom: 1px solid $color7;
+            padding-bottom: 20px;
 
             .logo{
-                margin-top: 150px;
+                width: 80px;
+                height: 80px;
             }
-            ul li{
-                display: inline-block;
-                padding: 10px 10px;
 
+            p{
+                font-size: 18px;
+                font-family: $font2;
+                margin-left: 20px;
+                color: $color7;
+            }
+        }
 
+        ul{
+            margin-top: 20px;
+
+            li{
+                list-style: none;
+                padding: 10px;
+                margin-top: 5px;  
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                transition: 0.4s ease-in;
+
+                img{
+                    margin-right: 20px;
+                }
+                a{
+                    text-decoration: none;
+                    font-family: $font1;
+                    color: $color7;
+                    letter-spacing: 2px;
+                    font-size: 18px;
+    
+                }
+
+                &:hover{
+                    background: rgba($color: $color1, $alpha: 0.40);
+                    border-radius: 10px;
+                    margin-top: 5px;  
+                }
+                
             }
         }
 
         
+        .logout{
+                width: 200px;
+                height: 30px;
+                border-radius: 7px;
+                color: red;
+                font-weight: bold;
+                font-size: 15px;
+                cursor: pointer;
+                
+                background: $color4;
+                margin: 150px 0px 0px 20px;
+                @include glassBg();
+                border: 0.5px solid red;
+    
+    
+                &:hover{
+                    background: $color2;
+                    color: red;
+                    font-weight: bold;
+                    box-shadow: 4px 4px 4px rgba($color: #fff, $alpha: 0.20), inset 4px 4px 4px rgba($color: #000, $alpha: 0.20);
+    
+                }
+    
+            }
+
+    
+
+       
+        
+    }
 
 
+    .main{
+        grid-column: 2/3;
+        grid-row: 1/2;
+        border: 1px solid $color7;
 
-
-        .header{
+        .sec1{
             width: 100%;
-            height: auto;
-            text-align: right;
-            padding: 100px 100px 120px 100px;
-
-            .line{
-                width: 600px; 
-                height: 5px; 
-                background: #ffffff;  
-                margin-left: 210px;
-                margin-top: 20px;
-            }
-
-            h1{
-                font-family: $font2;
-                color: $color7;
-                font-size: 55px;
-                padding-top: 20px;
-                text-shadow: 0px 4px 4px rgba($color: #000000, $alpha: 0.25)
-            
-            }
-
-            h2{
-                font-family: $font2;
-                color: $color6;
-                font-size: 35px;
-                text-shadow: 0px 4px 4px rgba($color: #000000, $alpha: 0.25)
-            }
-
-            p{
-                font-family: $font1;
-                color: $color7;
-                font-size: 18px;
-                font-weight: 100;
-                margin: 100px 0px 50px 0px;
-            }
-            
+            height: 100vh;
         }
-       
-
     }
-
-    .admin-ins{
-        width: 100px;
-        height: 100vh;
-    }
-
-
     
 
 
-    // .home-section{
-    //     width: 100%;
-    //     height: 100vh;
     
-    //     .header{
-    //         width: 100%;
-    //         display: flex;
-    //         flex-direction: column;
-    //         text-align: right;
-    //         margin-top: 80px;
-    //         padding: 0px 100px;
-            
-    //        
-    //     }
-       
-    //     .admin-ins{
-    //         width: 100px;
-    //         height: 100vh;
-            
-    //     }
-    // }
-
 
    
 }
