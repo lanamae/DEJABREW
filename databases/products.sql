@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2022 at 01:44 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Dec 07, 2022 at 09:04 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,38 +29,22 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tb_product` (
   `id` int(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
+  `productImage` varchar(255) NOT NULL,
   `productName` varchar(255) NOT NULL,
-  `Price` decimal(7,2) NOT NULL,
+  `Price` varchar(255) NOT NULL,
   `Category` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_product`
 --
 
-INSERT INTO `tb_product` (`id`, `image`, `productName`, `Price`, `Category`) VALUES
-(1, '', 'Sample Product Name', '80.00', 'Iced Coffee'),
-(2, '', 'Product Name', '80.00', 'Sample Category'),
-(3, '', 'Sample Product Name', '80.00', 'Iced Coffee'),
-(4, '', 'Sample Product Name', '80.00', 'Iced Coffee'),
-(5, '636ccf8760c97.', 'Sample Product Name', '80.00', 'Iced Coffee'),
-(6, '636ccf8c68b45.', 'Product Name', '80.00', 'Sample Category'),
-(7, '636ccfa88058c.png', 'Sample Product Name', '80.00', 'Iced Coffee'),
-(8, '636ccfba0f254.png', 'Sample Product Name', '80.00', 'Iced Coffee'),
-(9, '636cd04f0cc98.png', 'Sample Product Name', '80.00', 'Iced Coffee'),
-(10, '636cd05a5073d.png', 'Sample Product Name', '80.00', 'Iced Coffee'),
-(11, '636cd0648d3c4.png', 'Sample Product Name', '80.00', 'Iced Coffee'),
-(12, '636cd072a0f0a.png', 'Sample Product Name', '80.00', 'Iced Coffee'),
-(13, '636d09d5053ac.png', 'Sample Product Name 2', '99.99', 'Iced Coffee'),
-(14, '636d0a5b63ede.png', 'Sample Product Name 3', '150.00', 'Iced Coffee'),
-(15, '636d0a7794c6a.png', 'Sample Product Name', '100.00', 'Iced Coffee'),
-(16, '636d0b774c3bb.png', 'Product Name', '80.00', 'Sample Category'),
-(17, '636dd3e0a2006.png', 'Banana', '140.00', 'Iced Coffee'),
-(18, '', 'Iced Coffee', '90.00', 'Iced Coffee'),
-(19, '', 'Almond Tea Latte', '80.00', 'Sample Category'),
-(20, '', 'Bana Berry Yogurt Smoothie', '110.00', 'Sample Category'),
-(21, '', 'Bana Berry Yogurt Smoothie', '67.00', 'coffee');
+INSERT INTO `tb_product` (`id`, `productImage`, `productName`, `Price`, `Category`) VALUES
+(18, 'Bana Berry Yogurt Smoothie.png', 'Banana Berry Yogurt Smoothie', '90', 'Iced Coffee'),
+(19, 'Almond Tea Latte.png', 'Almond Tea Latte', '80', 'Iced Coffee'),
+(20, 'img7.jpg', 'agdshgda', '233', 'coffee '),
+(21, 'html5-logo-png-transparent-5.png', 'Sample Product Name 4 ', '899', 'fruits '),
+(22, '1590430652red-youtube-logo-png-xl.png', 'Sample Product Name ', '89', 'Non-Coffee ');
 
 --
 -- Indexes for dumped tables
@@ -80,7 +64,7 @@ ALTER TABLE `tb_product`
 -- AUTO_INCREMENT for table `tb_product`
 --
 ALTER TABLE `tb_product`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,9 +1,11 @@
 <?php
+error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);    
+
     require '../php-landing/database.php';
     require '../php-landing/date_and_time.php';
     require '../php-landing/logbook.php';
 
-
+    
 
     // echo $_SESSION['date'];
 
@@ -36,7 +38,8 @@
         $password = trim($_POST['password']);
 
         if(empty($position) || empty($username) || empty($password)){
-            echo "Fill up all fields!";
+            echo "<h4 style='background:red; width: 300px; height: 200px; border-radius: 20px; text-align: center; position: absolute; top: 200px; left: 550px; z-index: 10;padding: 20px; font-size: 30px;'>Fill up all fields!<br><br><br> <button style='width: 200px; height: 40px; background: #9C9C9C; border-radius: 20px; cursor: pointer;'><a href='login.php' style='text-decoration:none; color: #000;'>BACK</button></h2>";
+                
         }
 
         else{
@@ -121,7 +124,8 @@
             }
 
             else{
-                echo "Details not found!";
+                echo "<h4 style='background:red; width: 300px; height: 200px; border-radius: 20px; text-align: center; position: absolute; top: 200px; left: 550px; z-index: 10;padding: 20px; font-size: 30px;'>Details not found!<br><br><br> <button style='width: 200px; height: 40px; background: #9C9C9C; border-radius: 20px; cursor: pointer;'><a href='login.php' style='text-decoration:none; color: #000;'>BACK</button></h2>";
+                
                 $_SESSION['status'] = 'invalid';
                 
             }
