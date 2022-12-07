@@ -93,9 +93,8 @@ session_start();
         <!--INSTRUCTIONS  -->
         <div class="instructions">
             <h1>INSTRUCTIONS</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Non aliquam, at duis ac. Vel eleifend iaculis sit aliquet
-                 urna vehicula malesuada interdum pharetra.</p>
+            <p>To make a perfect blend, make sure to follow all the instructions before<br> 
+                proceeding to our world of coffee and sweets, BREWmates!</p>
 
             <div class="box-container">
 
@@ -103,36 +102,31 @@ session_start();
                  <div class="ins1">
                     <div class="num">1</div>
                     <img src="../PROJECT/Images/ins-1.png" class="icon"></img>
-                    <div class="content">Lorem ipsum dolor sit amet,
-                         consectetur adipiscing elit.
-                          Non aliquam, at duis ac. Vel 
-                          eleifend iaculis sit aliquet 
-                          urna vehicula malesuada 
-                          interdum pharetra.</div>
+                    <div class="content">To log-in, you need to make
+                         sure that you already have an
+                          account that is already existing.
+                           If not, proceed to sign-up for a new account..</div>
                  </div>
 
                   <!-- instruction # 2 -->
                   <div class="ins2">
                     <div class="num">2</div>
                     <img src="../PROJECT/Images/ins-2.png" class="icon"></img>
-                    <div class="content">Lorem ipsum dolor sit amet,
-                         consectetur adipiscing elit.
-                          Non aliquam, at duis ac. Vel 
-                          eleifend iaculis sit aliquet 
-                          urna vehicula malesuada 
-                          interdum pharetra.</div>
+                    <div class="content">For signing-in, make sure
+                         to identify if you’re the admin
+                          or the employee before filling 
+                          up all the necessary requirements
+                           for creating a new account.</div>
                  </div>
 
                   <!-- instruction # 3 -->
                   <div class="ins3">
                     <div class="num">3</div>
                     <img src="../PROJECT/Images/ins-3.png" class="icon"></img>
-                    <div class="content">Lorem ipsum dolor sit amet,
-                         consectetur adipiscing elit.
-                          Non aliquam, at duis ac. Vel 
-                          eleifend iaculis sit aliquet 
-                          urna vehicula malesuada 
-                          interdum pharetra.</div>
+                    <div class="content">
+                    Alert sign will pop up if you’ve
+                     failed to give the required
+                      details for creating an account. </div>
                  </div>
                  
             </div>

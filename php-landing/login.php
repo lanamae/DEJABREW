@@ -157,11 +157,11 @@
                     <div class="radio-container">
                         <!-- admin radio -->
                     <input type="radio" name="position" id="admin" class="admin" value="admin">
-                    <label for="admin" class="admintxt"> <img src="../PROJECT/Images/admin-icon.png" alt="admin-icon">ADMIN</label>
+                    <label for="admin" class="admintxt"> <img src="../PROJECT/Images/admin-icon.png" alt="admin-icon" class="admin-icon">ADMIN</label>
 
                     <!-- employee radio -->
                     <input type="radio" name="position" id="employee" class="employee" value="employee">
-                    <label for="employee" class="emptxt"><img src="../PROJECT/Images/employee-icon.png" alt="admin-icon">EMPLOYEE</label>
+                    <label for="employee" class="emptxt"><img src="../PROJECT/Images/Male User.png" alt="employee-icon" class="employee-icon" >EMPLOYEE</label>
 
                     </div>
             

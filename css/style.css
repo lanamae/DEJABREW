@@ -24,11 +24,11 @@
 .main .hero-section .navbar {
   width: 100%;
   height: 75px;
-  background: #1F1F1F;
   padding: 0px 100px;
-  box-shadow: inset 0px -6px 6px rgba(239, 239, 239, 0.25);
 }
 .main .hero-section .navbar .logo {
+  width: 120px;
+  height: 120px;
   margin-top: 38px;
 }
 .main .hero-section .hero-container {
@@ -77,29 +77,40 @@
 }
 .main .hero-section .hero-container .hero-content .buttons .signup {
   width: 200px;
-  height: 40px;
-  background: #DADADA;
-  color: #5A5A5A;
-  border-style: none;
+  height: 60px;
+  padding: 20px 40px;
+  background: none;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
   border-radius: 10px;
   font-family: "Arimo", sans-serif;
   font-weight: 800;
   font-size: 18px;
+  font-weight: bold;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
+.main .hero-section .hero-container .hero-content .buttons .signup:hover {
+  background-color: #DADADA;
+  color: #000000;
+}
 .main .hero-section .hero-container .hero-content .buttons .login {
   width: 200px;
-  height: 40px;
+  height: 60px;
+  padding: 20px 40px;
   margin-left: 50px;
-  background: #1F1F1F;
-  color: #FFFFFF;
-  border-style: none;
+  background: #FFFFFF;
+  color: #000000;
   border-radius: 10px;
   font-family: "Arimo", sans-serif;
   font-size: 18px;
+  font-weight: bold;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+}
+.main .hero-section .hero-container .hero-content .buttons .login:hover {
+  background-color: #333333;
+  color: #FFFFFF;
 }
 .main .instructions {
   width: 100%;
@@ -138,12 +149,13 @@
   height: 400px;
   background: #000000;
   border-radius: 20px;
-  box-shadow: inset 6px 6px 6px rgba(218, 218, 218, 0.8);
+  box-shadow: inset 3px 3px 3px rgba(218, 218, 218, 0.8);
   padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .main .instructions .box-container .ins1 .num {
   width: 50px;
@@ -156,16 +168,17 @@
   border-radius: 50%;
   text-align: center;
   box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
-  margin: -100px 0px 0px 0px;
+  position: absolute;
+  top: -20px;
 }
 .main .instructions .box-container .ins1 .icon {
-  margin: 50px 0px 30px;
+  margin-bottom: 30px;
 }
 .main .instructions .box-container .ins1 .content {
   text-align: center;
   color: #FFFFFF;
   font-family: "Arimo", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
 }
 .main .instructions .box-container .ins2 {
   grid-column: 2/3;
@@ -174,12 +187,13 @@
   height: 400px;
   background: #000000;
   border-radius: 20px;
-  box-shadow: inset 6px 6px 6px rgba(218, 218, 218, 0.8);
+  box-shadow: inset 3px 3px 3px rgba(218, 218, 218, 0.8);
   padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .main .instructions .box-container .ins2 .num {
   width: 50px;
@@ -192,16 +206,17 @@
   border-radius: 50%;
   text-align: center;
   box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
-  margin: -100px 0px 0px 0px;
+  position: absolute;
+  top: -20px;
 }
 .main .instructions .box-container .ins2 .icon {
-  margin: 50px 0px 30px;
+  margin: -20px 0px 30px 0px;
 }
 .main .instructions .box-container .ins2 .content {
   text-align: center;
   color: #FFFFFF;
   font-family: "Arimo", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
 }
 .main .instructions .box-container .ins3 {
   grid-column: 3/4;
@@ -210,12 +225,13 @@
   height: 400px;
   background: #000000;
   border-radius: 20px;
-  box-shadow: inset 6px 6px 6px rgba(218, 218, 218, 0.8);
+  box-shadow: inset 3px 3px 3px rgba(218, 218, 218, 0.8);
   padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .main .instructions .box-container .ins3 .num {
   width: 50px;
@@ -228,16 +244,17 @@
   border-radius: 50%;
   text-align: center;
   box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
-  margin: -100px 0px 0px 0px;
+  position: absolute;
+  top: -20px;
 }
 .main .instructions .box-container .ins3 .icon {
-  margin: 50px 0px 30px;
+  margin: -50px 0px 30px 0px;
 }
 .main .instructions .box-container .ins3 .content {
   text-align: center;
   color: #FFFFFF;
   font-family: "Arimo", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .main-signup {
@@ -247,7 +264,7 @@
 .main-signup .background {
   width: 100%;
   height: 100vh;
-  background-image: url("../PROJECT/Images/bg-signup-login1.png");
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.8) 6%), url("../PROJECT/Images/img1.jpg");
 }
 .main-signup .signup-modal {
   width: 100%;
@@ -258,7 +275,11 @@
 .main-signup .signup-modal .signup-container {
   width: 500px;
   height: 600px;
-  background-color: #1F1F1F;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
   border-radius: 20px;
   padding: 20px;
   margin-left: 350px;
@@ -290,16 +311,31 @@
   margin-right: 20px;
   text-align: center;
   border-radius: 10px;
+  font-weight: bold;
+  background: none;
+  width: 500px;
+  height: 30px;
+  text-align: center;
+  padding: 5px 20px;
+  padding-left: 50px;
+  position: relative;
+  cursor: pointer;
+}
+.main-signup .signup-modal .signup-container form .radio-container .admintxt .admin-icon {
+  margin-right: 10px;
+  position: absolute;
+  left: 50px;
 }
 .main-signup .signup-modal .signup-container form .radio-container .admin {
   visibility: hidden;
 }
 .main-signup .signup-modal .signup-container form .radio-container .admin:checked ~ .admintxt {
-  background: #DADADA;
-  width: 150px;
+  background: #9C9C9C;
+  width: 500px;
   height: 30px;
   text-align: center;
-  padding: 3px;
+  padding: 5px 20px;
+  padding-left: 50px;
 }
 .main-signup .signup-modal .signup-container form .radio-container .employee {
   visibility: hidden;
@@ -308,15 +344,30 @@
   color: #1F1F1F;
   font-family: "Arimo", sans-serif;
   font-size: 18px;
-  margin-right: 20px;
   text-align: center;
   border-radius: 10px;
-}
-.main-signup .signup-modal .signup-container form .radio-container .employee:checked ~ .emptxt {
-  background: #DADADA;
-  width: 150px;
+  font-weight: bold;
+  background: none;
+  width: 500px;
   height: 30px;
   text-align: center;
+  padding: 5px 18px;
+  padding-left: 40px;
+  position: relative;
+  cursor: pointer;
+}
+.main-signup .signup-modal .signup-container form .radio-container .emptxt .employee-icon {
+  margin-right: 10px;
+  position: absolute;
+  left: 20px;
+}
+.main-signup .signup-modal .signup-container form .radio-container .employee:checked ~ .emptxt {
+  background: #9C9C9C;
+  width: 500px;
+  height: 30px;
+  text-align: center;
+  padding: 5px 18px;
+  padding-left: 40px;
 }
 .main-signup .signup-modal .signup-container form .label {
   font-family: "Arimo", sans-serif;
@@ -329,8 +380,14 @@
   height: 35px;
   border-style: none;
   border-radius: 5px;
+  color: #FFFFFF;
   padding: 10px;
   margin-bottom: 10px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
 }
 .main-signup .signup-modal .signup-container form .create-btn {
   width: 70%;
@@ -367,7 +424,7 @@
 .main-login .background {
   width: 100%;
   height: 100vh;
-  background-image: url("../PROJECT/Images/bg-signup-login1.png");
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.8) 6%), url("../PROJECT/Images/img1.jpg");
 }
 .main-login .login-modal {
   width: 100%;
@@ -378,7 +435,11 @@
 .main-login .login-modal .login-container {
   width: 500px;
   height: 600px;
-  background-color: #1F1F1F;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
   border-radius: 20px;
   padding: 20px;
   margin-left: 350px;
@@ -410,16 +471,31 @@
   margin-right: 20px;
   text-align: center;
   border-radius: 10px;
+  font-weight: bold;
+  background: none;
+  width: 500px;
+  height: 30px;
+  text-align: center;
+  padding: 5px 20px;
+  padding-left: 50px;
+  position: relative;
+  cursor: pointer;
+}
+.main-login .login-modal .login-container form .radio-container .admintxt .admin-icon {
+  margin-right: 10px;
+  position: absolute;
+  left: 50px;
 }
 .main-login .login-modal .login-container form .radio-container .admin {
   visibility: hidden;
 }
 .main-login .login-modal .login-container form .radio-container .admin:checked ~ .admintxt {
-  background: #DADADA;
-  width: 150px;
+  background: #9C9C9C;
+  width: 500px;
   height: 30px;
   text-align: center;
-  padding: 3px;
+  padding: 5px 20px;
+  padding-left: 50px;
 }
 .main-login .login-modal .login-container form .radio-container .employee {
   visibility: hidden;
@@ -428,29 +504,49 @@
   color: #1F1F1F;
   font-family: "Arimo", sans-serif;
   font-size: 18px;
-  margin-right: 20px;
   text-align: center;
   border-radius: 10px;
-}
-.main-login .login-modal .login-container form .radio-container .employee:checked ~ .emptxt {
-  background: #DADADA;
-  width: 150px;
+  font-weight: bold;
+  background: none;
+  width: 500px;
   height: 30px;
   text-align: center;
+  padding: 5px 18px;
+  padding-left: 40px;
+  position: relative;
+  cursor: pointer;
+}
+.main-login .login-modal .login-container form .radio-container .emptxt .employee-icon {
+  margin-right: 10px;
+  position: absolute;
+  left: 20px;
+}
+.main-login .login-modal .login-container form .radio-container .employee:checked ~ .emptxt {
+  background: #9C9C9C;
+  width: 500px;
+  height: 30px;
+  text-align: center;
+  padding: 5px 18px;
+  padding-left: 40px;
 }
 .main-login .login-modal .login-container form .label {
   font-family: "Arimo", sans-serif;
   color: #FFFFFF;
-  font-size: 15px;
-  margin-bottom: 10px;
+  font-size: 18px;
 }
 .main-login .login-modal .login-container form .input {
   width: 100%;
   height: 35px;
   border-style: none;
   border-radius: 5px;
+  color: #FFFFFF;
   padding: 10px;
-  margin-bottom: 10px;
+  margin: 10px 0px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
 }
 .main-login .login-modal .login-container form .login-btn {
   width: 70%;

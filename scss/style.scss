@@ -29,6 +29,16 @@ $font2: 'Playfair Display', serif;
 @import '_admin.scss';
 @import '_employee.scss';
 
+
+// MIXINS
+@mixin glassBg {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border:  1px solid rgba(255,255,255,0.18);
+    box-shadow: 0px 8px 32px rgba(0,0,0,0.37);
+}
+
 .pop-message{
     width: 300px;
     height: 200px;

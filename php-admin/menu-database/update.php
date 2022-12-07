@@ -54,6 +54,7 @@
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
       echo "Sorry, your file was not uploaded.";
+      
     // if everything is ok, try to upload file
     }
     
@@ -71,8 +72,7 @@
         $query_updateProduct = "UPDATE tb_product SET productImage = '$update_Image', productName = '$update_productName', Price = '$update_productPrice', Category = '$update_productCategory' WHERE id = '$updateId'";
         $sqlUpdateProducts = mysqli_query($connProducts, $query_updateProduct);
 
-        echo "<script>window.location.href='../php-admin/admin-menu.php'";
-    
+        echo "<script>window.location.href='../admin-menu.php'</script>";
       } 
       
       else {

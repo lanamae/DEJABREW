@@ -1,4 +1,13 @@
 @import url('style.scss');
+// MIXINS
+@mixin glassBg {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border:  1px solid rgba(255,255,255,0.18);
+    box-shadow: 0px 8px 32px rgba(0,0,0,0.37);
+}
+
 
 .main-login{
     width: 100%;
@@ -7,7 +16,8 @@
     .background{
         width: 100%;
         height: 100vh;
-        background-image: url("../PROJECT/Images/bg-signup-login1.png");
+        background: linear-gradient(to top, rgba(0,0,0,0.8)40%,rgba(0,0,0,0.8)6%), url('../PROJECT/Images/img1.jpg');
+   
     }
 
     .login-modal{
@@ -19,7 +29,7 @@
         .login-container{
             width: 500px;
             height: 600px;
-            background-color: $color2;
+            @include glassBg();
             border-radius: 20px;
             padding: 20px;
             margin-left: 350px;
@@ -30,6 +40,7 @@
                 h2{
                     color: $color7;
                     font-size: 40px;
+                    
                     text-align: center;
                     font-weight: lighter;
                 }
@@ -54,9 +65,22 @@
                         margin-right: 20px;
                         text-align: center;
                         border-radius: 10px;
-
-
+                        font-weight: bold;
+                        background: none;
+                        width: 500px;
+                        height: 30px;
+                        text-align: center;
+                        padding: 5px 20px;
+                        padding-left: 50px;
+                        position: relative;
+                        cursor: pointer;
+                        
                        
+                        .admin-icon{ 
+                            margin-right: 10px;
+                            position: absolute;
+                            left: 50px;
+                        }
                        
                     }
 
@@ -64,16 +88,23 @@
                         visibility: hidden;
                     }
                     
+                    
+
                     .admin:checked ~.admintxt{
-                        background: $color6;
-                        width: 150px;
+                        background: $color5;
+                        width: 500px;
                         height: 30px;
                         text-align: center;
-                        padding: 3px;
+                        padding: 5px 20px;
+                        padding-left: 50px;;
+
                     }
                     
 
+
+
                     .employee{
+                        // margin-left: 100px;
                         visibility: hidden;
                     }
 
@@ -81,18 +112,34 @@
                         color: $color2;
                         font-family: $font1;
                         font-size: 18px;
-                        margin-right: 20px;
+                        // margin-right: 20px;
                         text-align: center;
                         border-radius: 10px;
-
+                        font-weight: bold;
+                        background: none;
+                        width: 500px;
+                        height: 30px;
+                        text-align: center;
+                        padding: 5px 18px;
+                        padding-left: 40px;
+                        position: relative;
+                        cursor: pointer;
+                   
+                        .employee-icon{
+                            margin-right: 10px;
+                            position: absolute;
+                            left: 20px;
+                        }
                         
                     }
 
                     .employee:checked ~.emptxt{
-                        background: $color6;
-                        width: 150px;
+                        background: $color5;
+                        width: 500px;
                         height: 30px;
                         text-align: center;
+                        padding: 5px 18px;
+                        padding-left: 40px;
                     }
                 }
 
@@ -101,8 +148,9 @@
                 .label{
                     font-family: $font1;
                     color: $color7;
-                    font-size: 15px;
-                    margin-bottom: 10px;
+                    font-size: 18px;
+                    
+                    
 
 
                 }
@@ -112,8 +160,10 @@
                     height:35px;
                     border-style: none;
                     border-radius: 5px;
+                    color: $color7;
                     padding: 10px;
-                    margin-bottom: 10px;
+                    margin: 10px 0px;
+                    @include glassBg();
                 }
 
                 .login-btn{

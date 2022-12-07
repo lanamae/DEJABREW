@@ -32,6 +32,7 @@
 </head>
 <body>
    <div class="main-adminHome">   
+    
         <!-- head section -->
         <div class="hero-section">
             <!-- NAVBAR -->
@@ -55,6 +56,11 @@
                     </ul>
                 
             </div>
+
+
+
+
+           
 
             <!-- HEADING -->
 

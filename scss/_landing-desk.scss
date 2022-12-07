@@ -20,11 +20,13 @@
         .navbar{
             width: 100%;
             height: 75px;
-            background: $color2;
             padding: 0px 100px ;
-            box-shadow: inset 0px -6px 6px rgba($color: #EFEFEF, $alpha: 0.25);
+            // background: $color2;
+            // box-shadow: inset 0px -6px 6px rgba($color: #EFEFEF, $alpha: 0.25);
 
             .logo{
+                width: 120px;
+                height: 120px;
                 margin-top: 38px;
             }
         }
@@ -83,30 +85,45 @@
 
                     .signup{
                         width: 200px;
-                        height: 40px;
-                        background: $color6;
-                        color: $color4;
-                        border-style: none;
+                        height: 60px;
+                        padding: 20px 40px;
+                        background: none;
+                        color: $color7;
+                        border: 1px solid $color7;
                         border-radius: 10px;
                         font-family: $font1;
                         font-weight: 800;
                         font-size: 18px;
+                        font-weight: bold;
                         box-shadow: 0px 4px 4px rgba($color: #000000, $alpha: 0.25);
                         cursor: pointer;
+
+                        &:hover{
+                            background-color: $color6;
+                            color: $color1;
+                        }
+                        
                     }
 
                     .login{
                         width: 200px;
-                        height: 40px;
+                        height: 60px;
+                        padding: 20px 40px;
                         margin-left: 50px;
-                        background: $color2;
-                        color: $color7;
-                        border-style: none;
+                        background: $color7;
+                        color: $color1;
+                        // border: 1px solid $color7;
                         border-radius: 10px;
                         font-family: $font1;
                         font-size: 18px;
+                        font-weight: bold;
                         box-shadow: 0px 4px 4px rgba($color: #000000, $alpha: 0.25);
                         cursor: pointer;
+
+                        &:hover{
+                            background-color: $color3;
+                            color: $color7;
+                        }
                     }
 
                 }
@@ -148,6 +165,7 @@
             grid-template-rows: 1fr;
             margin-top: 50px;
             padding: 0px 50px;
+        
 
 
             .ins1{
@@ -158,13 +176,14 @@
                 height: 400px;
                 background: $color1;
                 border-radius: 20px;
-                box-shadow: inset 6px 6px 6px rgba($color: $color6, $alpha: 0.8);
+                box-shadow: inset 3px 3px 3px rgba($color: $color6, $alpha: 0.8);
                 padding: 30px;
 
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                position: relative;
 
                 .num{
                     width: 50px;
@@ -177,18 +196,19 @@
                     border-radius: 50%;
                     text-align: center;
                     box-shadow: inset 4px 4px 4px rgba($color: #000000, $alpha: 0.25);
-                    margin: -100px 0px 0px 0px;
+                    position: absolute;
+                    top: -20px;
                 }
 
                 .icon{
-                    margin: 50px 0px 30px;
+                    margin-bottom:30px;
                 }
 
                 .content{
                     text-align: center;
                     color: $color7;
                     font-family: $font1;
-                    font-size: 18px;
+                    font-size: 16px;
                 }
             }
             .ins2{
@@ -199,14 +219,14 @@
                 height: 400px;
                 background: $color1;
                 border-radius: 20px;
-                box-shadow: inset 6px 6px 6px rgba($color: $color6, $alpha: 0.8);
+                box-shadow: inset 3px 3px 3px rgba($color: $color6, $alpha: 0.8);
                 padding: 30px;
 
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-
+                position: relative;
                 .num{
                     width: 50px;
                     height: 50px;
@@ -218,18 +238,19 @@
                     border-radius: 50%;
                     text-align: center;
                     box-shadow: inset 4px 4px 4px rgba($color: #000000, $alpha: 0.25);
-                    margin: -100px 0px 0px 0px;
+                    position: absolute;
+                    top: -20px;
                 }
 
                 .icon{
-                    margin: 50px 0px 30px;
+                    margin: -20px 0px 30px 0px;
                 }
 
                 .content{
                     text-align: center;
                     color: $color7;
                     font-family: $font1;
-                    font-size: 18px;
+                    font-size: 16px;
                 }
             }
 
@@ -241,14 +262,14 @@
                 height: 400px;
                 background: $color1;
                 border-radius: 20px;
-                box-shadow: inset 6px 6px 6px rgba($color: $color6, $alpha: 0.8);
+                box-shadow: inset 3px 3px 3px rgba($color: $color6, $alpha: 0.8);
                 padding: 30px;
 
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-
+                position: relative;
                 .num{
                     width: 50px;
                     height: 50px;
@@ -260,18 +281,20 @@
                     border-radius: 50%;
                     text-align: center;
                     box-shadow: inset 4px 4px 4px rgba($color: #000000, $alpha: 0.25);
-                    margin: -100px 0px 0px 0px;
+                    // margin: -150px 0px 0px 0px;
+                    position: absolute;
+                    top: -20px;
                 }
 
                 .icon{
-                    margin: 50px 0px 30px;
+                    margin: -50px 0px 30px 0px;
                 }
 
                 .content{
                     text-align: center;
                     color: $color7;
                     font-family: $font1;
-                    font-size: 18px;
+                    font-size: 16px;
                 }
             }
         }
