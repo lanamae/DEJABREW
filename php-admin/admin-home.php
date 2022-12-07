@@ -39,33 +39,16 @@
    <div class="sidebar">
         <div class="sidebar-header">
             <img src="../PROJECT/Images/dejabrew-logo.png" alt="" class="logo">
-            <p> 
-                <?php
-                    if($setHour == "AM"){
-                        echo  "Good Morning, ";
-                    }
-
-                    else if($hours<6 && $setHour == "PM"){
-                        echo  "Good Afternoon,";
-                    }
-
-                    else if($hours>=6 && $setHour == "PM" ){
-                        echo  "Good Evening,";
-                    }
-
-                
-                
-
-                ?>        
-                Admin <?php echo $_SESSION['username'];?> 
-            </p>
+           
 
            
         </div>
         
 
         <ul>
-            <li><img src="../PROJECT/Images/home-icon.png" alt=""><a href="admin-home.php">Dashboard</a></li>
+            <li style="background: #000000;
+                    border-radius: 10px;
+                    margin-top: 5px; "><img src="../PROJECT/Images/home-icon.png" alt=""><a href="admin-home.php">Dashboard</a></li>
             <li><img src="../PROJECT/Images/menu-icon.png" alt=""><a href="admin-menu.php">Menu</a></li>
             <li><img src="../PROJECT/Images/sales-icon.png" alt=""><a href="admin-sales.php">Sales</a></li>
             <li><img src="../PROJECT/Images/emp-icon.png" alt=""><a href="admin-employee.php">Employee</a></li>
@@ -103,60 +86,45 @@
    <div class="main">
         <!-- contents -->
         <div class="dashboard">
-                <!-- <div class="calendar">
-                    <div class="calendar__picture">
-                        <h2>18, Sunday</h2>
-                        <h3>November</h3>
-                    </div>
-                    <div class="calendar__date">
-                        <div class="calendar__day">M</div>
-                        <div class="calendar__day">T</div>
-                        <div class="calendar__day">W</div>
-                        <div class="calendar__day">T</div>
-                        <div class="calendar__day">F</div>
-                        <div class="calendar__day">S</div>
-                        <div class="calendar__day">S</div>
-                        <div class="calendar__number"></div>
-                        <div class="calendar__number"></div>
-                        <div class="calendar__number"></div>
-                        <div class="calendar__number">1</div>
-                        <div class="calendar__number">2</div>
-                        <div class="calendar__number">3</div>
-                        <div class="calendar__number">4</div>
-                        <div class="calendar__number">5</div>
-                        <div class="calendar__number">6</div>
-                        <div class="calendar__number">7</div>
-                        <div class="calendar__number">8</div>
-                        <div class="calendar__number">9</div>
-                        <div class="calendar__number">10</div>
-                        <div class="calendar__number">11</div>
-                        <div class="calendar__number">12</div>
-                        <div class="calendar__number">13</div>
-                        <div class="calendar__number">14</div>
-                        <div class="calendar__number">15</div>
-                        <div class="calendar__number">16</div>
-                        <div class="calendar__number">17</div>
-                        <div class="calendar__number calendar__number--current">18</div>
-                        <div class="calendar__number">19</div>
-                        <div class="calendar__number">20</div>
-                        <div class="calendar__number">21</div>
-                        <div class="calendar__number">22</div>
-                        <div class="calendar__number">23</div>
-                        <div class="calendar__number">24</div>
-                        <div class="calendar__number">25</div>
-                        <div class="calendar__number">26</div>
-                        <div class="calendar__number">27</div>
-                        <div class="calendar__number">28</div>
-                        <div class="calendar__number">29</div>
-                        <div class="calendar__number">30</div>
-                    </div>
-                </div> -->
+            <div class="header">
+                <div class="date"><?php echo $_SESSION['date'] ?></div>
+                <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
 
-
-
-            <div class="time">
-
+                <div class="profile"></div>
             </div>
+
+            <p class="greetings"> 
+                <?php
+                    if($setHour == "AM"){
+                        echo  "Good Morning, ";
+                    }
+
+                    else if($hours<6 && $setHour == "PM"){
+                        echo  "Good Afternoon,";
+                    }
+
+                    else if($hours>=6 && $setHour == "PM" ){
+                        echo  "Good Evening,";
+                    }
+
+                
+                
+
+                ?>        
+                Admin <?php echo $_SESSION['username'];?> 
+            </p>
+
+            <div class="content">
+                <div class="total-sales">Top sales</div>
+                <div class="total-order">Total order</div>
+                <div class="total-working-hours"> Total Working Hpurs</div>
+
+                <div class="product-carousel"></div>
+                
+
+                <div class="graph"></div>
+            </div>
+            
         </div>
 
 
@@ -206,5 +174,7 @@
 
 
 </body>
+
+<script src="../javascript/date-time.js"></script>
 </html> 
 
