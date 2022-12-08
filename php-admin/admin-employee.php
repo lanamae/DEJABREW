@@ -1,6 +1,6 @@
 <?php
     require '../php-landing/database.php';
-
+    require "../php-landing/date_and_time.php";
     // session_start();
 
     // echo $_SESSION['username'];
@@ -33,48 +33,65 @@
     
 </head>
 <body>
-    <div class="main-adminEmployee">
+<div class="adminEmployee">
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="../PROJECT/Images/dejabrew-logo.png" alt="" class="logo">
+           
 
-        <!-- EMPLOYEE HEADER -->
-        <div class="employee">
+           
+        </div>
+        
 
-            <div class="navbar">
-                    
-                    <ul>
-                        <li><a href="admin-home.php"><img src="../PROJECT/Images/home-icon.png" alt="home icon"style="width: 30px; height: 30px"></a></li>
-                        <li><a href="admin-menu.php"><img src="../PROJECT/Images/menu-icon.png" alt="menu icon"style="width: 30px; height: 30px"></a></li>
-                        <li><a href="admin-sales.php"><img src="../PROJECT/Images/sales-icon.png" alt="sales icon" style="width: 30px; height: 30px"></a></li>
-                        <li  style=" border-bottom: #fff 5px solid;"><a href="admin-employee.php"><img src="../PROJECT/Images/emp-icon.png" alt="employee icon" style="width: 30px; height: 30px"></a></li>
-                        <li><a href="admin-profile.php"><img src="../PROJECT/Images/prof-icon.png" alt="profile icon" style="width: 30px; height: 30px"></a></li>
+        <ul>
+            <li><img src="../PROJECT/Images/home-icon.png" alt=""><a href="admin-home.php">Dashboard</a></li>
+            <li><img src="../PROJECT/Images/menu-icon.png" alt=""><a href="admin-menu.php">Menu</a></li>
+            <li><img src="../PROJECT/Images/sales-icon.png" alt=""><a href="admin-sales.php">Sales</a></li>
+            <li style="background: #000000;
+                    border-radius: 10px;
+                    margin-top: 5px; "><img src="../PROJECT/Images/emp-icon.png" alt=""><a href="admin-employee.php">Employee</a></li>
+            <li><img src="../PROJECT/Images/prof-icon.png" alt=""><a href="admin-profile.php">Profile</a></li>
+        </ul>
 
-                        <!-- <li>
-                            <form action="admin-profile.php" method="post">
-                                <input type="submit" value="PROFILE" /></li>
-                            </form>
-                            
-                         -->
-                    
-                    </ul>
-                
+        
+        <form action="../php-landing/logout.php" method="POST">
+                    <input type="submit" name="logout" value="LOGOUT" class="logout"> 
+
+        </form>    
+        
+
+
+
+    </div>
+
+    <div class="main">
+        <div class="header">
+            
+            <!-- <div class="search-bar">
+                <form action="#" method="POST">
+                    <input type="text" name="search" class="search-txt">
+                    <button type="submit" name="search-btn" class="search-btn">
+                        <img src="../PROJECT/Images/search-icon.png" alt="search">
+                    </button>
+                </form>
             </div>
+                    -->
 
-            <div class="employee-header">
-                <p class="title-employee">EMPLOYEE</p> 
-                <div class="line" style="width: 360px; margin-left: 0px;"></div> 
-                <div class="line" style="width: 360px; margin-left: 0px;"></div> 
-            </div>
+            <div class="date"><?php echo $_SESSION['date'] ?></div>
+            <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
 
+            <div class="profile"></div>
+    
+        </div>
 
-        <!--EMPLOYEE CONTAINER  -->
-            <div class="employee-container">
+      <div class="employee-container">
+        <div class="employee-table">
 
-                <div class="employee-table">
-
-                <?php 
+        <?php 
                 while($employee = mysqli_fetch_array($sqlEmployee)) {?>
 
                 <div class="employee">
-                       <div class="name">SAMPLE NAME</div>
+                    <div class="name">SAMPLE NAME</div>
                         <img src="../PROJECT/Images/default-pic.png" alt="" srcset="">
                         <div class="id"><strong>ID:</strong> <?php echo $employee['id'] ?></div>
                         <div class="username"><strong>Username:</strong> <?php echo $employee['username'] ?> </div>
@@ -84,15 +101,16 @@
                 <?php } ?>
 
 
-                </div>
-
             </div>
+      </div>
+        
 
 
-        </div>
+    </div>
 
          
-    </div>
+</div>
     
 </body>
+<script src="../javascript/date-time.js"></script>
 </html>

@@ -80,7 +80,7 @@
 
         <div class="category">
             <ul>
-                    <li>All Menu</li>
+                    <li><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> All Menu</li>
                     <li>COFFEE</li>
                     <li>Bottled</li>
                     <li>Frappucino</li>

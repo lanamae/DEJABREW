@@ -1,5 +1,12 @@
 @import url('style.scss');
-
+// MIXINS
+@mixin glassBg {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border:  1px solid rgba(255,255,255,0.18);
+    box-shadow: 0px 8px 32px rgba(0,0,0,0.37);
+}
 
 
 .main{
@@ -174,7 +181,7 @@
 
                 width: 300px;
                 height: 400px;
-                background: $color1;
+                @include glassBg();
                 border-radius: 20px;
                 box-shadow: inset 3px 3px 3px rgba($color: $color6, $alpha: 0.8);
                 padding: 30px;
@@ -217,7 +224,7 @@
 
                 width: 300px;
                 height: 400px;
-                background: $color1;
+                @include glassBg();
                 border-radius: 20px;
                 box-shadow: inset 3px 3px 3px rgba($color: $color6, $alpha: 0.8);
                 padding: 30px;
@@ -260,7 +267,7 @@
 
                 width: 300px;
                 height: 400px;
-                background: $color1;
+                @include glassBg();
                 border-radius: 20px;
                 box-shadow: inset 3px 3px 3px rgba($color: $color6, $alpha: 0.8);
                 padding: 30px;

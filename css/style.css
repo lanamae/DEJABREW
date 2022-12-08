@@ -147,7 +147,11 @@
   grid-row: 1/2;
   width: 300px;
   height: 400px;
-  background: #000000;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
   border-radius: 20px;
   box-shadow: inset 3px 3px 3px rgba(218, 218, 218, 0.8);
   padding: 30px;
@@ -185,7 +189,11 @@
   grid-row: 1/2;
   width: 300px;
   height: 400px;
-  background: #000000;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
   border-radius: 20px;
   box-shadow: inset 3px 3px 3px rgba(218, 218, 218, 0.8);
   padding: 30px;
@@ -223,7 +231,11 @@
   grid-row: 1/2;
   width: 300px;
   height: 400px;
-  background: #000000;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
   border-radius: 20px;
   box-shadow: inset 3px 3px 3px rgba(218, 218, 218, 0.8);
   padding: 30px;
@@ -626,11 +638,13 @@
   justify-content: flex-start;
   align-items: center;
   transition: 0.4s ease-in;
+  cursor: pointer;
 }
 .adminHome .sidebar ul li img {
   margin-right: 20px;
 }
 .adminHome .sidebar ul li a {
+  width: 100%;
   text-decoration: none;
   font-family: "Arimo", sans-serif;
   color: #FFFFFF;
@@ -816,11 +830,13 @@
   justify-content: flex-start;
   align-items: center;
   transition: 0.4s ease-in;
+  cursor: pointer;
 }
 .adminMenu .sidebar ul li img {
   margin-right: 20px;
 }
 .adminMenu .sidebar ul li a {
+  width: 100%;
   text-decoration: none;
   font-family: "Arimo", sans-serif;
   color: #FFFFFF;
@@ -934,8 +950,16 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
   text-align: center;
   font-family: "Arimo", sans-serif;
-  padding: 5px 10px;
+  padding: 8px 10px;
   cursor: pointer;
+}
+.adminMenu .main .category ul li img {
+  width: 20.76px;
+  height: 30.53px;
+}
+.adminMenu .main .category ul li:hover {
+  background: rgb(32, 245, 138);
+  font-weight: bold;
 }
 .adminMenu .main .modal-container {
   position: fixed;
@@ -1242,89 +1266,269 @@
   color: #000000;
 }
 
-.main-adminSales {
+.adminSales {
   width: 100%;
-  height: auto;
-  background: #333333;
+  height: 100vh;
+  padding: 30px 0px 30px 30px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.8) 6%), url("../PROJECT/Images/img1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 1fr;
+  gap: 20px;
 }
-.main-adminSales .sales {
-  width: 100%;
-  height: auto;
+.adminSales .sidebar {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 300px;
+  height: 90vh;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
+  position: fixed;
+  border-radius: 10px;
+  padding: 30px;
 }
-.main-adminSales .sales .navbar {
+.adminSales .sidebar .sidebar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #FFFFFF;
+  padding-bottom: 20px;
+}
+.adminSales .sidebar .sidebar-header .logo {
+  width: 80px;
+  height: 80px;
+}
+.adminSales .sidebar ul {
+  padding: 20px 0px;
+  border-bottom: 2px solid #FFFFFF;
+}
+.adminSales .sidebar ul li {
+  list-style: none;
+  padding: 10px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition: 0.4s ease-in;
+  cursor: pointer;
+}
+.adminSales .sidebar ul li img {
+  margin-right: 20px;
+}
+.adminSales .sidebar ul li a {
   width: 100%;
-  height: 75px;
+  text-decoration: none;
+  font-family: "Arimo", sans-serif;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+.adminSales .sidebar ul li:hover {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  margin-top: 5px;
+}
+.adminSales .sidebar .logout {
+  width: 200px;
+  height: 30px;
+  border-radius: 7px;
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  background: #5A5A5A;
+  margin: 90px 0px 0px 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
+  border: 0.5px solid red;
+}
+.adminSales .sidebar .logout:hover {
   background: #1F1F1F;
-  padding: 0px 100px;
+  color: red;
+  font-weight: bold;
+  box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.2), inset 4px 4px 4px rgba(0, 0, 0, 0.2);
+}
+.adminSales .main {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px 0px 0px 10px;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
+}
+.adminSales .main .header {
+  width: 100%;
+  height: 50px;
+  background: #DADADA;
+  border-radius: 10px;
+  font-family: "Arimo", sans-serif;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  box-shadow: inset 0px -6px 6px rgba(239, 239, 239, 0.25);
+  padding: 10px 20px;
 }
-.main-adminSales .sales .navbar .logo {
-  margin-top: 150px;
+.adminSales .main .header .profile {
+  width: 30px;
+  height: 30px;
+  background: #000000;
+  border-radius: 50%;
 }
-.main-adminSales .sales .navbar ul li {
-  display: inline-block;
-  padding: 10px 10px;
+.adminSales .main .header .date {
+  margin-right: 20px;
+  color: red;
 }
-.main-adminSales .sales .sales-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 30px 0px;
-}
-.main-adminSales .sales .sales-header .title-sales {
-  font-family: "Arimo", sans-serif;
-  color: #FFFFFF;
-  font-size: 45px;
+.adminSales .main .header .clock {
+  margin-right: 20px;
+  font-weight: bold;
 }
 
-.main-adminEmployee {
+.adminEmployee {
   width: 100%;
-  height: auto;
-  background: #333333;
+  height: 100vh;
+  padding: 30px 0px 30px 30px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.8) 6%), url("../PROJECT/Images/img1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 1fr;
+  gap: 20px;
 }
-.main-adminEmployee .employee {
-  width: 100%;
-  height: auto;
+.adminEmployee .sidebar {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 300px;
+  height: 90vh;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
+  position: fixed;
+  border-radius: 10px;
+  padding: 30px;
 }
-.main-adminEmployee .employee .navbar {
+.adminEmployee .sidebar .sidebar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #FFFFFF;
+  padding-bottom: 20px;
+}
+.adminEmployee .sidebar .sidebar-header .logo {
+  width: 80px;
+  height: 80px;
+}
+.adminEmployee .sidebar ul {
+  padding: 20px 0px;
+  border-bottom: 2px solid #FFFFFF;
+}
+.adminEmployee .sidebar ul li {
+  list-style: none;
+  padding: 10px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition: 0.4s ease-in;
+  cursor: pointer;
+}
+.adminEmployee .sidebar ul li img {
+  margin-right: 20px;
+}
+.adminEmployee .sidebar ul li a {
   width: 100%;
-  height: 75px;
+  text-decoration: none;
+  font-family: "Arimo", sans-serif;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+.adminEmployee .sidebar ul li:hover {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  margin-top: 5px;
+}
+.adminEmployee .sidebar .logout {
+  width: 200px;
+  height: 30px;
+  border-radius: 7px;
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  background: #5A5A5A;
+  margin: 90px 0px 0px 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
+  border: 0.5px solid red;
+}
+.adminEmployee .sidebar .logout:hover {
   background: #1F1F1F;
-  padding: 0px 100px;
+  color: red;
+  font-weight: bold;
+  box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.2), inset 4px 4px 4px rgba(0, 0, 0, 0.2);
+}
+.adminEmployee .main {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px 0px 0px 10px;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
+}
+.adminEmployee .main .header {
+  width: 100%;
+  height: 50px;
+  background: #DADADA;
+  border-radius: 10px;
+  font-family: "Arimo", sans-serif;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  box-shadow: inset 0px -6px 6px rgba(239, 239, 239, 0.25);
+  padding: 10px 20px;
 }
-.main-adminEmployee .employee .navbar .logo {
-  margin-top: 150px;
+.adminEmployee .main .header .profile {
+  width: 30px;
+  height: 30px;
+  background: #000000;
+  border-radius: 50%;
 }
-.main-adminEmployee .employee .navbar ul li {
-  display: inline-block;
-  padding: 10px 10px;
+.adminEmployee .main .header .date {
+  margin-right: 20px;
+  color: red;
 }
-.main-adminEmployee .employee .employee-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 30px 0px;
+.adminEmployee .main .header .clock {
+  margin-right: 20px;
+  font-weight: bold;
 }
-.main-adminEmployee .employee .employee-header .title-employee {
-  font-family: "Arimo", sans-serif;
-  color: #FFFFFF;
-  font-size: 45px;
-}
-.main-adminEmployee .employee .employee-container {
+.adminEmployee .main .employee-container {
   width: 100%;
   height: auto;
   padding: 20px 80px;
 }
-.main-adminEmployee .employee .employee-container .employee-table {
+.adminEmployee .main .employee-container .employee-table {
   width: 100%;
   height: auto;
   display: grid;
@@ -1332,7 +1536,7 @@
   grid-row-gap: 50px;
   grid-column-gap: 20px;
 }
-.main-adminEmployee .employee .employee-container .employee-table .employee {
+.adminEmployee .main .employee-container .employee-table .employee {
   width: 235px;
   height: 360px;
   background: #FFFFFF;
@@ -1345,13 +1549,13 @@
   justify-content: center;
   align-items: flex-start;
 }
-.main-adminEmployee .employee .employee-container .employee-table .employee .name {
+.adminEmployee .main .employee-container .employee-table .employee .name {
   color: #000000;
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 50px;
 }
-.main-adminEmployee .employee .employee-container .employee-table .employee img {
+.adminEmployee .main .employee-container .employee-table .employee img {
   width: 120px;
   height: 120px;
   margin-bottom: 50px;
@@ -1407,11 +1611,13 @@
   justify-content: flex-start;
   align-items: center;
   transition: 0.4s ease-in;
+  cursor: pointer;
 }
 .adminProfile .sidebar ul li img {
   margin-right: 20px;
 }
 .adminProfile .sidebar ul li a {
+  width: 100%;
   text-decoration: none;
   font-family: "Arimo", sans-serif;
   color: #FFFFFF;

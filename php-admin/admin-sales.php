@@ -1,3 +1,16 @@
+<?php
+    require "../php-admin/menu-database/menu-database.php";
+    require "../php-admin/menu-database/read.php";
+    require "../php-landing/date_and_time.php";
+
+   
+
+    
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,35 +27,61 @@
 </head>
 <body>
 
-<div class="main-adminSales">
-    <div class="sales">
-            <div class="navbar">
-                    
-                    <ul>
-                        <li><a href="admin-home.php"><img src="../PROJECT/Images/home-icon.png" alt="home icon"style="width: 30px; height: 30px"></a></li>
-                        <li><a href="admin-menu.php"><img src="../PROJECT/Images/menu-icon.png" alt="menu icon"style="width: 30px; height: 30px"></a></li>
-                        <li style=" border-bottom: #fff 5px solid;"><a href="admin-sales.php"><img src="../PROJECT/Images/sales-icon.png" alt="sales icon" style="width: 30px; height: 30px"></a></li>
-                        <li><a href="admin-employee.php"><img src="../PROJECT/Images/emp-icon.png" alt="employee icon" style="width: 30px; height: 30px"></a></li>
-                        <li><a href="admin-profile.php"><img src="../PROJECT/Images/prof-icon.png" alt="profile icon" style="width: 30px; height: 30px"></a></li>
+<div class="adminSales">
+    
+     <!-- SIDEBAR -->
+   <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="../PROJECT/Images/dejabrew-logo.png" alt="" class="logo">
+           
 
-                        <!-- <li>
-                            <form action="admin-profile.php" method="post">
-                                <input type="submit" value="PROFILE" /></li>
-                            </form>
-                            
-                         -->
-                    
-                    </ul>
+           
+        </div>
+        
+
+        <ul>
+            <li><img src="../PROJECT/Images/home-icon.png" alt=""><a href="admin-home.php">Dashboard</a></li>
+            <li><img src="../PROJECT/Images/menu-icon.png" alt=""><a href="admin-menu.php">Menu</a></li>
+            <li   style="background: #000000;
+                    border-radius: 10px;
+                    margin-top: 5px; "><img src="../PROJECT/Images/sales-icon.png" alt=""><a href="admin-sales.php">Sales</a></li>
+            <li><img src="../PROJECT/Images/emp-icon.png" alt=""><a href="admin-employee.php">Employee</a></li>
+            <li><img src="../PROJECT/Images/prof-icon.png" alt=""><a href="admin-profile.php">Profile</a></li>
+        </ul>
+
+        
+        <form action="../php-landing/logout.php" method="POST">
+                    <input type="submit" name="logout" value="LOGOUT" class="logout"> 
+
+        </form>    
+        
+
+
+
+   </div>
+
+   <div class="main">
+        <div class="header">
                 
-            </div>
-            <div class="sales-header">
-                <p class="title-sales">Deja brew sales</p> 
-                <div class="line" style="width: 360px; margin-left: 0px;"></div> 
-                <div class="line" style="width: 360px; margin-left: 0px;"></div> 
-            </div>
+                <!-- <div class="search-bar">
+                    <form action="#" method="POST">
+                        <input type="text" name="search" class="search-txt">
+                        <button type="submit" name="search-btn" class="search-btn">
+                            <img src="../PROJECT/Images/search-icon.png" alt="search">
+                        </button>
+                    </form>
+                </div>
+                        -->
 
-    </div>
+                <div class="date"><?php echo $_SESSION['date'] ?></div>
+                <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+
+                <div class="profile"></div>
+        </div>
+   </div>
+
 </div>
     
 </body>
+<script src="../javascript/date-time.js"></script>
 </html>
