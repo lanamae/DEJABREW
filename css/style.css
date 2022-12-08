@@ -724,7 +724,7 @@
 .adminHome .main .dashboard .content .total-sales {
   grid-column: 1/3;
   grid-row: 1/2;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   margin-top: 5px;
   color: #FFFFFF;
@@ -736,28 +736,28 @@
 .adminHome .main .dashboard .content .total-order {
   grid-column: 3/5;
   grid-row: 1/2;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   margin-top: 5px;
 }
 .adminHome .main .dashboard .content .total-working-hours {
   grid-column: 5/7;
   grid-row: 1/2;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   margin-top: 5px;
 }
 .adminHome .main .dashboard .content .product-carousel {
   grid-column: 1/4;
   grid-row: 2/4;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   margin-top: 5px;
 }
 .adminHome .main .dashboard .content .graph {
   grid-column: 4/7;
   grid-row: 2/4;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   margin-top: 5px;
 }
@@ -766,137 +766,369 @@
   height: 100vh;
 }
 
-.main-adminMenu {
+.adminMenu {
   width: 100%;
   height: auto;
-  background: #333333;
-  color: #fff;
+  padding: 30px 0px 30px 30px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.8) 6%), url("../PROJECT/Images/img1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 1fr;
+  gap: 20px;
 }
-.main-adminMenu .sidebar {
+.adminMenu .sidebar {
+  grid-column: 1/2;
+  grid-row: 1/2;
   width: 300px;
-  height: 100vh;
-  background: #333333;
-  padding: 0px 20px;
+  height: 90vh;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
   position: fixed;
-  overflow: scroll;
-  transition: 0.5s ease-in;
-  z-index: 8;
-  margin-left: -1000px;
+  border-radius: 10px;
+  padding: 30px;
 }
-.main-adminMenu .sidebar .sidebar-header {
+.adminMenu .sidebar .sidebar-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-bottom: 2px solid #FFFFFF;
-  padding: 30px 0px;
+  padding-bottom: 20px;
 }
-.main-adminMenu .sidebar .sidebar-header .side-title {
-  font-size: 30px;
-  font-weight: 600;
+.adminMenu .sidebar .sidebar-header .logo {
+  width: 80px;
+  height: 80px;
 }
-.main-adminMenu .sidebar .sidebar-header .close {
-  font-size: 30px;
-  font-weight: bold;
-  cursor: pointer;
+.adminMenu .sidebar ul {
+  padding: 20px 0px;
+  border-bottom: 2px solid #FFFFFF;
 }
-.main-adminMenu .sidebar ul {
+.adminMenu .sidebar ul li {
   list-style: none;
-  padding-top: 30px;
+  padding: 10px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition: 0.4s ease-in;
 }
-.main-adminMenu .sidebar li {
+.adminMenu .sidebar ul li img {
+  margin-right: 20px;
+}
+.adminMenu .sidebar ul li a {
+  text-decoration: none;
+  font-family: "Arimo", sans-serif;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+.adminMenu .sidebar ul li:hover {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  margin-top: 5px;
+}
+.adminMenu .sidebar .logout {
+  width: 200px;
+  height: 30px;
+  border-radius: 7px;
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  background: #5A5A5A;
+  margin: 90px 0px 0px 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
+  border: 0.5px solid red;
+}
+.adminMenu .sidebar .logout:hover {
+  background: #1F1F1F;
+  color: red;
+  font-weight: bold;
+  box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.2), inset 4px 4px 4px rgba(0, 0, 0, 0.2);
+}
+.adminMenu .main {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px 0px 0px 10px;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
+}
+.adminMenu .main .header {
   width: 100%;
   height: 50px;
-  font-family: "Playfair Display", serif;
-  font-size: 18px;
-  font-weight: 300px;
-  padding: 10px;
-  cursor: pointer;
-}
-.main-adminMenu .sidebar li:hover {
-  background: #1F1F1F;
-  font-weight: bold;
+  background: #DADADA;
   border-radius: 10px;
-  border: 0.5px solid #FFFFFF;
-}
-.main-adminMenu .sidebar.show {
-  margin-left: 0px;
-}
-.main-adminMenu .navbar {
-  width: 100%;
-  height: 75px;
-  background: #1F1F1F;
-  padding: 0px 100px;
+  font-family: "Arimo", sans-serif;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  box-shadow: inset 0px -6px 6px rgba(239, 239, 239, 0.25);
+  padding: 10px 20px;
 }
-.main-adminMenu .navbar .logo {
-  margin-top: 150px;
+.adminMenu .main .header .search-bar {
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.main-adminMenu .navbar ul li {
-  display: inline-block;
-  padding: 10px 10px;
+.adminMenu .main .header .search-bar .search-txt {
+  border-style: none;
+  font-size: 15px;
+  width: 250px;
+  height: 30px;
+  border-radius: 10px;
 }
-.main-adminMenu .menu-bar {
+.adminMenu .main .header .search-bar .search-btn {
+  border-style: none;
+  background: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.adminMenu .main .header .search-bar .search-btn img {
+  width: 15px;
+  height: 15px;
+}
+.adminMenu .main .header .profile {
   width: 30px;
   height: 30px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 6px;
-  cursor: pointer;
-  margin: 20px 0px 0px 150px;
+  background: #000000;
+  border-radius: 50%;
 }
-.main-adminMenu .menu-bar span {
-  display: block;
+.adminMenu .main .header .date {
+  margin-right: 20px;
+  color: red;
 }
-.main-adminMenu .menu-bar span:nth-child(1) {
-  grid-column: 1/2;
-  grid-row: 1/2;
-  content: " ";
-  display: block;
-  background: #FFFFFF;
+.adminMenu .main .header .clock {
+  margin-right: 20px;
+  font-weight: bold;
 }
-.main-adminMenu .menu-bar span:nth-child(2) {
-  grid-column: 2/3;
-  grid-row: 1/2;
-  content: " ";
-  display: block;
-  background: #FFFFFF;
-}
-.main-adminMenu .menu-bar span:nth-child(3) {
-  grid-column: 1/2;
-  grid-row: 2/3;
-  content: " ";
-  display: block;
-  background: #FFFFFF;
-}
-.main-adminMenu .menu-bar span:nth-child(4) {
-  grid-column: 2/3;
-  grid-row: 2/3;
-  content: " ";
-  display: block;
-  background: #FFFFFF;
-}
-.main-adminMenu .menu {
+.adminMenu .main .category {
   width: 100%;
   height: auto;
+  margin: 20px 0px;
 }
-.main-adminMenu .menu .menu-header {
+.adminMenu .main .category ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100px);
+  gap: 20px;
+}
+.adminMenu .main .category ul li {
+  display: inline-block;
+  width: 100px;
+  height: 80px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-family: "Arimo", sans-serif;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.adminMenu .main .modal-container {
+  position: fixed;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 400px;
+  height: 550px;
+  max-width: 80%;
+  border: #FFFFFF 3px solid;
+  border-radius: 10px;
+  background: #DADADA;
+  z-index: 10;
+  color: #000000;
+  display: grid;
+  grid-template-rows: 60px 490px;
+}
+.adminMenu .main .modal-container .modal-header {
+  grid-row: 1/2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  border-bottom: #FFFFFF solid 2px;
+}
+.adminMenu .main .modal-container .modal-header h2 {
+  font-family: "Arimo", sans-serif;
+}
+.adminMenu .main .modal-container .modal-header .modal-close {
+  width: 30px;
+  height: 30px;
+  background: #000000;
+  border-radius: 50%;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 26px;
+  cursor: pointer;
+  text-align: center;
+}
+.adminMenu .main .modal-container .modal-body {
+  padding: 10px 40px;
+  grid-row: 2/3;
+}
+.adminMenu .main .modal-container .modal-body form {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
 }
-.main-adminMenu .menu .menu-header .title-menu {
+.adminMenu .main .modal-container .modal-body form .productImg {
+  width: 100px;
+  height: 100px;
+  border: #000 2px solid;
+}
+.adminMenu .main .modal-container .modal-body form label {
+  font-size: 18px;
   font-family: "Arimo", sans-serif;
-  color: #FFFFFF;
-  font-size: 25px;
+  margin-bottom: 5px;
+}
+.adminMenu .main .modal-container .modal-body form input {
+  width: 100%;
+  height: 30px;
+  padding: 0px 10px;
+  border: 2px solid #9C9C9C;
+  border-radius: 3px;
+  background: none;
+  font-size: 15px;
+}
+.adminMenu .main .modal-container .modal-body form .uploadProduct {
+  border: none;
+  padding-left: 70px;
   margin-top: 20px;
 }
-.main-adminMenu .menu .add {
+.adminMenu .main .modal-container .modal-body form .create-btn {
+  background: #333333;
+  color: #FFFFFF;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+.adminMenu .main .modal-container .modal-body form .create-btn:hover {
+  background: #9C9C9C;
+  border: 1px solid #333333;
+  color: #000000;
+}
+.adminMenu .main .modal-container.show {
+  position: fixed;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 400px;
+  height: 550px;
+  max-width: 80%;
+  border: #FFFFFF 3px solid;
+  border-radius: 10px;
+  background: #DADADA;
+  z-index: 10;
+  color: #000000;
+}
+.adminMenu .main .overlay {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.9);
+  opacity: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+.adminMenu .main .overlay.active {
+  display: block;
+}
+.adminMenu .main .product-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.adminMenu .main .product-container .product-table {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  gap: 30px;
+  padding-top: 30px;
+}
+.adminMenu .main .product-container .product-table .product {
+  width: 220px;
+  height: 300px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  font-family: "Arimo", sans-serif;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.adminMenu .main .product-container .product-table .product .product-name {
+  color: #000000;
+  font-weight: 900;
+  text-align: center;
+  font-size: 18px;
+}
+.adminMenu .main .product-container .product-table .product .product-img {
+  width: 74px;
+  height: 101px;
+  margin: 10px 0px;
+}
+.adminMenu .main .product-container .product-table .product .product-amount {
+  color: #5A5A5A;
+}
+.adminMenu .main .product-container .product-table .product .prodUpdate-btn {
+  width: 181px;
+  height: 40px;
+  background: #DADADA;
+  border-radius: 20px;
+  border-style: none;
+  padding: 5px 0px;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+.adminMenu .main .product-container .product-table .product .prodUpdate-btn:hover {
+  background: #333333;
+  color: #DADADA;
+  font-weight: bold;
+}
+.adminMenu .main .product-container .product-table .product .delete-btn {
+  width: 181px;
+  height: 30px;
+  background: rgb(247, 131, 131);
+  border-radius: 20px;
+  border-style: none;
+  padding: 5px 0px;
+  cursor: pointer;
+  margin-top: 10px;
+  color: #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+.adminMenu .main .product-container .product-table .product .delete-btn:hover {
+  background: red;
+  color: #DADADA;
+  font-weight: bold;
+}
+.adminMenu .add {
   width: 80px;
   height: 80px;
   background: red;
@@ -911,301 +1143,7 @@
   box-shadow: inset 6px 6px 6px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   position: fixed;
-  margin: 320px 0px 0px 1180px;
-}
-.main-adminMenu .menu .modal-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  width: 400px;
-  height: 550px;
-  max-width: 80%;
-  border: #FFFFFF 3px solid;
-  border-radius: 5px;
-  background: #DADADA;
-  z-index: 10;
-  color: #000000;
-  display: grid;
-  grid-template-rows: 60px 490px;
-}
-.main-adminMenu .menu .modal-container .modal-header {
-  grid-row: 1/2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 40px;
-  border-bottom: #FFFFFF solid 2px;
-}
-.main-adminMenu .menu .modal-container .modal-header h2 {
-  font-family: "Arimo", sans-serif;
-}
-.main-adminMenu .menu .modal-container .modal-header .modal-close {
-  width: 30px;
-  height: 30px;
-  background: #000000;
-  border-radius: 50%;
-  color: #FFFFFF;
-  font-weight: bold;
-  font-size: 26px;
-  cursor: pointer;
-  text-align: center;
-}
-.main-adminMenu .menu .modal-container .modal-body {
-  padding: 10px 40px;
-  grid-row: 2/3;
-}
-.main-adminMenu .menu .modal-container .modal-body form {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.main-adminMenu .menu .modal-container .modal-body form .productImg {
-  width: 100px;
-  height: 100px;
-  border: #000 2px solid;
-}
-.main-adminMenu .menu .modal-container .modal-body form label {
-  font-size: 18px;
-  font-family: "Arimo", sans-serif;
-  margin-bottom: 5px;
-}
-.main-adminMenu .menu .modal-container .modal-body form input {
-  width: 100%;
-  height: 30px;
-  padding: 0px 10px;
-  border: 2px solid #9C9C9C;
-  border-radius: 3px;
-  background: none;
-  font-size: 15px;
-}
-.main-adminMenu .menu .modal-container .modal-body form .uploadProduct {
-  border: none;
-  padding-left: 70px;
-  margin-top: 20px;
-}
-.main-adminMenu .menu .modal-container .modal-body form .create-btn {
-  background: #333333;
-  color: #FFFFFF;
-  height: 50px;
-  border-radius: 50px;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
-}
-.main-adminMenu .menu .modal-container .modal-body form .create-btn:hover {
-  background: #9C9C9C;
-  border: 1px solid #333333;
-  color: #000000;
-}
-.main-adminMenu .menu .modal-container.show {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  width: 400px;
-  height: 550px;
-  max-width: 80%;
-  border: #FFFFFF 3px solid;
-  border-radius: 5px;
-  background: #DADADA;
-  z-index: 10;
-  color: #000000;
-}
-.main-adminMenu .menu .modalUpdate-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  width: 400px;
-  height: 550px;
-  max-width: 80%;
-  border: #FFFFFF 3px solid;
-  border-radius: 5px;
-  background: #DADADA;
-  z-index: 10;
-  color: #000000;
-  display: grid;
-  grid-template-rows: 60px 490px;
-}
-.main-adminMenu .menu .modalUpdate-container .modal-header {
-  grid-row: 1/2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 40px;
-  border-bottom: #FFFFFF solid 2px;
-}
-.main-adminMenu .menu .modalUpdate-container .modal-header h2 {
-  font-family: "Arimo", sans-serif;
-}
-.main-adminMenu .menu .modalUpdate-container .modal-header .modal-close {
-  width: 30px;
-  height: 30px;
-  background: #000000;
-  border-radius: 50%;
-  color: #FFFFFF;
-  font-weight: bold;
-  font-size: 26px;
-  cursor: pointer;
-  text-align: center;
-}
-.main-adminMenu .menu .modalUpdate-container .modal-body {
-  padding: 10px 40px;
-  grid-row: 2/3;
-}
-.main-adminMenu .menu .modalUpdate-container .modal-body form {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.main-adminMenu .menu .modalUpdate-container .modal-body form .productImg {
-  width: 100px;
-  height: 100px;
-  border: #000 2px solid;
-}
-.main-adminMenu .menu .modalUpdate-container .modal-body form label {
-  font-size: 18px;
-  font-family: "Arimo", sans-serif;
-  margin-bottom: 5px;
-}
-.main-adminMenu .menu .modalUpdate-container .modal-body form input {
-  width: 100%;
-  height: 30px;
-  padding: 0px 10px;
-  border: 2px solid #9C9C9C;
-  border-radius: 3px;
-  background: none;
-  font-size: 15px;
-}
-.main-adminMenu .menu .modalUpdate-container .modal-body form .uploadProduct {
-  border: none;
-  padding-left: 70px;
-  margin-top: 20px;
-}
-.main-adminMenu .menu .modalUpdate-container .modal-body form .create-btn {
-  background: #333333;
-  color: #FFFFFF;
-  height: 50px;
-  border-radius: 50px;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
-}
-.main-adminMenu .menu .modalUpdate-container .modal-body form .create-btn:hover {
-  background: #9C9C9C;
-  border: 1px solid #333333;
-  color: #000000;
-}
-.main-adminMenu .menu .modalUpdate-container.show {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  width: 400px;
-  height: 550px;
-  max-width: 80%;
-  border: #FFFFFF 3px solid;
-  border-radius: 5px;
-  background: #DADADA;
-  z-index: 10;
-  color: #000000;
-}
-.main-adminMenu .menu .product-container {
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.main-adminMenu .menu .product-container .product-table {
-  width: 1250px;
-  height: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
-  grid-row-gap: 50px;
-  grid-column-gap: 50px;
-  padding-top: 30px;
-}
-.main-adminMenu .menu .product-container .product-table .product {
-  width: 235px;
-  height: 360px;
-  background: #FFFFFF;
-  border-radius: 10px;
-  font-family: "Arimo", sans-serif;
-  padding: 20px;
-  margin: 10px 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.main-adminMenu .menu .product-container .product-table .product .product-name {
-  color: #000000;
-  font-weight: 900;
-  text-align: center;
-}
-.main-adminMenu .menu .product-container .product-table .product .product-img {
-  width: 114px;
-  height: 141px;
-  margin: 10px 0px;
-}
-.main-adminMenu .menu .product-container .product-table .product .product-amount {
-  color: #5A5A5A;
-}
-.main-adminMenu .menu .product-container .product-table .product .prodUpdate-btn {
-  width: 181px;
-  height: 40px;
-  background: #DADADA;
-  border-radius: 20px;
-  border-style: none;
-  padding: 5px 0px;
-  cursor: pointer;
-  margin-top: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
-}
-.main-adminMenu .menu .product-container .product-table .product .prodUpdate-btn:hover {
-  background: #333333;
-  color: #DADADA;
-  font-weight: bold;
-}
-.main-adminMenu .menu .product-container .product-table .product .delete-btn {
-  width: 181px;
-  height: 30px;
-  background: rgb(247, 131, 131);
-  border-radius: 20px;
-  border-style: none;
-  padding: 5px 0px;
-  cursor: pointer;
-  margin-top: 10px;
-  color: #000000;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
-}
-.main-adminMenu .menu .product-container .product-table .product .delete-btn:hover {
-  background: red;
-  color: #DADADA;
-  font-weight: bold;
-}
-.main-adminMenu .menu .overlay {
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  background: rgba(0, 0, 0, 0.8);
-  opacity: 1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: none;
-}
-.main-adminMenu .menu .overlay.active {
-  display: block;
+  margin: 500px 0px 0px 1160px;
 }
 
 .main-updateMenu {

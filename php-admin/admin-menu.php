@@ -1,6 +1,7 @@
 <?php
     require "../php-admin/menu-database/menu-database.php";
     require "../php-admin/menu-database/read.php";
+    require "../php-landing/date_and_time.php";
 
    
 
@@ -24,89 +25,79 @@
 
 
 <body>
-<div class="main-adminMenu">
-    <div class="menu">
-        <!-- sidebar -->
-        <div class="sidebar">
-                <div class="sidebar-header">
-                    <p class="side-title">MENU</p>
-                    <div class="close">&times;</div>
-                    
-                </div>
+<div class="adminMenu">
+     <!-- SIDEBAR -->
+   <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="../PROJECT/Images/dejabrew-logo.png" alt="" class="logo">
+           
+
+           
+        </div>
+        
+
+        <ul>
+            <li><img src="../PROJECT/Images/home-icon.png" alt=""><a href="admin-home.php">Dashboard</a></li>
+            <li  style="background: #000000;
+                    border-radius: 10px;
+                    margin-top: 5px; "><img src="../PROJECT/Images/menu-icon.png" alt=""><a href="admin-menu.php">Menu</a></li>
+            <li><img src="../PROJECT/Images/sales-icon.png" alt=""><a href="admin-sales.php">Sales</a></li>
+            <li><img src="../PROJECT/Images/emp-icon.png" alt=""><a href="admin-employee.php">Employee</a></li>
+            <li><img src="../PROJECT/Images/prof-icon.png" alt=""><a href="admin-profile.php">Profile</a></li>
+        </ul>
+
+        
+        <form action="../php-landing/logout.php" method="POST">
+                    <input type="submit" name="logout" value="LOGOUT" class="logout"> 
+
+        </form>    
+        
+
+
+
+   </div>
+
+    <div class="main">
+
+        <div class="header">
                 
-                <ul>
+            <div class="search-bar">
+                <form action="#" method="POST">
+                    <input type="text" name="search" class="search-txt">
+                    <button type="submit" name="search-btn" class="search-btn">
+                        <img src="../PROJECT/Images/search-icon.png" alt="search">
+                    </button>
+                </form>
+            </div>
+
+
+                <div class="date"><?php echo $_SESSION['date'] ?></div>
+                <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+
+                <div class="profile"></div>
+        </div>
+
+
+        <div class="category">
+            <ul>
+                    <li>All Menu</li>
                     <li>COFFEE</li>
                     <li>Bottled</li>
                     <li>Frappucino</li>
                     <li>Float Series</li>
                     <li>Non-Coffee</li>
                     <li>Fruit Tea Series</li>
-                    <li style="font-size: 12px;">Fruit Splash Yogurt Smoothies</li>
+                    <li>Fruit Splash Yogurt Smoothies</li>
                     <li>Yogurt</li>
                     <li>Chees Macchiato Series</li>
                     <li>Barista's Choice</li>
                     <li>Gourmet Series</li>
                     <li>Tea Latte Series</li>
-                    <br>
-
-                    <!-- for voucher -->
-                    <div class="line" style="margin-left: 0; margin-bottom: 10px; width: 243px; height: 3px;"></div>
-                    <!-- <hr> -->
-                    <h1>Voucher List</h1><br>
-                    
-                    <li>Sample Voucher</li>
-                    <li>Sample Voucher</li>
-                    <li style="background: #5A5A5A; margin-bottom: 20px; border-radius: 10px; border: 2px white solid;">+ Add Voucher</li>
-                    
-
-                </ul>
-                </ul>
+            </ul>
         </div>
 
-<!-- ---------------------------------------------------------------- -->
-        <!-- NAVBAR -->
-        <div class="navbar">
-                <ul>
-                    <li><a href="admin-home.php"><img src="../PROJECT/Images/home-icon.png" alt="home icon"style="width: 30px; height: 30px"></a></li>
-                    <li style=" border-bottom: #fff 5px solid;"><a href="admin-menu.php"><img src="../PROJECT/Images/menu-icon.png" alt="menu icon"style="width: 30px; height: 30px"></a></li>
-                    <li><a href="admin-sales.php"><img src="../PROJECT/Images/sales-icon.png" alt="sales icon" style="width: 30px; height: 30px"></a></li>
-                    <li><a href="admin-employee.php"><img src="../PROJECT/Images/emp-icon.png" alt="employee icon" style="width: 30px; height: 30px"></a></li>
-                    <li><a href="admin-profile.php"><img src="../PROJECT/Images/prof-icon.png" alt="profile icon" style="width: 30px; height: 30px"></a></li>
 
-                    <!-- <li>
-                        <form action="admin-profile.php" method="post">
-                            <input type="submit" value="PROFILE" /></li>
-                        </form>
-                        
-                        -->
-                
-                </ul>
-        </div>
 
-        <!-- menu bar icon-->
-        <div class="menu-bar">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-
-            
-        </div>
-        
-        <!-- menu header -->
-        <div class="menu-header">
-            <div class="line" style="width: 100%; margin-left: 0px; height: 2px;"></div> 
-            <marquee class="title-menu">Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu .Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu . Deja brew Menu .</marquee> 
-            
-            <div class="line" style="width: 100%; margin-left: 0px; height: 2px;"></div> 
-        </div>
-
-       
-        <!-- ---------------------------------------------------------------- -->
-        <!-- add product button  - the red plus button-->
-        <div class="add" onclick="showModal()">
-            +
-        </div>
         
 
         <!----------------------------------------------------------------------------------------  -->
@@ -145,8 +136,8 @@
 
        <!-- ------------------------------------------------------------------------------------------------ -->
         <!-- VOUCHER MODAL -->
-        <div class="voucher">
-        </div>
+        <!-- <div class="voucher">
+        </div> -->
         <!-- ---------------------------------------------------------------------------------- -->
             <!-- MENU -->
         <div class="product-container">
@@ -187,30 +178,37 @@
 
                 <?php }?>
             </div>
-
-
-           
-
-
         </div>
 
-        <div class="overlay"></div>
+        <div class="overlay"></div> 
+        
+    
+    
 
         
         <!-- ----------------------------------------------------------------------------------- -->
 
-
+    </div>
    
-
+    
+        <!-- ---------------------------------------------------------------- -->
+        <!-- add product button  - the red plus button-->
+        <div class="add" onclick="showModal()">
+            +
+        </div>
     
 
     
 </div>
 
 
+
+
     
 </body>
 
+
+<script src="../javascript/date-time.js"></script>
 <script src="../javascript/events.js">
 alert('testingggg')
 
