@@ -80,6 +80,12 @@
 
         <div class="category">
             <ul>
+                    <form action="#"method="POST">
+                        <input type="submit" value="">
+
+
+                    </form>
+
                     <li><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> All Menu</li>
                     <li>COFFEE</li>
                     <li>Bottled</li>
@@ -89,7 +95,7 @@
                     <li>Fruit Tea Series</li>
                     <li>Fruit Splash Yogurt Smoothies</li>
                     <li>Yogurt</li>
-                    <li>Chees Macchiato Series</li>
+                    <li>Cheese Macchiato Series</li>
                     <li>Barista's Choice</li>
                     <li>Gourmet Series</li>
                     <li>Tea Latte Series</li>
