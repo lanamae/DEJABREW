@@ -58,21 +58,7 @@
         
         <form action="../php-landing/logout.php" method="POST">
                     <input type="submit" name="logout" value="LOGOUT" class="logout"> 
-
-
-            <!-- <br>
-            LOG DETAILS <br> -->
-                    <input type="hidden" name="logid"  value="<?php echo $_SESSION['logId']; ?>">
-                <br>     <br>     
-                    <input type="hidden" name="date_logout"  value="<?php echo $_SESSION['logPosition']; ?>">
-                <br><br>     
-                    <input type="hidden" name="logUsername"  value="<?php echo $_SESSION['logUsername']; ?>">
-                <br>     <br>     
-                    <input type="hidden" name="Updatedate_logout"  value="<?php echo $date_logout; ?>">
-                <br><br>     
-                    <input type="hidden" name="Updatelogout_time"  value="<?php echo $logout_time; ?>">
-                
-                    <br><br>
+           
         </form></span>     
         
 

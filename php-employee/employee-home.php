@@ -1,7 +1,24 @@
 <?php
+error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);   
+
     require "../php-landing/session.php";
     require "../php-landing/date_and_time.php";
+    require "../php-landing/read.php";
+    require '../php-landing/logbook.php';
+    require '../php-landing/database.php';
+    require '../php-landing/readLogbook.php';
+
+
+    // echo $_SESSION['username'];
+    // echo $_SESSION['dateLogin'];
+    // echo $_SESSION['timelogin'];
+
+    // $usernameSamp = $_SESSION['username'];
+    // $getDateLoginSamp = $_SESSION['dateLogin'];
+    // $getLogoutTimeSamp = $_SESSION['timelogin'];
+
      
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +26,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEJA BREW - EMPLOYEE</title>
+    <title>DEJA BREW - ADMIN</title>
 
     <link rel="shortcut icon" href="../PROJECT/Images/dejabrew-logo.png" type="image/x-icon">
    
@@ -18,60 +35,146 @@
     
 </head>
 <body>
-   <div class="main-employeeHome">   
-        <!-- head section -->
-        <div class="hero-section">
-            <!-- NAVBAR -->
-            <div class="navbar">
-                    <img src="../PROJECT/Images/dejabrew-logo.png" class="logo" alt="dejabrew logo">
-                    
-                    <ul>
-                        <li><a href="employee-home.php"><img src="../PROJECT/Images/home-icon.png" alt="home icon"style="width: 30px; height: 30px"></a></li>
-                        <li><a href="employee-menu.php"><img src="../PROJECT/Images/menu-icon.png" alt="menu icon"style="width: 30px; height: 30px"></a></li>
-                        <li><a href="employee-profile.php"><img src="../PROJECT/Images/prof-icon.png" alt="profile icon" style="width: 30px; height: 30px"></a></li>
-                    </ul>
+<div class="adminHome">  
+    
+    <!-- SIDEBAR -->
+   <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="../PROJECT/Images/dejabrew-logo.png" alt="" class="logo">
+           
+
+           
+        </div>
+        
+
+        <ul>
+            <li style="background: #000000;
+                    border-radius: 10px;
+                    margin-top: 5px; "><img src="../PROJECT/Images/home-icon.png" alt=""><a href="employee-home.php">Dashboard</a></li>
+            <li><img src="../PROJECT/Images/menu-icon.png" alt=""><a href="employee-menu.php">Menu</a></li>
+            <li><img src="../PROJECT/Images/prof-icon.png" alt=""><a href="employee-profile.php">Profile</a></li>
+        </ul>
+
+        
+        <form action="../php-landing/logout.php" method="POST">
+                    <input type="submit" name="logout" value="LOGOUT" class="logout"> 
+
+
+            <!-- <br>
+            LOG DETAILS <br> -->
+                    <input type="hidden" name="logid"  value="<?php echo $_SESSION['logId']; ?>">
+                <br>     <br>     
+                    <input type="hidden" name="date_logout"  value="<?php echo $_SESSION['logPosition']; ?>">
+                <br><br>     
+                    <input type="hidden" name="logUsername"  value="<?php echo $_SESSION['logUsername']; ?>">
+                <br>     <br>     
+                    <input type="hidden" name="Updatedate_logout"  value="<?php echo $date_logout; ?>">
+                <br><br>     
+                    <input type="hidden" name="Updatelogout_time"  value="<?php echo $logout_time; ?>">
                 
+                    <br><br>
+        </form></span>     
+        
+
+
+
+   </div>
+
+
+
+   <!-- main content -->
+   <div class="main">
+        <!-- contents -->
+        <div class="dashboard">
+            <div class="header">
+                <div class="date"><?php echo $_SESSION['date'] ?></div>
+                <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+
+                <div class="profile"></div>
             </div>
 
-            <!-- HEADING -->
-
-            <div class="header">
-                <div class="line" style="width: 950px;"></div> 
-                <h1> <?php
+            <p class="greetings"> 
+                <?php
                     if($setHour == "AM"){
                         echo  "Good Morning, ";
                     }
 
-                    else if($hours<6 || $setHour == "PM"){
+                    else if($hours<6 && $setHour == "PM"){
                         echo  "Good Afternoon,";
                     }
 
-                    else if($hours>=6 || $setHour == "PM" ){
+                    else if($hours>=6 && $setHour == "PM" ){
                         echo  "Good Evening,";
                     }
 
-                ?>
                 
                 
-                
-                 Employee <?php echo $_SESSION['username'];?> </h1>
-                <h2>Customers Deserve Your Hardwork, Serve them!</h2>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non aliquam, at <br>
-                duis ac. Vel eleifend iaculis sit aliquet urna vehicula malesuada interdum pharetra.</p>
 
-                <div class="line" style="width:750px;margin-left: 415px;"></div>
+                ?>        
+                Employee <?php echo $_SESSION['username'];?> 
+            </p>
+
+            <div class="content">
+                <div class="total-sales">Top sales</div>
+                <div class="total-order">Total order</div>
+                <div class="total-working-hours"> Total Working Hpurs</div>
+
+                <div class="product-carousel"></div>
+                
+
+                <div class="graph"></div>
+            </div>
+            
+        </div>
+
+
+
+
+        <hr>
+        <!-- instructions -->
+        <div class="instruction">
+            
+        </div>
+   </div>
+      
+   
+
+   
+</div>  
+ <!-- FOOTER -->
+ <div class="footer">
+            <img src="../PROJECT/Images/dejabrew-logo.png" class="logo" alt="dejabrew logo">
+                  
+            <div class="footer-details" style="display:flex;">
+                <div class="column1">
+                    <h4>Deja brew</h4><br>  
+                    <span>95 National Road Pulilan Bulacan</span><br> <br> <br> <br>
+                    <p>All Right Reserved 2023 &copy;</p>   
+                </div>
+
+                <div class="column2">
+                    <h4>Page Content</h4> <br>
+                    <p><a href="admin-home.php">Home</a></p>
+                    <p><a href="admin-menu.php">Menu</a></p>
+                    <p><a href="admin-sales.php">Sales</a></p>
+                    <p><a href="admin-employees.php">Employees</a></p>
+                    <p><a href="admin-profile.php">Profile</a></p>
+                </div>
+
+                <div class="column3">
+                    <h4>Social</h4><br>
+
+                    <p><a href="#">Facebook</a></p>
+                    <p><a href="#">Twitter</a></p>
+                    <p><a href="#">Instagram</a></p>
+                    <p><a href="#">FGmail</a></p>
+                </div>
+                
             </div>
 
-           <hr>
-        </div>
- <!-- admin instructions -->
-        <div class="admin-ins">
-            <div class="instruction1"></div>
-            <div class="instruction2"></div>
-            <div class="instruction3"></div>
-        </div>
-    
-    </div>    
+
 </body>
+
+<script src="../javascript/date-time.js"></script>
 </html> 
+
