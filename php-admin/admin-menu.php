@@ -3,7 +3,28 @@
     require "../php-admin/menu-database/read.php";
     require "../php-landing/date_and_time.php";
 
+   if(isset($_POST['allMenu'])){
+        
+        $queryRead_product= "SELECT * FROM tb_product";
+        $sqlRead_product = mysqli_query($connProducts, $queryRead_product);
+   }   
    
+   if(isset($_POST['coffee'])){
+
+        $category = 'COFFEE';
+            
+        $queryRead_product= "SELECT * FROM tb_product WHERE Category='$category'";
+        $sqlRead_product = mysqli_query($connProducts, $queryRead_product);
+    }  
+
+
+    if(isset($_POST['bottled'])){
+
+        $category = 'BOTTLED';
+            
+        $queryRead_product= "SELECT * FROM tb_product WHERE Category='$category'";
+        $sqlRead_product = mysqli_query($connProducts, $queryRead_product);
+    }  
 
     
 
@@ -80,15 +101,37 @@
 
         <div class="category">
             <ul>
-                    <form action="#"method="POST">
-                        <input type="submit" value="">
+                    
+
+                    <li><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> 
+
+                        <form action="../php-admin/admin-menu.php" method="POST">
+                            <input type="submit" name="allMenu" value="ALL MENU" style="witdh: 100%; height: 100%; cursor: pointer;">
 
 
-                    </form>
+                        </form>
+                    </li>
+                   
+                    <li><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> 
 
-                    <li><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> All Menu</li>
-                    <li>COFFEE</li>
-                    <li>Bottled</li>
+                        <form action="../php-admin/admin-menu.php" method="POST">
+                            <input type="submit" name="coffee" value="COFFEE" style="witdh: 100%; height: 100%; cursor: pointer;">
+
+
+                        </form>
+                    </li>
+
+                    <li><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> 
+
+                        <form action="../php-admin/admin-menu.php" method="POST">
+                            <input type="submit" name="bottled" value="BOTTLED" style="witdh: 100%; height: 100%; cursor: pointer;">
+
+
+                        </form>
+                    </li>
+
+                    <!-- <li>COFFEE</li> -->
+                    <!-- <li>Bottled</li> -->
                     <li>Frappucino</li>
                     <li>Float Series</li>
                     <li>Non-Coffee</li>

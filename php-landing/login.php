@@ -38,8 +38,32 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
         $password = trim($_POST['password']);
 
         if(empty($position) || empty($username) || empty($password)){
-            echo "<h4 style='background:red; width: 300px; height: 200px; border-radius: 20px; text-align: center; position: absolute; top: 200px; left: 550px; z-index: 10;padding: 20px; font-size: 30px;'>Fill up all fields!<br><br><br> <button style='width: 200px; height: 40px; background: #9C9C9C; border-radius: 20px; cursor: pointer;'><a href='login.php' style='text-decoration:none; color: #000;'>BACK</button></h2>";
+            echo "<p style='
+                background: #e44040;
+                width: 300px;
+                height: 200px;
+                border-radius: 20px;
+                text-align: center;
+                position: absolute;
+                top: 200px;
+                left: 550px;
+                z-index: 10;
+                padding: 20px; 
+                font-size: 25px;
+                color: #fff;
+                font-family: sans-serif;
+                '>FILL UP ALL FIELDS!<br><br><br> 
+               
                 
+                <a href='login.php' style='
+                text-decoration:none;
+                background: #9C9C9C;
+                color: #000;
+                font-weight: bold;
+                padding: 10px 70px;
+                border-radius: 10px;
+                font-size: 15px;
+                '>BACK</a></p>";   
         }
 
         else{
@@ -124,7 +148,34 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
             }
 
             else{
-                echo "<h4 style='background:red; width: 300px; height: 200px; border-radius: 20px; text-align: center; position: absolute; top: 200px; left: 550px; z-index: 10;padding: 20px; font-size: 30px;'>Details not found!<br><br><br> <button style='width: 200px; height: 40px; background: #9C9C9C; border-radius: 20px; cursor: pointer;'><a href='login.php' style='text-decoration:none; color: #000;'>BACK</button></h2>";
+                echo "<p style='
+                background: #e44040;
+                width: 300px;
+                height: 200px;
+                border-radius: 20px;
+                text-align: center;
+                position: absolute;
+                top: 200px;
+                left: 550px;
+                z-index: 10;
+                padding: 20px; 
+                font-size: 25px;
+                color: #fff;
+                font-family: sans-serif;
+                '>Details not found!<br><br><br> 
+               
+                
+                <a href='login.php' style='
+                text-decoration:none;
+                background: #9C9C9C;
+                color: #000;
+                font-weight: bold;
+                padding: 10px 70px;
+                border-radius: 10px;
+                font-size: 15px;
+                '>BACK</a></p>";
+
+            
                 
                 $_SESSION['status'] = 'invalid';
                 

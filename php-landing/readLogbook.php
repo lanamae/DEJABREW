@@ -25,13 +25,13 @@
 
 
         
-        // $_SESSION['logPosition'] =  $logData['position'];
-        // $_SESSION['logUsername'] = $logData['username'];
+        $_SESSION['logPosition'] =  $logData['position'];
+        $_SESSION['logUsername'] = $logData['username'];
 
-        // $_SESSION['date_login'] = $logData['date_login'];
-        // $_SESSION['login_time'] =$logData['login_time'];
-        // $_SESSION['date_logout'] =$logData['date_logout'];
-        // $_SESSION['logout_time']= $logData['logout_time'];
+        $_SESSION['date_login'] = $logData['date_login'];
+        $_SESSION['login_time'] =$logData['login_time'];
+        $_SESSION['date_logout'] =$logData['date_logout'];
+        $_SESSION['logout_time']= $logData['logout_time'];
 
 
 

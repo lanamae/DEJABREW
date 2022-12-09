@@ -100,7 +100,7 @@
             LOG DETAILS <br> -->
                     <input type="hidden" name="logid"  value="<?php echo $_SESSION['logId']; ?>">
                 <br>     <br>     
-                    <input type="hidden" name="date_logout"  value="<?php echo $_SESSION['logPosition']; ?>">
+                    <input type="hidden" name="logPosition"  value="<?php echo $_SESSION['logPosition']; ?>">
                 <br><br>     
                     <input type="hidden" name="logUsername"  value="<?php echo $_SESSION['logUsername']; ?>">
                 <br>     <br>     
