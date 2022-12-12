@@ -1331,8 +1331,7 @@
 .adminMenu .main .vouchers .voucher-container .voucher-table {
   grid-column: 2/3;
   grid-row: 1/2;
-  background: #DADADA;
-  color: #1F1F1F;
+  color: #FFFFFF;
   font-family: "Arimo", sans-serif;
 }
 .adminMenu .main .vouchers .voucher-container .voucher-table table {
@@ -1344,10 +1343,12 @@
 }
 .adminMenu .main .vouchers .voucher-container .voucher-table table tr th {
   background: #008AD8;
-  padding: 6px 15px;
+  padding: 10px 15px;
+  border-bottom: 1.5px solid #1F1F1F;
 }
 .adminMenu .main .vouchers .voucher-container .voucher-table table tr td {
-  padding: 3px 10px;
+  padding: 10px 15px;
+  border-bottom: 1.5px solid #1F1F1F;
 }
 .adminMenu .add {
   width: 80px;

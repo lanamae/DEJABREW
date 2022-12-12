@@ -960,8 +960,8 @@
                     grid-column: 2/3;
                     grid-row: 1/2;
                 
-                    background: $color6;
-                    color: $color2;
+                    // background: $color6;
+                    color: $color7;
                     font-family: $font1;
                     
 
@@ -974,12 +974,12 @@
                             border-bottom: 1px solid $color2;
                             th{
                                 background: $blue;
-                                padding: 6px 15px;
-                                // border-bottom: 1px solid $color2;
+                                padding: 10px 15px;
+                                border-bottom: 1.5px solid $color2;
                             }
                             td{
-                                padding: 3px 10px;
-                                // border-bottom: 1px solid $color2;
+                                padding: 10px 15px;
+                                border-bottom: 1.5px solid $color2;
                             }
                         }
                     }

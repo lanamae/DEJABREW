@@ -375,11 +375,12 @@
                         <th>Price</th>
 
                         
+                 
+                    </tr>
+                    
+
                     <?php 
                     while($results_voucher = mysqli_fetch_array($sqlRead_voucher)) {?>
-                    </tr>
-
-                   
 
                     
                         <td><?php echo $results_voucher['id'] ?></td>
@@ -387,9 +388,9 @@
                         <td><?php echo $results_voucher['voucher_percentage'] ?></td>
                         <td><?php echo $results_voucher['voucher_price'] ?></td>
 
-                   
+                        
                     </tr>
-
+                
                     <?php } 
                     ?>
 
