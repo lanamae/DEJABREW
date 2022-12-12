@@ -1260,7 +1260,7 @@
 }
 .adminMenu .main .vouchers {
   width: 100%;
-  height: 100vh;
+  height: auto;
   padding: 20px 0px;
 }
 .adminMenu .main .vouchers .voucher-title {
@@ -1297,6 +1297,10 @@
 }
 .adminMenu .main .vouchers .voucher-container .voucher-form form {
   margin: 30px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .adminMenu .main .vouchers .voucher-container .voucher-form form input {
   background: none;
@@ -1309,10 +1313,41 @@
 }
 .adminMenu .main .vouchers .voucher-container .voucher-form form .voucher-btn {
   background: #9C9C9C;
+  color: #1F1F1F;
+  border-radius: 50px;
+  border-bottom: none;
+  font-style: normal;
+  font-weight: bold;
+  padding: 10px 20px;
+  font-family: "Arimo", sans-serif;
+  font-size: 18px;
+  margin-top: 50px;
+  cursor: pointer;
+}
+.adminMenu .main .vouchers .voucher-container .voucher-form form .voucher-btn:hover {
+  color: #000000;
+  background: #DADADA;
 }
 .adminMenu .main .vouchers .voucher-container .voucher-table {
   grid-column: 2/3;
   grid-row: 1/2;
+  background: #DADADA;
+  color: #1F1F1F;
+  font-family: "Arimo", sans-serif;
+}
+.adminMenu .main .vouchers .voucher-container .voucher-table table {
+  width: 500px;
+  height: auto;
+}
+.adminMenu .main .vouchers .voucher-container .voucher-table table tr {
+  border-bottom: 1px solid #1F1F1F;
+}
+.adminMenu .main .vouchers .voucher-container .voucher-table table tr th {
+  background: #008AD8;
+  padding: 6px 15px;
+}
+.adminMenu .main .vouchers .voucher-container .voucher-table table tr td {
+  padding: 3px 10px;
 }
 .adminMenu .add {
   width: 80px;

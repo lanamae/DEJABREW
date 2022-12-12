@@ -2,6 +2,18 @@
     require "../php-admin/menu-database/menu-database.php";
     require "../php-admin/menu-database/read.php";
     require "../php-landing/date_and_time.php";
+    require "../php-admin/menu-database/voucher-file.php";
+
+   
+ 
+    // read voucher
+   
+    
+   
+    $queryRead_voucher = "SELECT * FROM vouchers";
+    $sqlRead_voucher = mysqli_query($queryVoucher, $queryRead_voucher);
+
+
 
    if(isset($_POST['allMenu'])){
         $queryRead_product= "SELECT * FROM tb_product";
@@ -337,27 +349,60 @@
             <div class="voucher-container">
                 <div class="voucher-form">
                         <p>Add Voucher</p>
-                    <form action="#" method="POST">
+                    <form action="../php-admin/menu-database/voucher-file.php" method="POST">
                         
                     
-                        <input type="text" value="Add  Voucher Name">
+                        <input type="text" name="voucher_name" placeholder="Add  Voucher Name">
                         <br>
                         
-                        <input type="text" value="Add  Voucher Percentage (N/A if not applicable)"> 
+                        <input type="text" name="voucher_percentage" placeholder="Add  Voucher Percentage (N/A if not applicable)"> 
                         <br>
                         
-                        <input type="text" value="Add  Voucher Price (N/A if not applicable)">
+                        <input type="text" name="voucher_price" placeholder="Add  Voucher Price (N/A if not applicable)">
                         
 
                         <input type="submit" name="create-voucher" class="voucher-btn"value="CREATE VOUCHER">
                     </form>
                 </div>
 
-            <div class="voucher-table">
+                <div class="voucher-table">
                 
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>VOUCHER NAME</th>
+                        <th>Percentage</th>
+                        <th>Price</th>
+
+                        
+                    <?php 
+                    while($results_voucher = mysqli_fetch_array($sqlRead_voucher)) {?>
+                    </tr>
+
+                   
+
+                    
+                        <td><?php echo $results_voucher['id'] ?></td>
+                        <td><?php echo $results_voucher['voucher_name'] ?></td>
+                        <td><?php echo $results_voucher['voucher_percentage'] ?></td>
+                        <td><?php echo $results_voucher['voucher_price'] ?></td>
+
+                   
+                    </tr>
+
+                    <?php } 
+                    ?>
+
+
+                </table>
+
+
             </div>
+            </div>
+
             
-            </div>
+            
+            
            
 
 
