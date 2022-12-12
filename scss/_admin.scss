@@ -189,16 +189,36 @@
                     background: rgba($color: $color7, $alpha: 0.90);
                     border-radius: 10px;
                     margin-top: 5px;  
-
-                    color: $color7;
-                    font-family: $font1;
-                    font-size: 18px;
-                    letter-spacing: 2px;
-                    padding: 20px 50px;
+                    padding: 20px 40px;
                 
+               
+                    img{
+                        width: 25px;
+                        height: 15px;
+                        margin-right: 10px;
+                    }
+
+                    .title{
+                        margin-top: -200px;
+                        
+                        color: $color1;
+                        font-family: $font1;
+                        font-size: 18px;
+                        font-weight: bold;
+                        letter-spacing: 2px;
+                    }
+
+                    p{
+                        font-family: $font1;
+                        font-size: 25px;
+                        font-weight: bold;
+                        color: $green;
+                        letter-spacing: 2px;
+                        margin-top: 30px;
+                    }
 
                 }
-                .total-order{
+                .total-profit{
                     grid-column: 3/5;
                     grid-row: 1/2;
                     
@@ -206,17 +226,78 @@
                     background: rgba($color: $color7, $alpha: 0.90);
                     border-radius: 10px;
                     margin-top: 5px;
+                    padding: 20px 40px;
+                    
+                    img{
+                        width: 25px;
+                        height: 15px;
+                        margin-right: 10px;
+                    }
+
+                    .title{
+                        margin-top: -200px;
+                        
+                        color: $color1;
+                        font-family: $font1;
+                        font-size: 18px;
+                        font-weight: bold;
+                        letter-spacing: 2px;
+                    }
+
+                    p{
+                        font-family: $font1;
+                        font-size: 25px;
+                        font-weight: bold;
+                        color: #FF81F2;
+                        letter-spacing: 2px;
+                        margin-top: 30px;
+                    }
+
                 }
-                .total-working-hours{
+
+
+
+                .total-orders{
                     grid-column: 5/7;
                     grid-row: 1/2;
                     
-                   
+
                     background: rgba($color: $color7, $alpha: 0.90);
                     border-radius: 10px;
                     margin-top: 5px;
+                    padding: 20px 40px;
+                    
+                    img{
+                        width: 25px;
+                        height: 15px;
+                        margin-right: 10px;
+                    }
+
+                    .title{
+                        margin-top: -200px;
+                        
+                        color: $color1;
+                        font-family: $font1;
+                        font-size: 18px;
+                        font-weight: bold;
+                        letter-spacing: 2px;
+                    }
+
+                    p{
+                        font-family: $font1;
+                        font-size: 25px;
+                        font-weight: bold;
+                        color: #DCAB72;
+                        letter-spacing: 2px;
+                        margin-top: 30px;
+                    }
+
                 }
-                .product-carousel{
+
+
+
+
+                .sale-analytics{
                     grid-column: 1/4;
                     grid-row: 2/4;
                     
@@ -224,15 +305,54 @@
                     background: rgba($color: $color7, $alpha: 0.90);
                     border-radius: 10px;
                     margin-top: 5px;
+                    padding: 20px 50px;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    .title{
+                        font-size: 18px;;
+                        font-weight: bold;
+                        font-family: $font1;
+                        letter-spacing: 2px;
+                        margin-bottom: 10px;
+                    }
+
+                    #chart_div{
+                        width: 350px;
+                        height: 200px;
+                        background-color: none;
+                        
+                    }
                 }
-                .graph{
+                .order-analytics{
                     grid-column: 4/7;
                     grid-row: 2/4;
-                    
                     
                     background: rgba($color: $color7, $alpha: 0.90);
                     border-radius: 10px;
                     margin-top: 5px;
+                    padding: 20px 50px;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    .title{
+                        font-size: 18px;;
+                        font-weight: bold;
+                        font-family: $font1;
+                        letter-spacing: 2px;
+                        margin-bottom: 10px;
+                    }
+
+                    #barchart_material{
+                        width: 100px;
+                        height: 100px;
+                        background: none;
+                        
+                    }
                 }
 
 
@@ -249,6 +369,7 @@
     }
     
 
+ 
 
     
 
@@ -454,7 +575,7 @@
                 grid-template-columns: repeat(auto-fill, 100px);
                 gap: 20px;
 
-                li{
+                label{
                     display: inline-block;
                     width: 100px;
                     height: 80px;
@@ -464,7 +585,7 @@
 
                     text-align: center;
                     font-family: $font1;
-                    padding: 8px 10px;
+                    padding: 8px 15px;
                     cursor: pointer;
 
                     img{
@@ -476,6 +597,20 @@
                     &:hover{
                         background: rgb(32, 245, 138);
                         font-weight: bold;
+
+                    }
+
+                    input{
+                        background: none;
+                        border-style: none;
+                        
+                        color: $color1;
+                        cursor: pointer;
+
+                        &:hover{
+                            font-weight: bold;
+                        }
+
                     }
                 }
 
@@ -652,6 +787,8 @@
             justify-content: center;
             align-items: center;
 
+            padding: 20px 0px;
+            padding-bottom: 50px;
         
             .product-table{
                 width: 100%;
@@ -736,7 +873,81 @@
             }
 
         }
+
+        .vouchers{
+            width: 100%;
+            height: 100vh;
+            padding: 20px 0px;
+
+            .voucher-title{
+                font-size: 45px;
+                color: $color7;
+                letter-spacing: 2px;
+                font-family: $font1;
+                margin: 10px 0px;
+            }
+
+
+            .voucher-container{
+                display: grid;
+                grid-template-columns: 350px 1fr;
+                grid-row: 1fr;
+
+                .voucher-form{
+                    grid-column: 1/2;
+                    grid-row: 1/2;
+
+                    @include glassBg;
+                    border: 2px solid $color7;
+                    border-radius: 10px;
+                    width: 300px;
+                    height: 350px;
+                    padding: 20px 35px;
+    
+                    p{
+                        color: $color6;
+                        font-family: $font1;
+                        font-size: 25px;
+                        text-align: center;
+                    }
+    
+                    form{
+                        margin: 30px 0px;
+    
+                        input{
+                            background: none;
+                            border-style: none;
+                            border-bottom: 1px solid $color7;
+                            padding: 10px 20px;
+                            color: $color5;
+                            font-style: italic;
+                            font-size: 15px;
+                        }        
+
+                        .voucher-btn{
+                            background: $color5;
+                            
+                        }
+    
+    
+                    }
+    
+    
+                }
+
+                .voucher-table{
+                    grid-column: 2/3;
+                    grid-row: 1/2;
+                }
+            }
+            
+        }
     }
+
+
+
+
+
     
     .add{
             

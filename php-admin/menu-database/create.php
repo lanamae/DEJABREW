@@ -65,7 +65,7 @@
         $productImage = basename( $_FILES["uploadProduct"]["name"]);
         $productName = $_POST['productName'];
         $productPrice = $_POST['productPrice'];
-        $productCategory = $_POST['productCategory'];
+        $productCategory = strtolower($_POST['productCategory']);
 
         $queryProducts = "INSERT INTO tb_product VALUES(null, '$productImage', '$productName', '$productPrice', '$productCategory')";
         $sqlProduct = mysqli_query($connProducts, $queryProducts);

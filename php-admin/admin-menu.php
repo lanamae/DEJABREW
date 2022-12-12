@@ -4,27 +4,81 @@
     require "../php-landing/date_and_time.php";
 
    if(isset($_POST['allMenu'])){
-        
         $queryRead_product= "SELECT * FROM tb_product";
         $sqlRead_product = mysqli_query($connProducts, $queryRead_product);
    }   
    
    if(isset($_POST['coffee'])){
-
-        $category = 'COFFEE';
-            
+        $category = 'coffee';
         $queryRead_product= "SELECT * FROM tb_product WHERE Category='$category'";
         $sqlRead_product = mysqli_query($connProducts, $queryRead_product);
     }  
-
 
     if(isset($_POST['bottled'])){
-
-        $category = 'BOTTLED';
-            
+        $category = 'bottled';
         $queryRead_product= "SELECT * FROM tb_product WHERE Category='$category'";
         $sqlRead_product = mysqli_query($connProducts, $queryRead_product);
     }  
+
+    if(isset($_POST['frappucino'])){
+        $category = 'frappucino';
+        $queryRead_product= "SELECT * FROM tb_product WHERE Category='$category'";
+        $sqlRead_product = mysqli_query($connProducts, $queryRead_product);
+    }  
+
+    if(isset($_POST['float-series'])){
+        $category = 'float series';
+        $queryRead_product= "SELECT * FROM tb_product WHERE Category='$category'";
+        $sqlRead_product = mysqli_query($connProducts, $queryRead_product);
+    }  
+
+    if(isset($_POST['non-coffee'])){
+        $category = 'non-coffee';
+        $queryRead_product= "SELECT * FROM tb_product WHERE Category='$category'";
+        $sqlRead_product = mysqli_query($connProducts, $queryRead_product);
+    }  
+
+    if(isset($_POST['fruit-tea-series'])){
+        $category = 'fruit tea series';
+        $queryRead_product= "SELECT * FROM tb_product WHERE Category='$category'";
+        $sqlRead_product = mysqli_query($connProducts, $queryRead_product);
+    }  
+
+    if(isset($_POST['fruit-splash-yogurt-smoothies'])){
+        $category = 'fruit splash yogurt smoothies';
+        $queryRead_product= "SELECT * FROM tb_product WHERE Category='$category'";
+        $sqlRead_product = mysqli_query($connProducts, $queryRead_product);
+    } 
+    
+    if(isset($_POST['yogurt'])){
+        $category = 'yogurt';
+        $queryRead_product= "SELECT * FROM tb_product WHERE Category='$category'";
+        $sqlRead_product = mysqli_query($connProducts, $queryRead_product);
+    }  
+
+    if(isset($_POST['cheese-macchiato-series'])){
+        $category = 'cheese macchiato series';
+        $queryRead_product= "SELECT * FROM tb_product WHERE Category='$category'";
+        $sqlRead_product = mysqli_query($connProducts, $queryRead_product);
+    }
+
+    if(isset($_POST['barista-choice'])){
+        $category = "Barista Choice";
+        $queryRead_product= "SELECT * FROM tb_product WHERE Category='$category'";
+        $sqlRead_product = mysqli_query($connProducts, $queryRead_product);
+    }
+
+    if(isset($_POST['gourmet-series'])){
+        $category = 'gourmet series';
+        $queryRead_product= "SELECT * FROM tb_product WHERE Category='$category'";
+        $sqlRead_product = mysqli_query($connProducts, $queryRead_product);
+    }
+
+    if(isset($_POST['tea-latte-series'])){
+        $category = 'tea latte series';
+        $queryRead_product= "SELECT * FROM tb_product WHERE Category='$category'";
+        $sqlRead_product = mysqli_query($connProducts, $queryRead_product);
+    }
 
     
 
@@ -101,47 +155,90 @@
 
         <div class="category">
             <ul>
-                    
+                
 
-                    <li><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> 
+                <label for="allMenu"><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> 
+                    <form action="../php-admin/admin-menu.php" method="POST">
+                        <input type="submit" id="allMenu" name="allMenu" value="ALL MENU">
+                    </form>
+                </label>
+                
 
-                        <form action="../php-admin/admin-menu.php" method="POST">
-                            <input type="submit" name="allMenu" value="ALL MENU" style="witdh: 100%; height: 100%; cursor: pointer;">
-
-
-                        </form>
-                    </li>
-                   
-                    <li><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> 
-
-                        <form action="../php-admin/admin-menu.php" method="POST">
-                            <input type="submit" name="coffee" value="COFFEE" style="witdh: 100%; height: 100%; cursor: pointer;">
-
-
-                        </form>
-                    </li>
-
-                    <li><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> 
-
-                        <form action="../php-admin/admin-menu.php" method="POST">
-                            <input type="submit" name="bottled" value="BOTTLED" style="witdh: 100%; height: 100%; cursor: pointer;">
+                <label for="coffee"><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> 
+                    <form action="../php-admin/admin-menu.php" method="POST">
+                        <input type="submit" id="coffee" name="coffee" value="COFFEE">
+                    </form>
+                </label>
 
 
-                        </form>
-                    </li>
+                <label for="bottled"><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> 
+                    <form action="../php-admin/admin-menu.php" method="POST">
+                        <input type="submit" id="bottled" name="bottled" value="BOTTLED">
+                    </form>
+                </label>
 
-                    <!-- <li>COFFEE</li> -->
-                    <!-- <li>Bottled</li> -->
-                    <li>Frappucino</li>
-                    <li>Float Series</li>
-                    <li>Non-Coffee</li>
-                    <li>Fruit Tea Series</li>
-                    <li>Fruit Splash Yogurt Smoothies</li>
-                    <li>Yogurt</li>
-                    <li>Cheese Macchiato Series</li>
-                    <li>Barista's Choice</li>
-                    <li>Gourmet Series</li>
-                    <li>Tea Latte Series</li>
+                <label for="frappucino"><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> 
+                    <form action="../php-admin/admin-menu.php" method="POST">
+                        <input type="submit" id="frappucino" name="frappucino" value="Frappucino">
+                    </form>
+                </label>
+
+                <label for="float series"><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> 
+                    <form action="../php-admin/admin-menu.php" method="POST">
+                        <input type="submit" id="float series" name="float-series" value="Float Series">
+                    </form>
+                </label>
+
+                <label for="non-coffee"><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> 
+                    <form action="../php-admin/admin-menu.php" method="POST">
+                        <input type="submit" id="non-coffee" name="non-coffee" value="Non-Coffee">
+                    </form>
+                </label>
+
+                <label for="fruit-tea-series"><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> 
+                    <form action="../php-admin/admin-menu.php" method="POST">
+                        <input type="submit" id="fruit-tea-series" name="fruit-tea-series" value="Fruit Tea Series" style="font-size: 11px; white-space: normal;">
+                    </form>
+                </label>
+
+                <label for="fruit-splash-yogurt-smoothies"><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon" style="width: 15px; height: 25px;"> 
+                    <form action="../php-admin/admin-menu.php" method="POST">
+                        <input type="submit" id="fruit-splash-yogurt-smoothies" name="fruit-splash-yogurt-smoothies" value="Fruit Splash  Yogurt Smoothies" style="font-size: 9px; white-space: normal;">
+                    </form>
+                </label>
+
+                <label for="yogurt"><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> 
+                    <form action="../php-admin/admin-menu.php" method="POST">
+                        <input type="submit" id="yogurt" name="yogurt" value="Yogurt">
+                    </form>
+                </label>
+
+                <label for="cheese-macchiato-series"><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> 
+                    <form action="../php-admin/admin-menu.php" method="POST">
+                        <input type="submit" id="cheese-macchiato Series" name="cheese-macchiato-series" value="Cheese Macchiato Series" style="font-size: 9px; white-space: normal;">
+                    </form>
+                </label>
+
+                <label for="barista's-choice"><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> 
+                    <form action="../php-admin/admin-menu.php" method="POST">
+                        <input type="submit" id="barista's-choice" name="barista-choice" value="Barista's Choice" style="font-size: 12px; white-space: normal;">
+                    </form>
+                </label>
+
+                <label for="gourmet-series"><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> 
+                    <form action="../php-admin/admin-menu.php" method="POST">
+                        <input type="submit" id="gourmet-series" name="gourmet-series" value="Gourmet Series" style="font-size: 12px; white-space: normal;">
+                    </form>
+                </label>
+
+                <label for="tea-latte-series"><img src="../PROJECT/Images/milktea-icon.png" alt="milktea-icon"> 
+                    <form action="../php-admin/admin-menu.php" method="POST">
+                        <input type="submit" id="tea-latte-series" name="tea-latte-series" value="Tea Latte Series" style="font-size: 12px; white-space: normal;">
+                    </form>
+                </label>
+             
+                
+                
             </ul>
         </div>
 
@@ -227,6 +324,43 @@
 
                 <?php }?>
             </div>
+        </div>
+
+
+        <hr>
+
+        <div class="vouchers">
+
+            <p class="voucher-title">VOUCHERS</p>
+            
+
+            <div class="voucher-container">
+                <div class="voucher-form">
+                        <p>Add Voucher</p>
+                    <form action="#" method="POST">
+                        
+                    
+                        <input type="text" value="Add  Voucher Name">
+                        <br>
+                        
+                        <input type="text" value="Add  Voucher Percentage (N/A if not applicable)"> 
+                        <br>
+                        
+                        <input type="text" value="Add  Voucher Price (N/A if not applicable)">
+                        
+
+                        <input type="submit" name="create-voucher" class="voucher-btn"value="CREATE VOUCHER">
+                    </form>
+                </div>
+
+            <div class="voucher-table">
+                
+            </div>
+            
+            </div>
+           
+
+
         </div>
 
         <div class="overlay"></div> 
