@@ -13,8 +13,19 @@
     $queryRead_voucher = "SELECT * FROM vouchers";
     $sqlRead_voucher = mysqli_query($queryVoucher, $queryRead_voucher);
 
+    
+    // delete voucher
+    if(isset($_POST['delete_voucher'])){
+        $deleteId = $_POST['deleteId'];
+
+        $queryDelete_Voucher = "DELETE FROM vouchers WHERE id ='$deleteId'";
+        $sqlDelete_Voucher = mysqli_query($queryVoucher, $queryDelete_Voucher);
+
+        echo "<script>window.location.href='../php-admin/admin-menu.php'</script>";
+    }
 
 
+    // sorting menu
    if(isset($_POST['allMenu'])){
         $queryRead_product= "SELECT * FROM tb_product";
         $sqlRead_product = mysqli_query($connProducts, $queryRead_product);
@@ -347,58 +358,78 @@
             
 
             <div class="voucher-container">
+               
                 <div class="voucher-form">
-                        <p>Add Voucher</p>
-                    <form action="../php-admin/menu-database/voucher-file.php" method="POST">
                         
-                    
-                        <input type="text" name="voucher_name" placeholder="Add  Voucher Name">
-                        <br>
-                        
-                        <input type="text" name="voucher_percentage" placeholder="Add  Voucher Percentage (N/A if not applicable)"> 
-                        <br>
-                        
-                        <input type="text" name="voucher_price" placeholder="Add  Voucher Price (N/A if not applicable)">
-                        
+                        <form action="../php-admin/menu-database/voucher-file.php" method="POST">
+                            
+                            <p>Add Voucher</p>
+                            <input type="text" name="voucher_name" placeholder="Add  Voucher Name">
+                            <br>
+                            
+                            <input type="text" name="voucher_percentage" placeholder="Add  Voucher Percentage (N/A if not applicable)"> 
+                            <br>
+                            
+                            <input type="text" name="voucher_price" placeholder="Add  Voucher Price (N/A if not applicable)">
+                            
 
-                        <input type="submit" name="create-voucher" class="voucher-btn"value="CREATE VOUCHER">
-                    </form>
+                            <input type="submit" name="create-voucher" class="voucher-btn"value="CREATE VOUCHER">
+                        </form>
+
+                       
                 </div>
+
+            
 
                 <div class="voucher-table">
                 
-                <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>VOUCHER NAME</th>
-                        <th>Percentage</th>
-                        <th>Price</th>
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>VOUCHER NAME</th>
+                            <th>Percentage</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                            
+                    
+                        </tr>
+                        
+
+                        <?php 
+                        while($results_voucher = mysqli_fetch_array($sqlRead_voucher)) {?>
 
                         
-                 
-                    </tr>
+                            <td><?php echo $results_voucher['id'] ?></td>
+                            <td><?php echo $results_voucher['voucher_name'] ?></td>
+                            <td><?php echo $results_voucher['voucher_percentage'] . " %" ?></td>
+                            <td><?php echo "P " .$results_voucher['voucher_price'] ?></td>
+
+                            <td class="action-voucher">
+                                <form action="../php-admin/menu-database/edit-voucher.php" method="POST">
+                                    <input type="submit" name="edit_voucher" class="edit-voucher" value="EDIT">
+                                    <input type="hidden" name="updateVoucher_Id" value="<?php echo $results_voucher['id'] ?>">
+                                    <input type="hidden" name="updateVoucher_Name" value="<?php echo $results_voucher['voucher_name'] ?>">
+                                    <input type="hidden" name="updateVoucher_Percentage" value="<?php echo $results_voucher['voucher_percentage'] ?>">
+                                    <input type="hidden" name="updateVoucher_Price" value="<?php echo $results_voucher['voucher_price'] ?>">
+                                </form>
+
+                                <form action="admin-menu.php" method="POST">
+                                    <input type="submit" name="delete_voucher" class="delete-voucher" value="Delete">
+                                    <input type="hidden" name="deleteId" value="<?php echo $results_voucher['id'] ?>">
+                                </form>
+                            </td>
+
+                            
+                        </tr>
                     
-
-                    <?php 
-                    while($results_voucher = mysqli_fetch_array($sqlRead_voucher)) {?>
-
-                    
-                        <td><?php echo $results_voucher['id'] ?></td>
-                        <td><?php echo $results_voucher['voucher_name'] ?></td>
-                        <td><?php echo $results_voucher['voucher_percentage'] ?></td>
-                        <td><?php echo $results_voucher['voucher_price'] ?></td>
-
-                        
-                    </tr>
-                
-                    <?php } 
-                    ?>
+                        <?php } 
+                        ?>
 
 
-                </table>
+                    </table>
 
 
-            </div>
+                </div>
             </div>
 
             
@@ -431,6 +462,38 @@
 </div>
 
 
+    <!-- FOOTER -->
+     <div class="footer">
+            <img src="../PROJECT/Images/dejabrew-logo.png" class="logo" alt="dejabrew logo">
+                  
+            <div class="footer-details" style="display:flex;">
+                <div class="column1">
+                    <h4>Deja brew</h4><br>  
+                    <span>95 National Road Pulilan Bulacan</span><br> <br> <br> <br>
+                    <p>All Right Reserved 2023 &copy;</p>   
+                </div>
+
+                <div class="column2">
+                    <h4>Page Content</h4> <br>
+                    <p><a href="admin-home.php">Home</a></p>
+                    <p><a href="admin-menu.php">Menu</a></p>
+                    <p><a href="admin-sales.php">Sales</a></p>
+                    <p><a href="admin-employees.php">Employees</a></p>
+                    <p><a href="admin-profile.php">Profile</a></p>
+                </div>
+
+                <div class="column3">
+                    <h4>Social</h4><br>
+
+                    <p><a href="#">Facebook</a></p>
+                    <p><a href="#">Twitter</a></p>
+                    <p><a href="#">Instagram</a></p>
+                    <p><a href="#">FGmail</a></p>
+                </div>
+                
+            </div>
+
+    </div>                
 
 
     
