@@ -103,6 +103,16 @@
         $sqlRead_product = mysqli_query($connProducts, $queryRead_product);
     }
 
+    if(isset($_POST['search-btn'])){
+        $search_text = $_POST['search'];
+
+        
+        $queryRead_product= "SELECT * FROM tb_product WHERE Category='$search_text' || productName = '$search_text' ";
+        $sqlRead_product = mysqli_query($connProducts, $queryRead_product);
+
+        
+    }
+
     
 
 ?>
@@ -160,7 +170,7 @@
         <div class="header">
                 
             <div class="search-bar">
-                <form action="#" method="POST">
+                <form action="admin-menu.php" method="POST">
                     <input type="text" name="search" class="search-txt">
                     <button type="submit" name="search-btn" class="search-btn">
                         <img src="../PROJECT/Images/search-icon.png" alt="search">
@@ -367,10 +377,10 @@
                             <input type="text" name="voucher_name" placeholder="Add  Voucher Name">
                             <br>
                             
-                            <input type="text" name="voucher_percentage" placeholder="Add  Voucher Percentage (N/A if not applicable)"> 
+                            <input type="number" name="voucher_percentage" placeholder="Add  Voucher Percentage (N/A if not applicable)"> 
                             <br>
                             
-                            <input type="text" name="voucher_price" placeholder="Add  Voucher Price (N/A if not applicable)">
+                            <input type="number" name="voucher_price" placeholder="Add  Voucher Price (N/A if not applicable)">
                             
 
                             <input type="submit" name="create-voucher" class="voucher-btn"value="CREATE VOUCHER">
@@ -395,7 +405,7 @@
                         </tr>
                         
 
-                        <?php 
+                        <?php
                         while($results_voucher = mysqli_fetch_array($sqlRead_voucher)) {?>
 
                         
@@ -405,7 +415,7 @@
                             <td><?php echo "P " .$results_voucher['voucher_price'] ?></td>
 
                             <td class="action-voucher">
-                                <form action="../php-admin/menu-database/edit-voucher.php" method="POST">
+                                <form action="../php-admin/edit-voucher.php" method="POST">
                                     <input type="submit" name="edit_voucher" class="edit-voucher" value="EDIT">
                                     <input type="hidden" name="updateVoucher_Id" value="<?php echo $results_voucher['id'] ?>">
                                     <input type="hidden" name="updateVoucher_Name" value="<?php echo $results_voucher['voucher_name'] ?>">

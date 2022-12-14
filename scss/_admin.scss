@@ -936,7 +936,7 @@
                             border-style: none;
                             border-bottom: 1px solid $color7;
                             padding: 10px 20px;
-                            color: $color5;
+                            color: $color7;
                             font-style: italic;
                             font-size: 15px;
                             
@@ -1084,7 +1084,7 @@
 // 
 // ------------------------------------------------------------------------------------
 // MENU UPDATE
-.main-updateMenu{
+.updateMenu{
     width: 100%;
     height: 100vh;
 
@@ -1177,7 +1177,7 @@
                         width: 100%;
                         height: 30px;
                         padding: 0px 10px;  
-                        border: 2px solid $color5;
+                        border: 2px solid $color7;
                         border-radius: 3px;
                         background: none;
                         font-size: 15px;
@@ -1228,6 +1228,157 @@
 
     
 }
+
+
+// --VOUCHER UPDATE
+.voucher-update{
+    width: 100%;
+    height: 100vh;
+
+    background: linear-gradient(to top, rgba(0,0,0,0.8)40%,rgba(0,0,0,0.8)6%), url('../PROJECT/Images/img1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+
+
+        //     }
+        // }
+
+        .modal-container{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)scale(1);
+            width: 400px;
+            height: 550px;
+            max-width: 80%;
+            border: $color7 3px solid;
+            border-radius: 5px;
+           
+            @include glassBg();
+            z-index: 10;
+            color: $color7;
+
+            display: grid;
+            grid-template-rows: 60px 490px;
+            border: 2px solid $color6;
+
+            .modal-header{
+                grid-row: 1/2;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                padding: 10px 40px;
+                border-bottom: $color7 solid 2px;
+                
+                h2{
+                    font-family: $font1;
+                    font-size: 30px;
+                }
+
+                .modal-close{
+                    width: 30px;
+                    height: 30px;
+                    background: $color1;
+                    border-radius: 50%;
+                    color: $color7;
+                    font-weight: bold;
+                    font-size: 26px;
+                    cursor: pointer;
+                    text-align: center;
+                    // padding: 5px;
+                }
+
+            }
+
+            .modal-body{
+                padding: 10px 40px;
+                grid-row: 2/3;
+                
+                form{
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: start;
+                    gap: 10px;
+                    
+                    .productImg{
+                        width: 100px;
+                        height: 100px;
+                        border:#000 2px solid;
+                    }
+
+                    
+
+                    label{
+                        font-size: 18px;
+                        font-family: $font1;
+                        font-weight: 100px;
+                        // margin-bottom: 5px;
+                        text-align: start;
+                    }
+
+                    input{
+                        width: 100%;
+                        height: 40px;
+                        padding: 0px 10px;  
+                        border: 2px solid $color5;
+                        border-radius: 3px;
+                        background: none;
+                        font-size: 15px;
+                        color: $color7;
+                        font-style: italic;
+                        
+                        
+                        
+                    }
+                   
+
+                    .voucher-btn{
+                        background: $color3;
+                        color: $color7;
+                        height: 50px;
+                        border-radius: 50px; 
+                        border: none;   
+                        font-size: 18px;
+                        margin-top: 20px;
+                        cursor: pointer;
+                        box-shadow: 0px 4px 4px rgba($color: $color1, $alpha: 0.30);
+
+                        &:hover{
+                            background: $color5;
+                            border: 1px solid $color3;
+                            color: $color1;
+                        }
+                    }
+                
+                }
+
+            }
+
+            
+        }
+
+
+
+
+
+
+
+       
+
+
+    
+}
+
+
+
+
+
 
 // ------------------------------------------------------------------------------------
 // ADMIN-SALES
@@ -1423,7 +1574,7 @@
 // ADMIN-EMPLOYEES
 .adminEmployee{
     width: 100%;
-    height: 100vh;
+    height: auto;
     padding: 30px 0px 30px 30px;
     
     
@@ -1611,48 +1762,55 @@
             width: 100%;
             height: auto;
             
-            padding: 20px 80px;
+            
 
             .employee-table{
                 width: 100%;
                 height: auto;
                 
-
+                margin: 30px 0px;
                 display: grid;
-                grid-template-columns: repeat(auto-fill, 250px);
-                grid-row-gap: 50px;
-                grid-column-gap: 20px;
+                grid-template-columns: repeat(auto-fill, 200px);
+                gap: 20px;
 
                 .employee{
-                    width: 235px;
-                    height: 360px;
+                    width: 200px;
+                    height: 250px;
                     background: $color7;
                     border-radius: 10px;
                     font-family: $font1;
-                    padding: 30px;
+                    padding: 10px 30px;
                     margin: 10px 50px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: flex-start;
+                    white-space: normal;
 
                     .name{
                         color: $color1;
                         font-weight: bold;
-                        font-size: 20px;
-                        margin-bottom: 50px;
+                        font-size: 15px;
+                        // margin-bottom: 50px;
                     }
 
                     img{
-                        width: 120px;
-                        height: 120px;
-                        margin-bottom: 50px;
+                        width: 60px;
+                        height: 60px;
+                        // margin-bottom: 50px;
                     }
 
 
 
                 }
             }
+        }
+
+
+        .logbook{
+            width: 100%;
+            height: 100vh;
+            // background: red;
         }
 
 

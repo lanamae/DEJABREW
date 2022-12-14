@@ -1,21 +1,19 @@
 <?php
+    error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);   
     require '../php-landing/database.php';
     require "../php-landing/date_and_time.php";
+    require '../php-landing/readLogbook.php';
     // session_start();
 
     // echo $_SESSION['username'];
 
     $queryEmployee = "SELECT * FROM useraccounts WHERE position = 'employee'";
     $sqlEmployee = mysqli_query($connection, $queryEmployee);
-    // $employee =  mysqli_fetch_array($sqlEmployee);
+    
 
-    // if(mysqli_num_rows($sqlEmployee) >0){
-        
-    //     echo $employee['id'];
-    //     echo $employee['username'];
+    $queryEmployee_log = "SELECT * FROM log_details WHERE position = 'employee'";
+    $sqlEmployee_log = mysqli_query($connLog, $queryEmployee_log);
 
-        
-    // }
 ?>
 
 <!DOCTYPE html>
@@ -91,11 +89,14 @@
                 while($employee = mysqli_fetch_array($sqlEmployee)) {?>
 
                 <div class="employee">
-                    <div class="name">SAMPLE NAME</div>
+                        
                         <img src="../PROJECT/Images/default-pic.png" alt="" srcset="">
-                        <div class="id"><strong>ID:</strong> <?php echo $employee['id'] ?></div>
+                        <span class="name">SAMPLE NAME</span><br>
+
+                        <input type="hidden" name="employee-id" id="employee-id" value="<?php echo $employee['id'] ?>">
                         <div class="username"><strong>Username:</strong> <?php echo $employee['username'] ?> </div>
-                        <div class="email"><strong>Email:</strong> <?php echo $employee['email'] ?></div>
+                        <br>
+                        <div class="email" style="white-space: normal;"><strong>Email:</strong> <?php echo $employee['email'] ?></div>
                 </div>
 
                 <?php } ?>
@@ -103,6 +104,44 @@
 
             </div>
       </div>
+
+      <hr>
+
+      <div class="logbook">
+        <div class="logbook-title">Logbook</div>
+        
+        <table border="collapsed">
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Date login</th>
+                <th>Time login</th>
+                <th>Date Logout</th>
+                <th>Time Logout</th>
+
+            </tr>
+           
+                <?php
+
+                while($resultLog = mysqli_fetch_array($sqlEmployee_log)) {?>
+             <tr>
+                        <td><?php echo $resultLog['id'] ?></td>
+                        <td><?php echo $resultLog['username'] ?></td>
+                        <td><?php echo $resultLog['date_login'] ?></td>
+                        <td><?php echo $resultLog['login_time'] ?></td>
+                        <td><?php echo $resultLog['date_logout'] ?></td>
+                        <td><?php echo $resultLog['logout_time'] ?></td>
+
+
+                
+            </tr>
+            <?php } ?>  
+
+
+        </table>
+      </div>
+
+
         
 
 

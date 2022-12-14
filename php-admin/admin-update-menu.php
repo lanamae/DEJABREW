@@ -33,7 +33,7 @@
 
 
 <body>
-    <div class="main-updateMenu">
+    <div class="updateMenu">
         
         
 
