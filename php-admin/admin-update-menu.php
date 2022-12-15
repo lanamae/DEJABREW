@@ -50,7 +50,7 @@
                         
                         <input type="file" name="update_Image" id="uploadProduct" class="uploadProduct"> <br>
 
-                        <input type="hidden" name="updateId" value="<?php echo $edit_productId ?>">
+                        <input type="text" name="updateId" value="<?php echo $edit_productId ?>">
                         
                         <label for="productName">UPDATE Product Name : </label>
                         <input type="text" name="update_productName" id="productName" value="<?php echo $edit_productName?> "> <br>

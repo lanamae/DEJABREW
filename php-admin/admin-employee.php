@@ -108,12 +108,12 @@
       <hr>
 
       <div class="logbook">
-        <div class="logbook-title">Logbook</div>
+        <div class="logbook-title">EMPLOYEE LOGBOOK</div>
         
-        <table border="collapsed">
+        <table>
             <tr>
                 <th>Id</th>
-                <th>Username</th>
+                <th>Employee Username</th>
                 <th>Date login</th>
                 <th>Time login</th>
                 <th>Date Logout</th>

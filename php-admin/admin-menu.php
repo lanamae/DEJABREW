@@ -361,6 +361,13 @@
 
 
         <hr>
+        <div class="add-ons">
+            
+        </div>
+
+
+
+        <hr>
 
         <div class="vouchers">
 
