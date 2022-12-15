@@ -118,7 +118,6 @@
                 <th>Time login</th>
                 <th>Date Logout</th>
                 <th>Time Logout</th>
-
             </tr>
            
                 <?php

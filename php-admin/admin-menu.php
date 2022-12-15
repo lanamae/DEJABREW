@@ -1,4 +1,5 @@
 <?php
+
     require "../php-admin/menu-database/menu-database.php";
     require "../php-admin/menu-database/read.php";
     require "../php-landing/date_and_time.php";
@@ -23,6 +24,28 @@
 
         echo "<script>window.location.href='../php-admin/admin-menu.php'</script>";
     }
+
+
+    // add ADD ONS
+
+    if(isset($_POST['add-ons-btn'])){
+        $add_ons_name = trim($_POST['add-ons-name']);
+        $add_ons_price = trim($_POST['add-ons-price']);
+
+        $queryAddons = "INSERT INTO addons VALUES(null, '$add_ons_name','$add_ons_price'";
+        $sqlAddons = mysqli_query($connProducts,$queryAddons);
+
+        echo "<script>window.location.href='../admin-menu.php'</script>";
+
+    }
+
+    // read add ons
+    $queryRead_addons = "SELECT * FROM addons";
+    $sqlRead_addons = mysqli_query($connProducts, $queryRead_addons);
+
+
+
+
 
 
     // sorting menu
@@ -362,6 +385,30 @@
 
         <hr>
         <div class="add-ons">
+            <div class="add-ons-title">ADD ONS</div>
+
+            <div class="add-ons-container">
+                    <form action="" method="POST">
+
+                    <!-- <label for="add-ons-name">Add Ons</label> -->
+                    <input type="text" name="add-ons-name" id="add-ons-name" placeholder="Enter Add Ons">
+                    <br>
+
+                    <!-- <label for="add-ons-price">Add Ons Price</label> -->
+                    <input type="number" name="add-ons-price" id="add-ons-price" placeholder="Enter Add Onns Price">
+                    <br>
+                    <input type="submit" name="add-ons-btn" class="add-ons-btn" value="Create Add Ons">
+                    </form>
+
+
+                    <div class="add-ons-table">
+                        
+                    </div>
+                    
+            </div>
+
+           
+
             
         </div>
 
