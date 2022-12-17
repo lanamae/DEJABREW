@@ -13,7 +13,9 @@
     // $_SESSION['password'] = $userDetails['password'];
 
 
-  
+    // while($fetchData){
+    //     echo $fetchData['id'];
+    // }
     
 
 

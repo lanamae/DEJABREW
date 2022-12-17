@@ -24,7 +24,7 @@
 
         echo "<script>window.location.href='../php-admin/admin-menu.php'</script>";
     }
-
+// ----------------------------------------------------
 
     // add ADD ONS
 
@@ -32,21 +32,31 @@
         $add_ons_name = trim($_POST['add-ons-name']);
         $add_ons_price = trim($_POST['add-ons-price']);
 
-        $queryAddons = "INSERT INTO addons VALUES(null, '$add_ons_name','$add_ons_price'";
-        $sqlAddons = mysqli_query($connProducts,$queryAddons);
+        $queryAddons = "INSERT INTO addons VALUES(null, '$add_ons_name','$add_ons_price')";
+        $sqlAddons = mysqli_query($connAddons,$queryAddons);
 
-        echo "<script>window.location.href='../admin-menu.php'</script>";
-
+        echo "<script>window.location.href='../php-admin/admin-menu.php'</script>";
+        
     }
 
     // read add ons
     $queryRead_addons = "SELECT * FROM addons";
-    $sqlRead_addons = mysqli_query($connProducts, $queryRead_addons);
+    $sqlRead_addons = mysqli_query($connAddons, $queryRead_addons);
 
 
+     // delete addons
+     if(isset($_POST['delete_addons'])){
+        $deleteId = $_POST['deleteId'];
+
+        $queryDelete_addons = "DELETE FROM addons WHERE id ='$deleteId'";
+        $sqlDelete_addons = mysqli_query($connAddons,$queryDelete_addons);
+
+        echo "<script>window.location.href='../php-admin/admin-menu.php'</script>";
+    }
+    
 
 
-
+// ------------------------------------------------------
 
     // sorting menu
    if(isset($_POST['allMenu'])){
@@ -388,14 +398,14 @@
             <div class="add-ons-title">ADD ONS</div>
 
             <div class="add-ons-container">
-                    <form action="" method="POST">
+                    <form action="../php-admin/admin-menu.php" method="POST" class="add-ons-form">
 
                     <!-- <label for="add-ons-name">Add Ons</label> -->
                     <input type="text" name="add-ons-name" id="add-ons-name" placeholder="Enter Add Ons">
                     <br>
 
                     <!-- <label for="add-ons-price">Add Ons Price</label> -->
-                    <input type="number" name="add-ons-price" id="add-ons-price" placeholder="Enter Add Onns Price">
+                    <input type="number" name="add-ons-price" id="add-ons-price" placeholder="Enter Add Ons Price">
                     <br>
                     <input type="submit" name="add-ons-btn" class="add-ons-btn" value="Create Add Ons">
                     </form>
@@ -403,6 +413,52 @@
 
                     <div class="add-ons-table">
                         
+                        
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Add  Ons</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                           
+                            
+                    
+                        </tr>
+                        
+
+                        <?php
+                        while($results_addons = mysqli_fetch_array($sqlRead_addons)) {?>
+
+                        
+                            <td><?php echo $results_addons['id'] ?></td>
+                            <td><?php echo $results_addons['add-ons-name'] ?></td>
+                            <td><?php echo "Php " .$results_addons['price'] ?></td>
+                  
+
+                            <td class="action-addons">
+                                <!-- <form action="../php-admin/addons.php" method="POST">
+                                    <input type="submit" name="edit_addons" class="edit-addons" value="EDIT">
+                                    <input type="hidden" name="updateVoucher_Id" value="<?php echo $results_addons['id'] ?>">
+                                    <input type="hidden" name="updateVoucher_Name" value="<?php echo $results_addons['add-ons-name'] ?>">
+                                    <input type="hidden" name="updateVoucher_Percentage" value="<?php echo $results_addons['price'] ?>">
+                               </form> -->
+
+                                <form action="../php-admin/admin-menu.php" method="POST">
+                                    <input type="submit" name="delete_addons" class="delete-addons" value="Delete">
+                                    <input type="hidden" name="deleteId" value="<?php echo $results_addons['id'] ?>">
+                                </form>
+                            </td>
+
+                            
+                        </tr>
+                    
+                        <?php } 
+                        ?>
+
+
+                    </table>
+
+
                     </div>
                     
             </div>

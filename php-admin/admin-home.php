@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);    
     require "../php-landing/session.php";
     require "../php-landing/date_and_time.php";
     require "../php-landing/read.php";
@@ -6,6 +7,7 @@
     require '../php-landing/database.php';
     require '../php-landing/readLogbook.php';
 
+    
 
     // echo $_SESSION['username'];
     // echo $_SESSION['dateLogin'];

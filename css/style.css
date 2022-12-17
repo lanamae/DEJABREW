@@ -1273,7 +1273,7 @@
   display: grid;
   grid-template-columns: 300px 1fr;
 }
-.adminMenu .main .add-ons .add-ons-container form {
+.adminMenu .main .add-ons .add-ons-container .add-ons-form {
   width: 250px;
   height: 300px;
   padding: 20px;
@@ -1290,7 +1290,7 @@
   justify-content: center;
   align-items: center;
 }
-.adminMenu .main .add-ons .add-ons-container form input {
+.adminMenu .main .add-ons .add-ons-container .add-ons-form input {
   background: none;
   border-style: none;
   border-bottom: 1px solid #9C9C9C;
@@ -1300,7 +1300,7 @@
   font-style: italic;
   color: #DADADA;
 }
-.adminMenu .main .add-ons .add-ons-container form .add-ons-btn {
+.adminMenu .main .add-ons .add-ons-container .add-ons-form .add-ons-btn {
   background: #9C9C9C;
   color: #1F1F1F;
   border-radius: 50px;
@@ -1313,13 +1313,62 @@
   margin-top: 70px;
   cursor: pointer;
 }
-.adminMenu .main .add-ons .add-ons-container form .add-ons-btn:hover {
+.adminMenu .main .add-ons .add-ons-container .add-ons-form .add-ons-btn:hover {
   color: #000000;
   background: #DADADA;
 }
 .adminMenu .main .add-ons .add-ons-container .add-ons-table {
   grid-column: 2/3;
-  background: red;
+  width: 100%;
+  height: auto;
+}
+.adminMenu .main .add-ons .add-ons-container .add-ons-table tr {
+  color: #DADADA;
+  font-family: "Arimo", sans-serif;
+}
+.adminMenu .main .add-ons .add-ons-container .add-ons-table tr th {
+  background: #008AD8;
+  padding: 10px 15px;
+  border-bottom: 0.2px solid #5A5A5A;
+  text-align: center;
+}
+.adminMenu .main .add-ons .add-ons-container .add-ons-table tr td {
+  padding: 10px 15px;
+  border-bottom: 0.2px solid #5A5A5A;
+  text-align: center;
+}
+.adminMenu .main .add-ons .add-ons-container .add-ons-table tr .action-addons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 10px 2px;
+}
+.adminMenu .main .add-ons .add-ons-container .add-ons-table tr .action-addons .edit-addons {
+  background: rgb(96, 194, 252);
+  padding: 5px 20px;
+  border-style: none;
+  border-radius: 5px;
+  color: #000000;
+  cursor: pointer;
+}
+.adminMenu .main .add-ons .add-ons-container .add-ons-table tr .action-addons .edit-addons:hover {
+  font-weight: bold;
+  background: #008AD8;
+  color: #FFFFFF;
+}
+.adminMenu .main .add-ons .add-ons-container .add-ons-table tr .action-addons .delete-addons {
+  background: rgb(240, 135, 161);
+  padding: 5px 20px;
+  border-style: none;
+  border-radius: 5px;
+  color: #000000;
+  cursor: pointer;
+}
+.adminMenu .main .add-ons .add-ons-container .add-ons-table tr .action-addons .delete-addons:hover {
+  font-weight: bold;
+  background: #e44040;
+  color: #FFFFFF;
 }
 .adminMenu .main .vouchers {
   width: 100%;
@@ -1410,6 +1459,10 @@
 .adminMenu .main .vouchers .voucher-container .voucher-table table {
   width: 100%;
   height: auto;
+}
+.adminMenu .main .vouchers .voucher-container .voucher-table table tr {
+  color: #DADADA;
+  font-family: "Arimo", sans-serif;
 }
 .adminMenu .main .vouchers .voucher-container .voucher-table table tr th {
   background: #008AD8;

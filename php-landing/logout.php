@@ -45,11 +45,11 @@
     
     }
 
-    else{
+        // else{
+            
+        //  echo "<script>alert('CANNOT CHANGE LOGBOOK')</script>";
         
-     echo "<script>alert('CANNOT CHANGE LOGBOOK')</script>";
-    
-    }
+        // }
 
 
     

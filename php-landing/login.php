@@ -67,7 +67,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
         }
 
         else{
-            $queryLogin = "SELECT * FROM useraccounts WHERE position='$position' AND username = '$username' AND password= md5('$password')";
+            $queryLogin = "SELECT * FROM useraccounts WHERE position='$position' AND username = '$username' AND password= '$password'";
             $sqlLogin = mysqli_query($connection, $queryLogin);
             $userDetails = mysqli_fetch_array($sqlLogin);
         

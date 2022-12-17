@@ -1,6 +1,8 @@
 <?php
     require './database.php';
+    require './read.php';
     //  require "../php-landing/session.php";
+    error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);    
     session_start();
     
     if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
@@ -51,7 +53,7 @@
             '>Fill up All Fields!<br><br><br> 
            
             
-            <a href='login.php' style='
+            <a href='signup.php' style='
             text-decoration:none;
             background: #9C9C9C;
             color: #000;
@@ -62,6 +64,8 @@
             '>BACK</a></p>";
 
         }
+        
+        // if($resultAccount)
         
         
         else if($password!=$password2){
@@ -94,8 +98,10 @@
 
         }
 
+        
+
         else{
-            $queryCreate = "INSERT INTO useraccounts VALUES(null, '$position', '$username', '$email', md5('$password')) ";
+            $queryCreate = "INSERT INTO useraccounts VALUES(null, '$position', '$username', '$email', '$password') ";
             $sqlCreate = mysqli_query($connection, $queryCreate);
 
             echo "<script>alert('SUCCESSFULLY CREATED ACCOUNT')</script>";
@@ -121,7 +127,7 @@
             '>Fill up all fields!<br><br><br> 
            
             
-            <a href='login.php' style='
+            <a href='signup.php' style='
             text-decoration:none;
             background: #9C9C9C;
             color: #000;
@@ -134,7 +140,7 @@
         }
 
         else{
-            $queryLogin = "SELECT * FROM useraccounts WHERE position='$position' AND username = '$username' AND password= md5('$password')";
+            $queryLogin = "SELECT * FROM useraccounts WHERE position='$position' AND username = '$username' AND password='$password'";
             $sqlLogin = mysqli_query($connection, $queryLogin);
             $userDetails = mysqli_fetch_array($sqlLogin);
             
@@ -156,11 +162,15 @@
 
                 }
 
+                
+
                 if($_SESSION['position'] == 'employee'){
                     // echo "<script>alert('Hello testing employee')</script>";
                     echo "<script>window.location.href='../php-employee/employee-home.php'</script>";
                 }
             }
+
+            
 
             else{
                 echo "<p style='
@@ -180,7 +190,7 @@
                 '>Unavailable to create Account!<br><br><br> 
                
                 
-                <a href='login.php' style='
+                <a href='signup.php' style='
                 text-decoration:none;
                 background: #9C9C9C;
                 color: #000;

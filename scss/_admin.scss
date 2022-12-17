@@ -891,7 +891,7 @@
                 display: grid;
                 grid-template-columns: 300px 1fr;
 
-                form{
+                .add-ons-form{
                     width: 250px;
                     height: 300px;
                     padding: 20px;
@@ -939,9 +939,72 @@
 
                 .add-ons-table{
                     grid-column: 2/3;
-                    background: red;
+        
+                    width: 100%;
+                    height: auto;
+
+                    tr {
+                        color: $color6;
+                        font-family: $font1;
+                            
+                        th{
+                            background: $blue;
+                            padding: 10px 15px;
+                            border-bottom: 0.2px solid $color4;
+                            text-align: center;
+                                
+                        }
+                        td{
+                            padding: 10px 15px;
+                            border-bottom: 0.2px solid $color4;
+                            text-align: center;
+                        }
+
+                        .action-addons{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 40px;
+                            padding: 10px 2px;
+
+                            .edit-addons{
+                                background: rgb(96, 194, 252);
+                                padding: 5px 20px;
+                                border-style: none;
+                                border-radius: 5px;
+                                color: $color1;
+                                cursor: pointer;
+
+                                &:hover{
+                                    font-weight: bold;
+                                    background: $blue;
+                                    color: $color7;
+                                }
+                            }
+
+
+                            .delete-addons{
+                                background: rgb(240, 135, 161);
+                                padding: 5px 20px;
+                                border-style: none;
+                                border-radius: 5px;
+                                color: $color1;
+                                cursor: pointer;
+
+                                &:hover{
+                                    font-weight: bold;
+                                    background: $red;
+                                    color: $color7;
+                                }
+                            }
+                            
+                            
+                        }
+                    }
                 }
             }
+
+            
 
         }
 
@@ -1058,7 +1121,8 @@
                         height: auto;
 
                         tr {
-                            
+                            color: $color6;
+                            font-family: $font1;
                              
                             th{
                                 background: $blue;
