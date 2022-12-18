@@ -2467,20 +2467,20 @@
 .employeeMenu {
   width: 100%;
   height: auto;
-  padding: 30px 0px 30px 30px;
+  padding: 30px 0px 0px 30px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.8) 6%), url("../PROJECT/Images/img1.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 80px 1fr 400px;
   grid-template-rows: 1fr;
   gap: 20px;
 }
 .employeeMenu .sidebar {
   grid-column: 1/2;
   grid-row: 1/2;
-  width: 300px;
+  width: 80px;
   height: 90vh;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);
@@ -2489,7 +2489,7 @@
   box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
   position: fixed;
   border-radius: 10px;
-  padding: 30px;
+  padding: 30px 10px;
 }
 .employeeMenu .sidebar .sidebar-header {
   display: flex;
@@ -2499,8 +2499,8 @@
   padding-bottom: 20px;
 }
 .employeeMenu .sidebar .sidebar-header .logo {
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
 }
 .employeeMenu .sidebar ul {
   padding: 20px 0px;
@@ -2509,7 +2509,8 @@
 .employeeMenu .sidebar ul li {
   list-style: none;
   padding: 10px;
-  margin-top: 5px;
+  margin-top: 25px;
+  margin-left: 5px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -2517,7 +2518,8 @@
   cursor: pointer;
 }
 .employeeMenu .sidebar ul li img {
-  margin-right: 20px;
+  width: 30px;
+  height: 30px;
 }
 .employeeMenu .sidebar ul li a {
   width: 100%;
@@ -2530,30 +2532,14 @@
 .employeeMenu .sidebar ul li:hover {
   background: rgba(0, 0, 0, 0.4);
   border-radius: 10px;
-  margin-top: 5px;
 }
 .employeeMenu .sidebar .logout {
-  width: 200px;
-  height: 30px;
-  border-radius: 7px;
-  color: red;
-  font-weight: bold;
-  font-size: 15px;
+  position: absolute;
+  bottom: 20px;
   cursor: pointer;
-  background: #5A5A5A;
-  margin: 90px 0px 0px 20px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
-  border: 0.5px solid red;
-}
-.employeeMenu .sidebar .logout:hover {
-  background: #1F1F1F;
-  color: red;
-  font-weight: bold;
-  box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.2), inset 4px 4px 4px rgba(0, 0, 0, 0.2);
+  width: 30px;
+  height: 30px;
+  margin-left: 18px;
 }
 .employeeMenu .main {
   grid-column: 2/3;
@@ -2566,6 +2552,8 @@
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
+  overflow: scroll;
+  height: 100vh;
 }
 .employeeMenu .main .header {
   width: 100%;
@@ -2625,7 +2613,7 @@
   grid-template-columns: repeat(auto-fill, 100px);
   gap: 20px;
 }
-.employeeMenu .main .category ul li {
+.employeeMenu .main .category ul label {
   display: inline-block;
   width: 100px;
   height: 80px;
@@ -2634,15 +2622,24 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
   text-align: center;
   font-family: "Arimo", sans-serif;
-  padding: 8px 10px;
+  padding: 8px 15px;
   cursor: pointer;
 }
-.employeeMenu .main .category ul li img {
+.employeeMenu .main .category ul label img {
   width: 20.76px;
   height: 30.53px;
 }
-.employeeMenu .main .category ul li:hover {
+.employeeMenu .main .category ul label:hover {
   background: rgb(32, 245, 138);
+  font-weight: bold;
+}
+.employeeMenu .main .category ul label input {
+  background: none;
+  border-style: none;
+  color: #000000;
+  cursor: pointer;
+}
+.employeeMenu .main .category ul label input:hover {
   font-weight: bold;
 }
 .employeeMenu .main .product-container {
@@ -2658,7 +2655,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
   gap: 30px;
-  padding-top: 30px;
+  padding: 30px 0px;
 }
 .employeeMenu .main .product-container .product-table .product {
   width: 220px;
@@ -2686,10 +2683,11 @@
 .employeeMenu .main .product-container .product-table .product .product-amount {
   color: #5A5A5A;
 }
-.employeeMenu .main .product-container .product-table .product .prodUpdate-btn {
+.employeeMenu .main .product-container .product-table .product .add-orders-btn {
   width: 181px;
   height: 40px;
-  background: #DADADA;
+  background: rgb(32, 245, 138);
+  font-weight: bold;
   border-radius: 20px;
   border-style: none;
   padding: 5px 0px;
@@ -2697,269 +2695,75 @@
   margin-top: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
-.employeeMenu .main .product-container .product-table .product .prodUpdate-btn:hover {
-  background: #333333;
+.employeeMenu .main .product-container .product-table .product .add-orders-btn:hover {
+  background: #000;
   color: #DADADA;
   font-weight: bold;
 }
-.employeeMenu .main .product-container .product-table .product .delete-btn {
-  width: 181px;
-  height: 30px;
-  background: rgb(247, 131, 131);
-  border-radius: 20px;
-  border-style: none;
-  padding: 5px 0px;
-  cursor: pointer;
-  margin-top: 10px;
-  color: #000000;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
-}
-.employeeMenu .main .product-container .product-table .product .delete-btn:hover {
-  background: red;
-  color: #DADADA;
-  font-weight: bold;
-}
-.employeeMenu s .menu {
+.employeeMenu .main .add-ons {
   width: 100%;
   height: auto;
+  padding: 30px 50px;
 }
-.employeeMenu s .menu .menu-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-}
-.employeeMenu s .menu .menu-header .title-menu {
+.employeeMenu .main .add-ons .add-ons-title {
+  color: #DADADA;
   font-family: "Arimo", sans-serif;
-  color: #FFFFFF;
-  font-size: 25px;
-  margin-top: 20px;
-}
-.employeeMenu s .menu .add {
-  width: 80px;
-  height: 80px;
-  background: red;
-  color: #FFFFFF;
-  font-size: 45px;
-  font-weight: 900;
-  border-radius: 50%;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: inset 6px 6px 6px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  position: fixed;
-  margin: 320px 0px 0px 1180px;
-}
-.employeeMenu s .menu .modal-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  width: 400px;
-  height: 550px;
-  max-width: 80%;
-  border: #FFFFFF 3px solid;
-  border-radius: 5px;
-  background: #DADADA;
-  z-index: 10;
-  color: #000000;
-  display: grid;
-  grid-template-rows: 60px 490px;
-}
-.employeeMenu s .menu .modal-container .modal-header {
-  grid-row: 1/2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 40px;
-  border-bottom: #FFFFFF solid 2px;
-}
-.employeeMenu s .menu .modal-container .modal-header h2 {
-  font-family: "Arimo", sans-serif;
-}
-.employeeMenu s .menu .modal-container .modal-header .modal-close {
-  width: 30px;
-  height: 30px;
-  background: #000000;
-  border-radius: 50%;
-  color: #FFFFFF;
-  font-weight: bold;
-  font-size: 26px;
-  cursor: pointer;
+  font-size: 30px;
+  letter-spacing: 2px;
   text-align: center;
 }
-.employeeMenu s .menu .modal-container .modal-body {
-  padding: 10px 40px;
-  grid-row: 2/3;
+.employeeMenu .main .add-ons .add-ons-container {
+  width: 100%;
 }
-.employeeMenu s .menu .modal-container .modal-body form {
-  height: 100%;
+.employeeMenu .main .add-ons .add-ons-container .add-ons-table {
+  grid-column: 2/3;
+  width: 100%;
+  height: auto;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.employeeMenu s .menu .modal-container .modal-body form .productImg {
-  width: 100px;
-  height: 100px;
-  border: #000 2px solid;
-}
-.employeeMenu s .menu .modal-container .modal-body form label {
-  font-size: 18px;
+.employeeMenu .main .add-ons .add-ons-container .add-ons-table tr {
+  color: #DADADA;
   font-family: "Arimo", sans-serif;
-  margin-bottom: 5px;
 }
-.employeeMenu s .menu .modal-container .modal-body form input {
-  width: 100%;
-  height: 30px;
-  padding: 0px 10px;
-  border: 2px solid #9C9C9C;
-  border-radius: 3px;
-  background: none;
-  font-size: 15px;
+.employeeMenu .main .add-ons .add-ons-container .add-ons-table tr th {
+  background: #008AD8;
+  padding: 10px 15px;
+  border-bottom: 0.2px solid #5A5A5A;
+  text-align: center;
 }
-.employeeMenu s .menu .modal-container .modal-body form .uploadProduct {
-  border: none;
-  padding-left: 70px;
-  margin-top: 20px;
+.employeeMenu .main .add-ons .add-ons-container .add-ons-table tr td {
+  padding: 10px 15px;
+  border-bottom: 0.2px solid #5A5A5A;
+  text-align: center;
 }
-.employeeMenu s .menu .modal-container .modal-body form .create-btn {
-  background: #333333;
+.employeeMenu .main .add-ons .add-ons-container .add-ons-table tr .action-addons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 10px 2px;
+}
+.employeeMenu .main .add-ons .add-ons-container .add-ons-table tr .action-addons .add-addons {
+  background: rgb(240, 135, 161);
+  padding: 5px 20px;
+  border-style: none;
+  border-radius: 5px;
+  color: #000000;
+  cursor: pointer;
+}
+.employeeMenu .main .add-ons .add-ons-container .add-ons-table tr .action-addons .add-addons:hover {
+  font-weight: bold;
+  background: #e44040;
   color: #FFFFFF;
-  height: 50px;
-  border-radius: 50px;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
-.employeeMenu s .menu .modal-container .modal-body form .create-btn:hover {
-  background: #9C9C9C;
-  border: 1px solid #333333;
-  color: #000000;
-}
-.employeeMenu s .menu .modal-container.show {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  width: 400px;
-  height: 550px;
-  max-width: 80%;
-  border: #FFFFFF 3px solid;
-  border-radius: 5px;
+.employeeMenu .add-orders {
+  grid-column: 3/4;
+  grid-row: 1/2;
   background: #DADADA;
-  z-index: 10;
-  color: #000000;
-}
-.employeeMenu s .menu .product-container {
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.employeeMenu s .menu .product-container .product-table {
-  width: 1250px;
-  height: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
-  grid-row-gap: 50px;
-  grid-column-gap: 50px;
-}
-.employeeMenu s .menu .product-container .product-table .product {
-  width: 235px;
-  height: 360px;
-  background: #FFFFFF;
-  border-radius: 10px;
-  font-family: "Arimo", sans-serif;
-  padding: 20px;
-  margin: 10px 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.employeeMenu s .menu .product-container .product-table .product .addproduct-form {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  margin-top: 20px;
-  width: 98%;
-}
-.employeeMenu s .menu .product-container .product-table .product .addproduct-form input {
-  width: 100%;
-  height: 30px;
-  padding: 5px;
-  border: #fff 1px solid;
-  border-radius: 5px;
-}
-.employeeMenu s .menu .product-container .product-table .product .addproduct-form .create-btn {
-  cursor: pointer;
-  border-radius: 20px;
-}
-.employeeMenu s .menu .product-container .product-table .product .product-name {
-  color: #000000;
-  font-weight: 900px;
-}
-.employeeMenu s .menu .product-container .product-table .product .product-img {
-  width: 114px;
-  height: 141px;
-  margin: 10px 0px;
-}
-.employeeMenu s .menu .product-container .product-table .product .product-amount {
-  color: #5A5A5A;
-}
-.employeeMenu s .menu .product-container .product-table .product .prodUpdate-btn {
-  width: 181px;
-  height: 30px;
-  background: #DADADA;
-  border-radius: 20px;
-  border-style: none;
-  padding: 5px 0px;
-  cursor: pointer;
-  margin-top: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
-}
-.employeeMenu s .menu .product-container .product-table .product .prodUpdate-btn:hover {
-  background: #333333;
-  color: #DADADA;
-  font-weight: bold;
-}
-.employeeMenu s .menu .product-container .product-table .product .delete-btn {
-  width: 181px;
-  height: 30px;
-  background: rgb(247, 131, 131);
-  border-radius: 20px;
-  border-style: none;
-  padding: 5px 0px;
-  cursor: pointer;
-  margin-top: 10px;
-  color: #000000;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
-}
-.employeeMenu s .menu .product-container .product-table .product .delete-btn:hover {
-  background: red;
-  color: #DADADA;
-  font-weight: bold;
-}
-.employeeMenu s .menu .overlay {
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  background: rgba(0, 0, 0, 0.8);
-  opacity: 1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: none;
-}
-.employeeMenu s .menu .overlay.active {
-  display: block;
+  overflow: scroll;
+  height: 97vh;
 }
 
 .employeeProfile {

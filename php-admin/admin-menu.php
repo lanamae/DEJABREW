@@ -487,10 +487,10 @@
                             <input type="text" name="voucher_name" placeholder="Add  Voucher Name">
                             <br>
                             
-                            <input type="number" name="voucher_percentage" placeholder="Add  Voucher Percentage (N/A if not applicable)"> 
+                            <input type="number" name="voucher_percentage" placeholder="Add  Voucher Percentage (0 if not applicable)"> 
                             <br>
                             
-                            <input type="number" name="voucher_price" placeholder="Add  Voucher Price (N/A if not applicable)">
+                            <input type="number" name="voucher_price" placeholder="Add  Voucher Price (0 if not applicable)">
                             
 
                             <input type="submit" name="create-voucher" class="voucher-btn"value="CREATE VOUCHER">
