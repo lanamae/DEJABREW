@@ -2758,6 +2758,64 @@
   background: #e44040;
   color: #FFFFFF;
 }
+.employeeMenu .main .vouchers {
+  width: 100%;
+  height: auto;
+  padding: 20px 0px;
+}
+.employeeMenu .main .vouchers .voucher-title {
+  font-size: 45px;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+  font-family: "Arimo", sans-serif;
+  margin: 10px 0px;
+  text-align: center;
+}
+.employeeMenu .main .vouchers .voucher-container .voucher-table {
+  width: 100%;
+  height: auto;
+  color: #FFFFFF;
+  font-family: "Arimo", sans-serif;
+}
+.employeeMenu .main .vouchers .voucher-container .voucher-table table {
+  width: 100%;
+  height: auto;
+}
+.employeeMenu .main .vouchers .voucher-container .voucher-table table tr {
+  color: #DADADA;
+  font-family: "Arimo", sans-serif;
+}
+.employeeMenu .main .vouchers .voucher-container .voucher-table table tr th {
+  background: #008AD8;
+  padding: 10px 15px;
+  border-bottom: 0.2px solid #5A5A5A;
+  text-align: center;
+}
+.employeeMenu .main .vouchers .voucher-container .voucher-table table tr td {
+  padding: 10px 15px;
+  border-bottom: 0.2px solid #5A5A5A;
+  text-align: center;
+}
+.employeeMenu .main .vouchers .voucher-container .voucher-table table tr .action-voucher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 10px 2px;
+}
+.employeeMenu .main .vouchers .voucher-container .voucher-table table tr .action-voucher .add-voucher {
+  background: rgb(96, 194, 252);
+  padding: 5px 20px;
+  border-style: none;
+  border-radius: 5px;
+  color: #000000;
+  cursor: pointer;
+}
+.employeeMenu .main .vouchers .voucher-container .voucher-table table tr .action-voucher .add-voucher:hover {
+  font-weight: bold;
+  background: #008AD8;
+  color: #FFFFFF;
+}
 .employeeMenu .add-orders {
   grid-column: 3/4;
   grid-row: 1/2;

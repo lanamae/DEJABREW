@@ -2,6 +2,16 @@
     require "../php-admin/menu-database/menu-database.php";
     require "../php-admin/menu-database/read.php";
     require "../php-landing/date_and_time.php";
+    require "../php-admin/menu-database/voucher-file.php";
+
+    // read voucher
+   
+    
+   
+    $queryRead_voucher = "SELECT * FROM vouchers";
+    $sqlRead_voucher = mysqli_query($queryVoucher, $queryRead_voucher);
+
+    // -------------------------------
    
     // read add ons
     $queryRead_addons = "SELECT * FROM addons";
@@ -302,6 +312,7 @@
             </div>
         </div>
 
+        <!-- ADD ONS -->
         
         <hr>
         <div class="add-ons">
@@ -370,6 +381,73 @@
 
 
 
+        <!-- VOUCHER -->
+        <hr>
+
+        <div class="vouchers">
+
+            <p class="voucher-title">VOUCHERS</p>
+            
+
+            <div class="voucher-container">
+    
+                <div class="voucher-table">
+                
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>VOUCHER NAME</th>
+                            <th>Percentage</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                            
+                    
+                        </tr>
+                        
+
+                        <?php
+                        while($results_voucher = mysqli_fetch_array($sqlRead_voucher)) {?>
+
+                        
+                            <td><?php echo $results_voucher['id'] ?></td>
+                            <td><?php echo $results_voucher['voucher_name'] ?></td>
+                            <td><?php echo $results_voucher['voucher_percentage'] . " %" ?></td>
+                            <td><?php echo "P " .$results_voucher['voucher_price'] ?></td>
+
+                            <td class="action-voucher">
+                                <form action="../php-employee/employee-menu.php" method="POST">
+                                    <input type="submit" name="add_voucher" class="add-voucher" value="ADD">
+                                    <input type="hidden" name="updateVoucher_Id" value="<?php echo $results_voucher['id'] ?>">
+                                    <input type="hidden" name="updateVoucher_Name" value="<?php echo $results_voucher['voucher_name'] ?>">
+                                    <input type="hidden" name="updateVoucher_Percentage" value="<?php echo $results_voucher['voucher_percentage'] ?>">
+                                    <input type="hidden" name="updateVoucher_Price" value="<?php echo $results_voucher['voucher_price'] ?>">
+                                </form>
+
+                            </td>
+
+                            
+                        </tr>
+                    
+                        <?php } 
+                        ?>
+
+
+                    </table>
+
+
+                </div>
+            </div>
+
+            
+            
+            
+           
+
+
+        </div>
+
+
+
 
 
 
@@ -377,9 +455,20 @@
     </div>    
     
     <div class="add-orders">
-        <div class="add-order-title">
-            ADD ORDERS
-        </div>
+        <div class="add-order-title">ADD ORDERS</div>
+
+            <div class="order">
+
+                <div class="order-container">
+                    <img src="">
+                    <div class="order-name"></div>
+                    <div class="order-price"></div>
+                    <div class="order-qty"></div>
+                    <input type="submit" value="Remove">
+                </div>
+
+            </div>
+
 
     </div>
 </div>

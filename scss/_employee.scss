@@ -644,6 +644,89 @@
             
 
         }
+
+        .vouchers{
+            width: 100%;
+            height: auto;
+            padding: 20px 0px;
+
+            .voucher-title{
+                font-size: 45px;
+                color: $color7;
+                letter-spacing: 2px;
+                font-family: $font1;
+                margin: 10px 0px;
+                text-align: center;
+            }
+
+
+            .voucher-container{
+               
+
+            
+                .voucher-table{
+                    
+                    width: 100%;
+                    height: auto;
+                    // background: $color6;
+                    color: $color7;
+                    font-family: $font1;
+                    
+
+
+                    table{
+                        width: 100%;
+                        height: auto;
+
+                        tr {
+                            color: $color6;
+                            font-family: $font1;
+                             
+                            th{
+                                background: $blue;
+                                padding: 10px 15px;
+                                border-bottom: 0.2px solid $color4;
+                                text-align: center;
+                                  
+                            }
+                            td{
+                                padding: 10px 15px;
+                                border-bottom: 0.2px solid $color4;
+                                text-align: center;
+                            }
+
+                            .action-voucher{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                gap: 40px;
+                                padding: 10px 2px;
+
+                                .add-voucher{
+                                    background: rgb(96, 194, 252);
+                                    padding: 5px 20px;
+                                    border-style: none;
+                                    border-radius: 5px;
+                                    color: $color1;
+                                    cursor: pointer;
+
+                                    &:hover{
+                                        font-weight: bold;
+                                        background: $blue;
+                                        color: $color7;
+                                    }
+                                }
+
+
+                            }
+                            
+                        }
+                    }
+                }
+
+            }
+            
+        }
     }
 
 
