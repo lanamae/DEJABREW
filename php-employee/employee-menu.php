@@ -3,11 +3,26 @@
     require "../php-admin/menu-database/read.php";
     require "../php-landing/date_and_time.php";
     require "../php-admin/menu-database/voucher-file.php";
+    require "../php-employee/order-database.php";
+
+
+
+    // Insert Order
+    if(isset($_POST['add-orders-btn'])){
+        $product_id = $_POST['product-id'];
+        $product_name = $_POST['product-name'];
+        $product_price = $_POST['product-price'];
+        
+
+        $queryAdd_order = "INSERT INTO tb_orders VALUES(null, '$product_id', '$product_name', '$product_price')";
+        $sqlAdd_order = mysqli_query($connOrder, $queryAdd_order);
+
+
+
+    }
+
 
     // read voucher
-   
-    
-   
     $queryRead_voucher = "SELECT * FROM vouchers";
     $sqlRead_voucher = mysqli_query($queryVoucher, $queryRead_voucher);
 
@@ -457,17 +472,21 @@
     <div class="add-orders">
         <div class="add-order-title">ADD ORDERS</div>
 
-            <div class="order">
+        <div class="order">
 
-                <div class="order-container">
-                    <img src="">
-                    <div class="order-name"></div>
-                    <div class="order-price"></div>
-                    <div class="order-qty"></div>
-                    <input type="submit" value="Remove">
-                </div>
-
+            <div class="order-container">
+                <img src="">
+                <div class="order-name"></div>
+                <div class="order-price"></div>
+                <div class="order-qty"></div>
+                <input type="submit" value="Remove">
             </div>
+
+        </div>
+
+        <div class="total">
+            
+        </div>
 
 
     </div>
