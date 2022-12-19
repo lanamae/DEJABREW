@@ -12,11 +12,19 @@
         $product_id = $_POST['product-id'];
         $product_name = $_POST['product-name'];
         $product_price = $_POST['product-price'];
-        
 
         $queryAdd_order = "INSERT INTO tb_orders VALUES(null, '$product_id', '$product_name', '$product_price')";
-        $sqlAdd_order = mysqli_query($connOrder, $queryAdd_order);
+        $sqlAdd_order = mysqli_query($connOrder,$queryAdd_order);
+
+        // read order
+        $queryRead_order = "SELECT * FROM tb_product";
+        $sqlRead_order = mysqli_query($connProducts,$queryRead_order);
+
+        
+        
+
     }
+        
 
 
     // read voucher
@@ -307,10 +315,11 @@
                         
                         <form action="../php-employee/employee-menu.php" method="POST" enctype="multipart/form-data">
                             
-                            <input type="hidden" name="product-id" value="<?php echo $results['id'] ?>">
-                            <input type="hidden" name="product-name" value="<?php echo $results['productName'] ?>">
-                            <input type="hidden" name="product-price" value="<?php echo $results['Price'] ?>">
-                            <input type="hidden" name="product-category" value="<?php echo $results['Category'] ?>">
+                            <input type="text" name="product-id" value="<?php echo $results['id'] ?>">
+                            <input type="text" name="product-name" value="<?php echo $results['productName'] ?>">
+                            <input type="text" name="product-price" value="<?php echo $results['Price'] ?>">
+                            <input type="text" name="product-category" value="<?php echo $results['Category'] ?>">
+                            
                             <input type="submit" name="add-orders-btn" value="ADD to Orders" class="add-orders-btn  ">
                         </form>
 
@@ -465,14 +474,45 @@
         <div class="add-order-title">ADD ORDERS</div>
 
         <div class="order">
+            
+            <form action="">
+                <div class="order-number">
+                        
+                    <label for="order-num">ORDER NUMBER</label>
+                    <input type="text" name="order-num" id="order-num">
+                </div>
+                                
+                <div class="order-container">
+                    
+                <?php 
+                while($results = mysqli_fetch_array($sqlRead_order)) {?>
 
-            <div class="order-container">
-                <img src="">
-                <div class="order-name"></div>
-                <div class="order-price"></div>
-                <div class="order-qty"></div>
-                <input type="submit" value="Remove">
-            </div>
+                    <div class="order-box">
+                        <img src="../php-admin/menu-database/uploads/<?php echo $results['order-name']?>">
+                        
+                        <div class="order-name"><?php echo $results['order-name']?></div>
+                        <div class="order-price"><?php echo $results['order-price']?></div>
+                            <div class="order-qty">
+                                <button class="add-qty">+</button>
+                                <input type="text" name="order=qty" id="order-qty" value="1" class="order-qty">
+                                <button class="minus-qty">-</button>
+                            </div>
+                        
+                        <input type="submit" value="Remove">
+                    </div>
+
+
+                <?php }?>        
+                        
+                </div>
+
+                <div class="total">
+                    <h1>TOTAL</h1>
+                    <div class="total-amount">Php 500.00</div>
+                    <input type="submit" value="PLACE ORDER" name="">
+                </div>
+            </form>
+                
 
         </div>
 
