@@ -9,13 +9,34 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
     require '../php-landing/readLogbook.php';
 
 
-    // echo $_SESSION['username'];
-    // echo $_SESSION['dateLogin'];
-    // echo $_SESSION['timelogin'];
+    date_default_timezone_set('Asia/Manila');  
+    $current_timezone = date_default_timezone_get();
+    //    echo $current_timezone . "<br>";
+    
+    $hours = date("h");
+    $minutes = date("i");
+    $seconds = date("s");
+    $setHour =  date("A");
+    
+    $month = date("M");
+    $dateNum = date("d");
+    $year = date("Y");
+    $day = date("D");
 
-    // $usernameSamp = $_SESSION['username'];
-    // $getDateLoginSamp = $_SESSION['dateLogin'];
-    // $getLogoutTimeSamp = $_SESSION['timelogin'];
+
+    $_SESSION['month'] = $month;
+    $_SESSION['dateNum'] = $dateNum;
+    $_SESSION['year'] = $year;
+    $_SESSION['day'] = $day;
+
+
+
+
+    $_SESSION['date'] = date("M-d-Y");
+    $_SESSION['time'] = $hours . ":". $minutes . ":" .$seconds .$setHour;
+     
+    $date_login = $_SESSION['date'];
+    $login_time = $_SESSION['time']; 
 
      
 
@@ -35,7 +56,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
     
 </head>
 <body>
-<div class="adminHome">  
+<div class="employeeHome">  
     
     <!-- SIDEBAR -->
    <div class="sidebar">
@@ -87,7 +108,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
         <!-- contents -->
         <div class="dashboard">
             <div class="header">
-                <div class="date"><?php echo $_SESSION['date'] ?></div>
+                <!-- <div class="date"><?php echo $_SESSION['date'] ?></div> -->
                 <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
 
                 <div class="profile"></div>
@@ -115,15 +136,40 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
             </p>
 
             <div class="content">
-                <div class="total-sales">Top sales</div>
-                <div class="total-order">Total order</div>
-                <div class="total-working-hours"> Total Working Hpurs</div>
 
-                <div class="product-carousel"></div>
+
+                <div class="total-sales">
+                    <h1 class="month"><?php echo $_SESSION['month']?></h1>
+                    <h3 class="dateNum"><?php echo $_SESSION['dateNum'] ?></h3>
+                    <p class="day"><?php echo $_SESSION['day'] ?></p>
+                     
+                </div>
+
+                <div class="total-profit">
+                    <p>Customer </p>
+                 
+                </div>
+
+
+                <div class="total-orders"> 
+                    <img src="../PROJECT/Images/coffee-icon.png" alt="total orders-icon">
+                    <span class="title"> Top Orders</span>
+                    <p>+547</p> <span>&uarr; this month</span>  
+                </div>
+
+                <div class="sale-analytics">
+                    <span class="title">Sales Analytics</span>
+                     <div id="chart_div"></div>
+                </div>
                 
 
-                <div class="graph"></div>
+                <div class="order-analytics">
+                     <span class="title">Order Analytics</span>
+                     <div id="barchart_material" style="width: 300px; height: 200px;"></div>
+                </div>
             </div>
+
+
             
         </div>
 
@@ -142,7 +188,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
    
 </div>  
  <!-- FOOTER -->
- <div class="footer">
+<div class="footer">
             <img src="../PROJECT/Images/dejabrew-logo.png" class="logo" alt="dejabrew logo">
                   
             <div class="footer-details" style="display:flex;">
@@ -172,6 +218,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
                 
             </div>
 
+</div>
 
 </body>
 

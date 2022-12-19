@@ -6,6 +6,38 @@
     require '../php-landing/read.php';
     require '../php-landing/readLogbook.php';
 
+
+       // error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);      
+    // UPDATE Profile
+    if(isset($_POST['save-changes'])){
+        $updateId = trim($_POST['updateId']);
+        $updateUsername = trim($_POST['updateUsername']);
+        $updateEmail = trim($_POST['updateEmail']);
+        $updatePassword = trim($_POST['updatePassword']);
+
+        $queryUpdate_Accounts = "UPDATE useraccounts SET username= '$updateUsername', email = '$updateEmail', password = '$updatePassword' WHERE id = '$updateId' ";
+        $sqlUpdate_Accounts = mysqli_query($connection, $queryUpdate_Accounts);
+
+        echo "<script>alert('LOGIN AGAIN TO SHOW CHANGES.')</script>";
+        
+        // echo "<script>window.location.href='../php-admin/admin-profile.php'</script>";
+
+        echo "<script>window.location.href='../php-landing/logout.php'</script>";
+
+        
+    }
+ 
+    if(isset($_POST['delete-account'])){
+        $updateId = trim($_POST['updateId']);
+
+        $queryDelete_Account = "DELETE FROM useraccounts WHERE id = $updateId";
+        $sqlDelete_Accounts = mysqli_query($connection, $queryDelete_Account);
+
+        echo "<script>alert('ACCOUNT HAS BEEN DELETED.')</script>";
+        echo "<script>window.location.href='../php-landing/logout.php'</script>";
+        // echo "<script>window.location.href='../php-landing/landing.php'</script>";
+    }
+
    
  
 
@@ -154,9 +186,9 @@
                 
                     </div>  
 
-                    <input type="submit" class="saveChanges-btn" value="SAVE CHANGES">
+                    <input type="submit" name="save-changes" class="saveChanges-btn" value="SAVE CHANGES">
                     <br><br>
-                    <input type="submit" class="deleteAccount-btn" value="Delete Account">
+                    <input type="submit" name="delete-account" class="deleteAccount-btn" value="Delete Account">
 
                 </form>
                     

@@ -13,9 +13,9 @@
         echo "Error Found";
     }
 
-    else{
-        echo "Connected to order database";
-    }
+    // else{
+    //     echo "Connected to order database";
+    // }
 
 
 

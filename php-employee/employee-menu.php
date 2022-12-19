@@ -16,9 +16,6 @@
 
         $queryAdd_order = "INSERT INTO tb_orders VALUES(null, '$product_id', '$product_name', '$product_price')";
         $sqlAdd_order = mysqli_query($connOrder, $queryAdd_order);
-
-
-
     }
 
 
