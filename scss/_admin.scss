@@ -1756,7 +1756,30 @@
             
         }
         }
-    }
+
+
+        table{
+            tr {
+                color: $color6;
+                font-family: $font1;
+                    
+                th{
+                    background: $blue;
+                    padding: 10px 15px;
+                    border-bottom: 0.2px solid $color4;
+                    text-align: center;
+                        
+                }
+                td{
+                    padding: 10px 15px;
+                    border-bottom: 0.2px solid $color4;
+                    text-align: center;
+                }
+
+            }
+        }
+
+    }    
 }
 
 // ------------------------------------------------------------------------------------

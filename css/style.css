@@ -1901,6 +1901,21 @@
   margin-top: 100px;
   /* overflow: hidden; */
 }
+.adminSales .main table tr {
+  color: #DADADA;
+  font-family: "Arimo", sans-serif;
+}
+.adminSales .main table tr th {
+  background: #008AD8;
+  padding: 10px 15px;
+  border-bottom: 0.2px solid #5A5A5A;
+  text-align: center;
+}
+.adminSales .main table tr td {
+  padding: 10px 15px;
+  border-bottom: 0.2px solid #5A5A5A;
+  text-align: center;
+}
 
 .adminEmployee {
   width: 100%;

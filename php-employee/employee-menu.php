@@ -331,12 +331,7 @@
             <div class="add-ons-title">ADD ONS</div>
 
             <div class="add-ons-container">
-                    
-
-
                     <div class="add-ons-table">
-                        
-                        
                     <table>
                         <tr>
                             <th>ID</th>
