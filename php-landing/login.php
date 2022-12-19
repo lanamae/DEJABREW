@@ -200,16 +200,21 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
     <link rel="shortcut icon" href="../PROJECT/Images/dejabrew-logo.png" type="image/x-icon">
    
    <link rel="stylesheet" href="../css/style.css">
+
+   <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+
 </head>
 <body>
     <div class="main-login">
 
         <div class="login-modal">
 
-            <div class="login-container">
+            <div class="login-container mr-3">
                 <form action="login.php" method="POST">
                     <h2>LOGIN </h2>
-                    <div class="radio-container">
+                    <div class="radio-container alert btn-primary">
                         <!-- admin radio -->
                     <input type="radio" name="position" id="admin" class="admin" value="admin">
                     <label for="admin" class="admintxt"> <img src="../PROJECT/Images/admin-icon.png" alt="admin-icon" class="admin-icon">ADMIN</label>
@@ -253,7 +258,12 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
                 
             </div>
         </div>
-        <div class="background"></div>
+
+
+        
     </div>
 </body>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </html>

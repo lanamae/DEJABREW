@@ -13,18 +13,25 @@
     width: 100%;
     height: auto;
 
-    .background{
-        width: 100%;
-        height: 100vh;
-        background: linear-gradient(to top, rgba(0,0,0,0.8)40%,rgba(0,0,0,0.8)6%), url('../PROJECT/Images/img1.jpg');
-   
-    }
+    background: linear-gradient(to top, rgba(0,0,0,0.8)40%,rgba(0,0,0,0.8)6%), url('../PROJECT/Images/img1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    
+
 
     .login-modal{
         width: 100%;
         height: 100vh;
-        padding: 30px 100px;
-        position: fixed;
+        // padding: 30px 100px;
+        // position: fixed;
+
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         .login-container{
             width: 500px;
@@ -32,7 +39,7 @@
             @include glassBg();
             border-radius: 20px;
             padding: 20px;
-            margin-left: 350px;
+            // margin-left: 350px;
 
             form{
                 padding: 10px;

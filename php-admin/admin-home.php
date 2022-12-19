@@ -34,11 +34,156 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
     
     
 </head>
+
+<style>
+
+    .main-chart {
+        width: 350px;
+        height: 200px;
+        background-color: none;
+        /* background: #444e80; */
+        color: #abafc6;
+        border-radius: 5px;
+        padding: 20px;
+       
+        font-family: 'Arimo', sans-serif;
+        overflow-x: auto;
+
+
+    }
+
+    .year-stats {
+        white-space: nowrap;
+        max-height: 170px;
+        /* overflow: hidden; */
+    }
+
+    .year-stats:hover {
+        /* overflow-x: auto; */
+    }
+
+    /* SCROLL BAR STYLE (ONLY WORKS IN CHROME) */
+    /* Width */
+    /* ::-webkit-scrollbar {
+        height: 5px;
+        width: 100%;
+    } */
+
+    /* Track */
+    /* ::-webkit-scrollbar-track {
+        background: #444e80;
+    } */
+
+    /* Handle */
+    /* ::-webkit-scrollbar-thumb {
+        background: #abafc6;
+        border-radius: 10px;
+    } */
+
+    /* ::-webkit-scrollbar-thumb {
+        background: #5397d6;
+    } */
+
+    .month-group {
+        cursor: pointer;
+        max-width: 400px;
+        height: 110px;
+        margin: 10px;
+        display: inline-block;
+    }
+
+    .bar {
+        background-color: #abafc6;
+        width: 20px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .month-group:hover .bar,
+    .selected .bar {
+        background: #5397d6;
+    }
+
+    .month-group:hover p,
+    .selected p {
+        color: #fff;
+    }
+
+    .h-25 {
+        height: 25%;
+    }
+    .h-50 {
+        height: 50%;
+    }
+    .h-75 {
+        height: 75%;
+    }
+    .h-100 {
+        height: 100%;
+    }
+
+    .stats-info {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+    }
+
+    .graph-container {
+        position: relative;
+    }
+
+    .percent {
+        display: block;
+        width: 120px;
+        height: 120px;
+    }
+
+    .circle {
+        stroke: #915db1;
+        fill: none;
+        stroke-width: 3;
+    }
+
+    .circle:nth-child(2) {
+        stroke: #e59f3c;
+    }
+
+    .circle:nth-child(3) {
+        stroke: #5397d6;
+    }
+
+    .circle:nth-child(4) {
+        stroke: #4cc790;
+    }
+
+    .graph-container p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 12px;
+        color: #fff;
+        text-align: center;
+    }
+
+    .info p {
+        margin-bottom: 10px;
+    }
+
+    .info span {
+        color: #fff;
+    }
+</style>
+
+
+
 <body>
-<div class="adminHome">  
+<div class="adminHome container-fluid mt-2">  
     
     <!-- SIDEBAR -->
-   <div class="sidebar">
+   <div class="sidebar col p-2">
         <div class="sidebar-header">
             <img src="../PROJECT/Images/dejabrew-logo.png" alt="" class="logo">
            
@@ -71,7 +216,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
 
 
    <!-- main content -->
-   <div class="main">
+   <div class="main col p-2">
         <!-- contents -->
         <div class="dashboard">
             <div class="header">
@@ -125,14 +270,179 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
                 </div>
 
                 <div class="sale-analytics">
-                    <span class="title">Sales Analytics</span>
-                     <div id="chart_div"></div>
+                    <span class="title"><a href="../php-admin/admin-sales.php">Sales Analytics</a></span>
+                     <!-- <div id="chart_div"></div> -->
+
+                    <div class="main-chart">
+                        <div class="stats-info">
+                            <div class="graph-container">
+                                <div class="percent">
+                                    <svg viewBox="0 0 36 36" class="circular-chart">
+                                        <path class="circle" stroke-dasharray="100, 100" d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                                                <path class="circle" stroke-dasharray="85, 100" d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                                                <path class="circle" stroke-dasharray="60, 100" d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                                                <path class="circle" stroke-dasharray="30, 100" d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    </svg>
+                                </div>
+                                <p style="color: #000;">Total: $2075</p>
+                            </div>
+
+                            <div class="info">
+                                <p style="color: #000;">Most expensive category <br /><span style="color: #000; font-weight: bold;">Restaurants & Dining</span></p>
+                                <p style="color: #000;">Updated categories <span style="color: #000; font-weight: bold;">2</span></p>
+                                <p style="color: #000;">Bonus payments <span style="color: #000; font-weight: bold;">$92</span></p>
+                            </div>
+                        </div>
+
+                        <div class="year-stats">
+                            <div class="month-group">
+                                <div class="bar h-100"></div>
+                                <p class="month">Jan</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-50"></div>
+                                <p class="month">Feb</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-75"></div>
+                                <p class="month">Mar</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-25"></div>
+                                <p class="month">Apr</p>
+                            </div>
+                            <div class="month-group selected">
+                                <div class="bar h-100"></div>
+                                <p class="month">May</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-50"></div>
+                                <p class="month">Jun</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-75"></div>
+                                <p class="month">Jul</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-25"></div>
+                                <p class="month">Aug</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-50"></div>
+                                <p class="month">Sep</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-75"></div>
+                                <p class="month">Oct</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-25"></div>
+                                <p class="month">Nov</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-100"></div>
+                                <p class="month">Dez</p>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
                 </div>
                 
 
                 <div class="order-analytics">
-                     <span class="title">Order Analytics</span>
-                     <div id="barchart_material" style="width: 300px; height: 200px;"></div>
+                     <span class="title"><a href="../php-admin/admin-sales.php">Order Analytics</a></span>
+                     <!-- <div id="barchart_material" style="width: 300px; height: 200px;"></div>
+                     -->
+                     <div class="main-chart">
+                        <div class="year-stats">
+                            <div class="month-group">
+                                <div class="bar h-100"></div>
+                                <p class="month">Jan</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-50"></div>
+                                <p class="month">Feb</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-75"></div>
+                                <p class="month">Mar</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-25"></div>
+                                <p class="month">Apr</p>
+                            </div>
+                            <div class="month-group selected">
+                                <div class="bar h-100"></div>
+                                <p class="month">May</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-50"></div>
+                                <p class="month">Jun</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-75"></div>
+                                <p class="month">Jul</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-25"></div>
+                                <p class="month">Aug</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-50"></div>
+                                <p class="month">Sep</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-75"></div>
+                                <p class="month">Oct</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-25"></div>
+                                <p class="month">Nov</p>
+                            </div>
+                            <div class="month-group">
+                                <div class="bar h-100"></div>
+                                <p class="month">Dez</p>
+                            </div>
+                        </div>
+
+                        <div class="stats-info">
+                            <div class="graph-container">
+                                <div class="percent">
+                                    <svg viewBox="0 0 36 36" class="circular-chart">
+                                        <path class="circle" stroke-dasharray="100, 100" d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                                                <path class="circle" stroke-dasharray="85, 100" d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                                                <path class="circle" stroke-dasharray="60, 100" d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                                                <path class="circle" stroke-dasharray="30, 100" d="M18 2.0845
+                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                            a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    </svg>
+                                </div>
+                                <p style="color: #000;">Total: $2075</p>
+                            </div>
+
+                            <div class="info">
+                                <p style="color: #000;">Most expensive category <br /><span style="color: #000; font-weight: bold;">Restaurants & Dining</span></p>
+                                <p style="color: #000;">Updated categories <span style="color: #000; font-weight: bold;">2</span></p>
+                                <p style="color: #000;">Bonus payments <span style="color: #000; font-weight: bold;">$92</span></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -183,7 +493,10 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
                 
             </div>
 
-    </div>                
+    </div>     
+    
+    
+
 
 </body>
 
