@@ -1894,6 +1894,13 @@
   font-size: 30px;
   font-family: "Arimo", sans-serif;
 }
+.adminSales .main .content .order-analytics .year-stats {
+  white-space: nowrap;
+  max-height: 170px;
+  margin-left: 200px !important;
+  margin-top: 100px;
+  /* overflow: hidden; */
+}
 
 .adminEmployee {
   width: 100%;

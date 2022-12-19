@@ -1744,6 +1744,15 @@
                     font-size: 30px;
                     font-family: $font1;
                 }
+
+                .year-stats {
+                    white-space: nowrap;
+                    max-height: 170px;
+                    
+                    margin-left: 200px !important;
+                    margin-top:  100px;
+                    /* overflow: hidden; */
+                }
             
         }
         }
