@@ -3007,19 +3007,23 @@
 .employeeMenu .add-orders .order form .order-container {
   border: 2px solid #333333;
   width: 350px;
-  height: 80px;
+  height: 500px;
   padding: 10px 20px;
+  overflow: scroll;
 }
 .employeeMenu .add-orders .order form .order-container .order-box img {
   width: 50px;
   height: 50px;
 }
 .employeeMenu .add-orders .order form .total {
-  width: 300px;
-  height: 50px;
-  background: #DADADA;
+  width: 350px;
+  height: 70px;
+  background: red;
   position: absolute;
   bottom: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .employeeProfile {

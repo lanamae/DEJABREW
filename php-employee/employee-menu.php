@@ -16,14 +16,16 @@
         $queryAdd_order = "INSERT INTO tb_orders VALUES(null, '$product_id', '$product_name', '$product_price')";
         $sqlAdd_order = mysqli_query($connOrder,$queryAdd_order);
 
-        // read order
-        $queryRead_order = "SELECT * FROM tb_product";
-        $sqlRead_order = mysqli_query($connProducts,$queryRead_order);
-
+        
         
         
 
     }
+
+    // read order
+    $queryRead_order = "SELECT * FROM tb_orders";
+    $sqlRead_order = mysqli_query($connOrder,$queryRead_order);
+
         
 
 
