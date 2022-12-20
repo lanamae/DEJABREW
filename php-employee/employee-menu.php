@@ -23,6 +23,7 @@
 
     // Insert Order
     if(isset($_POST['add-orders-btn'])){
+        
         $product_id = $_POST['product-id'];
         $product_name = $_POST['product-name'];
         $product_price = $_POST['product-price'];
@@ -31,15 +32,16 @@
         $sqlAdd_order = mysqli_query($connOrder,$queryAdd_order);
 
 
+
         
         
         
 
-    }
+     }
 
-    // read order
-    $queryRead_order = "SELECT * FROM tb_orders";
-    $sqlRead_order = mysqli_query($connOrder,$queryRead_order);
+    // // read order
+    // $queryRead_order = "SELECT * FROM tb_orders";
+    // $sqlRead_order = mysqli_query($connOrder,$queryRead_order);
 
         
 
@@ -502,7 +504,17 @@
                 <div class="order-container">
                     
                 <?php 
-                while($results = mysqli_fetch_array($sqlRead_order)) {?>
+                   // read order
+                    $queryRead_order = "SELECT * FROM tb_orders";
+                    $sqlRead_order = mysqli_query($connOrder,$queryRead_order);  
+
+                        
+                    if(mysqli_num_rows($sqlRead_order)>0){
+    
+                        while($results = mysqli_fetch_array($sqlRead_order)) {?>
+
+
+
 
                     <div class="order-box" style="background: #5A5A5A;
                             width: 300px;
@@ -541,7 +553,7 @@
 
                     
 
-                <?php }?>        
+                <?php } }?>        
                         
                 </div>
 
@@ -570,7 +582,12 @@
 <script src="../javascript/events.js">
 
 <script src="../shopping cart/script.js"></script>
-   
+
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href);
+    }
+</script>
 
 alert('testingggg')
 
