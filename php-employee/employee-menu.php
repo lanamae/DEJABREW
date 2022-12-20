@@ -7,6 +7,20 @@
 
 
 
+
+    // delete order
+    if(isset($_POST['remove-order'])){
+        $order_id = $_POST['order-id'];
+
+        $queryDelete_order = "DELETE FROM `tb_orders` WHERE id = '$order_id' ";
+        $sqlDelete_order = mysqli_query($connOrder, $queryDelete_order);
+
+        
+        // echo "<script>windows.location.href='../php-employee/employee-menu.php'</script>";
+        
+    }
+
+
     // Insert Order
     if(isset($_POST['add-orders-btn'])){
         $product_id = $_POST['product-id'];
@@ -15,6 +29,7 @@
 
         $queryAdd_order = "INSERT INTO tb_orders VALUES(null, '$product_id', '$product_name', '$product_price')";
         $sqlAdd_order = mysqli_query($connOrder,$queryAdd_order);
+
 
         
         
@@ -317,10 +332,10 @@
                         
                         <form action="../php-employee/employee-menu.php" method="POST" enctype="multipart/form-data">
                             
-                            <input type="text" name="product-id" value="<?php echo $results['id'] ?>">
-                            <input type="text" name="product-name" value="<?php echo $results['productName'] ?>">
-                            <input type="text" name="product-price" value="<?php echo $results['Price'] ?>">
-                            <input type="text" name="product-category" value="<?php echo $results['Category'] ?>">
+                            <input type="hidden" name="product-id" value="<?php echo $results['id'] ?>">
+                            <input type="hidden" name="product-name" value="<?php echo $results['productName'] ?>">
+                            <input type="hidden" name="product-price" value="<?php echo $results['Price'] ?>">
+                            <input type="hidden" name="product-category" value="<?php echo $results['Category'] ?>">
                             
                             <input type="submit" name="add-orders-btn" value="ADD to Orders" class="add-orders-btn  ">
                         </form>
@@ -477,7 +492,7 @@
 
         <div class="order">
             
-            <form action="">
+            <form action="../php-employee/employee-menu.php" method="POST">
                 <div class="order-number">
                         
                     <label for="order-num">ORDER NUMBER</label>
@@ -489,18 +504,38 @@
                 <?php 
                 while($results = mysqli_fetch_array($sqlRead_order)) {?>
 
-                    <div class="order-box">
-                        <img src="../php-admin/menu-database/uploads/<?php echo $results['order-name']?>">
+                    <div class="order-box" style="background: #5A5A5A;
+                            width: 300px;
+                            height: 100px;
+                            margin-bottom: 30px;
+                            display: flex;
+                            gap: 8px;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 0px 20px; 
+                            border-radius: 10px;">
+
+
+
+
+                        <img src="../php-admin/menu-database/uploads/<?php echo $results['order-name'].".png"?>">
                         
-                        <div class="order-name"><?php echo $results['order-name']?></div>
-                        <div class="order-price"><?php echo $results['order-price']?></div>
+                            <div class="order-name"><?php echo $results['order-name']?></div>
+                            <div class="order-price"><?php echo $results['order-price']?></div>
                             <div class="order-qty">
-                                <button class="add-qty">+</button>
-                                <input type="text" name="order=qty" id="order-qty" value="1" class="order-qty">
-                                <button class="minus-qty">-</button>
+                                
+                                <input type="number" name="order-qty" id="order-qty" value="1" class="order-qty" style="width: 50px;" min="1">
+                                
                             </div>
-                        
-                        <input type="submit" value="Remove">
+
+                            <input type="hidden" name="order-id" value="<?php echo $results['id']?>">
+
+                            <input type="hidden" name="order-name" value="<?php  $results['order-name']?>">
+                            <input type="hidden" name="order-price" value="<?php  $results['order-price']?>">
+
+
+                        <input type="submit" name="remove-order" value="Remove">
+
                     </div>
 
 
@@ -511,7 +546,7 @@
                 <div class="total">
                     <h1>TOTAL</h1>
                     <div class="total-amount">Php 500.00</div>
-                    <input type="submit" value="PLACE ORDER" name="">
+                    <input type="submit" value="PLACE ORDER" name="place-order">
                 </div>
             </form>
                 
@@ -531,6 +566,9 @@
 </body>
 <script src="../javascript/date-time.js"></script>
 <script src="../javascript/events.js">
+
+<script src="../shopping cart/script.js"></script>
+   
 
 alert('testingggg')
 

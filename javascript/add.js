@@ -4,5 +4,7 @@ const minusBtn = document.querySelector('.minus-btn');
 
 
 addBtn.addEventListener('click', () =>{
-    orderQty = orderQty + 1;
+    orderQty = orderQty +;
+
+    
 })
