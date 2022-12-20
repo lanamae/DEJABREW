@@ -532,12 +532,12 @@
 
                         <img src="../php-admin/menu-database/uploads/<?php echo $results['order-name'].".png"?>">
                         
-                            <div class="order-name"><?php echo $results['order-name']?></div>
+                            <div class="order-name"><?php echo $results['order-name'] ?></div>
                             <div class="order-price"><?php echo $results['order-price']?></div>
                             <div class="order-qty">
                                 
                                 <input type="number" name="order-qty" id="order-qty" value="1" class="order-qty" style="width: 50px;" min="1">
-                                
+                                <button class="add-btn" onclick="changePrice()">+</button>
                             </div>
 
                             <input type="hidden" name="order-id" value="<?php echo $results['id']?>">
@@ -580,16 +580,14 @@
 </body>
 <script src="../javascript/date-time.js"></script>
 <script src="../javascript/events.js">
+<script src="../javascript/add.js">
 
 <script src="../shopping cart/script.js"></script>
 
-<script>
-    if ( window.history.replaceState ) {
-        window.history.replaceState( null, null, window.location.href);
-    }
-</script>
+ 
 
 alert('testingggg')
 
 </script>
 </html>
+

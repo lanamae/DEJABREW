@@ -28,20 +28,20 @@ const closeModal = () =>{
 }
 
 
-// SIDEBAR
-const menu = document.querySelector('.menu-bar');
-const close = document.querySelector('.close');
-const sidebar = document.querySelector('.sidebar');
+// // SIDEBAR
+// const menu = document.querySelector('.menu-bar');
+// const close = document.querySelector('.close');
+// const sidebar = document.querySelector('.sidebar');
 
-// duntion to show sidebar
-menu.addEventListener('click', () =>{
-    // alert('testing');
-    sidebar.classList.add('show');
+// // duntion to show sidebar
+// menu.addEventListener('click', () =>{
+//     // alert('testing');
+//     sidebar.classList.add('show');
 
-})
+// })
 
-// function to close sidebar
-close.addEventListener('click', () =>{
-    sidebar.classList.remove('show');
+// // function to close sidebar
+// close.addEventListener('click', () =>{
+//     sidebar.classList.remove('show');
     
-})
+// })
