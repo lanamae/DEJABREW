@@ -17,8 +17,6 @@
     //     echo "Connected to order database";
     // }
 
-
-
-
+  
 
 ?>
