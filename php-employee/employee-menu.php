@@ -562,7 +562,7 @@
                                 <span>Qty:</span>
                                 <input type="number" name="order-qty" class="order-qty" value="1" style="width: 50px;" onchange="subTotal();" min="1"  >
                                 <br>  
-                                <pre><span>Add Ons: </span><input type="text" name="order-addons" id="order-addons" value="<?php echo $result_Addons['add-ons-name'] ?>" style="width: 100px; font-size: 10px; background: none; border-none;" "><input type="number" name="addons-price" id="addons-price" value="<?php echo $result_Addons['price']?>"  style="width: 50px;" >
+                                <pre><span>Add Ons: </span><input type="text" name="order-addons" id="order-addons" value="<?php echo $result_Addons['add-ons-name'] ?>" style="width: 100px; font-size: 10px; background: none; border-none;" "><input type="number" name="addons-price" id="addons-price" class="addons-price" value="<?php echo $result_Addons['price']?>"  style="width: 50px;" >
                                 </pre>
                                 
                                 <span>Php</span>
@@ -671,6 +671,7 @@
         var totaltext = document.querySelectorAll('.total-text');
 
         var vouPer = document.querySelector('#voucher-price');
+        var addons = document.querySelectorAll('addons-price')
 
    
         const subTotal = () =>{
@@ -679,16 +680,16 @@
 
                 subtotal[i].value = (productPrice[i].value* qty[i].value);
                
-                gt = gt+ (productPrice[i].value * qty[i].value);
+                gt = gt+ (productPrice[i].value * qty[i].value) ;
 
              
                 
             }
             grandTotal.value = gt;
 
-            var percent =vouPer.value/100);
+            // var percent =vouPer.value/100;
              
-            grandtotal.value = grandtotal.value - (grandtotal.value*percent);
+            // grandtotal.value = grandtotal.value - (grandtotal.value*percent);
  
         }
 
