@@ -50,14 +50,22 @@
        $sqlSelect_Addons = mysqli_query($connAddons, $querySelect_Addons);
         $result_Addons = mysqli_fetch_array($sqlSelect_Addons);
        
-
-
-
-        
-        
-        
-
      }
+
+
+
+
+     //add voucher
+    if(isset($_POST['add_voucher'])){
+        
+        $voucher_id = $_POST['updateVoucher_Id'];
+        
+ 
+        $querySelect_Voucher = "SELECT * FROM vouchers WHERE id= '$voucher_id'";
+        $sqlSelect_Voucher = mysqli_query($queryVoucher, $querySelect_Voucher);
+         $result_Voucher = mysqli_fetch_array($sqlSelect_Voucher);
+        
+      }
 
     // // read order
     // $queryRead_order = "SELECT * FROM tb_orders";
@@ -578,8 +586,8 @@
                                 
                             <h3>TOTAL: </h3>
                             <div class="" style="display: inline;">
-                                <input type="text" name="voucher-name" id="voucher-name" value="Senior" style="background: none; width: 100px; border:none">
-                                <span>-</span><input type="number" name="voucher-price" id="voucher-price" value="12" style="width: 65px; border: none; background:none; color: #000';"><span>%</span>
+                                <input type="text" name="voucher-name" id="voucher-name" value="<?php echo $result_Voucher['voucher_name'] ?>" style="background: none; width: 100px; border:none">
+                                <span>-</span><input type="number" name="voucher-price" id="voucher-price" value="<?php echo $result_Voucher['voucher_percentage']?>" style="width: 65px; border: none; background:none; color: #000';"><span>%</span>
                                 <hr>
                                 <br>
                                 <span>Php </span>
