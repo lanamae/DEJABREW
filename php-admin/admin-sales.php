@@ -2,9 +2,14 @@
     require "../php-admin/menu-database/menu-database.php";
     require "../php-admin/menu-database/read.php";
     require "../php-landing/date_and_time.php";
+    require "../php-employee/sales-record.php";
     error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING); 
    
 
+       // READ SALES RECORD
+
+       $queryRead_Sales = "SELECT * FROM salesrecord";
+       $sqliRead_Sales = mysqli_query($sales_record, $queryRead_Sales);
     
     
 
@@ -426,6 +431,7 @@
         <tr>
             <th>No.</th>
             <th>Order Code</th>
+            <th>Order Name</th>
             <th>Employee in Charge</th>
             <th>Total No.</th>
             <th>Mode of Payment</th>
@@ -435,29 +441,25 @@
             <th>Total Amount</th>
         </tr>
 
-        <tr>
-            <td>sample data</td>
-            <td>sample data</td>
-            <td>sample data</td>
-            <td>sample data</td>
-            <td>sample data</td>
-            <td>sample data</td>
-            <td>sample data</td>
-            <td>sample data</td>
-            <td>sample data</td>
-        </tr>
+        <?php 
+        while($result_sales = mysqli_fetch_array($sqliRead_Sales)) {?>
 
         <tr>
-            <td>sample data</td>
-            <td>sample data</td>
-            <td>sample data</td>
-            <td>sample data</td>
-            <td>sample data</td>
-            <td>sample data</td>
-            <td>sample data</td>
-            <td>sample data</td>
-            <td>sample data</td>
+        
+            <td><?php echo $result_sales['sales-id'] ?></td>
+            <td><?php echo $result_sales['order-code'] ?></td>
+            <td><?php echo $result_sales['order-name'] ?></td>
+            <td><?php echo $result_sales['employee_incharge'] ?></td>
+            <td><?php echo $result_sales['total-number'] ?></td>
+            <td><?php echo $result_sales['mode-of-payment'] ?></td>
+            <td><?php echo $result_sales['time'] ?></td>
+            <td><?php echo $result_sales['DI-or-TO'] ?></td>
+            <td><?php echo $result_sales['discount'] ?></td>
+            <td><?php echo $result_sales['total-amount'] ?></td>
+           
         </tr>
+
+            <?php }?>
 
         
 

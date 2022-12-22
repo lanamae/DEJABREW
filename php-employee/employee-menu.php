@@ -4,15 +4,61 @@
     require "../php-landing/date_and_time.php";
     require "../php-admin/menu-database/voucher-file.php";
     require "../php-employee/order-database.php";
+    require "../php-employee/sales-record.php";
     error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING); 
 
+
+
+    error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING); 
+    date_default_timezone_set('Asia/Manila');  
+    $current_timezone = date_default_timezone_get();
+    //    echo $current_timezone . "<br>";
+
+    $hours = date("h");
+    $minutes = date("i");
+    $seconds = date("s");
+    $setHour =  date("A");
+
+    $_SESSION['date'] = date("M-d-Y");
+    $_SESSION['time'] = $hours . ":". $minutes . ":" .$seconds .$setHour;
+    
+        $date_login = $_SESSION['date'];
+    $record_time = $_SESSION['time']; 
     // placeorder
 
     if(isset($_POST['place-order'])){
-        
-        // $order_code = $_POST['']
+
+        $order_code = $_POST['order-num'];
+        $order_name = $_POST['order-name'];
+        $employee_incharge = $_SESSION['username'];
+        $order_qty = $_POST['order-qty'];
+        $payment = $_POST['payment'];
+        $time= $record_time;
+        $di_or_to = $_POST['di-or-to'];
+        $voucher = $_POST['voucher-price'];
+        $grandtotal = $_POST['grand-total'];
+
+
+        $querySales_Record = "INSERT INTO salesrecord VALUES(
+            null,
+            '$order_code',
+            '$order_name',
+            '$employee_incharge',
+            '$order_qty',
+            '$payment',
+            '$time',
+            '$di_or_to',
+            '$voucher',
+            '$grandtotal'
+            )";
+        $sqlSales_Record = mysqli_query($sales_record, $querySales_Record);
+
+
+       echo "<script>alert('SUCCESSFULLY ADDED ORDERS')</script>";
     }
 
+
+ 
 
 
 
@@ -540,9 +586,28 @@
                         
                     <label for="order-num">ORDER NUMBER</label>
                     <input type="text" name="order-num" id="order-num">
+                    
+                    <br>
+                    <input type="radio" name="payment" id="cash" value="Cash">
+                    <label for="cash">Cash</label>
+
+                    <input type="radio" name="payment" id="gcash" value="GCash">
+                    <label for="gcash">GCash</label>
+                    
+                    <br>
+                    <input type="radio" name="di-or-to" id="dine-in" value="Dine-In">
+                    <label for="dine-in">Dine in</label>
+
+                    <input type="radio" name="di-or-to" id="gcash" value="Take-Out">
+                    <label for="take-out">Take Out</label>
+
+
                 </div>
                                 
-                <div class="order-container" style="height: 400px; padding: 0;">
+              
+
+                
+                <div class="order-container" style="height: 370px; padding: 0;">
                     
                 <?php 
                    // read order
@@ -565,10 +630,10 @@
                             <img src="../php-admin/menu-database/uploads/<?php echo $results['order-name'].".png"?>">
                             
                             <div class="info" style="margin-lfet: 50px;">
-                                <input type="text" name="order-name" id="order-name" value="<?php echo $results['order-name']?>" readonly="readonly"  style="background: #5A5A5A; border:none; color: white; font-size: 15px; letter-spacing: 1px;"><br><br>
+                                <input type="text" name="order-name" id="order-name" value="<?php echo $results['order-name']?>"   style="background: #5A5A5A; border:none; color: white; font-size: 15px; letter-spacing: 1px;"><br><br>
                                 
                                 <span>Php</span>
-                                <input type="number" name="order-price" class="order-price" value="<?php echo $results['order-price']?>" style="width: 75px; background: #5A5A5A; border:none; font-size: 18px" readonly="readonly" ><br>
+                                <input type="number" name="order-price" class="order-price" value="<?php echo $results['order-price']?>" style="width: 75px; background: #5A5A5A; border:none; font-size: 18px"  ><br>
                                 
                                 <span>Qty:</span>
                                 <input type="number" name="order-qty" class="order-qty" value="1" style="width: 50px;" onchange="subTotal();" min="1"  >
@@ -577,7 +642,7 @@
                                 </pre>
                                 
                                 <span>Php</span>
-                                <input type="number" name="subtotal" id="subtotal" class="subtotal" value="0"  style="width: 65px; background: #5A5A5A; border:none; font-size: 20px; font-weight: 800;" readonly="readonly">
+                                <input type="number" name="subtotal" id="subtotal" class="subtotal" value="0"  style="width: 65px; background: #5A5A5A; border:none; font-size: 20px; font-weight: 800;" >
                                 <input type="hidden" name="order-id" value="<?php echo $results['id']?>">
 
                             </div>
