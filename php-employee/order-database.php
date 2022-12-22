@@ -3,7 +3,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
     $host = "localhost";
     $user = "root";
     $password = "";
-    $database = "order";
+    $database = "orders";
     
     
     $connOrder = mysqli_connect($host, $user, $password, $database);

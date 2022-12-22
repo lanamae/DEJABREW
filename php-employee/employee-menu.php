@@ -490,7 +490,7 @@
         <!-- ----------------------------------------------------------------------------------- -->
     </div>    
     
-    <div class="add-orders">
+    <div class="add-orders" style="position: fixed; right: 0;">
         <div class="add-order-title">ADD ORDERS</div>
 
         <div class="order">
@@ -502,7 +502,7 @@
                     <input type="text" name="order-num" id="order-num">
                 </div>
                                 
-                <div class="order-container">
+                <div class="order-container" style="height: 450px;">
                     
                 <?php 
                    // read order
@@ -517,18 +517,7 @@
 
 
 
-                    <div class="order-box"
-                        style="  background: #5A5A5A;
-                        width: 300px;
-                        height: 150px;
-                        margin-bottom: 30px;
-                        display: flex;
-                        gap: 8px;
-                        justify-content: center;
-                        align-items: center;
-                        padding: 10px 30px; 
-                        border-radius: 5px;"
-                    >
+                    <div class="order-box">
 
 
 
@@ -544,7 +533,7 @@
                                 <br><br>    
                                 <span>Php</span>
                                 <input type="number" name="subtotal" id="subtotal" class="subtotal" value="0"  style="width: 65px; background: #5A5A5A; border:none; font-size: 20px; font-weight: 800;" readonly="readonly">
-                                <input type="hidden" name="order-id" value="<?php echo $results['id']?> '">
+                                <input type="hidden" name="order-id" value="<?php echo $results['id']?>">
 
                             </div>
                               
@@ -559,15 +548,23 @@
                 <?php } }?>        
                         
                 </div>
+                    <div class="grandtotal" style=" height: 60px; padding: 20px;background: lightblue; font-family: sans-serif; display: flex; justify-content: center; align-item: center; gap: 15px; " >
+                                <h3>TOTAL: </h3>
+                            <span>Php </span>
+                            <input type="number" name="grand-total" id="grand-total" class="grand-total" value=""  style="width: 75px; font-family: sans-serif; font-size: 25px; font-weight: 900; letter-height: 2px; background: none; border: none;">
+                            
+                            <input type="submit" value="Place Order" name="place-order" class="place-order" style="width: 100px; height: 40px; background: blue; border: none; border-radius: 5px; font-family: sans-serif; color: white; cursor: pointer;">
+                    
+                    </div>
 
-                <div class="total" STYLE="background: lightblue; font-family: sans-serif; display: flex; justify-content: center; align-item: center; gap: 15px; ">
-                    <h3>TOTAL: </h3>
-                        <span>Php </span>
-                        <input type="number" name="grand-total" id="grand-total" class="grand-total" value=""  style="width: 75px; font-family: sans-serif; font-size: 25px; font-weight: 900; letter-height: 2px; background: none; border: none;">
+                <!-- <div class="total" STYLE="background: lightblue; font-family: sans-serif; display: flex; justify-content: center; align-item: center; gap: 15px; "> -->
+                        <!-- <h3>TOTAL: </h3> -->
+                        <!-- <span>Php </span> -->
+                        <!-- <input type="number" name="grand-total" id="grand-total" class="grand-total" value=""  style="width: 75px; font-family: sans-serif; font-size: 25px; font-weight: 900; letter-height: 2px; background: none; border: none;"> -->
                         
-                        <input type="submit" value="Place Order" name="place-order" class="place-order" style="width: 100px; height: 40px; background: blue; border: none; border-radius: 5px; font-family: sans-serif; color: white; cursor: pointer;">
+                        <!-- <input type="submit" value="Place Order" name="place-order" class="place-order" style="width: 100px; height: 40px; background: blue; border: none; border-radius: 5px; font-family: sans-serif; color: white; cursor: pointer;"> -->
                   
-                </div>
+                <!-- </div> -->
             </form>
                 
 
