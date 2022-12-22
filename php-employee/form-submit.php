@@ -1,5 +1,5 @@
 <?php
- 
+ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING); 
     // get in server side
     $my_form = $_COOKIE["my_form"];
  

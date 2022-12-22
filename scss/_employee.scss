@@ -323,17 +323,15 @@
                     justify-content: center;
 
                     .title{
-                        font-size: 18px;;
+                        font-size: 38px;;
                         font-weight: bold;
                         font-family: $font1;
                         letter-spacing: 2px;
                         margin-bottom: 10px;
                     }
 
-                    #root{
-                        width: 300px;
-                        height: 200px;
-                        background-color: none;
+                    .text-alert{
+                      font-size: 20px;
                         
                         
                     }
@@ -909,17 +907,23 @@
 
 
                 .order-container{
-                    border: 2px solid $color3;
+                    // border: 2px solid $color3;
                     width: 350px;
                     height: 500px;
                     padding: 10px 20px;
                     overflow: scroll;
 
                     .order-box{
-                        width: 350px;
-                        height: 60px;
+                        background: #5A5A5A;
+                        width: 300px;
+                        height: 150px;
+                        margin-bottom: 30px;
                         display: flex;
-                        background: $color1;
+                        gap: 8px;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 0px 20px; 
+                        border-radius: 5px;
 
                         img{
                             width: 50px;
@@ -927,23 +931,33 @@
                             
                         }
 
+                        .order-name{
+                            width: 10px;
+                        }
+
+                        .order-price{
+                            width: 50px;
+                        }
 
                         .order-qty{
                             width: 50px;
                         }
+
+                        
                     }
                 }
 
                 .total{
                     width: 350px;
                     height: 70px;
-                    background: red;
+                    background: $color2;
                     position: absolute;
                     bottom: -100px;
 
                     padding: 10px;
                     display: flex;
                     justify-content: space-between;
+                    align-items: center;
                 }
             }
         }

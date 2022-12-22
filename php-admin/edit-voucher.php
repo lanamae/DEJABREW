@@ -1,7 +1,6 @@
 <?php
     require 'c:/xampp/htdocs/SOFTWARE-DESIGN/Source-Code/php-admin/menu-database/voucher-file.php';
-
-
+    error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING); 
     if(isset($_POST['edit_voucher'])){
         $edit_voucherId  = trim($_POST['updateVoucher_Id']);
         $edit_voucherName  = trim($_POST['updateVoucher_Name']);

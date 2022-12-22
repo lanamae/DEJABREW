@@ -1,7 +1,7 @@
 <?php
     require "../php-admin/menu-database/menu-database.php";
     require "../php-admin/menu-database/read.php";
-
+    error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING); 
 
     if(isset($_POST['edit'])){
         $edit_productId  = trim($_POST['product-id']);

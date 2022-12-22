@@ -1,7 +1,6 @@
 <?php
     require "../menu-database/menu-database.php";
-
-
+    error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING); 
     if(isset($_POST['delete'])){
         $deleteId = $_POST['deleteId'];
 

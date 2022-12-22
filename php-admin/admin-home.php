@@ -252,20 +252,20 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
 
                 <div class="total-sales">
                     <img src="../PROJECT/Images/money-icon.png" alt="money-icon">
-                    <span class="title"> Top Sales</span>
+                    <span class="title"> Total Sales</span>
                     <p>PHP 50,000</p> <span>&uarr; this month</span>  
                 </div>
 
                 <div class="total-profit">
                     <img src="../PROJECT/Images/chartline-icon.png" alt="profit-icon">
-                    <span class="title"> Top Profit</span>
+                    <span class="title"> Total Profit</span>
                     <p>PHP 256,000</p> <span>&uarr; this month</span>  
                 </div>
 
 
                 <div class="total-orders"> 
                     <img src="../PROJECT/Images/coffee-icon.png" alt="total orders-icon">
-                    <span class="title"> Top Orders</span>
+                    <span class="title"> Total Orders</span>
                     <p>+547</p> <span>&uarr; this month</span>  
                 </div>
 
@@ -450,12 +450,12 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
 
 
 
-
+<!-- 
         <hr>
         <!-- instructions -->
-        <div class="instruction">
+        <!-- <div class="instruction"> -->
             
-        </div>
+        <!-- </div> -->
    </div>
       
    

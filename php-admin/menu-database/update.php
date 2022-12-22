@@ -1,7 +1,6 @@
 <?php
     require "../menu-database/menu-database.php";
-    
-
+    error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING); 
     
     // folder for image
     $target_dir = "uploads/"; 

@@ -4,8 +4,7 @@
     require "../php-landing/date_and_time.php";
     require "../php-admin/menu-database/voucher-file.php";
     require "../php-employee/order-database.php";
-
-
+    error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING); 
 
 
     // delete order
@@ -166,6 +165,8 @@
     <link rel="stylesheet" href="../css/style.css">
     
 </head>
+
+
 <body>
 <div class="employeeMenu">
 
@@ -516,37 +517,39 @@
 
 
 
-                    <div class="order-box" style="background: #5A5A5A;
-                            width: 300px;
-                            height: 100px;
-                            margin-bottom: 30px;
-                            display: flex;
-                            gap: 8px;
-                            justify-content: center;
-                            align-items: center;
-                            padding: 0px 20px; 
-                            border-radius: 10px;">
+                    <div class="order-box"
+                        style="  background: #5A5A5A;
+                        width: 300px;
+                        height: 150px;
+                        margin-bottom: 30px;
+                        display: flex;
+                        gap: 8px;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 10px 20px; 
+                        border-radius: 5px;"
+                    >
 
 
 
 
-                        <img src="../php-admin/menu-database/uploads/<?php echo $results['order-name'].".png"?>">
-                        
-                            <div class="order-name"><?php echo $results['order-name'] ?></div>
-                            <div class="order-price"><?php echo $results['order-price']?></div>
-                            <div class="order-qty">
-                                
-                                <input type="number" name="order-qty" id="order-qty" value="1" class="order-qty" style="width: 50px;" min="1">
-                                <button class="add-btn" onclick="changePrice()">+</button>
+                            <img src="../php-admin/menu-database/uploads/<?php echo $results['order-name'].".png"?>">
+                            
+                            <div class="info">
+                                <input type="text" name="order-name" id="order-name" value="<?php echo $results['order-name']?>" readonly="readonly"  style="background: #5A5A5A; border:none; color: white; font-size: 15px; letter-spacing: 1px;"><br><br>
+                                <span>Php</span>
+                                <input type="number" name="order-price" class="order-price" value="<?php echo $results['order-price']?>" style="width: 65px; background: #5A5A5A; border:none; font-size: 18px" readonly="readonly" ><br>
+                                <span>Qty:</span>
+                                <input type="number" name="order-qty" class="order-qty" value="1" style="width: 50px;" onchange="subTotal();" min="1"  >
+                                <br><br>    
+                                <span>Php</span>
+                                <input type="number" name="subtotal" id="subtotal" class="subtotal" value="0"  style="width: 65px; background: #5A5A5A; border:none; font-size: 20px; font-weight: 300;" readonly="readonly">
+                                <input type="hidden" name="order-id" value="<?php echo $results['id']?> '">
+
                             </div>
-
-                            <input type="hidden" name="order-id" value="<?php echo $results['id']?>">
-
-                            <input type="hidden" name="order-name" value="<?php  $results['order-name']?>">
-                            <input type="hidden" name="order-price" value="<?php  $results['order-price']?>">
-
-
-                        <input type="submit" name="remove-order" value="Remove">
+                              
+                            <label for="remove-order"><img src="../PROJECT/Images/delete-icon.png" style="width: 20px; height: 20px; cursor: pointer;"></label>      
+                             <input type="submit" name="remove-order" value=" " id="remove-order" style="background: #5A5A5A; border:none;">
 
                     </div>
 
@@ -557,37 +560,110 @@
                         
                 </div>
 
-                <div class="total">
+                <div class="total" STYLE="background: lightblue;">
                     <h1>TOTAL</h1>
-                    <div class="total-amount">Php 500.00</div>
-                    <input type="submit" value="PLACE ORDER" name="place-order">
+                        <input type="number" name="order-num" id="order-num" class="order-num" value=""  style="width: 50px;">
+                        <input type="number" name="grand-total" id="grand-total" class="grand-total" value=""  style="width: 50px;">
+                        
+                        <input type="submit" value="Place Order" name="place-order" class="place-order">
+                        <div class="total-text">das</div>
                 </div>
             </form>
                 
 
         </div>
 
-        <div class="total">
-            
-        </div>
+        
 
 
     </div>
 </div>
 
+    <!-- <div class="footer">
+            <img src="../PROJECT/Images/dejabrew-logo.png" class="logo" alt="dejabrew logo">
+                  
+            <div class="footer-details" style="display:flex;">
+                <div class="column1">
+                    <h4>Deja brew</h4><br>  
+                    <span>95 National Road Pulilan Bulacan</span><br> <br> <br> <br>
+                    <p>All Right Reserved 2023 &copy;</p>   
+                </div>
 
+                <div class="column2">
+                    <h4>Page Content</h4> <br>
+                    <p><a href="admin-home.php">Home</a></p>
+                    <p><a href="admin-menu.php">Menu</a></p>
+                    <p><a href="admin-sales.php">Sales</a></p>
+                    <p><a href="admin-employees.php">Employees</a></p>
+                    <p><a href="admin-profile.php">Profile</a></p>
+                </div>
+
+                <div class="column3">
+                    <h4>Social</h4><br>
+
+                    <p><a href="#">Facebook</a></p>
+                    <p><a href="#">Twitter</a></p>
+                    <p><a href="#">Instagram</a></p>
+                    <p><a href="#">FGmail</a></p>
+                </div>
+                
+            </div>
+
+    </div>      -->
+    
 
 </body>
 <script src="../javascript/date-time.js"></script>
-<script src="../javascript/events.js">
-<script src="../javascript/add.js">
+<script src="../javascript/events.js"></script>
 
 <script src="../shopping cart/script.js"></script>
 
- 
+ <script>
+ if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+}
+ </script>
 
-alert('testingggg')
 
-</script>
+ <script>
+  //  
+        var productPrice = document.querySelectorAll('.order-price');
+        var qty = document.querySelectorAll('.order-qty');
+        // var subTotal = document.querySelectorAll('.sub-total');
+        var order = document.querySelectorAll('.order-box');
+        
+        var grandTotal = document.querySelector('.grand-total');
+        var sample = document.querySelectorAll('.sample');
+        var subtotal = document.querySelectorAll('.subtotal');
+        var totaltext = document.querySelectorAll('.total-text');
+
+
+   
+        const subTotal = () =>{
+            gt = 0;
+            for(let i=0;i<order.length;i++){
+
+                subtotal[i].value = (productPrice[i].value* qty[i].value);
+               
+                gt = gt+ (productPrice[i].value * qty[i].value);
+
+             
+                
+            }
+            grandTotal.value = gt;
+        }
+
+
+        subTotal();
+
+
+        // const grandtotalShow = () =>{
+
+        // }
+
+
+ </script>
+
+
 </html>
 

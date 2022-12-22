@@ -2,7 +2,7 @@
     require "../php-admin/menu-database/menu-database.php";
     require "../php-admin/menu-database/read.php";
     require "../php-landing/date_and_time.php";
-
+    error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING); 
    
 
     
@@ -233,6 +233,34 @@
                 <div class="profile"></div>
         </div>
 
+<!-- 
+        <a href="../php-admin/admin-employee.php" download class = "download" style="background: lightblue;
+         color: black;
+         font-family: sans-serif;
+        width: 100px;
+        height: 60px;
+        padding: 10px;
+        margin-top: 100px;
+        border-radius: 5px;
+        text-decoration: none;
+        "> Download </a>
+         -->
+
+         <button class = "download" style="background: lightblue;
+         color: black;
+         font-family: sans-serif;
+        width: 100px;
+        height: 30px;
+        padding: 5px;
+        margin-top: 20px;
+        border-style: none;
+        border-radius: 5px;
+        text-decoration: none;
+        cursor: pointer;
+        "> Download </button>
+        
+
+
         <div class="content">
                 <div class="sale-analytics">
                         <span class="title">Sales Analytics</span>
@@ -394,7 +422,7 @@
 
         </div>
 
-        <table>
+        <table class="sales-table">
         <tr>
             <th>No.</th>
             <th>Order Code</th>
@@ -437,6 +465,39 @@
    </div>
 
 </div>
+
+<div class="footer">
+            <img src="../PROJECT/Images/dejabrew-logo.png" class="logo" alt="dejabrew logo">
+                  
+            <div class="footer-details" style="display:flex;">
+                <div class="column1">
+                    <h4>Deja brew</h4><br>  
+                    <span>95 National Road Pulilan Bulacan</span><br> <br> <br> <br>
+                    <p>All Right Reserved 2023 &copy;</p>   
+                </div>
+
+                <div class="column2">
+                    <h4>Page Content</h4> <br>
+                    <p><a href="admin-home.php">Home</a></p>
+                    <p><a href="admin-menu.php">Menu</a></p>
+                    <p><a href="admin-sales.php">Sales</a></p>
+                    <p><a href="admin-employees.php">Employees</a></p>
+                    <p><a href="admin-profile.php">Profile</a></p>
+                </div>
+
+                <div class="column3">
+                    <h4>Social</h4><br>
+
+                    <p><a href="#">Facebook</a></p>
+                    <p><a href="#">Twitter</a></p>
+                    <p><a href="#">Instagram</a></p>
+                    <p><a href="#">FGmail</a></p>
+                </div>
+                
+            </div>
+
+    </div>     
+    
     
 </body>
 <script src="../javascript/date-time.js"></script>
@@ -515,4 +576,25 @@
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }
     </script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    document.querySelector('.download').onclick = function(){
+        var element =document.querySelector('.sales-table')
+
+        var option ={
+            margin: 1,
+            filename: 'Sales-record.pdf',
+            image: {type: 'jpeg', quality: 0.98},
+            html2canvas: {scale: 2},
+            jsPDF: {unit: 'in', format: 'letter', orientation: 'portrait'}
+        }
+
+        html2pdf(element,option)
+    }
+</script>
+
 </html>

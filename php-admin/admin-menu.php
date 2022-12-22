@@ -6,7 +6,7 @@
     require "../php-admin/menu-database/voucher-file.php";
 
    
- 
+    error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING); 
     // read voucher
    
     

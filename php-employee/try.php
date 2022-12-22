@@ -1,75 +1,80 @@
-<?php
-session_start();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-$connss =mysqli_connect('localhost','root','','products');
+<style>
+    .order{
+        width: 200px;
+        height: 300px;
+        border:  1px solid black;
 
-if(isset($_POST['add-order-btn'])){
-
-    if(isset($_SESSION['cart'])){
-
-        $session_array_id = array_column($_SESSION['cart'], "id");
-
-        if(!in_array($_GET['id'], $session_array_id)){
-
-            // $session_array_id=array_column($_SESSION['cart'], column_key)
-            $session_array = array (
-                'id' => $_GET['id'],
-                'productImage' => $_POST['productImage'],
-                'productName' => $_POST['productName'],
-                'Price' => $_POST['Price'],
-                'Category' => $_POST['Category']
-            );
-
-            $_SESSION['cart'][] = $session_array;
-
-        }
-
-        else{
-
-                $session_array = array (
-                'id' => $_GET['id'],
-                'productImage' => $_POST['productImage'],
-                'productName' => $_POST['productName'],
-                'Price' => $_POST['Price'],
-                'Category' => $_POST['Category']
-                );
-
-                $_SESSION['cart'][] = $session_array;
-        }
     }
 
+    img{
+        width: 100px;
+        height: 100px;
+    }
+</style>
 
-}
-
-                $query="SELECT * FROM tb_product";
-                $result=mysqli_query($connss,$query);
+<body>
 
 
-                while($row = mysqli_fetch_array($result)){?>
+<div class="order">
 
-                <div class="product">
+    <div class="product-name">Almond</div>
+    <img src="../PROJECT/Images/Almond Tea Latte.png" alt="" srcset="">
+    <input type="numer" name="product-price" class="product-price" value="130">
+    <!-- <input type="number" name="qty" id="qty" value="8" class="qty"> -->
 
-                            <?php//  $pic = '../php-admin/menu-database/uploads/' .$results['productImage'];
-                           // $_SESSION['pic'] = $pic;
-                            ?>
-                            
-<!--                     
-                        <h3 class="product-name"><?php //$row['productName'] ?> </h3>                       
-                        <img src="<?php //echo $pic?>" alt="productImage" class="product-img">
-                        <h4 class="product-amount"><?php //echo "Php " . $row['Price'] ?></h4> -->
-                        
-                        <form action="../php-employee/try.php?id=$row['id]?>" method="GET" enctype="multipart/form-data">
-                          
-                            <input type="text" name="product-id" value="<?php $row['id'] ?>">
-                            <input type="text" name="product-name" value="<?php $row['productName'] ?>">
-                            <input type="text" name="product-price" value="<?php $row['Price'] ?>">
-                            <input type="text" name="product-category" value="<?php $row['Category'] ?>">
-                            
-                            <input type="submit" name="add-order-btn" value="ADD to Orders" class="add-orders-btn  ">
-                        </form>
+ 
+    <input type="number" name="qty" id="qty" class="qty" value="2" onchange=subTotal()>
+    <input type="number" name="total" id="total" class="total" value="0">
+    
+</div>
 
-                      
+<div class="order">
 
-                        
-                </div> <?php } 
-                   var_dump($_SESSION['cart']); ?>
+    <div class="product-name">Almond</div>
+    <img src="../PROJECT/Images/Almond Tea Latte.png" alt="" srcset="">
+    <input type="numer" name="product-price" class="product-price" value="140">
+    <!-- <input type="number" name="qty" id="qty" value="2" class="qty"> -->
+
+ 
+    <input type="number" name="qty" id="qty" class="qty" value="3">
+    <input type="number" name="total" id="total" class="total" value="0">
+    
+</div>
+
+<div class="order">
+
+    <div class="product-name">Almond</div>
+    <img src="../PROJECT/Images/Almond Tea Latte.png" alt="" srcset="">
+    <input type="numer" name="product-price" class="product-price" value="160">
+    <!-- <input type="number" name="qty" id="qty" value="3" class="qty"> -->
+
+ 
+    <input type="number" name="qty" id="qty" class="qty" value="5">
+    <input type="number" name="total" id="total" class="total" value="0">
+
+
+    
+</div>
+
+
+
+<input type="number" class="grand-total" value="">
+<div class="sample"></div>
+
+
+
+
+
+</body>
+
+<script src="../javascript/add.js"></script>
+</html>

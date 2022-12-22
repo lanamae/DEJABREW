@@ -1,6 +1,6 @@
 <?php
     session_start();
-
+    error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING); 
     
     // echo 'SESSION:' .$_SESSION['status'] .'<br>';
     // echo 'USERNAME:' .$_SESSION['username'];

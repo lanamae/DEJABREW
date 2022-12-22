@@ -3,6 +3,7 @@
     require '../php-landing/date_and_time.php';
     // require '../php-landing/readLogbook.php';
 
+    error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING); 
     session_start();
 
     $idHello = $_SESSION['logId']; 

@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING); 
 date_default_timezone_set('Asia/Manila');  
 $current_timezone = date_default_timezone_get();
 //    echo $current_timezone . "<br>";

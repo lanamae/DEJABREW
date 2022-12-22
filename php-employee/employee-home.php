@@ -47,7 +47,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEJA BREW - ADMIN</title>
+    <title>DEJA BREW - EMPLOYEE</title>
 
     <link rel="shortcut icon" href="../PROJECT/Images/dejabrew-logo.png" type="image/x-icon">
    
@@ -162,16 +162,17 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
 
 
                 <div class="sale-analytics">
-                    <span class="title">Sales Analytics</span>
+                    <span class="title" style="font-size: 40px;">ALERT!</span>
                      <!-- <div id="chart_div"></div> -->
-                     <!-- <div id="root"></div> -->
+                     <div class="text-alert">Please contact your admin or employer when something went wrong in this system</div>
                 </div>
                 
 
                 <div class="order-analytics">
-                     <span class="title">Order Analytics</span>
-                     <!-- <div id="barchart_material" style="width: 300px; height: 200px;"></div> -->
-                </div>
+                     <span class="title" style="font-size: 40px;">MENU</span>
+                     <img src="../PROJECT/Images/img-hero.png" style="width: 250px; height: 200px;"alt="" srcset="">
+                    <a href="../php-employee/employee-menu.php" style="color: black; font-family: sans-serif;">Click here to direct to Menu</a>
+                    </div>
             </div>
 
 
@@ -179,13 +180,13 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
         </div>
 
 
-
+<!-- 
 
         <hr>
         <!-- instructions -->
-        <div class="instruction">
+        <!-- <div class="instruction"> -->
             
-        </div>
+        <!-- </div> -->
    </div>
       
    

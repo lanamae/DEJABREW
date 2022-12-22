@@ -2583,16 +2583,14 @@
   justify-content: center;
 }
 .employeeHome .main .dashboard .content .sale-analytics .title {
-  font-size: 18px;
+  font-size: 38px;
   font-weight: bold;
   font-family: "Arimo", sans-serif;
   letter-spacing: 2px;
   margin-bottom: 10px;
 }
-.employeeHome .main .dashboard .content .sale-analytics #root {
-  width: 300px;
-  height: 200px;
-  background-color: none;
+.employeeHome .main .dashboard .content .sale-analytics .text-alert {
+  font-size: 20px;
 }
 .employeeHome .main .dashboard .content .order-analytics {
   grid-column: 4/7;
@@ -3005,25 +3003,46 @@
   margin-bottom: 30px;
 }
 .employeeMenu .add-orders .order form .order-container {
-  border: 2px solid #333333;
   width: 350px;
   height: 500px;
   padding: 10px 20px;
   overflow: scroll;
 }
+.employeeMenu .add-orders .order form .order-container .order-box {
+  background: #5A5A5A;
+  width: 300px;
+  height: 150px;
+  margin-bottom: 30px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+  border-radius: 5px;
+}
 .employeeMenu .add-orders .order form .order-container .order-box img {
   width: 50px;
   height: 50px;
 }
+.employeeMenu .add-orders .order form .order-container .order-box .order-name {
+  width: 10px;
+}
+.employeeMenu .add-orders .order form .order-container .order-box .order-price {
+  width: 50px;
+}
+.employeeMenu .add-orders .order form .order-container .order-box .order-qty {
+  width: 50px;
+}
 .employeeMenu .add-orders .order form .total {
   width: 350px;
   height: 70px;
-  background: red;
+  background: #1F1F1F;
   position: absolute;
-  bottom: 10px;
+  bottom: -100px;
   padding: 10px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .employeeProfile {

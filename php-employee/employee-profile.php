@@ -6,7 +6,7 @@
     require '../php-landing/read.php';
     require '../php-landing/readLogbook.php';
 
-
+    error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING); 
        // error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);      
     // UPDATE Profile
     if(isset($_POST['save-changes'])){
@@ -217,6 +217,37 @@
 
 </div>
 
+<div class="footer">
+            <img src="../PROJECT/Images/dejabrew-logo.png" class="logo" alt="dejabrew logo">
+                  
+            <div class="footer-details" style="display:flex;">
+                <div class="column1">
+                    <h4>Deja brew</h4><br>  
+                    <span>95 National Road Pulilan Bulacan</span><br> <br> <br> <br>
+                    <p>All Right Reserved 2023 &copy;</p>   
+                </div>
 
+                <div class="column2">
+                    <h4>Page Content</h4> <br>
+                    <p><a href="admin-home.php">Home</a></p>
+                    <p><a href="admin-menu.php">Menu</a></p>
+                    <p><a href="admin-sales.php">Sales</a></p>
+                    <p><a href="admin-employees.php">Employees</a></p>
+                    <p><a href="admin-profile.php">Profile</a></p>
+                </div>
+
+                <div class="column3">
+                    <h4>Social</h4><br>
+
+                    <p><a href="#">Facebook</a></p>
+                    <p><a href="#">Twitter</a></p>
+                    <p><a href="#">Instagram</a></p>
+                    <p><a href="#">FGmail</a></p>
+                </div>
+                
+            </div>
+
+    </div>     
+    
 </body>
 </html>
