@@ -526,7 +526,7 @@
                         gap: 8px;
                         justify-content: center;
                         align-items: center;
-                        padding: 10px 20px; 
+                        padding: 10px 30px; 
                         border-radius: 5px;"
                     >
 
@@ -535,15 +535,15 @@
 
                             <img src="../php-admin/menu-database/uploads/<?php echo $results['order-name'].".png"?>">
                             
-                            <div class="info">
+                            <div class="info" style="margin-lfet: 50px;">
                                 <input type="text" name="order-name" id="order-name" value="<?php echo $results['order-name']?>" readonly="readonly"  style="background: #5A5A5A; border:none; color: white; font-size: 15px; letter-spacing: 1px;"><br><br>
                                 <span>Php</span>
-                                <input type="number" name="order-price" class="order-price" value="<?php echo $results['order-price']?>" style="width: 65px; background: #5A5A5A; border:none; font-size: 18px" readonly="readonly" ><br>
+                                <input type="number" name="order-price" class="order-price" value="<?php echo $results['order-price']?>" style="width: 75px; background: #5A5A5A; border:none; font-size: 18px" readonly="readonly" ><br>
                                 <span>Qty:</span>
                                 <input type="number" name="order-qty" class="order-qty" value="1" style="width: 50px;" onchange="subTotal();" min="1"  >
                                 <br><br>    
                                 <span>Php</span>
-                                <input type="number" name="subtotal" id="subtotal" class="subtotal" value="0"  style="width: 65px; background: #5A5A5A; border:none; font-size: 20px; font-weight: 300;" readonly="readonly">
+                                <input type="number" name="subtotal" id="subtotal" class="subtotal" value="0"  style="width: 65px; background: #5A5A5A; border:none; font-size: 20px; font-weight: 800;" readonly="readonly">
                                 <input type="hidden" name="order-id" value="<?php echo $results['id']?> '">
 
                             </div>
@@ -560,13 +560,13 @@
                         
                 </div>
 
-                <div class="total" STYLE="background: lightblue;">
-                    <h1>TOTAL</h1>
-                        <input type="number" name="order-num" id="order-num" class="order-num" value=""  style="width: 50px;">
-                        <input type="number" name="grand-total" id="grand-total" class="grand-total" value=""  style="width: 50px;">
+                <div class="total" STYLE="background: lightblue; font-family: sans-serif; display: flex; justify-content: center; align-item: center; gap: 15px; ">
+                    <h3>TOTAL: </h3>
+                        <span>Php </span>
+                        <input type="number" name="grand-total" id="grand-total" class="grand-total" value=""  style="width: 75px; font-family: sans-serif; font-size: 25px; font-weight: 900; letter-height: 2px; background: none; border: none;">
                         
-                        <input type="submit" value="Place Order" name="place-order" class="place-order">
-                        <div class="total-text">das</div>
+                        <input type="submit" value="Place Order" name="place-order" class="place-order" style="width: 100px; height: 40px; background: blue; border: none; border-radius: 5px; font-family: sans-serif; color: white; cursor: pointer;">
+                  
                 </div>
             </form>
                 
