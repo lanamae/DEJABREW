@@ -586,8 +586,8 @@
                                 
                             <h3>TOTAL: </h3>
                             <div class="" style="display: inline;">
-                                <input type="text" name="voucher-name" id="voucher-name" value="<?php echo $result_Voucher['voucher_name'] ?>" style="background: none; width: 100px; border:none">
-                                <span>-</span><input type="number" name="voucher-price" id="voucher-price" value="<?php echo $result_Voucher['voucher_percentage']?>" style="width: 65px; border: none; background:none; color: #000';"><span>%</span>
+                                <input type="text" name="voucher-name" id="voucher-name" value="<?php echo $result_Voucher['voucher_name'] ?>" style="background: none; width: 60px; border:none">
+                                <span>-</span><input type="number" name="voucher-price" id="voucher-price" value="<?php echo $result_Voucher['voucher_percentage']?>" style="width: 35px; border: none; background:none; color: #000';" onchange="minusVoucher();"><span>%</span>
                                 <hr>
                                 <br>
                                 <span>Php </span>
@@ -601,14 +601,6 @@
                     
                     </div>
 
-                <!-- <div class="total" STYLE="background: lightblue; font-family: sans-serif; display: flex; justify-content: center; align-item: center; gap: 15px; "> -->
-                        <!-- <h3>TOTAL: </h3> -->
-                        <!-- <span>Php </span> -->
-                        <!-- <input type="number" name="grand-total" id="grand-total" class="grand-total" value=""  style="width: 75px; font-family: sans-serif; font-size: 25px; font-weight: 900; letter-height: 2px; background: none; border: none;"> -->
-                        
-                        <!-- <input type="submit" value="Place Order" name="place-order" class="place-order" style="width: 100px; height: 40px; background: blue; border: none; border-radius: 5px; font-family: sans-serif; color: white; cursor: pointer;"> -->
-                  
-                <!-- </div> -->
             </form>
                 
 
@@ -678,6 +670,7 @@
         var subtotal = document.querySelectorAll('.subtotal');
         var totaltext = document.querySelectorAll('.total-text');
 
+        var vouPer = document.querySelector('#voucher-price');
 
    
         const subTotal = () =>{
@@ -692,16 +685,23 @@
                 
             }
             grandTotal.value = gt;
+
+            var percent =vouPer.value/100);
+             
+            grandtotal.value = grandtotal.value - (grandtotal.value*percent);
+ 
         }
 
 
         subTotal();
 
+           
+          
+    
 
-        // const grandtotalShow = () =>{
+       
 
-        // }
-
+        
 
  </script>
 
