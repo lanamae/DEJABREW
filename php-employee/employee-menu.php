@@ -38,6 +38,27 @@
 
      }
 
+
+     
+    //add add ons
+    if(isset($_POST['add-addons'])){
+        
+       $addons_id = $_POST['add-ons-id'];
+       
+
+       $querySelect_Addons = "SELECT * FROM addons WHERE id= '$addons_id'";
+       $sqlSelect_Addons = mysqli_query($connAddons, $querySelect_Addons);
+        $result_Addons = mysqli_fetch_array($sqlSelect_Addons);
+       
+
+
+
+        
+        
+        
+
+     }
+
     // // read order
     // $queryRead_order = "SELECT * FROM tb_orders";
     // $sqlRead_order = mysqli_query($connOrder,$queryRead_order);
@@ -502,7 +523,7 @@
                     <input type="text" name="order-num" id="order-num">
                 </div>
                                 
-                <div class="order-container" style="height: 450px;">
+                <div class="order-container" style="height: 400px; padding: 0;">
                     
                 <?php 
                    // read order
@@ -517,7 +538,7 @@
 
 
 
-                    <div class="order-box">
+                    <div class="order-box" style="width: 350px; ">
 
 
 
@@ -526,11 +547,16 @@
                             
                             <div class="info" style="margin-lfet: 50px;">
                                 <input type="text" name="order-name" id="order-name" value="<?php echo $results['order-name']?>" readonly="readonly"  style="background: #5A5A5A; border:none; color: white; font-size: 15px; letter-spacing: 1px;"><br><br>
+                                
                                 <span>Php</span>
                                 <input type="number" name="order-price" class="order-price" value="<?php echo $results['order-price']?>" style="width: 75px; background: #5A5A5A; border:none; font-size: 18px" readonly="readonly" ><br>
+                                
                                 <span>Qty:</span>
                                 <input type="number" name="order-qty" class="order-qty" value="1" style="width: 50px;" onchange="subTotal();" min="1"  >
-                                <br><br>    
+                                <br>  
+                                <pre><span>Add Ons: </span><input type="text" name="order-addons" id="order-addons" value="<?php echo $result_Addons['add-ons-name'] ?>" style="width: 100px; font-size: 10px; background: none; border-none;" "><input type="number" name="addons-price" id="addons-price" value="<?php echo $result_Addons['price']?>"  style="width: 50px;" >
+                                </pre>
+                                
                                 <span>Php</span>
                                 <input type="number" name="subtotal" id="subtotal" class="subtotal" value="0"  style="width: 65px; background: #5A5A5A; border:none; font-size: 20px; font-weight: 800;" readonly="readonly">
                                 <input type="hidden" name="order-id" value="<?php echo $results['id']?>">
@@ -548,10 +574,20 @@
                 <?php } }?>        
                         
                 </div>
-                    <div class="grandtotal" style=" height: 60px; padding: 20px;background: lightblue; font-family: sans-serif; display: flex; justify-content: center; align-item: center; gap: 15px; " >
-                                <h3>TOTAL: </h3>
-                            <span>Php </span>
-                            <input type="number" name="grand-total" id="grand-total" class="grand-total" value=""  style="width: 75px; font-family: sans-serif; font-size: 25px; font-weight: 900; letter-height: 2px; background: none; border: none;">
+                    <div class="grandtotal" style=" height: 100px; padding: 20px;background: lightblue; font-family: sans-serif; display: flex; justify-content: center; align-item: center; gap: 15px; " >
+                                
+                            <h3>TOTAL: </h3>
+                            <div class="" style="display: inline;">
+                                <input type="text" name="voucher-name" id="voucher-name" value="Senior" style="background: none; width: 100px; border:none">
+                                <span>-</span><input type="number" name="voucher-price" id="voucher-price" value="12" style="width: 65px; border: none; background:none; color: #000';"><span>%</span>
+                                <hr>
+                                <br>
+                                <span>Php </span>
+                                <input type="number" name="grand-total" id="grand-total" class="grand-total" value=""  style="width: 75px; font-family: sans-serif; font-size: 25px; font-weight: 900; letter-height: 2px; background: none; border: none;">
+                            
+                            </div>
+                           
+                        
                             
                             <input type="submit" value="Place Order" name="place-order" class="place-order" style="width: 100px; height: 40px; background: blue; border: none; border-radius: 5px; font-family: sans-serif; color: white; cursor: pointer;">
                     
