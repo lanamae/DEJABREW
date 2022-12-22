@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2022 at 05:01 AM
+-- Generation Time: Dec 22, 2022 at 03:22 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -47,7 +47,8 @@ INSERT INTO `addons` (`id`, `add-ons-name`, `price`) VALUES
 (8, 'Breve Milk', '20.00'),
 (9, 'Espresso Shot', '20.00'),
 (10, 'Strawberry Pure', '25.00'),
-(11, 'Ice Cream Float', '25.00');
+(11, 'Ice Cream Float', '25.00'),
+(12, 'sample', '10.00');
 
 -- --------------------------------------------------------
 
@@ -68,7 +69,7 @@ CREATE TABLE `tb_product` (
 --
 
 INSERT INTO `tb_product` (`id`, `productImage`, `productName`, `Price`, `Category`) VALUES
-(1, 'Almond Coffee Cheesecake Streusel.png', 'Almond Coffee Cheesecake Streusel', '150.00', 'gourmet series'),
+(1, 'Almond Coffee Cheesecake Streusel.png', 'Almond Coffee Cheesecake Streusel ', '150.00', 'gourmet series '),
 (2, 'Almond Tea Latte.png', 'Almond Tea Latte', '130.00', 'tea latte series'),
 (3, 'Bana Berry Yogurt Smoothie.png', 'Bana Berry Yogurt Smoothie', '155.00', 'fruit splash yogurt smoothies'),
 (4, 'Banana Mocha Brownie.png', 'Banana Mocha Brownie', '150.00', 'gourmet series'),
@@ -153,19 +154,19 @@ ALTER TABLE `vouchers`
 -- AUTO_INCREMENT for table `addons`
 --
 ALTER TABLE `addons`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tb_product`
 --
 ALTER TABLE `tb_product`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `vouchers`
 --
 ALTER TABLE `vouchers`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

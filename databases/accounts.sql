@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2022 at 05:01 AM
+-- Generation Time: Dec 22, 2022 at 03:21 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -140,8 +140,61 @@ INSERT INTO `log_details` (`id`, `position`, `username`, `date_login`, `login_ti
 (96, 'employee', 'dejabrew', 'Dec-19-2022', '10:05:45AM', 'Dec-19-2022', '10:17:18AM'),
 (97, 'admin', 'lanamaegalvez123', 'Dec-19-2022', '10:17:19AM', 'Dec-19-2022', '10:18:12AM'),
 (98, 'employee', 'dejabrew', 'Dec-19-2022', '10:18:14AM', 'still logged in', 'still logged in'),
-(99, 'employee', 'dejabrew', 'Dec-19-2022', '10:19:15AM', 'still logged in', 'still logged in'),
-(100, 'employee', 'dejabrew', 'Dec-19-2022', '10:48:23AM', 'still logged in', 'still logged in');
+(99, 'employee', 'dejabrew', 'Dec-19-2022', '10:19:15AM', 'Dec-19-2022', '12:43:41PM'),
+(100, 'employee', 'dejabrew', 'Dec-19-2022', '10:48:23AM', 'Dec-19-2022', '01:57:57PM'),
+(101, 'admin', 'lanamaegalvez123', 'Dec-19-2022', '12:43:43PM', 'Dec-19-2022', '12:44:22PM'),
+(102, 'admin', 'lanamaegalvez123', 'Dec-19-2022', '12:44:35PM', 'Dec-19-2022', '12:44:50PM'),
+(103, 'employee', 'dejabrew', 'Dec-19-2022', '12:45:01PM', 'Dec-19-2022', '01:13:35PM'),
+(104, 'employee', 'dejabrew', 'Dec-19-2022', '01:20:55PM', 'Dec-19-2022', '02:40:30PM'),
+(105, 'admin', 'lanamaegalvez123', 'Dec-19-2022', '01:58:00PM', 'still logged in', 'still logged in'),
+(106, 'admin', 'lanamaegalvez123', 'Dec-19-2022', '02:41:27PM', 'still logged in', 'still logged in'),
+(107, 'admin', 'lanamaegalvez123', 'Dec-19-2022', '05:54:07PM', 'Dec-19-2022', '06:04:30PM'),
+(108, 'employee', 'dejabrew', 'Dec-19-2022', '06:04:32PM', 'Dec-19-2022', '06:05:43PM'),
+(109, 'admin', 'lanamaegalvez123', 'Dec-19-2022', '06:05:45PM', 'Dec-19-2022', '06:06:51PM'),
+(110, 'employee', 'dejabrew', 'Dec-19-2022', '06:06:54PM', 'Dec-19-2022', '08:47:47PM'),
+(111, 'employee', 'dejabrew', 'Dec-19-2022', '08:47:48PM', 'still logged in', 'still logged in'),
+(112, 'employee', 'dejabrew', 'Dec-20-2022', '03:50:03AM', 'still logged in', 'still logged in'),
+(113, 'employee', 'dejabrew', 'Dec-20-2022', '09:24:12AM', 'still logged in', 'still logged in'),
+(114, 'employee', 'dejabrew', 'Dec-20-2022', '09:42:50AM', 'Dec-22-2022', '12:11:51PM'),
+(115, 'employee', 'dejabrew', 'Dec-20-2022', '04:25:47PM', 'Dec-21-2022', '07:15:21AM'),
+(116, 'admin', 'lanamaegalvez123', 'Dec-21-2022', '07:15:23AM', 'Dec-21-2022', '07:17:59AM'),
+(117, 'employee', 'dejabrew', 'Dec-21-2022', '07:18:00AM', 'Dec-21-2022', '07:19:13AM'),
+(118, 'admin', 'lanamaegalvez123', 'Dec-21-2022', '07:46:57AM', 'Dec-21-2022', '08:00:22AM'),
+(119, 'admin', 'lanamaegalvez123', 'Dec-21-2022', '08:05:49AM', 'Dec-21-2022', '08:35:48AM'),
+(120, 'employee', 'dejabrew', 'Dec-21-2022', '08:35:49AM', 'still logged in', 'still logged in'),
+(121, 'employee', 'dejabrew', 'Dec-22-2022', '06:02:08AM', 'Dec-22-2022', '06:35:51PM'),
+(122, 'admin', 'lanamaegalvez123', 'Dec-22-2022', '12:12:02PM', 'Dec-22-2022', '02:48:50PM'),
+(123, 'employee', 'dejabrew', 'Dec-22-2022', '02:49:15PM', 'Dec-22-2022', '05:40:32PM'),
+(124, 'admin', 'lanamaegalvez123', 'Dec-22-2022', '05:40:33PM', 'still logged in', 'still logged in'),
+(125, 'admin', 'lanamaegalvez123', 'Dec-22-2022', '06:42:43PM', 'Dec-22-2022', '06:49:50PM'),
+(126, 'employee', 'dejabrew', 'Dec-22-2022', '06:49:52PM', 'Dec-22-2022', '06:53:07PM'),
+(127, 'admin', 'lanamaegalvez123', 'Dec-22-2022', '06:53:08PM', 'Dec-22-2022', '06:53:42PM'),
+(128, 'admin', 'lanamaegalvez123', 'Dec-22-2022', '07:05:54PM', 'Dec-22-2022', '07:16:25PM'),
+(129, 'admin', 'lanamaegalvez123', 'Dec-22-2022', '07:21:46PM', 'Dec-22-2022', '07:27:49PM'),
+(130, 'employee', 'dejabrew', 'Dec-22-2022', '07:27:51PM', 'Dec-22-2022', '07:30:57PM'),
+(131, 'admin', 'bscpe', 'Dec-22-2022', '07:36:35PM', 'Dec-22-2022', '07:36:56PM'),
+(132, 'admin', 'lanamaegalvez123', 'Dec-22-2022', '07:39:13PM', 'Dec-22-2022', '07:39:37PM'),
+(133, 'admin', 'lanamaegalvez123', 'Dec-22-2022', '07:56:42PM', 'Dec-22-2022', '08:01:15PM'),
+(134, 'employee', 'deja', 'Dec-22-2022', '08:01:49PM', 'Dec-22-2022', '08:05:08PM'),
+(135, 'admin', 'admin', 'Dec-22-2022', '08:08:16PM', 'still logged in', 'still logged in'),
+(136, 'admin', 'lanamaegalvez123', 'Dec-22-2022', '08:10:43PM', 'Dec-22-2022', '08:11:11PM'),
+(137, 'admin', 'lanamaegalvez123', 'Dec-22-2022', '08:21:14PM', 'Dec-22-2022', '08:26:07PM'),
+(138, 'employee', 'employee', 'Dec-22-2022', '08:26:17PM', 'Dec-22-2022', '08:29:48PM'),
+(139, 'admin', 'lanamaegalvez123', 'Dec-22-2022', '08:53:51PM', 'Dec-22-2022', '08:58:08PM'),
+(140, 'admin', 'lanamaegalvez123', 'Dec-22-2022', '09:01:50PM', 'Dec-22-2022', '09:06:04PM'),
+(141, 'employee', 'employee', 'Dec-22-2022', '09:06:06PM', 'Dec-22-2022', '09:08:51PM'),
+(142, 'admin', 'admin1', 'Dec-22-2022', '09:11:26PM', 'still logged in', 'still logged in'),
+(143, 'admin', 'lanamaegalvez123', 'Dec-22-2022', '09:13:51PM', 'Dec-22-2022', '09:14:16PM'),
+(144, 'admin', 'lanamaegalvez123', 'Dec-22-2022', '09:20:32PM', 'Dec-22-2022', '09:23:41PM'),
+(145, 'admin', 'lanamaegalvez123', 'Dec-22-2022', '09:25:49PM', 'Dec-22-2022', '09:30:22PM'),
+(146, 'admin', 'lanamaegalvez123', 'Dec-22-2022', '09:34:07PM', 'Dec-22-2022', '09:34:29PM'),
+(147, 'admin', 'lanamaegalvez123', 'Dec-22-2022', '09:38:45PM', 'Dec-22-2022', '09:41:15PM'),
+(148, 'admin', 'lanamaegalvez123', 'Dec-22-2022', '09:42:49PM', 'Dec-22-2022', '09:46:53PM'),
+(149, 'employee', 'employee', 'Dec-22-2022', '09:46:55PM', 'Dec-22-2022', '09:49:38PM'),
+(150, 'admin', 'lanamaegalvez123', 'Dec-22-2022', '09:51:14PM', 'Dec-22-2022', '09:55:32PM'),
+(151, 'employee', 'employee', 'Dec-22-2022', '09:55:35PM', 'Dec-22-2022', '09:58:40PM'),
+(152, 'admin', 'admin2', 'Dec-22-2022', '10:01:36PM', 'Dec-22-2022', '10:01:49PM'),
+(153, 'admin', 'admin2', 'Dec-22-2022', '10:03:38PM', 'Dec-22-2022', '10:04:06PM');
 
 -- --------------------------------------------------------
 
@@ -162,9 +215,18 @@ CREATE TABLE `useraccounts` (
 --
 
 INSERT INTO `useraccounts` (`id`, `position`, `username`, `email`, `password`) VALUES
-(9, 'employee', 'dejabrew', 'dejabrew@yhaoo.com', 'dejabrew'),
+(9, 'employee', 'bscpeHAHA', 'bscpe@gmail.com', 'BSCPE'),
 (10, 'admin', 'lanamaegalvez123', 'lanamaegalvez015@gmail.com', '123456'),
-(11, 'employee', 'alyfajardo', 'ai@gmail.com', '456');
+(11, 'employee', 'alyfajardo', 'ai@gmail.com', '456'),
+(13, 'admin', 'dejabrew', 'dejabrew@yhaoo.com', 'qwe'),
+(14, 'admin', 'dejabrew', 'dejabrew@yhaoo.com', 'dasdad'),
+(15, 'admin', 'bscpe', 'bscpe@gmail.com', 'bscpe'),
+(16, 'employee', 'admin', '', 'admin'),
+(18, 'employee', 'admin1', '', 'admin1'),
+(20, 'employee', 'employee1', 'employee1@gmail.com', 'employee1'),
+(21, 'employee', 'admin2', '', 'admin2'),
+(22, 'admin', 'admin2', 'admin2@gmail.com', 'admin2'),
+(23, 'employee', 'employee2', 'employee2@gmail.com', 'employee2');
 
 --
 -- Indexes for dumped tables
@@ -190,13 +252,13 @@ ALTER TABLE `useraccounts`
 -- AUTO_INCREMENT for table `log_details`
 --
 ALTER TABLE `log_details`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
 
 --
 -- AUTO_INCREMENT for table `useraccounts`
 --
 ALTER TABLE `useraccounts`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
