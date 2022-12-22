@@ -6,6 +6,17 @@
     require "../php-employee/order-database.php";
     error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING); 
 
+    // placeorder
+
+    if(isset($_POST['place-order'])){
+        
+        // $order_code = $_POST['']
+    }
+
+
+
+
+
 
     // delete order
     if(isset($_POST['remove-order'])){
