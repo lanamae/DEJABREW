@@ -2978,7 +2978,7 @@
   background: #DADADA;
   overflow-x: auto;
   overflow-y: hidden;
-  height: 97vh;
+  height: 100vh;
   padding: 10px;
 }
 .employeeMenu .add-orders .add-order-title {
@@ -3009,7 +3009,7 @@
   overflow: scroll;
 }
 .employeeMenu .add-orders .order form .order-container .order-box {
-  background: #5A5A5A;
+  background: red;
   width: 300px;
   height: 150px;
   margin-bottom: 30px;
@@ -3017,12 +3017,12 @@
   gap: 8px;
   justify-content: center;
   align-items: center;
-  padding: 0px 20px;
+  padding: 10px 30px;
   border-radius: 5px;
 }
 .employeeMenu .add-orders .order form .order-container .order-box img {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 }
 .employeeMenu .add-orders .order form .order-container .order-box .order-name {
   width: 10px;
@@ -3032,17 +3032,6 @@
 }
 .employeeMenu .add-orders .order form .order-container .order-box .order-qty {
   width: 50px;
-}
-.employeeMenu .add-orders .order form .total {
-  width: 350px;
-  height: 70px;
-  background: #1F1F1F;
-  position: absolute;
-  bottom: -100px;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .employeeProfile {
